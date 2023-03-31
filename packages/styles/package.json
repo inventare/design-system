@@ -1,0 +1,12 @@
+{
+  "name": "@inventare/styles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "sass src/inventare.scss dist/inventare.css"
+  },
+  "devDependencies": {
+    "sass": "^1.60.0"
+  }
+}
