@@ -1,0 +1,13 @@
+{
+  "name": "inventare",
+  "version": "0.0.1",
+  "repository": "https://github.com/inventare/design-system.git",
+  "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
