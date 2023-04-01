@@ -4,9 +4,27 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "sass src/inventare.scss dist/inventare.css"
+    "build": "sass src/inventare.scss dist/inventare.css",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "sass": "^1.60.0"
-  }
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "@storybook/addon-essentials": "^7.0.0",
+    "@storybook/addon-interactions": "^7.0.0",
+    "@storybook/addon-links": "^7.0.0",
+    "@storybook/blocks": "^7.0.0",
+    "@storybook/html": "^7.0.0",
+    "@storybook/html-webpack5": "^7.0.0",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "css-loader": "^6.7.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "storybook": "^7.0.0",
+    "style-loader": "^3.3.2"
+  },
+  "peerDependencies": {}
 }

@@ -1,0 +1,8 @@
+.container-wrapper {
+    height: 200px;
+    background: #222;
+}
+.container-wrapper > div {
+    height: 100%;
+    background-color: #FFF;
+}

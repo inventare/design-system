@@ -1,1 +1,5 @@
-@import "./variables/variables.scss";
+@import "./variables";
+@import "./mixins";
+@import "./functions";
+
+@import "./layouts/containers";
