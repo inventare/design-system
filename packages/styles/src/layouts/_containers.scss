@@ -8,11 +8,16 @@
   margin-left: auto;
 }
 
-.container {
+.container,
+.container-fluid {
   @include make-container();
 }
 
 @each $breakpoint, $container-max-width in $container-max-widths {
+  .container-#{$breakpoint} {
+    @extend .container-fluid;
+  }
+
   @include media-breakpoint-up($breakpoint, $breakpoints) {
     %responsive-container-#{$breakpoint} {
       max-width: $container-max-width;
