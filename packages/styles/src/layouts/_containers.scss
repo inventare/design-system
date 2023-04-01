@@ -1,0 +1,37 @@
+@mixin make-container($gutter: $container-padding-x) {
+  --#{$variable-prefix}gutter-x: #{$gutter};
+  --#{$variable-prefix}gutter-y: 0;
+  width: 100%;
+  padding-right: var(--#{$variable-prefix}gutter-x, #{$gutter});
+  padding-left: var(--#{$variable-prefix}gutter-x, #{$gutter});
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  @include make-container();
+}
+
+@each $breakpoint, $container-max-width in $container-max-widths {
+  @include media-breakpoint-up($breakpoint, $breakpoints) {
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    // Extend each breakpoint which is smaller or equal to the current breakpoint
+    $extend-breakpoint: true;
+
+    @each $name, $width in $breakpoints {
+      @if ($extend-breakpoint) {
+        .container#{breakpoint-infix($name, $breakpoints)} {
+          @extend %responsive-container-#{$breakpoint};
+        }
+
+        // Once the current breakpoint is reached, stop extending
+        @if ($breakpoint == $name) {
+          $extend-breakpoint: false;
+        }
+      }
+    }
+  }
+}
