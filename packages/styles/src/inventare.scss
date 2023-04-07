@@ -1,5 +1,9 @@
 @import "./variables";
-@import "./mixins";
-@import "./functions";
+
+@import "./mixins/breakpoints";
+@import "./mixins/colors";
+@import "./functions/breakpoints";
 
 @import "./layouts/containers";
+
+@import "./components/button";

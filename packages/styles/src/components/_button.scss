@@ -1,0 +1,75 @@
+.btn {
+  --#{$variable-prefix}button-padding-y: #{$button-padding-y};
+  --#{$variable-prefix}button-padding-x: #{$button-padding-x};
+  --#{$variable-prefix}button-font-size: #{$button-font-size};
+  --#{$variable-prefix}button-font-weight: #{$button-font-weight};
+  --#{$variable-prefix}button-line-height: #{$button-line-height};
+  --#{$variable-prefix}button-border-radius: #{$button-border-radius};
+  --#{$variable-prefix}button-transition: #{$button-transition};
+
+  --#{$variable-prefix}button-border: #{$button-default-border};
+  --#{$variable-prefix}button-bg: #{$button-default-bg};
+  --#{$variable-prefix}button-fg: #{$button-default-fg};
+
+  border-radius: var(--#{$variable-prefix}button-border-radius);
+
+  display: flex;
+  align-items: center;
+  gap: $button-gap;
+
+  padding: var(--#{$variable-prefix}button-padding-y)
+    var(--#{$variable-prefix}button-padding-x);
+
+  font-size: var(--#{$variable-prefix}button-font-size);
+  font-weight: var(--#{$variable-prefix}button-font-weight);
+  line-height: var(--#{$variable-prefix}button-line-height);
+
+  cursor: pointer;
+
+  border: 1px solid var(--#{$variable-prefix}button-border);
+  background: var(--#{$variable-prefix}button-bg);
+  color: var(--#{$variable-prefix}button-fg);
+
+  transition: var(--#{$variable-prefix}button-transition);
+
+  &:hover {
+    --#{$variable-prefix}button-border: #{$button-default-hover-border};
+    --#{$variable-prefix}button-bg: #{$button-default-hover-bg};
+    --#{$variable-prefix}button-fg: #{$button-default-hover-fg};
+  }
+
+  &:active {
+    --#{$variable-prefix}button-border: #{$button-default-active-border};
+    --#{$variable-prefix}button-bg: #{$button-default-active-bg};
+    --#{$variable-prefix}button-fg: #{$button-default-active-fg};
+  }
+
+  @each $variant, $dict in $button-colors {
+    &.#{$variant} {
+      @include map-variable("button-border", $dict, "border");
+      @include map-variable("button-bg", $dict, "bg");
+      @include map-variable("button-fg", $dict, "fg");
+
+      &:hover {
+        @include map-variable("button-border", $dict, "hover-border");
+        @include map-variable("button-bg", $dict, "hover-bg");
+        @include map-variable("button-fg", $dict, "hover-fg");
+      }
+
+      &:active {
+        @include map-variable("button-border", $dict, "active-border");
+        @include map-variable("button-bg", $dict, "active-bg");
+        @include map-variable("button-fg", $dict, "active-fg");
+      }
+
+      &:disabled {
+        --#{$variable-prefix}button-disabled-opacity: #{$button-disabled-opacity};
+
+        cursor: default;
+        pointer-events: none;
+
+        opacity: var(--#{$variable-prefix}button-disabled-opacity);
+      }
+    }
+  }
+}
