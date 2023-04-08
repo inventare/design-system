@@ -18,7 +18,7 @@
     @extend .container-fluid;
   }
 
-  @include media-breakpoint-up($breakpoint, $breakpoints) {
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
     %responsive-container-#{$breakpoint} {
       max-width: $container-max-width;
     }
@@ -26,9 +26,9 @@
     // Extend each breakpoint which is smaller or equal to the current breakpoint
     $extend-breakpoint: true;
 
-    @each $name, $width in $breakpoints {
+    @each $name, $width in $grid-breakpoints {
       @if ($extend-breakpoint) {
-        .container#{breakpoint-infix($name, $breakpoints)} {
+        .container#{breakpoint-infix($name, $grid-breakpoints)} {
           @extend %responsive-container-#{$breakpoint};
         }
 
