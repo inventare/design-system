@@ -26,3 +26,76 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1320px,
 );
+
+/*
+ * BUTTON
+ */
+$button-padding-x: 0.75rem !default;
+$button-padding-y: 0.375rem !default;
+$button-font-size: 1rem !default;
+$button-font-weight: 400 !default;
+$button-line-height: 1.5 !default;
+$button-gap: 0.5rem !default;
+$button-border-radius: 0.25rem !default;
+$button-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$button-disabled-opacity: 0.65;
+
+/* DEFAULT */
+$button-default-border: transparent !default;
+$button-default-bg: transparent !default;
+$button-default-fg: #222 !default;
+$button-default-hover-border: transparent !default;
+$button-default-hover-bg: transparent !default;
+$button-default-hover-fg: #222 !default;
+$button-default-active-border: #222 !default;
+$button-default-active-bg: transparent !default;
+$button-default-active-fg: #222 !default;
+
+/* PRIMARY */
+$button-primary-border: #0b5ed7 !default;
+$button-primary-bg: #0b5ed7 !default;
+$button-primary-fg: #fff !default;
+$button-primary-hover-border: #0b5ed7 !default;
+$button-primary-hover-bg: #0b5ed7 !default;
+$button-primary-hover-fg: #fff !default;
+$button-primary-active-border: #0a58ca !default;
+$button-primary-active-bg: #0a58ca !default;
+$button-primary-active-fg: #fff !default;
+
+/* DANGER */
+$button-danger-border: #dc3545 !default;
+$button-danger-bg: #dc3545 !default;
+$button-danger-fg: #fff !default;
+$button-danger-hover-border: #bb2d3b !default;
+$button-danger-hover-bg: #bb2d3b !default;
+$button-danger-hover-fg: #fff !default;
+$button-danger-active-border: #b02a37 !default;
+$button-danger-active-bg: #b02a37 !default;
+$button-danger-active-fg: #fff !default;
+
+/* COLORS */
+$button-colors: (
+  primary: (
+    border: $button-primary-border,
+    bg: $button-primary-bg,
+    fg: $button-primary-fg,
+    hover-border: $button-primary-hover-border,
+    hover-bg: $button-primary-hover-bg,
+    hover-fg: $button-primary-hover-fg,
+    active-border: $button-primary-active-border,
+    active-bg: $button-primary-active-bg,
+    active-fg: $button-primary-active-fg,
+  ),
+  danger: (
+    border: $button-danger-border,
+    bg: $button-danger-bg,
+    fg: $button-danger-fg,
+    hover-border: $button-danger-hover-border,
+    hover-bg: $button-danger-hover-bg,
+    hover-fg: $button-danger-hover-fg,
+    active-border: $button-danger-active-border,
+    active-bg: $button-danger-active-bg,
+    active-fg: $button-danger-active-fg,
+  ),
+);

@@ -1,0 +1,3 @@
+@mixin map-variable($name, $map, $color) {
+  --#{$variable-prefix}#{$name}: #{map-get($map, $color)};
+}
