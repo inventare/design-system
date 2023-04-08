@@ -2,7 +2,7 @@ import { createButton } from "./button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/html/writing-stories/introduction
 export default {
-  title: "Component/Button",
+  title: "Components/Button",
   tags: ["autodocs"],
   argTypes: {
     label: { control: "text" },
