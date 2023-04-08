@@ -1,24 +1,32 @@
 import { createButton } from "./button";
 
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/html/writing-stories/introduction
 export default {
   title: "Components/Button",
-  tags: ["autodocs"],
   argTypes: {
-    label: { control: "text" },
-    onClick: { action: "onClick" },
-    disabled: { control: "boolean" },
+    label: {
+      control: "text",
+      description: "the button display text",
+    },
+    onClick: {
+      action: "onClick",
+      description: 'event raised when clicks on the button',
+    },
+    disabled: {
+      control: "boolean",
+      description: "indicate if the button is disabled",
+    },
     variant: {
-      control: { type: "select" },
+      control: { type: "select", },
       options: ["default", "primary", "danger"],
+      description: "the button style",
     },
   },
 };
 
 const Template = ({ ...args }) => createButton({ ...args });
 
-export const Base = Template.bind();
-Base.args = {
+export const Default = Template.bind();
+Default.args = {
   label: "Button",
   variant: "default",
   disabled: false,
