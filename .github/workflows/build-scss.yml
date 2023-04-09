@@ -23,4 +23,4 @@ jobs:
         run: yarn
 
       - name: Build SCSS
-      - run: yarn workspace @inventare/styles build
+        run: yarn workspace @inventare/styles build
