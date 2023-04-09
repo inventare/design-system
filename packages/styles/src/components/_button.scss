@@ -72,4 +72,8 @@
       }
     }
   }
+
+  &.square {
+    --#{$variable-prefix}button-border-radius: 0;
+  }
 }
