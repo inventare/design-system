@@ -9,16 +9,20 @@ export default {
     },
     onClick: {
       action: "onClick",
-      description: 'event raised when clicks on the button',
+      description: "event raised when clicks on the button",
     },
     disabled: {
       control: "boolean",
       description: "indicate if the button is disabled",
     },
     variant: {
-      control: { type: "select", },
+      control: { type: "select" },
       options: ["default", "primary", "danger"],
       description: "the button style",
+    },
+    square: {
+      control: "boolean",
+      description: "indicate if button border round is square",
     },
   },
 };
@@ -37,6 +41,14 @@ Primary.args = {
   label: "Button",
   variant: "primary",
   disabled: false,
+};
+
+export const PrimarySquare = Template.bind();
+PrimarySquare.args = {
+  label: "Button",
+  variant: "primary",
+  disabled: false,
+  square: true,
 };
 
 export const PrimaryDisabled = Template.bind();
@@ -58,4 +70,11 @@ DangerDisabled.args = {
   label: "Button",
   variant: "danger",
   disabled: true,
+};
+
+export const DangerSquare = Template.bind();
+DangerSquare.args = {
+  label: "Button",
+  variant: "danger",
+  square: true,
 };
