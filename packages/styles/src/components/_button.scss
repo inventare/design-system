@@ -73,6 +73,19 @@
     }
   }
 
+  &.large {
+    --#{$variable-prefix}button-padding-y: #{$button-large-padding-y};
+    --#{$variable-prefix}button-padding-x: #{$button-large-padding-x};
+    --#{$variable-prefix}button-font-size: #{$button-large-font-size};
+    --#{$variable-prefix}button-border-radius: #{$button-large-border-radius};
+  }
+  &.small {
+    --#{$variable-prefix}button-padding-y: #{$button-small-padding-y};
+    --#{$variable-prefix}button-padding-x: #{$button-small-padding-x};
+    --#{$variable-prefix}button-font-size: #{$button-small-font-size};
+    --#{$variable-prefix}button-border-radius: #{$button-small-border-radius};
+  }
+
   &.square {
     --#{$variable-prefix}button-border-radius: 0;
   }

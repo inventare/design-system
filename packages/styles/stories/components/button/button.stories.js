@@ -20,6 +20,11 @@ export default {
       options: ["default", "primary", "danger"],
       description: "the button style",
     },
+    size: {
+      control: { type: "select" },
+      options: ["normal", "small", "large"],
+      description: "the button size variant",
+    },
     square: {
       control: "boolean",
       description: "indicate if button border round is square",
@@ -77,4 +82,18 @@ DangerSquare.args = {
   label: "Button",
   variant: "danger",
   square: true,
+};
+
+export const Large = Template.bind();
+Large.args = {
+  label: "Button",
+  variant: "primary",
+  size: "large",
+};
+
+export const Small = Template.bind();
+Small.args = {
+  label: "Button",
+  variant: "primary",
+  size: "small",
 };

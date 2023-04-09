@@ -1,4 +1,11 @@
-export const createButton = ({ label, variant, disabled, square, onClick }) => {
+export const createButton = ({
+  label,
+  variant,
+  size,
+  disabled,
+  square,
+  onClick,
+}) => {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.innerText = label;
@@ -6,7 +13,10 @@ export const createButton = ({ label, variant, disabled, square, onClick }) => {
 
   variant = variant === "default" ? "" : variant;
   square = square ? "square" : "";
-  btn.className = ["btn", variant, square].filter((item) => !!item).join(" ");
+  size = size === "normal" ? "" : size;
+  btn.className = ["btn", variant, square, size]
+    .filter((item) => !!item)
+    .join(" ");
 
   if (disabled) {
     btn.disabled = true;
