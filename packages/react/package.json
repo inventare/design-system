@@ -1,8 +1,17 @@
 {
   "name": "@inventare/react",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "license": "MIT",
+  "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
+  "homepage": "https://github.com/inventare/design-system",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inventare/design-system.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,7 +19,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
