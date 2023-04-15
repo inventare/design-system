@@ -4,6 +4,11 @@
 $variable-prefix: inventare-;
 
 /*
+ * FONT
+ */
+$body-font: "Roboto", sans-serif !default;
+
+/*
  * BREAKPOINTS
  */
 $grid-breakpoints: (
@@ -32,6 +37,7 @@ $container-max-widths: (
  */
 $button-padding-x: 0.75rem !default;
 $button-padding-y: 0.375rem !default;
+$button-font: $body-font !default;
 $button-font-size: 1rem !default;
 $button-font-weight: 400 !default;
 $button-line-height: 1.5 !default;

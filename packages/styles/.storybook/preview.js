@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!sass-loader!../src/inventare.scss';
+import "!style-loader!css-loader!sass-loader!../scss/inventare.scss";
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
