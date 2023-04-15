@@ -25,7 +25,12 @@ jobs:
       - name: Build React
         run: yarn workspace @inventare/react build
 
-      - name: Publish Package to NPM
-        run: yarn publish:all
+      - name: Publish SCSS
+        run: yarn workspace @inventare/styles publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish React
+        run: yarn workspace @inventare/react publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
