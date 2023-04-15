@@ -1,8 +1,9 @@
 import clsx from "clsx";
-import { forwardRef, createElement } from "react";
+import { createElement } from "react";
 import { ButtonProps } from "./button.types";
+import { forwardRef } from "../../utils";
 
-export const Button = forwardRef<any, ButtonProps>((props, ref) => {
+export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
   const {
     as,
     children,
@@ -23,3 +24,9 @@ export const Button = forwardRef<any, ButtonProps>((props, ref) => {
 
   return createElement(as || "button", { ...rest, ref, children, className });
 });
+
+const el = () => (
+  <Button as="a" href="#">
+    Q?
+  </Button>
+);
