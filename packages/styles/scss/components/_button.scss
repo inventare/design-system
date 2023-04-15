@@ -1,6 +1,7 @@
 .btn {
   --#{$variable-prefix}button-padding-y: #{$button-padding-y};
   --#{$variable-prefix}button-padding-x: #{$button-padding-x};
+  --#{$variable-prefix}button-font: #{$button-font};
   --#{$variable-prefix}button-font-size: #{$button-font-size};
   --#{$variable-prefix}button-font-weight: #{$button-font-weight};
   --#{$variable-prefix}button-line-height: #{$button-line-height};
@@ -20,6 +21,7 @@
   padding: var(--#{$variable-prefix}button-padding-y)
     var(--#{$variable-prefix}button-padding-x);
 
+  font-family: var(--#{$variable-prefix}button-font);
   font-size: var(--#{$variable-prefix}button-font-size);
   font-weight: var(--#{$variable-prefix}button-font-weight);
   line-height: var(--#{$variable-prefix}button-line-height);
