@@ -1,4 +1,4 @@
-import { HTMLProps } from "../../types";
+import { HTMLProps } from "../../core";
 
 export type ButtonVariant = "default" | "primary" | "danger";
 

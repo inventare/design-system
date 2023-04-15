@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { createElement } from "react";
 import { ButtonProps } from "./button.types";
-import { forwardRef } from "../../utils";
+import { forwardRef } from "../../core";
 
 export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
   const {
