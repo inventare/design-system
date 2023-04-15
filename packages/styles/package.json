@@ -1,10 +1,20 @@
 {
   "name": "@inventare/styles",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "main": "index.js",
   "license": "MIT",
+  "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
+  "homepage": "https://github.com/inventare/design-system",
+  "files": [
+    "dist",
+    "scss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inventare/design-system.git"
+  },
   "scripts": {
-    "build": "sass src/inventare.scss dist/inventare.css",
+    "build": "sass scss/inventare.scss dist/inventare.css",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
