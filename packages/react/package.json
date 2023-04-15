@@ -1,8 +1,9 @@
 {
   "name": "@inventare/react",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "license": "MIT",
+  "main": "dist/inventare.es.js",
   "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
   "homepage": "https://github.com/inventare/design-system",
   "files": [
@@ -39,5 +40,8 @@
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vite-plugin-dts": "^2.1.0"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1"
   }
 }
