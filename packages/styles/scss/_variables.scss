@@ -117,3 +117,10 @@ $button-colors: (
     active-fg: $button-danger-active-fg,
   ),
 );
+
+/*
+ * SPINNER
+ */
+$spinner-default-size: 32px !default;
+$spinner-default-color: currentColor;
+$spinner-default-width: 2px;
