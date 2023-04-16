@@ -15,6 +15,10 @@ export default {
       control: "boolean",
       description: "indicate if the button is disabled",
     },
+    link: {
+      control: "boolean",
+      description: "indicate if the button is an link",
+    },
     variant: {
       control: { type: "select" },
       options: ["default", "primary", "danger"],

@@ -4,9 +4,14 @@ export const createButton = ({
   size,
   disabled,
   square,
+  link,
   onClick,
 }) => {
-  const btn = document.createElement("button");
+  let btn = document.createElement("button");
+  if (link) {
+    btn = document.createElement("a");
+    btn.setAttribute("href", "#");
+  }
   btn.type = "button";
   btn.innerText = label;
   btn.addEventListener("click", onClick);
