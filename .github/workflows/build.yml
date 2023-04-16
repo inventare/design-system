@@ -24,3 +24,6 @@ jobs:
 
       - name: Build SCSS
         run: yarn workspace @inventare/styles build
+
+      - name: Build React
+        run: yarn workspace @inventare/react build
