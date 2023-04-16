@@ -3,13 +3,17 @@ import { createSpinner } from "./spinner";
 export default {
   title: "Components/Spinner",
   argTypes: {
-    color: { control: "color" },
+    color: {
+      control: "color",
+      description: "the color of the spinner component.",
+    },
     size: {
       control: {
         type: "number",
         min: 16,
         step: 1,
       },
+      description: "the size of the spinner component.",
     },
     width: {
       control: {
@@ -17,6 +21,7 @@ export default {
         min: 1,
         step: 1,
       },
+      description: "the border width of the spinner circle.",
     },
   },
 };
