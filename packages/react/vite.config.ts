@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
 import { defineConfig } from "vite";
 import path from "node:path";
 import react from "@vitejs/plugin-react";
@@ -19,7 +21,7 @@ export default defineConfig({
       fileName: (format) => `inventare.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "styled-components"],
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
@@ -27,5 +29,10 @@ export default defineConfig({
         },
       },
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.ts",
   },
 });
