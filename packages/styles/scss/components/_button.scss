@@ -16,11 +16,14 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: $button-gap;
 
   padding: var(--#{$variable-prefix}button-padding-y)
     var(--#{$variable-prefix}button-padding-x);
 
+  text-align: center;
+  text-decoration: none;
   font-family: var(--#{$variable-prefix}button-font);
   font-size: var(--#{$variable-prefix}button-font-size);
   font-weight: var(--#{$variable-prefix}button-font-weight);
