@@ -2,15 +2,22 @@ import clsx from "clsx";
 import { createElement } from "react";
 import { ButtonProps } from "./button.types";
 import { forwardRef } from "../../core";
+import { Spinner } from "../spinner";
 
 export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
   const {
     as,
-    children,
+    children: rawChildren,
     className: rawClassName,
+    disabled: rawDisabled,
     variant = "default",
     size = "normal",
     square = false,
+    isLoading = false,
+    loadingType = "text",
+    loadingText = "Loading...",
+    loadingSpinnerSize = 24,
+    loadingSpinnerWidth = 3,
     ...rest
   } = props;
 
@@ -22,11 +29,26 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
     [rawClassName || ""]: true,
   });
 
-  return createElement(as || "button", { ...rest, ref, children, className });
-});
+  let disabled = rawDisabled;
+  let children = rawChildren;
+  if (isLoading) {
+    disabled = true;
 
-const el = () => (
-  <Button as="a" href="#">
-    Q?
-  </Button>
-);
+    if (loadingType === "text") {
+      children = <>{loadingText}</>;
+    }
+    if (loadingType === "spinner") {
+      children = (
+        <Spinner size={loadingSpinnerSize} width={loadingSpinnerWidth} />
+      );
+    }
+  }
+
+  return createElement(as || "button", {
+    ...rest,
+    ref,
+    disabled,
+    children,
+    className,
+  });
+});
