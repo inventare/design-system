@@ -42,6 +42,7 @@
     "vite-plugin-dts": "^2.1.0"
   },
   "dependencies": {
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "@inventare/styles": "*"
   }
 }
