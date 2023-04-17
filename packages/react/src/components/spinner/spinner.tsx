@@ -10,7 +10,7 @@ export const Spinner = (props: SpinnerProps) => {
   };
 
   return (
-    <div className="spinner" style={styles as any}>
+    <div className="spinner" data-testid="spinner" style={styles as any}>
       <div />
       <div />
       <div />
