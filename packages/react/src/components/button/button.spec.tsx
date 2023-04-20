@@ -1,4 +1,6 @@
+import { vitest } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Button } from "./button";
 
 describe("Components/Button", () => {
@@ -80,5 +82,20 @@ describe("Components/Button", () => {
     const sizeProp = spinner.style.getPropertyValue("--inventare-spinner-size");
     expect(widthProp).toEqual(`${width}px`);
     expect(sizeProp).toEqual(`${size}px`);
+  });
+
+  it("should not call onClick when disabled is true", async () => {
+    const onClick = vitest.fn();
+    render(
+      <Button onClick={onClick} disabled>
+        My Button!
+      </Button>
+    );
+
+    const button = screen.getByRole("button");
+
+    userEvent.click(button);
+
+    expect(onClick).not.toHaveBeenCalled();
   });
 });
