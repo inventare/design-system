@@ -21,14 +21,6 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
     ...rest
   } = props;
 
-  const className = clsx({
-    btn: true,
-    [size]: true,
-    [variant]: true,
-    square: square,
-    [rawClassName || ""]: true,
-  });
-
   let disabled = rawDisabled;
   let children = rawChildren;
   if (isLoading) {
@@ -43,6 +35,15 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
       );
     }
   }
+
+  const className = clsx({
+    btn: true,
+    [size]: true,
+    [variant]: true,
+    square: square,
+    disabled: disabled,
+    [rawClassName || ""]: true,
+  });
 
   return createElement(as || "button", {
     ...rest,
