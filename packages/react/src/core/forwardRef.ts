@@ -1,3 +1,8 @@
+/**
+ * All credits here goes to Chakra-UI package creators and contributors:
+ *
+ * https://github.com/chakra-ui/chakra-ui/tree/main/packages/core/system
+ */
 import { ForwardRefRenderFunction, forwardRef as forwardReactRef } from "react";
 import { RightJoinProps, PropsOf, As, ComponentWithAs } from "./types";
 

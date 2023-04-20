@@ -1,3 +1,8 @@
+/**
+ * All credits here goes to Chakra-UI package creators and contributors:
+ *
+ * https://github.com/chakra-ui/chakra-ui/tree/main/packages/core/system
+ */
 import { ElementType } from "react";
 
 export type As = ElementType;
