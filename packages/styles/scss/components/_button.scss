@@ -67,7 +67,8 @@
         @include map-variable("button-fg", $dict, "active-fg");
       }
 
-      &:disabled {
+      &:disabled,
+      &.disabled {
         --#{$variable-prefix}button-disabled-opacity: #{$button-disabled-opacity};
 
         cursor: default;
