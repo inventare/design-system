@@ -35,3 +35,11 @@ export const Primary: Story = {
     children: "Button",
   },
 };
+
+export const PrimaryLink: Story = {
+  args: {
+    children: "Button",
+    variant: "primary",
+  },
+  render: ({ ...args }) => <Button {...args} as="a" href="#" />,
+};
