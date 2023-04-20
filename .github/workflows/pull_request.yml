@@ -1,4 +1,4 @@
-name: Build SCSS
+name: Build and Test on Pull Request
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: "Build Styles and React Lib"
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +28,23 @@ jobs:
 
       - name: Build React
         run: yarn workspace @inventare/react build
+
+  tests:
+    name: "Run React Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Run Tests
+        run: yarn workspace @inventare/react test
