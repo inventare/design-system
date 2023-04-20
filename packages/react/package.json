@@ -19,6 +19,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "storybook:docs:build": "storybook build --docs",
     "test:watch": "vitest",
     "test": "vitest run"
   },
