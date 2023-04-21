@@ -76,6 +76,24 @@
 
         opacity: var(--#{$variable-prefix}button-disabled-opacity);
       }
+
+      &.outline {
+        @include map-variable("button-border", $dict, "border");
+        @include map-variable("button-bg", $dict, "fg");
+        @include map-variable("button-fg", $dict, "bg");
+
+        &:hover {
+          @include map-variable("button-border", $dict, "hover-border");
+          @include map-variable("button-bg", $dict, "hover-bg");
+          @include map-variable("button-fg", $dict, "hover-fg");
+        }
+
+        &:active {
+          @include map-variable("button-border", $dict, "active-border");
+          @include map-variable("button-bg", $dict, "active-bg");
+          @include map-variable("button-fg", $dict, "active-fg");
+        }
+      }
     }
   }
 

@@ -33,6 +33,15 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: "Button",
+    variant: "primary",
+  },
+};
+
+export const PrimaryOutline: Story = {
+  args: {
+    children: "Button",
+    variant: "primary",
+    outline: true,
   },
 };
 
