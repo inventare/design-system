@@ -15,4 +15,5 @@ export interface ButtonProps extends HTMLProps<"button"> {
   loadingText?: string;
   loadingSpinnerWidth?: number;
   loadingSpinnerSize?: number;
+  outline?: boolean;
 }

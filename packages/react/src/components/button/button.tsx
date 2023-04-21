@@ -13,6 +13,7 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
     variant = "default",
     size = "normal",
     square = false,
+    outline = false,
     isLoading = false,
     loadingType = "text",
     loadingText = "Loading...",
@@ -42,6 +43,7 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
     [variant]: true,
     square: square,
     disabled: disabled,
+    outline: outline,
     [rawClassName || ""]: true,
   });
 
