@@ -36,7 +36,9 @@ export const Default: Story = {
 };
 
 export const WrappingChild: Story = {
-  args: {},
+  args: {
+    width: "100%",
+  },
   render: ({ ...props }) => (
     <Skeleton {...props}>
       <div style={{ padding: 20 }}>
