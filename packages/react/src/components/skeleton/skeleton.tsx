@@ -11,7 +11,7 @@ export const Skeleton = forwardRef<SkeletonProps, "div">((props, ref) => {
     className: rawClassName,
     style: rawStyle,
     children,
-    width = "100%",
+    width,
     height,
     radius,
     isLoading = true,
