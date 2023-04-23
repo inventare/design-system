@@ -49,6 +49,16 @@
     --#{$variable-prefix}button-fg: #{$button-default-active-fg};
   }
 
+  &:disabled,
+  &.disabled {
+    --#{$variable-prefix}button-disabled-opacity: #{$button-disabled-opacity};
+
+    cursor: default;
+    pointer-events: none;
+
+    opacity: var(--#{$variable-prefix}button-disabled-opacity);
+  }
+
   @each $variant, $dict in $button-colors {
     &.#{$variant} {
       @include map-variable("button-border", $dict, "border");
