@@ -1,0 +1,29 @@
+.skeleton {
+  --#{$variable-prefix}skeleton-start-color: #{$skeleton-start-color};
+  --#{$variable-prefix}skeleton-end-color: #{$skeleton-end-color};
+  --#{$variable-prefix}skeleton-opacity: #{$skeleton-opacity};
+  --#{$variable-prefix}skeleton-color: #{$skeleton-color};
+  --#{$variable-prefix}skeleton-radius: #{$skeleton-radius};
+
+  @keyframes skeleton-animation {
+    from {
+      background: var(--#{$variable-prefix}skeleton-start-color);
+    }
+    to {
+      background: var(--#{$variable-prefix}skeleton-end-color);
+    }
+  }
+
+  display: inline-block;
+  border: none;
+  opacity: var(--#{$variable-prefix}skeleton-opacity);
+  border-radius: var(--#{$variable-prefix}skeleton-radius);
+  animation: 0.8s linear 0s infinite alternate none running skeleton-animation;
+
+  color: var(--#{$variable-prefix}skeleton-color);
+
+  * {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
