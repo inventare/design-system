@@ -48,5 +48,6 @@ export const Skeleton = forwardRef<SkeletonProps, "div">((props, ref) => {
     children,
     className,
     style,
+    "data-testid": "skeleton",
   });
 });
