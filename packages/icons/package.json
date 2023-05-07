@@ -1,0 +1,27 @@
+{
+  "name": "@inventare/icons",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/icons.es.js",
+  "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
+  "homepage": "https://github.com/inventare/design-system",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inventare/design-system.git"
+  },
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "vite": "^4.2.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite-plugin-dts": "^2.1.0"
+  }
+}
