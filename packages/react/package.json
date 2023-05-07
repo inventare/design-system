@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@inventare/styles": "*",
+    "@inventare/icons": "*",
     "clsx": "^1.2.1"
   }
 }
