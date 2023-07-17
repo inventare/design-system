@@ -5,9 +5,15 @@
   "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
+  "scripts": {
+    "build": "turbo run build",
+    "release": "changeset publish"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "turbo": "^1.10.8"
   }
 }

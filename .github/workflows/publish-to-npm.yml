@@ -1,10 +1,13 @@
 name: Publish Packages
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+
 jobs:
-  build:
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
@@ -19,18 +22,14 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Build SCSS
-        run: yarn workspace @inventare/styles build
+      - name: Build
+        run: yarn build
 
-      - name: Build React
-        run: yarn workspace @inventare/react build
-
-      - name: Publish SCSS
-        run: yarn workspace @inventare/styles publish
+      - name: Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish React
-        run: yarn workspace @inventare/react publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
