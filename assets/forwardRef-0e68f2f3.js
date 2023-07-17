@@ -1,2 +1,0 @@
-import{r as a}from"./index-f1f749bf.js";function n(r){var f,o,t="";if(typeof r=="string"||typeof r=="number")t+=r;else if(typeof r=="object")if(Array.isArray(r))for(f=0;f<r.length;f++)r[f]&&(o=n(r[f]))&&(t&&(t+=" "),t+=o);else for(f in r)r[f]&&(t&&(t+=" "),t+=f);return t}function e(){for(var r,f,o=0,t="";o<arguments.length;)(r=arguments[o++])&&(f=n(r))&&(t&&(t+=" "),t+=f);return t}function i(r){return a.forwardRef(r)}export{e as c,i as f};
-//# sourceMappingURL=forwardRef-0e68f2f3.js.map
