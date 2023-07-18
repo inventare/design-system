@@ -54,5 +54,8 @@
   "dependencies": {
     "@inventare/styles": "*",
     "clsx": "^1.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

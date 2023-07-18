@@ -19,5 +19,8 @@
   "devDependencies": {
     "sass": "^1.60.0"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }
