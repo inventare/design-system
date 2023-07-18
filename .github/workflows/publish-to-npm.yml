@@ -25,17 +25,9 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Creating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Publish
         id: changesets
-        uses: changesets/action@master
+        uses: changesets/action@v1
         with:
           publish: yarn release
         env:
