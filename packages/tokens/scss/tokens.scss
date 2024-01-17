@@ -1,0 +1,12 @@
+/* BORDER RADIUS */
+$border-radius: 4px !default;
+$border-radius-medium: 8px !default;
+$border-radius-large: 12px !default;
+$border-radius-full: 12px !default;
+
+:root, ::backdrop {
+  --border-radius: #{$border-radius};
+  --border-radius-medium: #{$border-radius-medium};
+  --border-radius-large: #{$border-radius-large};
+  --border-radius-full: #{$border-radius-full};
+}

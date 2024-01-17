@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@inventare/styles": "*",
+    "@inventare/tokens": "*",
     "clsx": "^1.2.1"
   },
   "publishConfig": {

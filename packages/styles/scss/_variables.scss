@@ -42,7 +42,7 @@ $button-font-size: 1rem !default;
 $button-font-weight: 400 !default;
 $button-line-height: 1.5 !default;
 $button-gap: 0.5rem !default;
-$button-border-radius: 0.25rem !default;
+$button-border-radius: var(--border-radius) !default;
 $button-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 $button-disabled-opacity: 0.65;
@@ -51,13 +51,13 @@ $button-disabled-opacity: 0.65;
 $button-large-padding-x: 1rem !default;
 $button-large-padding-y: 0.5rem !default;
 $button-large-font-size: 1.25rem !default;
-$button-large-border-radius: 0.5rem !default;
+$button-large-border-radius: var(--border-radius) !default;
 
 /* SMALL */
 $button-small-padding-x: 0.5rem !default;
 $button-small-padding-y: 0.25rem !default;
 $button-small-font-size: 0.875rem !default;
-$button-small-border-radius: 0.25rem !default;
+$button-small-border-radius: var(--border-radius) !default;
 
 /* DEFAULT */
 $button-default-border: transparent !default;
@@ -137,7 +137,7 @@ $form-control-font: $body-font !default;
 $form-control-font-size: 1rem !default;
 $form-control-font-weight: 400 !default;
 $form-control-line-height: 1.5 !default;
-$form-control-border-radius: 0.25rem !default;
+$form-control-border-radius: var(--border-radius) !default;
 $form-control-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 $form-control-disabled-opacity: 0.65;
