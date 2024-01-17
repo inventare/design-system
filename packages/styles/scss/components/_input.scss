@@ -1,0 +1,49 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  --#{$variable-prefix}form-control-padding-y: #{$form-control-padding-y};
+  --#{$variable-prefix}form-control-padding-x: #{$form-control-padding-x};
+  --#{$variable-prefix}form-control-font: #{$form-control-font};
+  --#{$variable-prefix}form-control-font-size: #{$form-control-font-size};
+  --#{$variable-prefix}form-control-font-weight: #{$form-control-font-weight};
+  --#{$variable-prefix}form-control-line-height: #{$form-control-line-height};
+  --#{$variable-prefix}form-control-border-radius: #{$form-control-border-radius};
+  --#{$variable-prefix}form-control-transition: #{$form-control-transition};
+
+  --#{$variable-prefix}form-control-border: #{$form-control-default-border};
+  --#{$variable-prefix}form-control-bg: #{$form-control-default-bg};
+  --#{$variable-prefix}form-control-fg: #{$form-control-default-fg};
+
+  input {
+    padding: var(--#{$variable-prefix}form-control-padding-y) var(--#{$variable-prefix}form-control-padding-x);
+    
+    font-family: var(--#{$variable-prefix}form-control-font);
+    font-size: var(--#{$variable-prefix}form-control-font-size);
+    font-weight: var(--#{$variable-prefix}form-control-font-weight);
+    line-height: var(--#{$variable-prefix}form-control-line-height);
+    
+    border-radius: var(--#{$variable-prefix}form-control-border-radius);
+
+    border: 1px solid var(--#{$variable-prefix}form-control-border);
+    background: var(--#{$variable-prefix}form-control-bg);
+    color: var(--#{$variable-prefix}form-control-fg);
+
+    transition: var(--#{$variable-prefix}form-control-transition);
+
+    &:hover {
+      --#{$variable-prefix}form-control-border: #{$form-control-default-hover-border};
+      --#{$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
+      --#{$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
+      outline: none;
+    }
+
+    &:active, &:focus {
+      --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
+      --#{$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
+      --#{$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
+      outline: none;
+    }
+  }
+};
