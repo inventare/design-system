@@ -5,4 +5,4 @@ export * from "./spinner";
 export * from "./skeleton";
 export * from "./skeleton-circle";
 
-export * from './Input';
+export * from "./TextField";
