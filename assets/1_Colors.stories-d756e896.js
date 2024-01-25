@@ -1,8 +1,0 @@
-import{j as r,a as i,F as d}from"./jsx-runtime-29545a09.js";import{u as s}from"./index-a1cf9e47.js";import{M as p,d as c,e as l}from"./index-700c07d4.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./iframe-8eba872e.js";import"../sb-preview/runtime.mjs";import"./index-d475d2ea.js";import"./index-c967ba62.js";import"./index-d37d4223.js";import"./index-356e4a49.js";const{deprecate:m}=__STORYBOOK_MODULE_CLIENT_LOGGER__;m("Import from '@storybook/addon-docs/blocks' is deprecated. Please import from '@storybook/blocks' instead.");function h(t={}){const{wrapper:a}=Object.assign({},s(),t.components);return a?r(a,{...t,children:r(n,{})}):n();function n(){const o=Object.assign({h1:"h1",p:"p",h2:"h2"},s(),t.components);return i(d,{children:[r(p,{title:"Tokens/Colors"}),`
-`,r(o.h1,{id:"colors",children:"Colors"}),`
-`,r(o.p,{children:"All color palettes and their CSS Variables."}),`
-`,r(o.h2,{id:"brand-colors",children:"Brand Colors"}),`
-`,r(c,{children:r(l,{title:"Primary",colors:["var(--color-primary)","var(--color-primary-darken-1)","var(--color-primary-darken-2)","var(--color-primary-opacity-25)"]})}),`
-`,r(o.h2,{id:"contextual-colors",children:"Contextual Colors"}),`
-`,r(c,{children:r(l,{title:"Danger",colors:["var(--color-danger)","var(--color-danger-darken-1)","var(--color-danger-darken-2)"]})})]})}}const _=()=>{throw new Error("Docs-only story")};_.parameters={docsOnly:!0};const e={title:"Tokens/Colors",tags:["stories-mdx"],includeStories:["__page"]};e.parameters=e.parameters||{};e.parameters.docs={...e.parameters.docs||{},page:h};const D=["__page"];export{D as __namedExportsOrder,_ as __page,e as default};
-//# sourceMappingURL=1_Colors.stories-d756e896.js.map
