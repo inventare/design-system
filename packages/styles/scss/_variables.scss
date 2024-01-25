@@ -163,3 +163,13 @@ $form-control-default-active-fg: #212529 !default;
 $form-control-disabled-border: #dee2e6;
 $form-control-disabled-bg: #e9ecef;
 $form-control-disabled-fg: #212529;
+
+$form-control-helper-font: $body-font !default;
+$form-control-helper-font-size: 0.875rem !default;
+$form-control-helper-font-weight: 400 !default;
+$form-control-helper-margin-top: 4px;
+
+$form-control-invalid-color: var(--color-error) !default;
+$form-control-invalid-shadow: var(--color-error-opacity-25) !default;
+$form-control-valid-color: var(--color-success) !default;
+$form-control-valid-shadow: var(--color-success-opacity-25) !default;

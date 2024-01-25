@@ -9,6 +9,12 @@ $color-danger: #dc3545;
 $color-danger-darken-1: darken($color-danger, 5%);
 $color-danger-darken-2: darken($color-danger, 10%);
 
+$color-error: $color-danger;
+$color-error-opacity-25: rgba($color-error, 0.25);
+
+$color-success: #198754;
+$color-success-opacity-25: rgba($color-success, 0.25);
+
 /* BORDER RADIUS */
 $border-radius: 4px !default;
 $border-radius-medium: 8px !default;
@@ -30,4 +36,10 @@ $border-radius-full: 12px !default;
   --color-danger: #{$color-danger};
   --color-danger-darken-1: #{$color-danger-darken-1};
   --color-danger-darken-2: #{$color-danger-darken-2};
+
+  --color-error: #{$color-error};
+  --color-error-opacity-25: #{$color-error-opacity-25};
+
+  --color-success: #{$color-success};
+  --color-success-opacity-25: #{$color-success-opacity-25};
 }

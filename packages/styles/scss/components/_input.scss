@@ -21,6 +21,11 @@
   --#{$variable-prefix}form-control-label-font-weight: #{$form-control-label-font-weight};
   --#{$variable-prefix}form-control-label-line-height: #{$form-control-label-line-height};
 
+  --#{$variable-prefix}form-control-helper-font: #{$form-control-helper-font};
+  --#{$variable-prefix}form-control-helper-font-size: #{$form-control-helper-font-size};
+  --#{$variable-prefix}form-control-helper-font-weight: #{$form-control-helper-font-weight};
+  --#{$variable-prefix}form-control-helper-margin-top: #{$form-control-helper-margin-top};
+
   label {
     font-family: var(--#{$variable-prefix}form-control-label-font);
     font-size: var(--#{$variable-prefix}form-control-label-font-size);
@@ -72,6 +77,43 @@
 
         box-shadow: 0 0 0 0.25rem var(--#{$variable-prefix}form-control-shadow);
       }
+    }
+  }
+
+  .helper-text {
+    font-family: var(--#{$variable-prefix}form-control-helper-font);
+    font-size: var(--#{$variable-prefix}form-control-helper-font-size);
+    font-weight: var(--#{$variable-prefix}form-control-helper-font-weight);
+    margin-top: var(--#{$variable-prefix}form-control-helper-margin-top);
+  }
+
+  &.invalid {
+    .helper-text {
+      --#{$variable-prefix}form-control-invalid-color: #{$form-control-invalid-color};
+      color: var(--#{$variable-prefix}form-control-invalid-color);
+    }
+
+    input,
+    input:hover,
+    input:focus,
+    input:active {
+      --#{$variable-prefix}form-control-border: #{$form-control-invalid-color};
+      --#{$variable-prefix}form-control-shadow: #{$form-control-invalid-shadow};
+    }
+  }
+
+  &.valid {
+    .helper-text {
+      --#{$variable-prefix}form-control-valid-color: #{$form-control-valid-color};
+      color: var(--#{$variable-prefix}form-control-valid-color);
+    }
+
+    input,
+    input:hover,
+    input:focus,
+    input:active {
+      --#{$variable-prefix}form-control-border: #{$form-control-valid-color};
+      --#{$variable-prefix}form-control-shadow: #{$form-control-valid-shadow};
     }
   }
 }
