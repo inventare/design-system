@@ -1,6 +1,6 @@
 {
   "name": "@inventare/styles",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "index.js",
   "license": "MIT",
   "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
@@ -17,8 +17,7 @@
     "build": "sass scss/inventare.scss dist/inventare.css",
     "build:watch": "sass --watch scss/inventare.scss dist/inventare.css"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "sass": "^1.60.0"
   },
