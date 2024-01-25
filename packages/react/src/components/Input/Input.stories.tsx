@@ -10,8 +10,8 @@ const meta: Meta<typeof Input> = {
       description: "indicate if the button is disabled",
     },
     label: {
-      control: 'text'
-    }
+      control: "text",
+    },
   },
 };
 
@@ -20,15 +20,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    id: 'name',
-    label: 'Your Name'
+    id: "name",
+    label: "E-mail address",
+    type: "email",
+    placeholder: "example@example.com",
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    id: 'disabled-name',
-    label: 'Your Name'
+    id: "disabled-name",
+    label: "E-mail address",
+    type: "email",
+    placeholder: "example@example.com",
   },
 };

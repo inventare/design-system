@@ -1,0 +1,27 @@
+{
+  "name": "@inventare/docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "storybook:docs:build": "storybook build --docs"
+  },
+  "dependencies": {
+    "@inventare/styles": "*",
+    "@inventare/tokens": "*",
+    "@inventare/react": "*"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.5",
+    "@storybook/addon-interactions": "^7.0.5",
+    "@storybook/addon-links": "^7.0.5",
+    "@storybook/blocks": "^7.0.5",
+    "@storybook/react": "^7.0.5",
+    "@storybook/react-vite": "^7.0.5",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "storybook": "^7.0.5"
+  }
+}

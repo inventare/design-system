@@ -16,14 +16,29 @@
   --#{$variable-prefix}form-control-bg: #{$form-control-default-bg};
   --#{$variable-prefix}form-control-fg: #{$form-control-default-fg};
 
+  --#{$variable-prefix}form-control-label-font: #{$form-control-label-font};
+  --#{$variable-prefix}form-control-label-font-size: #{$form-control-label-font-size};
+  --#{$variable-prefix}form-control-label-font-weight: #{$form-control-label-font-weight};
+  --#{$variable-prefix}form-control-label-line-height: #{$form-control-label-line-height};
+
+  label {
+    font-family: var(--#{$variable-prefix}form-control-label-font);
+    font-size: var(--#{$variable-prefix}form-control-label-font-size);
+    font-weight: var(--#{$variable-prefix}form-control-label-font-weight);
+    line-height: var(--#{$variable-prefix}form-control-label-line-height);
+
+    margin-bottom: 8px;
+  }
+
   input {
-    padding: var(--#{$variable-prefix}form-control-padding-y) var(--#{$variable-prefix}form-control-padding-x);
-    
+    padding: var(--#{$variable-prefix}form-control-padding-y)
+      var(--#{$variable-prefix}form-control-padding-x);
+
     font-family: var(--#{$variable-prefix}form-control-font);
     font-size: var(--#{$variable-prefix}form-control-font-size);
     font-weight: var(--#{$variable-prefix}form-control-font-weight);
     line-height: var(--#{$variable-prefix}form-control-line-height);
-    
+
     border-radius: var(--#{$variable-prefix}form-control-border-radius);
 
     border: 1px solid var(--#{$variable-prefix}form-control-border);
@@ -32,18 +47,31 @@
 
     transition: var(--#{$variable-prefix}form-control-transition);
 
-    &:hover {
-      --#{$variable-prefix}form-control-border: #{$form-control-default-hover-border};
-      --#{$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
-      --#{$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
-      outline: none;
+    &:disabled {
+      --#{$variable-prefix}form-control-border: #{$form-control-disabled-border};
+      --#{$variable-prefix}form-control-bg: #{$form-control-disabled-bg};
+      --#{$variable-prefix}form-control-fg: #{$form-control-disabled-fg};
     }
 
-    &:active, &:focus {
-      --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
-      --#{$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
-      --#{$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
-      outline: none;
+    &:not(:disabled) {
+      &:hover {
+        --#{$variable-prefix}form-control-border: #{$form-control-default-hover-border};
+        --#{$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
+        --#{$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
+        outline: none;
+      }
+
+      &:active,
+      &:focus {
+        --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
+        --#{$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
+        --#{$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
+        --#{$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
+
+        outline: none;
+
+        box-shadow: 0 0 0 0.25rem var(--#{$variable-prefix}form-control-shadow);
+      }
     }
   }
-};
+}

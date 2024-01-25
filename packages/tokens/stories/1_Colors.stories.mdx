@@ -1,0 +1,34 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+
+<Meta title="Tokens/Colors" />
+
+# Colors
+
+All color palettes and their CSS Variables.
+
+## Brand Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    colors={[
+      "var(--color-primary)",
+      "var(--color-primary-darken-1)",
+      "var(--color-primary-darken-2)",
+      "var(--color-primary-opacity-25)",
+    ]}
+  />
+</ColorPalette>
+
+## Contextual Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Danger"
+    colors={[
+      "var(--color-danger)",
+      "var(--color-danger-darken-1)",
+      "var(--color-danger-darken-2)",
+    ]}
+  />
+</ColorPalette>

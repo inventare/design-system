@@ -1,12 +1,33 @@
+/* COLORS */
+$color-primary: #045afa;
+$color-primary-darken-1: darken($color-primary, 5%);
+$color-primary-darken-2: darken($color-primary, 10%);
+
+$color-primary-opacity-25: rgba($color-primary, 0.25);
+
+$color-danger: #dc3545;
+$color-danger-darken-1: darken($color-danger, 5%);
+$color-danger-darken-2: darken($color-danger, 10%);
+
 /* BORDER RADIUS */
 $border-radius: 4px !default;
 $border-radius-medium: 8px !default;
 $border-radius-large: 12px !default;
 $border-radius-full: 12px !default;
 
-:root, ::backdrop {
+:root {
   --border-radius: #{$border-radius};
   --border-radius-medium: #{$border-radius-medium};
   --border-radius-large: #{$border-radius-large};
   --border-radius-full: #{$border-radius-full};
+
+  --color-primary: #{$color-primary};
+  --color-primary-darken-1: #{$color-primary-darken-1};
+  --color-primary-darken-2: #{$color-primary-darken-2};
+
+  --color-primary-opacity-25: #{$color-primary-opacity-25};
+
+  --color-danger: #{$color-danger};
+  --color-danger-darken-1: #{$color-danger-darken-1};
+  --color-danger-darken-2: #{$color-danger-darken-2};
 }
