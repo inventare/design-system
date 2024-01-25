@@ -17,9 +17,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "storybook:docs:build": "storybook build --docs",
     "test:watch": "vitest",
     "test": "vitest run"
   },
@@ -28,13 +25,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.5",
-    "@storybook/addon-interactions": "^7.0.5",
-    "@storybook/addon-links": "^7.0.5",
-    "@storybook/blocks": "^7.0.5",
-    "@storybook/react": "^7.0.5",
-    "@storybook/react-vite": "^7.0.5",
-    "@storybook/testing-library": "^0.0.14-next.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -45,7 +35,6 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.5",
     "typescript": "^4.9.3",
     "vite": "^4.5.2",
     "vite-plugin-dts": "^2.1.0",
@@ -53,6 +42,7 @@
   },
   "dependencies": {
     "@inventare/styles": "*",
+    "@inventare/tokens": "*",
     "clsx": "^1.2.1"
   },
   "publishConfig": {

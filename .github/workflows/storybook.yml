@@ -23,12 +23,12 @@ jobs:
         run: yarn
 
       - name: Build Storybook
-        run: yarn workspace @inventare/react storybook:docs:build
+        run: yarn workspace @inventare/docs storybook:docs:build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/react/storybook-static
+          publish_dir: ./apps/docs/storybook-static
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com

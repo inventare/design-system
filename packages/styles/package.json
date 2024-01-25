@@ -14,7 +14,10 @@
     "url": "https://github.com/inventare/design-system.git"
   },
   "scripts": {
-    "build": "sass scss/inventare.scss dist/inventare.css"
+    "build": "sass scss/inventare.scss dist/inventare.css",
+    "build:watch": "sass --watch scss/inventare.scss dist/inventare.css"
+  },
+  "dependencies": {
   },
   "devDependencies": {
     "sass": "^1.60.0"
