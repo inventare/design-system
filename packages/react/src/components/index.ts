@@ -1,7 +1,8 @@
-export { default as Container } from "./container";
+export * from "./Container";
 
 export * from "./Button";
-export * from "./spinner";
+
+export * from "./Spinner";
 
 export * from "./Skeleton";
 export * from "./SkeletonCircle";

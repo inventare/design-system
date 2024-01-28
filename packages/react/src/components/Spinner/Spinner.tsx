@@ -1,4 +1,4 @@
-import { SpinnerProps } from "./spinner.types";
+import { SpinnerProps } from "./Spinner.types";
 
 export const Spinner = (props: SpinnerProps) => {
   const { color, size, width } = props;
