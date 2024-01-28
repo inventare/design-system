@@ -7,14 +7,26 @@ const meta: Meta<typeof TextField> = {
   argTypes: {
     disabled: {
       control: "boolean",
-      description: "indicate if the button is disabled",
+      description: "indicate if the TextField is disabled",
     },
     label: {
       control: "text",
+      description: "determines the label of the TextField",
     },
-    helperText: { control: "text" },
-    validFeedback: { control: "text" },
-    invalidFeedback: { control: "text" },
+    helperText: {
+      control: "text",
+      description: "determines the helper text of the TextField",
+    },
+    validFeedback: {
+      control: "text",
+      description:
+        "determines the valid feedback text of the TextField. If this is set, the state colors of the TextField goes to success.",
+    },
+    invalidFeedback: {
+      control: "text",
+      description:
+        "determines the invalid feedback text of the TextField. If this is set, the state colors of the TextField goes to error.",
+    },
   },
 };
 
