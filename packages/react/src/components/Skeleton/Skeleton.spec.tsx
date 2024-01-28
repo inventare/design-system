@@ -1,7 +1,7 @@
 import { vitest } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Skeleton } from "./skeleton";
+import { Skeleton } from "./Skeleton";
 
 describe("Components/Skeleton", () => {
   it("should not render the skeleton component if isLoading is false", () => {

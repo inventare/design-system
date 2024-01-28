@@ -1,7 +1,7 @@
 import { createElement } from "react";
 import clsx from "clsx";
 import { forwardRef } from "../../core";
-import { SkeletonProps } from "./skeleton.types";
+import { SkeletonProps } from "./Skeleton.types";
 
 export const Skeleton = forwardRef<SkeletonProps, "div">((props, ref) => {
   const {

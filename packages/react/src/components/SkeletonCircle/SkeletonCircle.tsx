@@ -1,6 +1,6 @@
 import { forwardRef } from "../../core";
-import { Skeleton } from "../skeleton";
-import { SkeletonCircleProps } from "./skeleton-circle.types";
+import { Skeleton } from "../Skeleton";
+import { SkeletonCircleProps } from "./SkeletonCircle.types";
 
 export const SkeletonCircle = forwardRef<SkeletonCircleProps, "div">(
   (props, ref) => {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SkeletonCircle } from "./skeleton-circle";
+import { SkeletonCircle } from "./SkeletonCircle";
 
 const meta: Meta<typeof SkeletonCircle> = {
   title: "Components/SkeletonCircle",
