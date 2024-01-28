@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { createElement } from "react";
-import { ButtonProps } from "./button.types";
+import { ButtonProps } from "./Button.types";
 import { forwardRef } from "../../core";
 import { Spinner } from "../spinner";
 
