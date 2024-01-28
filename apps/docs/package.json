@@ -10,14 +10,15 @@
     "storybook:docs:build": "storybook build --docs"
   },
   "dependencies": {
+    "@inventare/react": "*",
     "@inventare/styles": "*",
-    "@inventare/tokens": "*",
-    "@inventare/react": "*"
+    "@inventare/tokens": "*"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.5",
     "@storybook/addon-interactions": "^7.0.5",
     "@storybook/addon-links": "^7.0.5",
+    "@storybook/addon-mdx-gfm": "7.6.10",
     "@storybook/blocks": "^7.0.5",
     "@storybook/react": "^7.0.5",
     "@storybook/react-vite": "^7.0.5",

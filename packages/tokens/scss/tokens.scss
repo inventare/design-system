@@ -19,7 +19,7 @@ $color-success-opacity-25: rgba($color-success, 0.25);
 $border-radius: 4px !default;
 $border-radius-medium: 8px !default;
 $border-radius-large: 12px !default;
-$border-radius-full: 12px !default;
+$border-radius-full: 50% !default;
 
 :root {
   --border-radius: #{$border-radius};

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { createElement } from "react";
 import { ButtonProps } from "./Button.types";
 import { forwardRef } from "../../core";
-import { Spinner } from "../spinner";
+import { Spinner } from "../Spinner";
 
 export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
   const {
