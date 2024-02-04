@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button as ButtonBase } from "./Button";
-import { ButtonProps } from "./Button.types";
+import { Button } from "./Button";
 
-const Button = (props: ButtonProps) => <ButtonBase {...props} />;
+(Button as any).displayName = "Button";
 
-const meta: Meta<typeof ButtonBase> = {
+const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
   argTypes: {
@@ -133,4 +132,19 @@ export const Disabled: Story = {
     variant: "primary",
     disabled: true,
   },
+};
+
+export const PrimaryLink: Story = {
+  args: {
+    children: "Open GitHub Repository",
+    variant: "primary",
+  },
+  render: ({ ...args }) => (
+    <Button
+      {...args}
+      as="a"
+      href="https://github.com/inventare/design-system"
+      target="_blank"
+    />
+  ),
 };
