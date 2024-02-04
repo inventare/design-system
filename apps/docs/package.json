@@ -6,8 +6,7 @@
   "private": true,
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "storybook:docs:build": "storybook build --docs"
+    "storybook:docs:build": "storybook build"
   },
   "dependencies": {
     "@inventare/react": "*",
