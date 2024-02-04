@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Skeleton } from "./Skeleton";
 
+(Skeleton as any).displayName = "Skeleton";
+
 const meta: Meta<typeof Skeleton> = {
   title: "Components/Skeleton",
   component: Skeleton,

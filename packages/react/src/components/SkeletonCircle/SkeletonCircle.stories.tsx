@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SkeletonCircle } from "./SkeletonCircle";
 
+(SkeletonCircle as any).displayName = "SkeletonCircle";
+
 const meta: Meta<typeof SkeletonCircle> = {
   title: "Components/SkeletonCircle",
   component: SkeletonCircle,
