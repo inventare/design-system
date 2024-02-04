@@ -4,7 +4,7 @@ import { ButtonProps } from "./Button.types";
 
 const Button = (props: ButtonProps) => <ButtonBase {...props} />;
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof ButtonBase> = {
   title: "Components/Button",
   component: Button,
   argTypes: {
@@ -133,19 +133,4 @@ export const Disabled: Story = {
     variant: "primary",
     disabled: true,
   },
-};
-
-export const PrimaryLink: Story = {
-  args: {
-    children: "Open GitHub Repository",
-    variant: "primary",
-  },
-  render: ({ ...args }) => (
-    <Button
-      {...args}
-      as="a"
-      href="https://github.com/inventare/design-system"
-      target="_blank"
-    />
-  ),
 };
