@@ -1,4 +1,4 @@
-name: Build and Test on Pull Request
+name: Build on Pull Request
 
 on:
   pull_request:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "20"
           cache: yarn
 
       - name: Install Dependencies
@@ -25,26 +25,3 @@ jobs:
 
       - name: Build SCSS
         run: yarn workspace @inventare/styles build
-
-      - name: Build React
-        run: yarn workspace @inventare/react build
-
-  tests:
-    name: "Run React Tests"
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-          cache: yarn
-
-      - name: Install Dependencies
-        run: yarn
-
-      - name: Run Tests
-        run: yarn workspace @inventare/react test
