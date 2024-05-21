@@ -1,4 +1,5 @@
 import { Meta } from "@storybook/blocks";
+import { BorderPreview } from './components/BorderPreview';
 
 <Meta title="Tokens/BorderRadius" />
 
@@ -6,9 +7,9 @@ import { Meta } from "@storybook/blocks";
 
 Most of our components have rounded edges. Depending on the size of the component, this rounding can vary between 4px, 8px, 12px and fully rounded.
 
-| value | Variable                      | Description                                                                                                   |
-| ----- | ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| 4px   | `var(--border-radius)`        | Used in smaller components like tooltips, alerts, text fields.                                                |
-| 8px   | `var(--border-radius-medium)` | Used in larger components like dialogs, cards and dropdown menu.                                              |
-| 12px  | `var(--border-radius-large)`  | Depending on the context, the this border radius can also be used on larger components like cards and images. |
-| 50%   | `var(--border-radius-full)`   | The fully rounded edge is used for specific components like buttons, badges and avatars.                      |
+| value | Variable                      | Visualização  | Description                                                                                                   |
+| ----- | ----------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------- |
+| 4px   | `var(--border-radius)`        | <BorderPreview radius="--border-radius" />              | Used in smaller components like tooltips, alerts, text fields.                                                |
+| 8px   | `var(--border-radius-medium)` | <BorderPreview radius="--border-radius-medium" />              | Used in larger components like dialogs, cards and dropdown menu.                                              |
+| 12px  | `var(--border-radius-large)`  | <BorderPreview radius="--border-radius-large" />              | Depending on the context, the this border radius can also be used on larger components like cards and images. |
+| 50%   | `var(--border-radius-full)`   | <BorderPreview radius="--border-radius-full" />              | The fully rounded edge is used for specific components like buttons, badges and avatars.                      |
