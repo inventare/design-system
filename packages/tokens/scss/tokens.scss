@@ -10,6 +10,7 @@ $color-primary-700: #045afa;
 $color-primary-800: #0b46c2;
 $color-primary-900: #0f3f99;
 $color-primary-950: #0f285c;
+$color-primary-opacity-25: rgba($color-primary-500, 0.25);
 
 $color-danger-50: #fef2f2;
 $color-danger-100: #fee6e5;
@@ -22,6 +23,20 @@ $color-danger-700: #b7192c;
 $color-danger-800: #99182c;
 $color-danger-900: #83182c;
 $color-danger-950: #490812;
+$color-danger-opacity-25: rgba($color-danger-500, 0.25);
+
+$color-success-50: #f0fdf6;
+$color-success-100: #ddfbec;
+$color-success-200: #bcf6d9;
+$color-success-300: #88edbd;
+$color-success-400: #4ddb98;
+$color-success-500: #25c279;
+$color-success-600: #19a061;
+$color-success-700: #198754;
+$color-success-800: #186340;
+$color-success-900: #155237;
+$color-success-950: #062d1c;
+$color-success-opacity-25: rgba($color-success-500, 0.25);
 
 /* BORDER RADIUS */
 $border-radius: 4px !default;
@@ -46,6 +61,7 @@ $border-radius-full: 50% !default;
   --color-primary-800: #{$color-primary-800};
   --color-primary-900: #{$color-primary-900};
   --color-primary-950: #{$color-primary-950};
+  --color-primary-opacity-25: #{$color-primary-opacity-25};
 
   --color-danger-50: #{$color-danger-50};
   --color-danger-100: #{$color-danger-100};
@@ -58,4 +74,18 @@ $border-radius-full: 50% !default;
   --color-danger-800: #{$color-danger-800};
   --color-danger-900: #{$color-danger-900};
   --color-danger-950: #{$color-danger-950};
+  --color-danger-opacity-25: #{$color-danger-opacity-25};
+
+  --color-success-50: #{$color-success-50};
+  --color-success-100: #{$color-success-100};
+  --color-success-200: #{$color-success-200};
+  --color-success-300: #{$color-success-300};
+  --color-success-400: #{$color-success-400};
+  --color-success-500: #{$color-success-500};
+  --color-success-600: #{$color-success-600};
+  --color-success-700: #{$color-success-700};
+  --color-success-800: #{$color-success-800};
+  --color-success-900: #{$color-success-900};
+  --color-success-950: #{$color-success-950};
+  --color-success-opacity-25: #{$color-success-opacity-25};
 }
