@@ -71,31 +71,29 @@ $button-default-active-bg: transparent !default;
 $button-default-active-fg: #222 !default;
 
 /* PRIMARY */
-$button-primary-border: var(--color-primary) !default;
-$button-primary-bg: var(--color-primary) !default;
+$button-primary-border: var(--color-primary-500) !default;
+$button-primary-bg: var(--color-primary-500) !default;
 $button-primary-fg: #fff !default;
-$button-primary-hover-border: var(--color-primary-darken-1) !default;
-$button-primary-hover-bg: var(--color-primary-darken-1) !default;
+$button-primary-hover-border: var(--color-primary-600) !default;
+$button-primary-hover-bg: var(--color-primary-600) !default;
 $button-primary-hover-fg: #fff !default;
-$button-primary-active-border: var(--color-primary-darken-2) !default;
-$button-primary-active-bg: var(--color-primary-darken-2) !default;
+$button-primary-active-border: var(--color-primary-700) !default;
+$button-primary-active-bg: var(--color-primary-700) !default;
 $button-primary-active-fg: #fff !default;
-
 /* DANGER */
-$button-danger-border: var(--color-danger) !default;
-$button-danger-bg: var(--color-danger) !default;
+$button-danger-border: var(--color-danger-500) !default;
+$button-danger-bg: var(--color-danger-500) !default;
 $button-danger-fg: #fff !default;
-$button-danger-hover-border: var(--color-danger-darken-1) !default;
-$button-danger-hover-bg: var(--color-danger-darken-1) !default;
+$button-danger-hover-border: var(--color-danger-600) !default;
+$button-danger-hover-bg: var(--color-danger-600) !default;
 $button-danger-hover-fg: #fff !default;
-$button-danger-active-border: var(--color-danger-darken-2) !default;
-$button-danger-active-bg: var(--color-danger-darken-2) !default;
+$button-danger-active-border: var(--color-danger-700) !default;
+$button-danger-active-bg: var(--color-danger-700) !default;
 $button-danger-active-fg: #fff !default;
 
 /* COLORS */
 $button-colors: (
-  primary: (
-    border: $button-primary-border,
+  primary: (border: $button-primary-border,
     bg: $button-primary-bg,
     fg: $button-primary-fg,
     hover-border: $button-primary-hover-border,
@@ -105,8 +103,7 @@ $button-colors: (
     active-bg: $button-primary-active-bg,
     active-fg: $button-primary-active-fg,
   ),
-  danger: (
-    border: $button-danger-border,
+  danger: (border: $button-danger-border,
     bg: $button-danger-bg,
     fg: $button-danger-fg,
     hover-border: $button-danger-hover-border,
@@ -155,7 +152,7 @@ $form-control-default-fg: #212529 !default;
 $form-control-default-hover-border: #dee2e6 !default;
 $form-control-default-hover-bg: #fff !default;
 $form-control-default-hover-fg: #212529 !default;
-$form-control-default-active-border: var(--color-primary) !default;
+$form-control-default-active-border: var(--color-primary-500) !default;
 $form-control-default-active-shadow: var(--color-primary-opacity-25) !default;
 $form-control-default-active-bg: #fff !default;
 $form-control-default-active-fg: #212529 !default;
@@ -169,7 +166,7 @@ $form-control-helper-font-size: 0.875rem !default;
 $form-control-helper-font-weight: 400 !default;
 $form-control-helper-margin-top: 4px;
 
-$form-control-invalid-color: var(--color-error) !default;
-$form-control-invalid-shadow: var(--color-error-opacity-25) !default;
-$form-control-valid-color: var(--color-success) !default;
+$form-control-invalid-color: var(--color-danger-500) !default;
+$form-control-invalid-shadow: var(--color-danger-opacity-25) !default;
+$form-control-valid-color: var(--color-success-500) !default;
 $form-control-valid-shadow: var(--color-success-opacity-25) !default;
