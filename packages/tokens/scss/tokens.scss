@@ -42,13 +42,17 @@ $color-success-opacity-25: rgba($color-success-500, 0.25);
 $border-radius: 4px !default;
 $border-radius-medium: 8px !default;
 $border-radius-large: 12px !default;
-$border-radius-full: 50% !default;
+$border-radius-xlarge: 16px !default;
+$border-radius-circle: 50% !default;
+$border-radius-pill: 300px !default;
 
 :root {
   --border-radius: #{$border-radius};
   --border-radius-medium: #{$border-radius-medium};
   --border-radius-large: #{$border-radius-large};
-  --border-radius-full: #{$border-radius-full};
+  --border-radius-xlarge: #{$border-radius-xlarge};
+  --border-radius-circle: #{$border-radius-circle};
+  --border-radius-pill: #{$border-radius-pill};
 
   --color-primary-50: #{$color-primary-50};
   --color-primary-100: #{$color-primary-100};

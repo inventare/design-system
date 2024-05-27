@@ -5,11 +5,13 @@ import { BorderPreview } from './components/BorderPreview';
 
 # BorderRadius
 
-Most of our components have rounded edges. Depending on the size of the component, this rounding can vary between 4px, 8px, 12px and fully rounded.
+Most of our components have rounded edges. Depending on the size and style of the component, the `border-radius` property can be changed to one of those listed below:
 
-| value | Variable                      | Visualização  | Description                                                                                                   |
-| ----- | ----------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------- |
-| 4px   | `var(--border-radius)`        | <BorderPreview radius="--border-radius" />              | Used in smaller components like tooltips, alerts, text fields.                                                |
-| 8px   | `var(--border-radius-medium)` | <BorderPreview radius="--border-radius-medium" />              | Used in larger components like dialogs, cards and dropdown menu.                                              |
-| 12px  | `var(--border-radius-large)`  | <BorderPreview radius="--border-radius-large" />              | Depending on the context, the this border radius can also be used on larger components like cards and images. |
-| 50%   | `var(--border-radius-full)`   | <BorderPreview radius="--border-radius-full" />              | The fully rounded edge is used for specific components like buttons, badges and avatars.                      |
+| value  | Variable                        | Visualization                                                     | Description                                                                                                   |
+| ------ | ------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 4px    | `var(--border-radius)`          | <BorderPreview radius="--border-radius" />                        | Used in smaller components like tooltips, alerts, text fields.                                                |
+| 8px    | `var(--border-radius-medium)`   | <BorderPreview radius="--border-radius-medium" />                 | Used in larger components like dialogs and cards.                                                             |
+| 12px   | `var(--border-radius-large)`    | <BorderPreview radius="--border-radius-large" />                  | Depending on the context, this border radius can also be used on larger components like cards and images.     |
+| 16px   | `var(--border-radius-xlarge)`   | <BorderPreview radius="--border-radius-xlarge" />                 | Depending on the context, this border radius can also be used on larger components like cards and images.     |
+| pill   | `var(--border-radius-pill)`     | <BorderPreview size="150x75" radius="--border-radius-pill" />     | Used in specific components, like chips and buttons.                                                          |
+| circle | `var(--border-radius-circle)`   | <BorderPreview radius="--border-radius-circle" />                 | The fully rounded edge is used for specific components like buttons, badges and avatars.                      |
