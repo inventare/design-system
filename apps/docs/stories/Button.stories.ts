@@ -3,7 +3,6 @@ import { createButton } from './Button';
 
 export default {
   title: 'Inventare/Button',
-  tags: ['autodocs'],
   render: ({ label, ...args }) => {
     return createButton({ label, ...args });
   },

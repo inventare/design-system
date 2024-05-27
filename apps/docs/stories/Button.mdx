@@ -1,0 +1,20 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import { MultipleCanvas } from '../../../utils/storybook/components/MultipleCanvas';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Displays a button or a component that looks like a button.
+
+## Colors
+
+We provide some color schemes for the button component, each serving its own semantic purpose.
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary', of: ButtonStories.Primary },
+    { title: 'Danger', of: ButtonStories.Danger }
+  ]}
+/>

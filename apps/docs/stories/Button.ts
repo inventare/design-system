@@ -30,7 +30,7 @@ export const createButton = ({
     `${variant}`,
     `${sizing === 'default' ? '' : sizing}`,
     `${square ? 'square' : ''}`
-  ].join(' ');
+  ].join(' ').trim();
 
   return btn;
 };

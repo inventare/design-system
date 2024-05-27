@@ -16,6 +16,7 @@ const config = {
   },
   stories: [
     "../../../packages/tokens/stories/**/*.mdx",
+    "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
