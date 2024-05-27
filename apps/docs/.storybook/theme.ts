@@ -44,7 +44,7 @@ export const theme = create({
   inputBorderRadius: $borderRadius,
 
   brandTitle: 'Instituto Inventare - Design System',
-  brandUrl: 'https://www.juntossomosmais.com.br/',
+  brandUrl: '#',
   brandImage:
-    'https://user-images.githubusercontent.com/3603793/77353251-67234580-6d1f-11ea-83dc-ad35695ba582.png',
+    'https://raw.githubusercontent.com/inventare/design-system/main/utils/assets/logo_500x125_blue.png',
 })
