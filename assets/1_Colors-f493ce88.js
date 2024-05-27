@@ -1,4 +1,4 @@
-import{j as r}from"./jsx-runtime-013c2351.js";import{u as e}from"./index-0ce9ca84.js";import{M as t,C as a,d as s}from"./index-e9cedf0e.js";import"./iframe-dcf4d849.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-725317a4.js";import"./index-8c3ac41d.js";import"./index-5ecf8671.js";import"./index-356e4a49.js";function l(c){const o={h1:"h1",h2:"h2",p:"p",...e(),...c.components};return r.jsxs(r.Fragment,{children:[r.jsx(t,{title:"Tokens/Colors"}),`
+import{j as r}from"./jsx-runtime-4590add5.js";import{u as e}from"./index-6cd396d1.js";import{M as t,C as a,d as s}from"./index-e2509470.js";import"./iframe-d9dc3ea6.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-725317a4.js";import"./index-8c3ac41d.js";import"./index-5ecf8671.js";import"./index-356e4a49.js";function l(c){const o={h1:"h1",h2:"h2",p:"p",...e(),...c.components};return r.jsxs(r.Fragment,{children:[r.jsx(t,{title:"Tokens/Colors"}),`
 `,r.jsx(o.h1,{id:"colors",children:"Colors"}),`
 `,r.jsx(o.p,{children:"All color palettes and their CSS Variables."}),`
 `,r.jsx(o.h2,{id:"brand-colors",children:"Brand Colors"}),`
