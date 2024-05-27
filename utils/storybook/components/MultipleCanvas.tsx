@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModuleExport } from '@storybook/types';
-import { Canvas, } from '@storybook/blocks';
+import { Story, Source } from '@storybook/blocks';
 import styles from './MultipleCanvas.module.scss';
 
 export interface MultipleCanvasProps {
@@ -16,10 +16,13 @@ export const MultipleCanvas = ({ components }: MultipleCanvasProps) => {
   return (
     <div className={styles.componentsGrid}>
       {components.map((item, index) => (
-        <div key={index}>
-          <h3>{item.title}</h3>
-
-          <Canvas of={item.of} />
+        <div className={styles.componentRow} key={index}>
+          <div>
+            <Story of={item.of} />
+          </div>
+          <div className={styles.source}>
+            <Source of={item.of} dark />
+          </div>
         </div>
       ))}
     </div>

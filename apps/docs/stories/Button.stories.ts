@@ -26,7 +26,7 @@ export default {
 export const Primary = {
   args: {
     variant: 'primary',
-    label: 'Button',
+    label: 'Primary',
   },
 };
 
@@ -57,7 +57,7 @@ export const PrimaryDisabled = {
 export const Danger = {
   args: {
     variant: 'danger',
-    label: 'Button',
+    label: 'Danger',
   },
 };
 
