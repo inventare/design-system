@@ -1,6 +1,0 @@
-import{j as o}from"./jsx-runtime-c5f0d17e.js";import{u as s}from"./index-ff80c8b9.js";import{R as n,e as a,M as m}from"./index-48e8b7ed.js";import{B as c,P as p,D as l}from"./Button.stories-8d7c1fa2.js";import"./iframe-e15e3743.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-725317a4.js";import"./index-8c3ac41d.js";import"./index-5ecf8671.js";import"./index-356e4a49.js";import"./index-5a183c01.js";const u="_componentsGrid_1yfkh_1",h={componentsGrid:u},d=({components:e})=>n.createElement("div",{className:h.componentsGrid},e.map((t,i)=>n.createElement("div",{key:i},n.createElement("h3",null,t.title),n.createElement(a,{of:t.of}))));function r(e){const t={h1:"h1",h2:"h2",p:"p",...s(),...e.components};return o.jsxs(o.Fragment,{children:[o.jsx(m,{of:c}),`
-`,o.jsx(t.h1,{id:"button",children:"Button"}),`
-`,o.jsx(t.p,{children:"Displays a button or a component that looks like a button."}),`
-`,o.jsx(t.h2,{id:"colors",children:"Colors"}),`
-`,o.jsx(t.p,{children:"We provide some color schemes for the button component, each serving its own semantic purpose."}),`
-`,o.jsx(d,{components:[{title:"Primary",of:p},{title:"Danger",of:l}]})]})}function g(e={}){const{wrapper:t}={...s(),...e.components};return t?o.jsx(t,{...e,children:o.jsx(r,{...e})}):r(e)}export{g as default};
