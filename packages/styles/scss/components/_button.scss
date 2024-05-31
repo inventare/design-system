@@ -1,6 +1,7 @@
 .btn {
   --#{$variable-prefix}button-padding-y: #{$button-padding-y};
   --#{$variable-prefix}button-padding-x: #{$button-padding-x};
+  --#{$variable-prefix}button-gap: #{$button-gap};
   --#{$variable-prefix}button-font: #{$button-font};
   --#{$variable-prefix}button-font-size: #{$button-font-size};
   --#{$variable-prefix}button-font-weight: #{$button-font-weight};
@@ -17,10 +18,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: $button-gap;
+  gap: var(--#{$variable-prefix}button-gap);
 
-  padding: var(--#{$variable-prefix}button-padding-y)
-    var(--#{$variable-prefix}button-padding-x);
+  padding: var(--#{$variable-prefix}button-padding-y) var(--#{$variable-prefix}button-padding-x);
 
   text-align: center;
   text-decoration: none;
@@ -113,14 +113,11 @@
     --#{$variable-prefix}button-font-size: #{$button-large-font-size};
     --#{$variable-prefix}button-border-radius: #{$button-large-border-radius};
   }
+
   &.small {
     --#{$variable-prefix}button-padding-y: #{$button-small-padding-y};
     --#{$variable-prefix}button-padding-x: #{$button-small-padding-x};
     --#{$variable-prefix}button-font-size: #{$button-small-font-size};
     --#{$variable-prefix}button-border-radius: #{$button-small-border-radius};
-  }
-
-  &.square {
-    --#{$variable-prefix}button-border-radius: 0;
   }
 }

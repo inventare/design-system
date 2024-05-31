@@ -23,7 +23,7 @@ jobs:
         run: yarn
 
       - name: Build Storybook
-        run: yarn workspace @inventare/docs build-storybook
+        run: yarn workspace @inventare/docs build-storybook-docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

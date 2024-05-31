@@ -1,4 +1,4 @@
-import { Canvas, Meta } from '@storybook/blocks';
+import { Canvas, Meta, Story } from '@storybook/blocks';
 import { MultipleCanvas } from '../../../utils/storybook/components/MultipleCanvas';
 import * as ButtonStories from './Button.stories';
 
@@ -18,3 +18,61 @@ We provide some color schemes for the button component, each serving its own sem
     { title: 'Danger', of: ButtonStories.Danger }
   ]}
 />
+
+### Outline variants
+
+In addition, we have some outline variant for some use-cases. This outline variants are based on the same colors of the solid buttons. The outline variants are described in this section.
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary Outline', of: ButtonStories.PrimaryOutline },
+    { title: 'Danger Outline', of: ButtonStories.DangerOutline }
+  ]}
+/>
+
+### Disabled states
+
+The disbaled state variant is defined by reducing the opacity of the original color schema and setting the `pointer-events` to `none`.
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary', of: ButtonStories.PrimaryDisabled },
+    { title: 'Danger', of: ButtonStories.DangerDisabled },
+    { title: 'Primary Outline', of: ButtonStories.PrimaryOutlineDisabled },
+    { title: 'Danger Outline', of: ButtonStories.DangerOutlineDisabled }
+  ]}
+/>
+
+## Sizes
+
+In addiction to the colors, we provide some sizes for different scenarios usages.
+
+<MultipleCanvas
+  components={[
+    { title: 'Small', of: ButtonStories.Small },
+    { title: 'Normal', of: ButtonStories.Normal },
+    { title: 'Large', of: ButtonStories.Large },
+  ]}
+/>
+
+The padding is a custom padding for each button size:
+
+| Button Size  | Horizontal Padding      | Vertical Padding         | Preview                             |
+| ------------ | ----------------------- | ------------------------ | ----------------------------------- |
+| Small        | `var(--spacing-small)`  | `var(--spacing-xxsmall)` | <Story of={ButtonStories.Small} />  |
+| Normal       | `var(--spacing-base)`   | `var(--spacing-xsmall)`  | <Story of={ButtonStories.Normal} /> |
+| Large        | `var(--spacing-large)`  | `var(--spacing-small)`   | <Story of={ButtonStories.Large} />  |
+
+## Border-radius
+
+The `var(--border-radius)` from `Tokens/BorderRadius` is used as the `border-radius` css property for all buttons.
+
+## Text and Icon
+
+The button has a `display: inline-flex` with a gap of `var(--spacing-small)`:
+
+| Button Size  | Gap                     | Preview                                         |
+| ------------ | ----------------------- | ----------------------------------------------- |
+| Small        | `var(--spacing-small)`  | <Story of={ButtonStories.DeleteButtonSmall} />  |
+| Normal       | `var(--spacing-base)`   | <Story of={ButtonStories.DeleteButton} />       |
+| Large        | `var(--spacing-base)`   | <Story of={ButtonStories.DeleteButtonLarge} />  |

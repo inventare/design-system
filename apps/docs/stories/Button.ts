@@ -1,8 +1,8 @@
 export interface ButtonProps {
   variant?: 'primary' | 'danger';
   disabled?: boolean;
+  outline?: boolean;
   sizing?: 'default' | 'large' | 'small';
-  square?: boolean;
   label?: string;
   onClick?: any;
 }
@@ -10,14 +10,14 @@ export interface ButtonProps {
 export const createButton = ({
   variant = 'primary',
   disabled = false,
+  outline = false,
   sizing = 'default',
-  square = false,
   label,
   onClick,
 }: ButtonProps) => {
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.innerText = label || 'Button';
+  btn.innerHTML = label || 'Button';
 
   if (disabled) {
     btn.disabled = true;
@@ -29,7 +29,7 @@ export const createButton = ({
     'btn',
     `${variant}`,
     `${sizing === 'default' ? '' : sizing}`,
-    `${square ? 'square' : ''}`
+    `${outline ? 'outline' : ''}`,
   ].join(' ').trim();
 
   return btn;

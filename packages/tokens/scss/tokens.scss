@@ -38,6 +38,18 @@ $color-success-900: #155237;
 $color-success-950: #062d1c;
 $color-success-opacity-25: rgba($color-success-500, 0.25);
 
+$color-gray-50: #f6f6f6;
+$color-gray-100: #e7e7e7;
+$color-gray-200: #d1d1d1;
+$color-gray-300: #b0b0b0;
+$color-gray-400: #888888;
+$color-gray-500: #6d6d6d;
+$color-gray-600: #5d5d5d;
+$color-gray-700: #4f4f4f;
+$color-gray-800: #454545;
+$color-gray-900: #3d3d3d;
+$color-gray-950: #222222;
+
 /* BORDER RADIUS */
 $border-radius: 4px !default;
 $border-radius-medium: 8px !default;
@@ -46,6 +58,20 @@ $border-radius-xlarge: 16px !default;
 $border-radius-circle: 50% !default;
 $border-radius-pill: 300px !default;
 
+/* SPACING */
+$spacing-xxsmall: 4px;
+$spacing-xsmall: 8px;
+$spacing-small: 12px;
+$spacing-base: 16px;
+$spacing-medium: 20px;
+$spacing-large: 24px;
+$spacing-xlarge: 28px;
+$spacing-xxlarge: 32px;
+$spacing-xxxlarge: 40px;
+$spacing-xxxxlarge: 48px;
+$spacing-giant: 64px;
+$spacing-xgiant: 80px;
+
 :root {
   --border-radius: #{$border-radius};
   --border-radius-medium: #{$border-radius-medium};
@@ -53,6 +79,19 @@ $border-radius-pill: 300px !default;
   --border-radius-xlarge: #{$border-radius-xlarge};
   --border-radius-circle: #{$border-radius-circle};
   --border-radius-pill: #{$border-radius-pill};
+
+  --spacing-xxsmall: #{$spacing-xxsmall};
+  --spacing-xsmall: #{$spacing-xsmall};
+  --spacing-small: #{$spacing-small};
+  --spacing-base: #{$spacing-base};
+  --spacing-medium: #{$spacing-medium};
+  --spacing-large: #{$spacing-large};
+  --spacing-xlarge: #{$spacing-xlarge};
+  --spacing-xxlarge: #{$spacing-xxlarge};
+  --spacing-xxxlarge: #{$spacing-xxxlarge};
+  --spacing-xxxxlarge: #{$spacing-xxxxlarge};
+  --spacing-giant: #{$spacing-giant};
+  --spacing-xgiant: #{$spacing-xgiant};
 
   --color-primary-50: #{$color-primary-50};
   --color-primary-100: #{$color-primary-100};
@@ -92,4 +131,16 @@ $border-radius-pill: 300px !default;
   --color-success-900: #{$color-success-900};
   --color-success-950: #{$color-success-950};
   --color-success-opacity-25: #{$color-success-opacity-25};
+
+  --color-gray-50: #{$color-gray-50};
+  --color-gray-100: #{$color-gray-100};
+  --color-gray-200: #{$color-gray-200};
+  --color-gray-300: #{$color-gray-300};
+  --color-gray-400: #{$color-gray-400};
+  --color-gray-500: #{$color-gray-500};
+  --color-gray-600: #{$color-gray-600};
+  --color-gray-700: #{$color-gray-700};
+  --color-gray-800: #{$color-gray-800};
+  --color-gray-900: #{$color-gray-900};
+  --color-gray-950: #{$color-gray-950};
 }

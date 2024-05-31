@@ -2,15 +2,30 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  padding-bottom: 40px;
 
   .componentRow {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     gap: 16px;
+
+    .title {
+      width: 100%;
+      font-weight: 700;
+      color: rgba(46, 52, 56, 0.6);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .previewCol {
+      min-width: 150px;
+    }
 
     .source {
       flex: 1;
+      overflow: hidden;
 
       >div {
         margin: 0;

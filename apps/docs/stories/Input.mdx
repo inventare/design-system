@@ -1,0 +1,78 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { MultipleCanvas } from '../../../utils/storybook/components/MultipleCanvas';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+Display styled form controls.
+
+## Basic Input Types
+
+The styles of the Form Control is applied and valid for all of the basic input types:
+
+<MultipleCanvas
+  components={[
+    { title: 'text', of: InputStories.Text },
+    { title: 'password', of: InputStories.Password },
+    { title: 'email', of: InputStories.Email },
+    { title: 'date', of: InputStories.Date },
+    { title: 'datetime-local', of: InputStories.DateTimeLocal },
+    { title: 'color', of: InputStories.Color },
+    { title: 'file', of: InputStories.File },
+    { title: 'month', of: InputStories.Month },
+    { title: 'week', of: InputStories.Week },
+  ]}
+  renderWidth={300}
+/>
+
+## Color Variants
+
+We provide some semantic color variant of the inputs: default, valid and invalid inputs:
+
+<MultipleCanvas
+  components={[
+    { title: 'default', of: InputStories.Default },
+    { title: 'valid', of: InputStories.Valid },
+    { title: 'invalid', of: InputStories.Invalid },
+  ]}
+  renderWidth={300}
+/>
+
+## Help Text
+
+As like the above example of valid and invalid, we have a helper text with the default state:
+
+<MultipleCanvas
+  components={[
+    { title: '', of: InputStories.WithHelperText },
+  ]}
+  renderWidth={300}
+/>
+
+## Disabled state
+
+The disabled state of the input is avaliable for all variants:
+
+<MultipleCanvas
+  components={[
+    { title: 'default', of: InputStories.Disabled },
+    { title: 'valid', of: InputStories.DisabledValid },
+    { title: 'invalid', of: InputStories.DisabledInvalid },
+  ]}
+  renderWidth={300}
+/>
+
+## Placeholder
+
+The placeholder has compatible styles for all variants:
+
+<MultipleCanvas
+  components={[
+    { title: 'default', of: InputStories.Placeholder },
+    { title: 'valid', of: InputStories.PlaceholderValid },
+    { title: 'invalid', of: InputStories.PlaceholderInvalid },
+  ]}
+  renderWidth={300}
+/>

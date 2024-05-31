@@ -35,27 +35,27 @@ $container-max-widths: (
 /*
  * BUTTON
  */
-$button-padding-x: 0.75rem !default;
-$button-padding-y: 0.375rem !default;
+$button-padding-x: var(--spacing-base) !default;
+$button-padding-y: var(--spacing-xsmall) !default;
 $button-font: $body-font !default;
 $button-font-size: 1rem !default;
 $button-font-weight: 400 !default;
-$button-line-height: 1.5 !default;
-$button-gap: 0.5rem !default;
+$button-line-height: normal !default;
+$button-gap: var(--spacing-small) !default;
 $button-border-radius: var(--border-radius) !default;
 $button-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 $button-disabled-opacity: 0.65;
 
 /* LARGE */
-$button-large-padding-x: 1rem !default;
-$button-large-padding-y: 0.5rem !default;
+$button-large-padding-x: var(--spacing-large) !default;
+$button-large-padding-y: var(--spacing-small) !default;
 $button-large-font-size: 1.25rem !default;
 $button-large-border-radius: var(--border-radius) !default;
 
 /* SMALL */
-$button-small-padding-x: 0.5rem !default;
-$button-small-padding-y: 0.25rem !default;
+$button-small-padding-x: var(--spacing-small) !default;
+$button-small-padding-y: var(--spacing-xxsmall) !default;
 $button-small-font-size: 0.875rem !default;
 $button-small-border-radius: var(--border-radius) !default;
 
@@ -128,45 +128,61 @@ $skeleton-opacity: 0.7;
 $skeleton-color: transparent;
 $skeleton-radius: 0.125rem;
 
-$form-control-padding-x: 0.75rem !default;
-$form-control-padding-y: 0.375rem !default;
+
+/*
+ * FORM CONTROL
+ */
+
+$form-control-padding-x: var(--spacing-small) !default;
+$form-control-padding-y: var(--spacing-small) !default;
 
 $form-control-font: $body-font !default;
 $form-control-font-size: 1rem !default;
 $form-control-font-weight: 400 !default;
-$form-control-line-height: 1.5 !default;
+$form-control-line-height: normal !default;
 
 $form-control-label-font: $body-font !default;
 $form-control-label-font-size: 1rem !default;
 $form-control-label-font-weight: 400 !default;
-$form-control-label-line-height: 1.5 !default;
+$form-control-label-line-height: normal !default;
+$form-control-label-spacing: var(--spacing-xsmall) !default;
+$form-control-label-fg: var(--color-gray-600) !default;
 
 $form-control-border-radius: var(--border-radius) !default;
 $form-control-transition: color 0.15s ease-in-out,
   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
 
-$form-control-default-border: #dee2e6 !default;
+$form-control-default-border: var(--color-gray-100) !default;
 $form-control-default-bg: #fff !default;
-$form-control-default-fg: #212529 !default;
-$form-control-default-hover-border: #dee2e6 !default;
+$form-control-default-fg: var(--color-gray-500) !default;
+$form-control-default-hover-border: var(--color-gray-100) !default;
 $form-control-default-hover-bg: #fff !default;
-$form-control-default-hover-fg: #212529 !default;
+$form-control-default-hover-fg: var(--color-gray-600) !default;
 $form-control-default-active-border: var(--color-primary-500) !default;
 $form-control-default-active-shadow: var(--color-primary-opacity-25) !default;
 $form-control-default-active-bg: #fff !default;
-$form-control-default-active-fg: #212529 !default;
+$form-control-default-active-fg: var(--color-gray-700) !default;
+$form-control-default-placeholder: var(--color-gray-400) !default;
 
-$form-control-disabled-border: #dee2e6;
-$form-control-disabled-bg: #e9ecef;
-$form-control-disabled-fg: #212529;
+$form-control-color-padding-y: var(--spacing-xxsmall) !default;
+$form-control-color-padding-x: var(--spacing-xxsmall) !default;
+$form-control-color-height: var(--spacing-xxxlarge) !default;
+$form-control-color-width: var(--spacing-xxxxlarge) !default;
+
+$form-control-disabled-border: var(--color-gray-100);
+$form-control-disabled-bg: var(--color-gray-50);
+$form-control-disabled-fg: var(--color-gray-400);
 
 $form-control-helper-font: $body-font !default;
 $form-control-helper-font-size: 0.875rem !default;
 $form-control-helper-font-weight: 400 !default;
-$form-control-helper-margin-top: 4px;
+$form-control-helper-margin-top: var(--spacing-xxsmall);
+$form-control-helper-fg: var(--color-gray-400);
 
 $form-control-invalid-color: var(--color-danger-500) !default;
 $form-control-invalid-shadow: var(--color-danger-opacity-25) !default;
+$form-control-invalid-placeholder: var(--color-danger-400) !default;
 $form-control-valid-color: var(--color-success-500) !default;
 $form-control-valid-shadow: var(--color-success-opacity-25) !default;
+$form-control-valid-placeholder: var(--color-gray-400) !default;

@@ -22,7 +22,9 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook-docs": "storybook dev --docs -p 6006",
+    "build-storybook": "storybook build",
+    "build-storybook-docs": "storybook build --docs"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1",

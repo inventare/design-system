@@ -3,6 +3,9 @@ export interface InputProps {
   label: string;
   disabled?: boolean;
   helperText?: string;
+  value?: string;
+  type?: string;
+  placeholder?: string;
   variant?: 'default' | 'valid' | 'invalid';
 }
 
@@ -11,6 +14,9 @@ export const createInput = ({
   disabled,
   label,
   helperText,
+  value = '',
+  type = 'text',
+  placeholder = '',
   variant = 'default',
 }: InputProps) => {
   const container = document.createElement('div');
@@ -28,6 +34,14 @@ export const createInput = ({
 
   const input = document.createElement('input');
   input.id = id;
+  input.type = type;
+
+  if (value) {
+    input.value = value;
+  }
+  if (placeholder) {
+    input.placeholder = placeholder;
+  }
   if (disabled) {
     input.disabled = true;
   }

@@ -15,29 +15,37 @@
   --#{$variable-prefix}form-control-border: #{$form-control-default-border};
   --#{$variable-prefix}form-control-bg: #{$form-control-default-bg};
   --#{$variable-prefix}form-control-fg: #{$form-control-default-fg};
+  --#{$variable-prefix}form-control-placeholder: #{$form-control-default-placeholder};
 
   --#{$variable-prefix}form-control-label-font: #{$form-control-label-font};
   --#{$variable-prefix}form-control-label-font-size: #{$form-control-label-font-size};
   --#{$variable-prefix}form-control-label-font-weight: #{$form-control-label-font-weight};
   --#{$variable-prefix}form-control-label-line-height: #{$form-control-label-line-height};
+  --#{$variable-prefix}form-control-label-spacing: #{$form-control-label-spacing};
+  --#{$variable-prefix}form-control-label-fg: #{$form-control-label-fg};
 
   --#{$variable-prefix}form-control-helper-font: #{$form-control-helper-font};
   --#{$variable-prefix}form-control-helper-font-size: #{$form-control-helper-font-size};
   --#{$variable-prefix}form-control-helper-font-weight: #{$form-control-helper-font-weight};
   --#{$variable-prefix}form-control-helper-margin-top: #{$form-control-helper-margin-top};
+  --#{$variable-prefix}form-control-helper-fg: #{$form-control-helper-fg};
+
+  --#{$variable-prefix}form-control-color-padding-y: #{$form-control-color-padding-y};
+  --#{$variable-prefix}form-control-color-padding-x: #{$form-control-color-padding-x};
+  --#{$variable-prefix}form-control-color-height: #{$form-control-color-height};
+  --#{$variable-prefix}form-control-color-width: #{$form-control-color-width};
 
   label {
     font-family: var(--#{$variable-prefix}form-control-label-font);
     font-size: var(--#{$variable-prefix}form-control-label-font-size);
     font-weight: var(--#{$variable-prefix}form-control-label-font-weight);
     line-height: var(--#{$variable-prefix}form-control-label-line-height);
-
-    margin-bottom: 8px;
+    margin-bottom: var(--#{$variable-prefix}form-control-label-spacing);
+    color: var(--#{$variable-prefix}form-control-label-fg);
   }
 
   input {
-    padding: var(--#{$variable-prefix}form-control-padding-y)
-      var(--#{$variable-prefix}form-control-padding-x);
+    padding: var(--#{$variable-prefix}form-control-padding-y) var(--#{$variable-prefix}form-control-padding-x);
 
     font-family: var(--#{$variable-prefix}form-control-font);
     font-size: var(--#{$variable-prefix}form-control-font-size);
@@ -77,6 +85,16 @@
 
         box-shadow: 0 0 0 0.25rem var(--#{$variable-prefix}form-control-shadow);
       }
+
+      &::placeholder {
+        color: var(--#{$variable-prefix}form-control-placeholder);
+      }
+    }
+
+    &[type="color"] {
+      padding: var(--#{$variable-prefix}form-control-color-padding-y) var(--#{$variable-prefix}form-control-color-padding-x);
+      width: var(--#{$variable-prefix}form-control-color-width);
+      height: var(--#{$variable-prefix}form-control-color-height);
     }
   }
 
@@ -85,6 +103,7 @@
     font-size: var(--#{$variable-prefix}form-control-helper-font-size);
     font-weight: var(--#{$variable-prefix}form-control-helper-font-weight);
     margin-top: var(--#{$variable-prefix}form-control-helper-margin-top);
+    color: var(--#{$variable-prefix}form-control-helper-fg);
   }
 
   &.invalid {
@@ -99,6 +118,7 @@
     input:active {
       --#{$variable-prefix}form-control-border: #{$form-control-invalid-color};
       --#{$variable-prefix}form-control-shadow: #{$form-control-invalid-shadow};
+      --#{$variable-prefix}form-control-placeholder: #{$form-control-invalid-placeholder};
     }
   }
 
@@ -114,6 +134,7 @@
     input:active {
       --#{$variable-prefix}form-control-border: #{$form-control-valid-color};
       --#{$variable-prefix}form-control-shadow: #{$form-control-valid-shadow};
+      --#{$variable-prefix}form-control-placeholder: #{$form-control-valid-placeholder};
     }
   }
 }
