@@ -1,3 +1,0 @@
-const i=({})=>{const e=document.createElement("div");e.style.width="200px",e.style.height="200px",e.className="spinner";const a=document.createElement("div"),d=document.createElement("div"),c=document.createElement("div"),o=document.createElement("div");return e.appendChild(a),e.appendChild(d),e.appendChild(c),e.appendChild(o),e},p={title:"Inventare/Spinner",tags:["autodocs"],render:({...e})=>i({...e}),argTypes:{}},t={args:{}};var n,r,s;t.parameters={...t.parameters,docs:{...(n=t.parameters)==null?void 0:n.docs,source:{originalSource:`{
-  args: {}
-}`,...(s=(r=t.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};const l=["Default"];export{t as Default,l as __namedExportsOrder,p as default};
