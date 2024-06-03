@@ -1,5 +1,8 @@
+$variable-prefix: inventare-;
+
 @import "./fonts";
-@import "./variables";
+
+@import "./variables/breakpoints";
 
 @import "./reset";
 
@@ -9,7 +12,7 @@
 
 @import "./layouts/containers";
 
+@import "./components//alerts";
 @import "./components/button";
-@import "./components/spinner";
-@import "./components/skeleton";
-@import "./components/input";
+@import "./components/form_control";
+@import "./components/form_row";

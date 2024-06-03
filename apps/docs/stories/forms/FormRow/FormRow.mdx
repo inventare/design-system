@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story, Source } from '@storybook/blocks';
+import * as FormRowStories from './FormRow.stories';
+
+<Meta of={FormRowStories} />
+
+# FormRow
+
+Used to maintain the consistency of form rows spacing's.
+
+An example of usage is the login form bellow:
+
+<Story of={FormRowStories.LoginExample} />
+
+<Source code={`
+<div style="max-width: 350px;">
+    <div class="form-row">
+        <div class="form-control"><!-- ... --></div>
+    </div>
+    <div class="form-row">
+        <div class="form-control"><!-- ... --></div>
+    </div>
+    <div class="form-row submit center">
+        <button type="button" class="btn primary  outline">Go Back</button>
+        <button type="button" class="btn primary">Send</button>
+    </div>
+</div>
+`} dark />

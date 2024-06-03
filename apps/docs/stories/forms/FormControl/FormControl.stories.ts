@@ -1,9 +1,9 @@
-import { InputProps, createInput } from './Input';
+import { FormControlProps, createFormControl } from './FormControl';
 
 export default {
-  title: 'Inventare/Input',
-  render: ({ ...args }: InputProps) => {
-    return createInput({ ...args });
+  title: 'Forms/FormControl',
+  render: ({ ...args }: FormControlProps) => {
+    return createFormControl({ ...args });
   },
   argTypes: {
     id: { control: 'text', },

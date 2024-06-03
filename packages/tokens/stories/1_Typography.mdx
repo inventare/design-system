@@ -1,0 +1,65 @@
+import { Meta } from "@storybook/blocks";
+import LinkTo from '@storybook/addon-links/react';
+
+<Meta title="Tokens/Typography" />
+
+# Typography
+
+All typography tokens used by the design system.
+
+## Font Family
+
+The font used in the design system is the [Ubuntu font-family](https://fonts.google.com/specimen/Ubuntu).
+
+| Variable               | Value                   |
+| ---------------------- | ----------------------- |
+| `var(--font-family)`   | `'Ubuntu', sans-serif`  |
+
+## Font Weight
+
+| Variable                     | Name    | Value     |
+| ---------------------------- | ------- | --------- |
+| `var(--font-weight-light)`   | Light   | 300       |
+| `var(--font-weight-regular)` | Regular | 400       |
+| `var(--font-weight-medium)`  | Medium  | 500       |
+| `var(--font-weight-bold)`    | Bold    | 700       |
+
+## Font Size
+
+The font size tokens are defined in two subsections: the base text, used for common text, and the headings, used for the h1-h6 headings.
+
+### Base Text
+
+The base text font size tokens are used for common locations.
+A basic example is the usage of `var(--font-size-small)` at the
+<LinkTo kind="Inventare/FormControl" story="docs" >FormControl</LinkTo> helper text, and the `var(--font-size-base)` at the FormControl label.
+
+| Example                                                                         | Variable                 | Name        | Value       |
+| ------------------------------------------------------------------------------- | ------------------------ | ----------- | ----------- |
+| <span style={{ fontSize: 'var(--font-size-small)' }}>Instituto Inventare</span> | `var(--font-size-small)` | Small Text  | `0.825rem`  |
+| <span style={{ fontSize: 'var(--font-size-base)' }}>Instituto Inventare</span>  | `var(--font-size-base)`  | Text Base   | `1rem`      |
+
+### Headings
+
+| Example                                                                      | Variable              | Name       | Value       |
+| ---------------------------------------------------------------------------- | --------------------- | ---------- | ----------- |
+| <span style={{ fontSize: 'var(--font-size-h1)' }}>Instituto Inventare</span> | `var(--font-size-h1)` | Heading 1  | `2.5rem`    |
+| <span style={{ fontSize: 'var(--font-size-h2)' }}>Instituto Inventare</span> | `var(--font-size-h2)` | Heading 2  | `2rem`      |
+| <span style={{ fontSize: 'var(--font-size-h3)' }}>Instituto Inventare</span> | `var(--font-size-h3)` | Heading 3  | `1.75rem`   |
+| <span style={{ fontSize: 'var(--font-size-h4)' }}>Instituto Inventare</span> | `var(--font-size-h4)` | Heading 4  | `1.5rem`    |
+| <span style={{ fontSize: 'var(--font-size-h5)' }}>Instituto Inventare</span> | `var(--font-size-h5)` | Heading 5  | `1.25rem`   |
+| <span style={{ fontSize: 'var(--font-size-h6)' }}>Instituto Inventare</span> | `var(--font-size-h6)` | Heading 6  | `1rem`      |
+
+
+## Tokens
+
+The complete tokens are used to combine all tokens described above to maintain the consistency of the design system.
+
+| Example                                                           | Class      | Name       |
+| ----------------------------------------------------------------- | ---------- | ---------- |
+| <span className="h1 sb-unstyled">Instituto Inventare</span>       | `.h1`      | Heading 1  |
+| <span className="h2 sb-unstyled">Instituto Inventare</span>       | `.h2`      | Heading 2  |
+| <span className="h3 sb-unstyled">Instituto Inventare</span>       | `.h3`      | Heading 3  |
+| <span className="h4 sb-unstyled">Instituto Inventare</span>       | `.h4`      | Heading 4  |
+| <span className="h5 sb-unstyled">Instituto Inventare</span>       | `.h5`      | Heading 5  |
+| <span className="h6 sb-unstyled">Instituto Inventare</span>       | `.h6`      | Heading 6  |

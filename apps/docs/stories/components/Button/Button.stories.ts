@@ -2,7 +2,7 @@ import { fn } from '@storybook/test';
 import { createButton } from './Button';
 
 export default {
-  title: 'Inventare/Button',
+  title: 'Components/Button',
   render: ({ label, ...args }) => {
     return createButton({ label, ...args });
   },
@@ -30,14 +30,12 @@ export const Primary = {
   },
 };
 
-
 export const Danger = {
   args: {
     variant: 'danger',
     label: 'Danger',
   },
 };
-
 
 export const PrimaryOutline = {
   args: {
@@ -46,7 +44,6 @@ export const PrimaryOutline = {
     outline: true,
   },
 };
-
 
 export const DangerOutline = {
   args: {
@@ -64,7 +61,6 @@ export const PrimaryDisabled = {
   },
 };
 
-
 export const DangerDisabled = {
   args: {
     variant: 'danger',
@@ -72,7 +68,6 @@ export const DangerDisabled = {
     disabled: true,
   },
 };
-
 
 export const PrimaryOutlineDisabled = {
   args: {
@@ -82,7 +77,6 @@ export const PrimaryOutlineDisabled = {
     disabled: true,
   },
 };
-
 
 export const DangerOutlineDisabled = {
   args: {

@@ -1,3 +1,84 @@
+$button-padding-x: var(--spacing-base) !default;
+$button-padding-y: var(--spacing-xsmall) !default;
+$button-font: var(--font-family) !default;
+$button-font-size: 1rem !default;
+$button-font-weight: 400 !default;
+$button-line-height: normal !default;
+$button-gap: var(--spacing-small) !default;
+$button-border-radius: var(--border-radius) !default;
+$button-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$button-disabled-opacity: 0.65;
+
+/* LARGE */
+$button-large-padding-x: var(--spacing-large) !default;
+$button-large-padding-y: var(--spacing-small) !default;
+$button-large-font-size: 1.25rem !default;
+$button-large-border-radius: var(--border-radius) !default;
+
+/* SMALL */
+$button-small-padding-x: var(--spacing-small) !default;
+$button-small-padding-y: var(--spacing-xxsmall) !default;
+$button-small-font-size: 0.875rem !default;
+$button-small-border-radius: var(--border-radius) !default;
+
+/* DEFAULT */
+$button-default-border: transparent !default;
+$button-default-bg: transparent !default;
+$button-default-fg: #222 !default;
+$button-default-hover-border: transparent !default;
+$button-default-hover-bg: transparent !default;
+$button-default-hover-fg: #222 !default;
+$button-default-active-border: #222 !default;
+$button-default-active-bg: transparent !default;
+$button-default-active-fg: #222 !default;
+
+/* PRIMARY */
+$button-primary-border: var(--color-primary-500) !default;
+$button-primary-bg: var(--color-primary-500) !default;
+$button-primary-fg: #fff !default;
+$button-primary-hover-border: var(--color-primary-600) !default;
+$button-primary-hover-bg: var(--color-primary-600) !default;
+$button-primary-hover-fg: #fff !default;
+$button-primary-active-border: var(--color-primary-700) !default;
+$button-primary-active-bg: var(--color-primary-700) !default;
+$button-primary-active-fg: #fff !default;
+
+/* DANGER */
+$button-danger-border: var(--color-danger-500) !default;
+$button-danger-bg: var(--color-danger-500) !default;
+$button-danger-fg: #fff !default;
+$button-danger-hover-border: var(--color-danger-600) !default;
+$button-danger-hover-bg: var(--color-danger-600) !default;
+$button-danger-hover-fg: #fff !default;
+$button-danger-active-border: var(--color-danger-700) !default;
+$button-danger-active-bg: var(--color-danger-700) !default;
+$button-danger-active-fg: #fff !default;
+
+/* COLORS */
+$button-colors: (
+  primary: (border: $button-primary-border,
+    bg: $button-primary-bg,
+    fg: $button-primary-fg,
+    hover-border: $button-primary-hover-border,
+    hover-bg: $button-primary-hover-bg,
+    hover-fg: $button-primary-hover-fg,
+    active-border: $button-primary-active-border,
+    active-bg: $button-primary-active-bg,
+    active-fg: $button-primary-active-fg,
+  ),
+  danger: (border: $button-danger-border,
+    bg: $button-danger-bg,
+    fg: $button-danger-fg,
+    hover-border: $button-danger-hover-border,
+    hover-bg: $button-danger-hover-bg,
+    hover-fg: $button-danger-hover-fg,
+    active-border: $button-danger-active-border,
+    active-bg: $button-danger-active-bg,
+    active-fg: $button-danger-active-fg,
+  ),
+);
+
 .btn {
   --#{$variable-prefix}button-padding-y: #{$button-padding-y};
   --#{$variable-prefix}button-padding-x: #{$button-padding-x};

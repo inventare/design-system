@@ -1,0 +1,41 @@
+$form-row-bottom-margin: var(--spacing-base) !default;
+$form-row-bottom-margin-large: var(--spacing-large) !default;
+$form-row-bottom-gap: var(--spacing-base) !default;
+
+.form-row {
+  --#{$variable-prefix}form-row-bottom-margin: #{$form-row-bottom-margin};
+  --#{$variable-prefix}form-row-bottom-margin-large: #{$form-row-bottom-margin-large};
+  --#{$variable-prefix}form-row-bottom-gap: #{$form-row-bottom-gap};
+
+  margin-bottom: var(--#{$variable-prefix}form-row-bottom-margin);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &.submit {
+    gap: var(--#{$variable-prefix}form-row-bottom-gap);
+  }
+
+  &.large {
+    margin-bottom: var(--#{$variable-prefix}form-row-bottom-margin-large);
+  }
+
+  &.left {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &.right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &.center {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}

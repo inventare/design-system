@@ -72,7 +72,27 @@ $spacing-xxxxlarge: 48px;
 $spacing-giant: 64px;
 $spacing-xgiant: 80px;
 
-:root {
+/* TYPOGRAPHY */
+$font-family: 'Ubuntu', sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-size-base: 1rem;
+$font-size-small: 0.825 * $font-size-base;
+$font-size-h6: $font-size-base;
+$font-size-h5: 1.25 * $font-size-base;
+$font-size-h4: 1.5 * $font-size-base;
+$font-size-h3: 1.75 * $font-size-base;
+$font-size-h2: 2 * $font-size-base;
+$font-size-h1: 2.5 * $font-size-base;
+
+$line-height-base: 1.2;
+$line-height-headings: $line-height-base;
+
+:root,
+::backdrop {
   --border-radius: #{$border-radius};
   --border-radius-medium: #{$border-radius-medium};
   --border-radius-large: #{$border-radius-large};
@@ -92,6 +112,24 @@ $spacing-xgiant: 80px;
   --spacing-xxxxlarge: #{$spacing-xxxxlarge};
   --spacing-giant: #{$spacing-giant};
   --spacing-xgiant: #{$spacing-xgiant};
+
+  --font-family: #{$font-family};
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-bold: #{$font-weight-bold};
+
+  --font-size-base: #{$font-size-base};
+  --font-size-small: #{$font-size-small};
+  --font-size-h6: #{$font-size-h6};
+  --font-size-h5: #{$font-size-h5};
+  --font-size-h4: #{$font-size-h4};
+  --font-size-h3: #{$font-size-h3};
+  --font-size-h2: #{$font-size-h2};
+  --font-size-h1: #{$font-size-h1};
+
+  --line-height-base: #{$line-height-base};
+  --line-height-headings: #{$line-height-headings};
 
   --color-primary-50: #{$color-primary-50};
   --color-primary-100: #{$color-primary-100};
@@ -143,4 +181,42 @@ $spacing-xgiant: 80px;
   --color-gray-800: #{$color-gray-800};
   --color-gray-900: #{$color-gray-900};
   --color-gray-950: #{$color-gray-950};
+
+  --text-color: var(--color-gray-950);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-headings);
+}
+
+.h1 {
+  font-size: var(--font-size-h1);
+}
+
+.h2 {
+  font-size: var(--font-size-h2);
+}
+
+.h3 {
+  font-size: var(--font-size-h3);
+}
+
+.h4 {
+  font-size: var(--font-size-h4);
+}
+
+.h5 {
+  font-size: var(--font-size-h5);
+}
+
+.h6 {
+  font-size: var(--font-size-h6);
 }

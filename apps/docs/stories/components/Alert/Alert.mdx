@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story, Source } from '@storybook/blocks';
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+Provide contextual feedback messages for user actions.
+
+## Default state
+
+The default state is a base gray-styled alert.
+
+<Story of={AlertStories.Base} />
+
+<Source of={AlertStories.Base} dark />
+
+## Contextual colors
+
+We provide some contextual color cases by default:
+
+### Danger
+
+Used for danger or error actions.
+
+<Story of={AlertStories.Danger} />
+
+<Source of={AlertStories.Danger} dark />

@@ -1,3 +1,57 @@
+$form-control-padding-x: var(--spacing-small) !default;
+$form-control-padding-y: var(--spacing-small) !default;
+
+$form-control-font: var(--font-family) !default;
+$form-control-font-size: var(--font-size-base) !default;
+$form-control-font-weight: var(--font-weight-regular) !default;
+$form-control-line-height: normal !default;
+
+$form-control-label-font: var(--font-family) !default;
+$form-control-label-font-size: var(--font-size-base) !default;
+$form-control-label-font-weight: var(--font-weight-medium) !default;
+$form-control-label-line-height: normal !default;
+$form-control-label-spacing: var(--spacing-xsmall) !default;
+$form-control-label-fg: var(--color-gray-600) !default;
+
+$form-control-border-radius: var(--border-radius) !default;
+$form-control-transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
+
+$form-control-default-border: var(--color-gray-100) !default;
+$form-control-default-bg: #fff !default;
+$form-control-default-fg: var(--color-gray-500) !default;
+$form-control-default-hover-border: var(--color-gray-100) !default;
+$form-control-default-hover-bg: #fff !default;
+$form-control-default-hover-fg: var(--color-gray-600) !default;
+$form-control-default-active-border: var(--color-primary-500) !default;
+$form-control-default-active-shadow: var(--color-primary-opacity-25) !default;
+$form-control-default-active-bg: #fff !default;
+$form-control-default-active-fg: var(--color-gray-700) !default;
+$form-control-default-placeholder: var(--color-gray-400) !default;
+
+$form-control-color-padding-y: var(--spacing-xxsmall) !default;
+$form-control-color-padding-x: var(--spacing-xxsmall) !default;
+$form-control-color-height: var(--spacing-xxxlarge) !default;
+$form-control-color-width: var(--spacing-xxxxlarge) !default;
+
+$form-control-disabled-border: var(--color-gray-100);
+$form-control-disabled-bg: var(--color-gray-50);
+$form-control-disabled-fg: var(--color-gray-400);
+
+$form-control-helper-font: var(--font-family) !default;
+$form-control-helper-font-size: var(--font-size-small) !default;
+$form-control-helper-font-weight: var(--font-weight-light) !default;
+$form-control-helper-margin-top: var(--spacing-xxsmall);
+$form-control-helper-fg: var(--color-gray-400);
+
+$form-control-invalid-color: var(--color-danger-500) !default;
+$form-control-invalid-shadow: var(--color-danger-opacity-25) !default;
+$form-control-invalid-placeholder: var(--color-danger-400) !default;
+$form-control-valid-color: var(--color-success-500) !default;
+$form-control-valid-shadow: var(--color-success-opacity-25) !default;
+$form-control-valid-placeholder: var(--color-gray-400) !default;
+
 .form-control {
   display: flex;
   flex-direction: column;

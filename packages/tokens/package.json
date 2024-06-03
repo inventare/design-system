@@ -2,5 +2,24 @@
   "name": "@inventare/tokens",
   "version": "0.0.3",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist",
+    "scss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inventare/design-system.git"
+  },
+  "scripts": {
+    "build": "sass scss/tokens.scss dist/tokens.css"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.60.0"
+  },
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }

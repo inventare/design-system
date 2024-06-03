@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface FormControlProps {
   id: string;
   label: string;
   disabled?: boolean;
@@ -9,7 +9,7 @@ export interface InputProps {
   variant?: 'default' | 'valid' | 'invalid';
 }
 
-export const createInput = ({
+export const createFormControl = ({
   id,
   disabled,
   label,
@@ -18,7 +18,7 @@ export const createInput = ({
   type = 'text',
   placeholder = '',
   variant = 'default',
-}: InputProps) => {
+}: FormControlProps) => {
   const container = document.createElement('div');
   container.className = 'form-control';
   if (variant === 'valid') {

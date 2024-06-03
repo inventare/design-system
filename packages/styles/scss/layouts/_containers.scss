@@ -1,3 +1,12 @@
+$container-padding-x: 0;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
 @mixin make-container($gutter: $container-padding-x) {
   --#{$variable-prefix}gutter-x: #{$gutter};
   --#{$variable-prefix}gutter-y: 0;
@@ -33,7 +42,7 @@
         }
 
         // Once the current breakpoint is reached, stop extending
-        @if ($breakpoint == $name) {
+        @if ($breakpoint ==$name) {
           $extend-breakpoint: false;
         }
       }
