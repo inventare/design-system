@@ -3,7 +3,7 @@ import { theme } from './theme';
 import "@inventare/tokens/scss/tokens.scss";
 import "@inventare/styles/scss/inventare.scss";
 
-import "@inventare/javascript/src/index";
+import "@inventare/vanilla/src/index";
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
