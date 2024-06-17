@@ -1,0 +1,27 @@
+{
+  "name": "@inventare/vanilla",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
+  "homepage": "https://github.com/inventare/design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inventare/design-system.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --minify --target=es2020,chrome84,firefox84,safari14,edge84"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "esbuild": "0.21.5",
+    "typescript": "5.4.5"
+  },
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}
