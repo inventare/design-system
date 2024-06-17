@@ -36,24 +36,24 @@ $button-default-active-fg: #222 !default;
 /* PRIMARY */
 $button-primary-border: var(--color-primary-500) !default;
 $button-primary-bg: var(--color-primary-500) !default;
-$button-primary-fg: #fff !default;
+$button-primary-fg: var(--color-gray-50) !default;
 $button-primary-hover-border: var(--color-primary-600) !default;
 $button-primary-hover-bg: var(--color-primary-600) !default;
-$button-primary-hover-fg: #fff !default;
+$button-primary-hover-fg: var(--color-gray-50) !default;
 $button-primary-active-border: var(--color-primary-700) !default;
 $button-primary-active-bg: var(--color-primary-700) !default;
-$button-primary-active-fg: #fff !default;
+$button-primary-active-fg: var(--color-gray-50) !default;
 
 /* DANGER */
 $button-danger-border: var(--color-danger-500) !default;
 $button-danger-bg: var(--color-danger-500) !default;
-$button-danger-fg: #fff !default;
+$button-danger-fg: var(--color-gray-50) !default;
 $button-danger-hover-border: var(--color-danger-600) !default;
 $button-danger-hover-bg: var(--color-danger-600) !default;
-$button-danger-hover-fg: #fff !default;
+$button-danger-hover-fg: var(--color-gray-50) !default;
 $button-danger-active-border: var(--color-danger-700) !default;
 $button-danger-active-bg: var(--color-danger-700) !default;
-$button-danger-active-fg: #fff !default;
+$button-danger-active-fg: var(--color-gray-50) !default;
 
 /* COLORS */
 $button-colors: (

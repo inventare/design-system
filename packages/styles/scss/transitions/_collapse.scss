@@ -1,0 +1,20 @@
+$transition-collapse: height .35s ease !default;
+$transition-collapse-width: width .35s ease !default;
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: $transition-collapse;
+
+  &.collapse-horizontal {
+    width: 0;
+    height: auto;
+    transition: $transition-collapse-width;
+  }
+}

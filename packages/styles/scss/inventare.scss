@@ -12,7 +12,10 @@ $variable-prefix: inventare-;
 
 @import "./layouts/containers";
 
-@import "./components//alerts";
+@import "./components/alerts";
 @import "./components/button";
 @import "./components/form_control";
 @import "./components/form_row";
+@import "./components/sidebar";
+
+@import "./transitions/collapse";
