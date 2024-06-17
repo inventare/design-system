@@ -1,5 +1,5 @@
 {
-  "name": "@inventare/vanilla",
+  "name": "@inventare/docs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "@storybook/theming": "^8.1.4",
     "remark-gfm": "4.0.0",
     "storybook": "^8.1.4",
-    "@inventare/javascript": "*"
+    "@inventare/vanilla": "*"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
