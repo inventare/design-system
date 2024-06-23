@@ -41,11 +41,147 @@ $inactive-sidebar-button-colors: (
 );
 
 $sidebar-button-dropdown-padding-right: var(--spacing-xxlarge) !default;
-$sidebar-button-dropdown-margin-bottom: var(--spacing-base) !default;
+$sidebar-button-dropdown-margin-bottom: var(--spacing-xxsmall) !default;
 $sidebar-button-child-margin-left: var(--spacing-xxlarge) !default;
-$sidebar-button-child-margin-bottom: var(--spacing-small) !default;
+$sidebar-button-child-margin-bottom: var(--spacing-xxsmall) !default;
 $sidebar-button-child-timeline-bg: var(--color-gray-400) !default;
 $sidebar-button-child-timeline-active-bg: var(--color-primary-500) !default;
+
+$sidebar-width: 300px;
+$sidebar-collapsed-width: 80px;
+$sidebar-bg: #222;
+$sidebar-padding-x: var(--spacing-base);
+$sidebar-padding-y: var(--spacing-base);
+$sidebar-branding-height: 80px;
+$sidebar-transition: width .35s ease !default;
+
+.sidebar {
+  --#{$variable-prefix}sidebar-default-width: #{$sidebar-width};
+  --#{$variable-prefix}sidebar-collapsed-width: #{$sidebar-collapsed-width};
+
+  --#{$variable-prefix}sidebar-width: var(--#{$variable-prefix}sidebar-default-width);
+  --#{$variable-prefix}sidebar-bg: #{$sidebar-bg};
+  --#{$variable-prefix}sidebar-padding-x: #{$sidebar-padding-x};
+  --#{$variable-prefix}sidebar-padding-y: #{$sidebar-padding-y};
+
+  --#{$variable-prefix}sidebar-branding-height: #{$sidebar-branding-height};
+
+  display: flex;
+
+  width: var(--#{$variable-prefix}sidebar-width);
+  background-color: var(--#{$variable-prefix}sidebar-bg);
+
+  transition: $sidebar-transition;
+  position: relative;
+
+  border-right: 1px solid #ccc;
+
+  @include media-breakpoint-down('md', $grid-breakpoints) {
+    --#{$variable-prefix}sidebar-collapsed-width: 0;
+
+    --#{$variable-prefix}sidebar-width: 100%;
+    max-width: var(--#{$variable-prefix}sidebar-default-width);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    .sidebar-toggle {
+      display: none;
+    }
+  }
+
+  .sidebar-toggle {
+    position: absolute;
+    right: 0;
+    top: var(--spacing-large);
+    transform: translateX(50%);
+    width: 24px;
+    height: 24px;
+    background-color: var(--#{$variable-prefix}sidebar-bg);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc(50% + 2px);
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(135deg);
+
+      border: solid #ccc;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+
+      transition: transform .35s ease;
+    }
+  }
+
+  .branding {
+    height: var(--#{$variable-prefix}sidebar-branding-height);
+  }
+
+  >.sidebar-inner {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    width: var(--#{$variable-prefix}sidebar-default-width);
+    padding: var(--#{$variable-prefix}sidebar-padding-y) var(--#{$variable-prefix}sidebar-padding-x);
+  }
+
+  .sidebar-childs {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &.collapsed {
+    --#{$variable-prefix}sidebar-width: var(--#{$variable-prefix}sidebar-collapsed-width);
+
+    .sidebar-toggle::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      left: calc(50% - 2px);
+    }
+
+    &.collapsed-complete {
+      >.sidebar-inner {
+        width: var(--#{$variable-prefix}sidebar-collapsed-width);
+      }
+
+      .hide-on-collapse {
+        display: none;
+      }
+
+      .btn-sidebar {
+        --#{$variable-prefix}button-padding-y: var(--spacing-xsmall);
+        --#{$variable-prefix}button-padding-x: var(--spacing-xsmall);
+        align-items: center;
+        justify-content: center;
+
+        &.dropdown {
+          --#{$variable-prefix}sidebar-button-dropdown-padding-right: var(--spacing-xsmall);
+
+          &::after {
+            display: none;
+          }
+        }
+
+        &.child {
+          display: none;
+        }
+      }
+    }
+  }
+}
 
 .btn-sidebar {
   --#{$variable-prefix}sidebar-button-spacing-y: #{$sidebar-button-spacing-y};
