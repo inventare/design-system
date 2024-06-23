@@ -14,7 +14,7 @@ export default {
 
 export const Default = {
   args: {
-    id: 'default-collapse',
+    id: 'example-default-collapse',
     triggerContent: 'Click here to toggle',
     content: 'John doe<br/>John doe<br/>John doe<br/>John doe<br/>John doe<br/>John doe<br/>'
   }
@@ -22,7 +22,7 @@ export const Default = {
 
 export const Horizontal = {
   args: {
-    id: 'default-collapse',
+    id: 'example-horizontal-collapse',
     triggerContent: 'Click here to toggle',
     content: 'John doe<br/>John doe<br/>John doe<br/>John doe<br/>John doe<br/>John doe<br/>',
     horizontal: true,
