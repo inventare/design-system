@@ -21,12 +21,14 @@ $sidebar-button-colors: (
   ),
 );
 
+$sidebar-button-spacing-y: var(--spacing-xxsmall) !default;
+
 $sidebar-button-dropdown-fg: var(--color-gray-50) !default;
 $sidebar-button-dropdown-hover-bg: $button-primary-hover-bg !default;
 $sidebar-button-dropdown-hover-fg: var(--color-gray-50) !default;
 $sidebar-button-dropdown-active-bg: $button-primary-active-bg !default;
 
-$inactive-sidebar-button-dropdown-colors: (
+$inactive-sidebar-button-colors: (
   border: transparent,
   fg: $sidebar-button-dropdown-fg,
   bg: transparent,
@@ -46,7 +48,31 @@ $sidebar-button-child-timeline-bg: var(--color-gray-400) !default;
 $sidebar-button-child-timeline-active-bg: var(--color-primary-500) !default;
 
 .btn-sidebar {
+  --#{$variable-prefix}sidebar-button-spacing-y: #{$sidebar-button-spacing-y};
+
   justify-content: flex-start;
+
+  &:not(.child) {
+    margin: var(--#{$variable-prefix}sidebar-button-spacing-y) 0;
+  }
+
+  &:not(.active) {
+    @include map-variable("button-border", $inactive-sidebar-button-colors, "border");
+    @include map-variable("button-bg", $inactive-sidebar-button-colors, "bg");
+    @include map-variable("button-fg", $inactive-sidebar-button-colors, "fg");
+
+    &:hover {
+      @include map-variable("button-border", $inactive-sidebar-button-colors, "hover-border");
+      @include map-variable("button-bg", $inactive-sidebar-button-colors, "hover-bg");
+      @include map-variable("button-fg", $inactive-sidebar-button-colors, "hover-fg");
+    }
+
+    &:active {
+      @include map-variable("button-border", $inactive-sidebar-button-colors, "active-border");
+      @include map-variable("button-bg", $inactive-sidebar-button-colors, "active-bg");
+      @include map-variable("button-fg", $inactive-sidebar-button-colors, "active-fg");
+    }
+  }
 
   &.child {
     --#{$variable-prefix}sidebar-button-child-margin-left: #{$sidebar-button-child-margin-left};
@@ -100,24 +126,6 @@ $sidebar-button-child-timeline-active-bg: var(--color-primary-500) !default;
         z-index: 1;
       }
     }
-
-    &:not(.active) {
-      @include map-variable("button-border", $inactive-sidebar-button-dropdown-colors, "border");
-      @include map-variable("button-bg", $inactive-sidebar-button-dropdown-colors, "bg");
-      @include map-variable("button-fg", $inactive-sidebar-button-dropdown-colors, "fg");
-
-      &:hover {
-        @include map-variable("button-border", $inactive-sidebar-button-dropdown-colors, "hover-border");
-        @include map-variable("button-bg", $inactive-sidebar-button-dropdown-colors, "hover-bg");
-        @include map-variable("button-fg", $inactive-sidebar-button-dropdown-colors, "hover-fg");
-      }
-
-      &:active {
-        @include map-variable("button-border", $inactive-sidebar-button-dropdown-colors, "active-border");
-        @include map-variable("button-bg", $inactive-sidebar-button-dropdown-colors, "active-bg");
-        @include map-variable("button-fg", $inactive-sidebar-button-dropdown-colors, "active-fg");
-      }
-    }
   }
 
   &.dropdown {
@@ -146,24 +154,6 @@ $sidebar-button-child-timeline-active-bg: var(--color-primary-500) !default;
     &[aria-expanded="true"] {
       &::after {
         transform: translateY(-50%) rotate(-135deg);
-      }
-    }
-
-    &:not(.active) {
-      @include map-variable("button-border", $inactive-sidebar-button-dropdown-colors, "border");
-      @include map-variable("button-bg", $inactive-sidebar-button-dropdown-colors, "bg");
-      @include map-variable("button-fg", $inactive-sidebar-button-dropdown-colors, "fg");
-
-      &:hover {
-        @include map-variable("button-border", $inactive-sidebar-button-dropdown-colors, "hover-border");
-        @include map-variable("button-bg", $inactive-sidebar-button-dropdown-colors, "hover-bg");
-        @include map-variable("button-fg", $inactive-sidebar-button-dropdown-colors, "hover-fg");
-      }
-
-      &:active {
-        @include map-variable("button-border", $inactive-sidebar-button-dropdown-colors, "active-border");
-        @include map-variable("button-bg", $inactive-sidebar-button-dropdown-colors, "active-bg");
-        @include map-variable("button-fg", $inactive-sidebar-button-dropdown-colors, "active-fg");
       }
     }
 
