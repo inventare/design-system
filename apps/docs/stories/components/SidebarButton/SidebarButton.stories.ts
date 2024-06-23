@@ -37,10 +37,26 @@ export const Primary = {
   },
 };
 
+export const PrimaryActive = {
+  args: {
+    variant: 'primary',
+    label: `Primary`,
+    active: true,
+  },
+};
+
 export const PrimaryWithIcon = {
   args: {
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
+  },
+};
+
+export const PrimaryActiveWithIcon = {
+  args: {
+    variant: 'primary',
+    label: `${shoppingCartIcon} Sales`,
+    active: true,
   },
 };
 
@@ -49,6 +65,15 @@ export const Dropdown = {
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
     dropDown: true,
+  },
+};
+
+export const DropdownActive = {
+  args: {
+    variant: 'primary',
+    label: `${shoppingCartIcon} Sales`,
+    dropDown: true,
+    active: true,
   },
 };
 
@@ -61,11 +86,49 @@ export const DropdownExpanded = {
   },
 };
 
+export const DropdownExpandedActive = {
+  args: {
+    variant: 'primary',
+    label: `${shoppingCartIcon} Sales`,
+    dropDown: true,
+    active: true,
+    expanded: true,
+  },
+};
+
 export const Child = {
   args: {
     variant: 'primary',
     label: `Sales Summary`,
     child: true,
+  },
+};
+
+export const ChildMiddle = {
+  args: {
+    variant: 'primary',
+    label: `Sales Summary`,
+    child: true,
+    childPosition: 'middle'
+  },
+};
+
+export const ChildEnd = {
+  args: {
+    variant: 'primary',
+    label: `Sales Summary`,
+    child: true,
+    childPosition: 'end'
+  },
+};
+
+export const ChildActive = {
+  args: {
+    variant: 'primary',
+    label: `Sales Summary`,
+    child: true,
+    childPosition: 'middle',
+    active: true,
   },
 };
 
