@@ -1,17 +1,12 @@
-import { executeAfterTransition } from './utils/transitions';
-
-interface CollapseObjects {
-  toggle: HTMLElement | null;
-  content: HTMLElement | null;
-}
-
-const CLASS_NAME_SHOW = 'show';
-const CLASS_NAME_COLLAPSE = 'collapse';
-const CLASS_NAME_COLLAPSING = 'collapsing';
-const CLASS_NAME_COLLAPSED = 'collapsed';
-const CLASS_NAME_HORIZONTAL = 'horizontal';
-
-const TRIGGER_SELECTOR = '[data-toggle="collapse"]';
+import { executeAfterTransition } from '../../utils/transitions';
+import {
+  getCollapseObjects,
+  CLASS_NAME_SHOW,
+  CLASS_NAME_COLLAPSE,
+  CLASS_NAME_COLLAPSING,
+  CLASS_NAME_COLLAPSED,
+  CLASS_NAME_HORIZONTAL,
+} from './collapse.helpers';
 
 const DIMENSION_VERTICAL = 'VERTICAL'
 const DIMENSION_HORIZONTAL = 'HORIZONTAL'
@@ -19,28 +14,6 @@ type DIMENSION_TYPE = 'VERTICAL' | 'HORIZONTAL';
 const DIMENSIONS: Record<DIMENSION_TYPE, 'width' | 'height'> = {
   'VERTICAL': 'height',
   'HORIZONTAL': 'width',
-}
-
-function getCollapseObjects(target?: HTMLElement | null): CollapseObjects {
-  if (!target) {
-    return { toggle: null, content: null };
-  }
-  const toggleClosest = target.closest<HTMLElement>(TRIGGER_SELECTOR);
-  if (!toggleClosest) {
-    return { toggle: null, content: null };
-  }
-  const contentQuery = toggleClosest.getAttribute('data-target');
-  if (!contentQuery) {
-    return { toggle: toggleClosest, content: null };
-  }
-  const contentEl = document.querySelector<HTMLElement>(contentQuery);
-  if (!contentEl) {
-    return { toggle: toggleClosest, content: null };
-  }
-  return {
-    toggle: toggleClosest,
-    content: contentEl,
-  };
 }
 
 function capFirst(text: string) {

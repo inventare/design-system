@@ -1,59 +1,4 @@
-export interface SidebarButtonProps {
-  label?: string;
-  disabled?: boolean;
-  variant?: 'primary' | 'danger';
-  dropDown?: boolean;
-  expanded?: boolean;
-  child?: boolean;
-  childPosition?: 'start' | 'middle' | 'end';
-  active?: boolean;
-  withParent?: boolean;
-}
-
-export const createSidebarButton = ({
-  variant = 'primary',
-  label = 'Button',
-  disabled = false,
-  dropDown = false,
-  expanded = false,
-  child = false,
-  childPosition = 'start',
-  active = false,
-  withParent = true,
-}: SidebarButtonProps) => {
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.innerHTML = label;
-
-  if (disabled) {
-    btn.disabled = true;
-  }
-  btn.setAttribute('aria-expanded', String(expanded))
-
-  btn.className = [
-    'btn btn-sidebar',
-    `${variant}`,
-    `${dropDown ? 'dropdown' : ''}`,
-    `${child ? `child ${childPosition}` : ''}`,
-    `${active ? 'active' : ''}`,
-  ].join(' ').trim();
-
-  if (withParent) {
-    const div = document.createElement('div');
-    div.style.backgroundColor = '#222';
-    div.style.width = '300px';
-    div.style.padding = '16px';
-    div.style.display = 'flex';
-    div.style.flexDirection = 'column';
-    div.style.alignItems = 'stretch';
-
-    div.appendChild(btn);
-
-    return div;
-  }
-
-  return btn;
-};
+import { createSidebarButton } from '../SidebarButton/SidebarButton';
 
 const shoppingCartIcon = `
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
@@ -61,23 +6,23 @@ const shoppingCartIcon = `
   </svg>
 `;
 
-export const createMultipleSidebarButtons = () => {
+export const createSidebar = () => {
   const buttonExample = createSidebarButton({
     variant: 'primary',
-    label: `${shoppingCartIcon} Users`,
+    label: `${shoppingCartIcon} <span class="hide-on-collapse">Users</span>`,
     withParent: false,
     active: true,
   });
 
   const buttonExample2 = createSidebarButton({
     variant: 'primary',
-    label: `${shoppingCartIcon} Products`,
+    label: `${shoppingCartIcon} <span class="hide-on-collapse">Products</span>`,
     withParent: false,
   });
 
   const toggle = createSidebarButton({
     variant: 'primary',
-    label: `${shoppingCartIcon} Sales`,
+    label: `${shoppingCartIcon} <span class="hide-on-collapse">Sales</span>`,
     dropDown: true,
     expanded: true,
     active: true,
@@ -123,29 +68,64 @@ export const createMultipleSidebarButtons = () => {
   childsContainer.className = 'collapse show';
 
   const childs = document.createElement('div');
-  childs.style.display = 'flex';
-  childs.style.flexDirection = 'column';
-  childs.style.alignItems = 'stretch';
+  childs.className = 'sidebar-childs';
+
+
+  const buttonExample3 = createSidebarButton({
+    variant: 'primary',
+    label: `${shoppingCartIcon} <span class="hide-on-collapse">Products</span>`,
+    withParent: false,
+  });
 
   const div = document.createElement('div');
-  div.style.display = 'flex';
-  div.style.flexDirection = 'column';
-  div.style.alignItems = 'stretch';
-  div.style.width = '350px';
-  div.style.backgroundColor = '#222';
-  div.style.padding = '16px';
+  div.className = 'sidebar'
+  div.id = 'sidebar'
 
-  div.appendChild(buttonExample);
-  div.appendChild(buttonExample2);
+  const inner = document.createElement('div');
+  inner.className = 'sidebar-inner';
 
-  div.appendChild(toggle);
+  const branding = document.createElement('div');
+  branding.className = 'branding';
+
+  inner.appendChild(branding);
+
+  inner.appendChild(buttonExample);
+  inner.appendChild(buttonExample2);
+
+  inner.appendChild(toggle);
 
   childs.appendChild(child1);
   childs.appendChild(child2);
   childs.appendChild(child3);
   childs.appendChild(child4);
   childsContainer.appendChild(childs);
-  div.appendChild(childsContainer);
+  inner.appendChild(childsContainer);
 
-  return div;
+  inner.appendChild(buttonExample3);
+
+  div.appendChild(inner);
+
+  const toggler = document.createElement('button');
+  toggler.className = 'sidebar-toggle';
+  toggler.setAttribute('data-toggle', 'sidebar');
+  toggler.setAttribute('data-target', '#sidebar');
+  div.appendChild(toggler);
+
+  const baseContainer = document.createElement('div');
+  baseContainer.style.display = 'flex'
+  baseContainer.style.flexDirection = 'row';
+  baseContainer.style.alignItems = 'stretch'
+  baseContainer.style.height = '700px';
+
+  baseContainer.appendChild(div);
+
+  const anotherDiv = document.createElement('div');
+  anotherDiv.style.flex = '1';
+  anotherDiv.style.backgroundColor = 'var(--color-primary-300)';
+  anotherDiv.style.padding = 'var(--spacing-base)';
+  anotherDiv.innerHTML = '<h1>Main Content</h1>';
+
+  baseContainer.appendChild(anotherDiv);
+
+  return baseContainer;
 };
