@@ -15,7 +15,12 @@ const config = {
     ignored: /node_modules/,
   },
   stories: [
+    // TOKENS
     "../../../packages/tokens/stories/**/*.mdx",
+    // VANILLA JAVASCRIPT COMPONENTS
+    "../../../packages/vanilla/stories/**/*.mdx",
+    "../../../packages/vanilla/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    // OUR STORIES
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
