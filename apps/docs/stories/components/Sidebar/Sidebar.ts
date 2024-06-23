@@ -79,7 +79,7 @@ export const createSidebar = () => {
 
   const div = document.createElement('div');
   div.className = 'sidebar'
-  div.id = 'sidebar'
+  div.id = 'sidebar-example-here'
 
   const inner = document.createElement('div');
   inner.className = 'sidebar-inner';
@@ -108,7 +108,7 @@ export const createSidebar = () => {
   const toggler = document.createElement('button');
   toggler.className = 'sidebar-toggle';
   toggler.setAttribute('data-toggle', 'sidebar');
-  toggler.setAttribute('data-target', '#sidebar');
+  toggler.setAttribute('data-target', '#sidebar-example-here');
   div.appendChild(toggler);
 
   const baseContainer = document.createElement('div');
