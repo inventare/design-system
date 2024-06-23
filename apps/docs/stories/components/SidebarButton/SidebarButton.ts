@@ -60,6 +60,19 @@ const shoppingCartIcon = `
 `;
 
 export const createMultipleSidebarButtons = () => {
+  const buttonExample = createSidebarButton({
+    variant: 'primary',
+    label: `${shoppingCartIcon} Users`,
+    withParent: false,
+    active: true,
+  });
+
+  const buttonExample2 = createSidebarButton({
+    variant: 'primary',
+    label: `${shoppingCartIcon} Products`,
+    withParent: false,
+  });
+
   const toggle = createSidebarButton({
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
@@ -114,6 +127,9 @@ export const createMultipleSidebarButtons = () => {
   div.style.width = '350px';
   div.style.backgroundColor = '#222';
   div.style.padding = '16px';
+
+  div.appendChild(buttonExample);
+  div.appendChild(buttonExample2);
 
   div.appendChild(toggle);
 
