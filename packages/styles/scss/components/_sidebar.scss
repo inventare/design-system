@@ -47,7 +47,7 @@ $sidebar-button-child-margin-bottom: var(--spacing-xxsmall) !default;
 $sidebar-button-child-timeline-bg: var(--color-gray-400) !default;
 $sidebar-button-child-timeline-active-bg: var(--color-primary-500) !default;
 
-$sidebar-width: 350px;
+$sidebar-width: 300px;
 $sidebar-collapsed-width: 80px;
 $sidebar-bg: #222;
 $sidebar-padding-x: var(--spacing-base);
@@ -75,6 +75,22 @@ $sidebar-transition: width .35s ease !default;
   position: relative;
 
   border-right: 1px solid #ccc;
+
+  @include media-breakpoint-down('md', $grid-breakpoints) {
+    --#{$variable-prefix}sidebar-collapsed-width: 0;
+
+    --#{$variable-prefix}sidebar-width: 100%;
+    max-width: var(--#{$variable-prefix}sidebar-default-width);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    .sidebar-toggle {
+      display: none;
+    }
+  }
 
   .sidebar-toggle {
     position: absolute;
