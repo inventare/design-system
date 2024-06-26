@@ -1,0 +1,3 @@
+import{j as t}from"./jsx-runtime-b3bb7e5a.js";import{u as e}from"./index-4d25ef3a.js";import{M as i,C as s}from"./index-b97427f2.js";import{S as m,D as a}from"./Sidebar.stories-30705148.js";import"./index-c87bde1c.js";import"./_commonjsHelpers-725317a4.js";import"./iframe-89fa64a5.js";import"../sb-preview/runtime.js";import"./index-4ebcf599.js";import"./index-5ecf8671.js";import"./index-356e4a49.js";import"./SidebarButton-cf46dea7.js";function n(o){const r={h1:"h1",...e(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{of:m}),`
+`,t.jsx(r.h1,{id:"sidebar",children:"Sidebar"}),`
+`,t.jsx(s,{of:a})]})}function S(o={}){const{wrapper:r}={...e(),...o.components};return r?t.jsx(r,{...o,children:t.jsx(n,{...o})}):n(o)}export{S as default};
