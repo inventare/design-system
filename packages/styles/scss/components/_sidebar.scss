@@ -188,6 +188,9 @@ $sidebar-transition: width .35s ease !default;
 
   justify-content: flex-start;
 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   &:not(.child) {
     margin: var(--#{$variable-prefix}sidebar-button-spacing-y) 0;
   }
@@ -314,5 +317,14 @@ $sidebar-transition: width .35s ease !default;
         }
       }
     }
+  }
+
+  .sidebar-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
   }
 }
