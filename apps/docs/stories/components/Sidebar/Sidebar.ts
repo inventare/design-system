@@ -1,4 +1,5 @@
 import { createSidebarButton } from '../SidebarButton/SidebarButton';
+import { createSidebarLabel } from '../SidebarLabel/SidebarLabel';
 
 const shoppingCartIcon = `
   <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
@@ -90,6 +91,10 @@ export const createSidebar = () => {
   inner.appendChild(branding);
 
   inner.appendChild(buttonExample);
+
+  const label = createSidebarLabel({ label: 'E-commerce', withParent: false })
+  inner.appendChild(label)
+
   inner.appendChild(buttonExample2);
 
   inner.appendChild(toggle);
@@ -100,6 +105,9 @@ export const createSidebar = () => {
   childs.appendChild(child4);
   childsContainer.appendChild(childs);
   inner.appendChild(childsContainer);
+
+  const label2 = createSidebarLabel({ label: 'Shops', withParent: false })
+  inner.appendChild(label2)
 
   inner.appendChild(buttonExample3);
 

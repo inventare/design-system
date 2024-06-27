@@ -55,6 +55,14 @@ $sidebar-padding-y: var(--spacing-base);
 $sidebar-branding-height: 80px;
 $sidebar-transition: width .35s ease !default;
 
+$sidebar-label-padding-x: var(--spacing-base);
+$sidebar-label-padding-y: var(--spacing-xsmall);
+$sidebar-label-top-margin: var(--spacing-base);
+$sidebar-label-font-size: var(--font-size-small);
+$sidebar-label-font-weight: var(--font-weight-light);
+$sidebar-label-fg: #aaa;
+
+
 .sidebar {
   --#{$variable-prefix}sidebar-default-width: #{$sidebar-width};
   --#{$variable-prefix}sidebar-collapsed-width: #{$sidebar-collapsed-width};
@@ -159,6 +167,23 @@ $sidebar-transition: width .35s ease !default;
 
       .hide-on-collapse {
         display: none;
+      }
+
+      .sidebar-label {
+        position: relative;
+        color: transparent;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 1px;
+          background: var(--#{$variable-prefix}sidebar-label-fg);
+          opacity: 0.25;
+        }
       }
 
       .btn-sidebar {
@@ -326,5 +351,25 @@ $sidebar-transition: width .35s ease !default;
     min-height: 24px;
     max-width: 24px;
     max-height: 24px;
+    font-size: 14px;
   }
+}
+
+.sidebar-label {
+  --#{$variable-prefix}sidebar-label-padding-x: #{$sidebar-label-padding-x};
+  --#{$variable-prefix}sidebar-label-padding-y: #{$sidebar-label-padding-y};
+  --#{$variable-prefix}sidebar-label-fg: #{$sidebar-label-fg};
+  --#{$variable-prefix}sidebar-label-top-margin: #{$sidebar-label-top-margin};
+  --#{$variable-prefix}sidebar-label-font-size: #{$sidebar-label-font-size};
+  --#{$variable-prefix}sidebar-label-font-weight: #{$sidebar-label-font-weight};
+
+  color: var(--#{$variable-prefix}sidebar-label-fg);
+  padding: var(--#{$variable-prefix}sidebar-label-padding-y) var(--#{$variable-prefix}sidebar-label-padding-x);
+  margin-top: var(--#{$variable-prefix}sidebar-label-top-margin);
+  font-weight: var(--#{$variable-prefix}sidebar-label-font-weight);
+  font-size: var(--#{$variable-prefix}sidebar-label-font-size);
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
