@@ -18,9 +18,12 @@
     "rootDir": "./",
     "declaration": true,
     "declarationMap": true,
-    "incremental": true
+    "incremental": true,
+    "types": [
+      "vitest/globals"
+    ],
   },
   "include": [
-    "src/**/*.ts"
-  ]
+    "src/**/*.ts",
+  ],
 }
