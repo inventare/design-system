@@ -7,11 +7,13 @@ export default {
   },
   argTypes: {
     id: { control: 'text', },
+    center: { control: 'boolean', },
   },
 };
 
 export const Default = {
   args: {
     id: 'example-modal',
+    center: true,
   }
 };

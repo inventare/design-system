@@ -1,30 +1,32 @@
 $modal-zindex: 1050;
 $modal-dialog-margin: .5rem;
 
-$modal-content-color: #333;
-$modal-content-bg: #ccc;
-$modal-content-border-color: #333;
+$modal-content-color: var(--color-gray-600);
+$modal-content-bg: var(--color-white);
+$modal-content-border-color: var(--color-gray-100);
 $modal-content-border-width: 1px;
 $modal-content-border-radius: 10px;
-$modal-content-box-shadow: 0 .125rem .25rem rgba(#000, .075);
+$modal-content-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 $modal-content-inner-border-radius: calc($modal-content-border-radius - $modal-content-border-width);
 
 $modal-header-padding-x: 16px;
 $modal-header-padding-y: 16px;
 $modal-header-padding: $modal-header-padding-y $modal-header-padding-x;
 
+$modal-title-color: var(--color-gray-700);
 $modal-title-line-height: 1.5;
 
 $modal-body-padding: 16px;
 
 $modal-footer-border-width: 1px;
+$modal-footer-border-color: var(--color-gray-100);
 $modal-footer-padding: 16px;
 $modal-footer-gap: 5px;
-$modal-footer-bg: #666;
+$modal-footer-bg: var(--color-white);
 
-$modal-fade-transform: translate(0, -50px) !default;
+$modal-fade-transform: scale(0.8) translate(0, -100px) !default;
 $modal-show-transform: none !default;
-$modal-transition: transform .3s ease-out !default;
+$modal-transition: transform .3s ease;
 $modal-scale-transform: scale(1.02) !default;
 
 $modal-sm: 300px;
@@ -33,8 +35,9 @@ $modal-lg: 800px;
 $modal-xl: 1140px;
 
 $modal-backdrop-zindex: 1025;
-$modal-backdrop-bg: #222;
-$modal-backdrop-opacity: 0.7;
+$modal-backdrop-bg: rgba(255, 255, 255, 0.3);
+$modal-backdrop-opacity: 1;
+$modal-backdrop-blur: 3px;
 
 .modal {
   --#{$variable-prefix}modal-zindex: #{$modal-zindex};
@@ -53,10 +56,12 @@ $modal-backdrop-opacity: 0.7;
   --#{$variable-prefix}modal-header-padding: #{$modal-header-padding};
 
   --#{$variable-prefix}modal-title-line-height: #{$modal-title-line-height};
+  --#{$variable-prefix}modal-title-color: #{$modal-title-color};
 
   --#{$variable-prefix}modal-body-padding: #{$modal-body-padding};
 
   --#{$variable-prefix}modal-footer-border-width: #{$modal-footer-border-width};
+  --#{$variable-prefix}modal-footer-border-color: #{$modal-footer-border-color};
   --#{$variable-prefix}modal-footer-padding: #{$modal-footer-padding};
   --#{$variable-prefix}modal-footer-gap: #{$modal-footer-gap};
   --#{$variable-prefix}modal-footer-bg: #{$modal-footer-bg};
@@ -65,7 +70,7 @@ $modal-backdrop-opacity: 0.7;
   top: 0;
   left: 0;
   z-index: var(--#{$variable-prefix}modal-zindex);
-  /*display: none;*/
+  display: none;
   width: 100%;
   height: 100%;
 
@@ -124,6 +129,7 @@ $modal-backdrop-opacity: 0.7;
   --#{$variable-prefix}backdrop-zindex: #{$modal-backdrop-zindex};
   --#{$variable-prefix}backdrop-bg: #{$modal-backdrop-bg};
   --#{$variable-prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+  --#{$variable-prefix}modal-backdrop-blur: #{$modal-backdrop-blur};
 
   position: fixed;
   top: 0;
@@ -132,6 +138,7 @@ $modal-backdrop-opacity: 0.7;
   width: 100vw;
   height: 100vh;
   background-color: var(--#{$variable-prefix}backdrop-bg);
+  backdrop-filter: blur(var(--#{$variable-prefix}modal-backdrop-blur));
   transition: opacity .3s ease-out;
 
   // Fade for backdrop
@@ -162,6 +169,7 @@ $modal-backdrop-opacity: 0.7;
 .modal-title {
   margin-bottom: 0;
   line-height: var(--#{$variable-prefix}modal-title-line-height);
+  color: var(--#{$variable-prefix}modal-title-color);
 }
 
 .modal-body {
