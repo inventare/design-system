@@ -55,8 +55,29 @@ class Modal {
     }
     Modal.instances[modalElement.id] = this;
 
+    this.handleBackdropClick = this.handleBackdropClick.bind(this);
     this.element = modalElement;
+    this.element.addEventListener('click', this.handleBackdropClick);
     this.backdrop = new Backdrop();
+  }
+
+  private handleBackdropClick(event: Event) {
+    if (this.isTransitioning) {
+      return;
+    }
+    const isContent = !!(event.target as HTMLElement).closest('.modal-content')
+    if (isContent) {
+      return;
+    }
+
+    const complete = () => {
+      this.isTransitioning = false;
+      setTimeout(() => this.element.classList.remove('modal-static'), 400);
+    }
+
+    this.isTransitioning = true;
+    executeAfterTransition(complete, this.element);
+    this.element.classList.add('modal-static');
   }
 
   show() {

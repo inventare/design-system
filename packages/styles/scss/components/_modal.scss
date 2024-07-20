@@ -1,5 +1,5 @@
 $modal-zindex: 1050;
-$modal-dialog-margin: .5rem;
+$modal-dialog-margin: 0.5rem;
 
 $modal-content-color: var(--color-gray-600);
 $modal-content-bg: var(--color-white);
@@ -7,7 +7,9 @@ $modal-content-border-color: var(--color-gray-100);
 $modal-content-border-width: 1px;
 $modal-content-border-radius: 10px;
 $modal-content-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-$modal-content-inner-border-radius: calc($modal-content-border-radius - $modal-content-border-width);
+$modal-content-inner-border-radius: calc(
+  $modal-content-border-radius - $modal-content-border-width
+);
 
 $modal-header-padding-x: 16px;
 $modal-header-padding-y: 16px;
@@ -24,9 +26,9 @@ $modal-footer-padding: 16px;
 $modal-footer-gap: 5px;
 $modal-footer-bg: var(--color-white);
 
-$modal-fade-transform: scale(0.8) translate(0, -100px) !default;
-$modal-show-transform: none !default;
-$modal-transition: transform .3s ease;
+$modal-fade-transform: scale(0.6);
+$modal-show-transform: none;
+$modal-transition: transform 0.3s ease;
 $modal-scale-transform: scale(1.02) !default;
 
 $modal-sm: 300px;
@@ -69,10 +71,10 @@ $modal-backdrop-blur: 3px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--#{$variable-prefix}modal-zindex);
   display: none;
   width: 100%;
   height: 100%;
+  z-index: var(--#{$variable-prefix}modal-zindex);
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -116,7 +118,8 @@ $modal-backdrop-blur: 3px;
   color: var(--#{$variable-prefix}modal-content-color);
   background-color: var(--#{$variable-prefix}modal-content-bg);
   background-clip: padding-box;
-  border: var(--#{$variable-prefix}modal-content-border-width) solid var(--#{$variable-prefix}modal-content-border-color);
+  border: var(--#{$variable-prefix}modal-content-border-width) solid
+    var(--#{$variable-prefix}modal-content-border-color);
   border-radius: var(--#{$variable-prefix}modal-content-border-radius);
 
   box-shadow: var(--#{$variable-prefix}modal-content-box-shadow);
@@ -139,7 +142,7 @@ $modal-backdrop-blur: 3px;
   height: 100vh;
   background-color: var(--#{$variable-prefix}backdrop-bg);
   backdrop-filter: blur(var(--#{$variable-prefix}modal-backdrop-blur));
-  transition: opacity .3s ease-out;
+  transition: opacity 0.3s ease-out;
 
   // Fade for backdrop
   &.fade {
@@ -156,7 +159,8 @@ $modal-backdrop-blur: 3px;
   flex-shrink: 0;
   align-items: center;
   padding: var(--#{$variable-prefix}modal-header-padding);
-  border-bottom: var(--#{$variable-prefix}modal-header-border-width) solid var(--#{$variable-prefix}modal-header-border-color);
+  border-bottom: var(--#{$variable-prefix}modal-header-border-width) solid
+    var(--#{$variable-prefix}modal-header-border-color);
   border-top-left-radius: var(--#{$variable-prefix}modal-inner-border-radius);
   border-top-right-radius: var(--#{$variable-prefix}modal-inner-border-radius);
 
@@ -175,7 +179,7 @@ $modal-backdrop-blur: 3px;
     cursor: pointer;
     border-radius: 4px;
 
-    transition: border .3s ease;
+    transition: border 0.3s ease;
 
     &:hover {
       border-color: var(--color-gray-200);
@@ -207,13 +211,23 @@ $modal-backdrop-blur: 3px;
   display: flex;
   flex-shrink: 0;
   flex-wrap: wrap;
-  align-items: center; // vertically center
-  justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
-  padding: calc(var(--#{$variable-prefix}modal-footer-padding) - var(--#{$variable-prefix}modal-footer-gap) * .5);
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: calc(
+    var(--#{$variable-prefix}modal-footer-padding) -
+      var(--#{$variable-prefix}modal-footer-gap) * 0.5
+  );
   background-color: var(--#{$variable-prefix}modal-footer-bg);
-  border-top: var(--#{$variable-prefix}modal-footer-border-width) solid var(--#{$variable-prefix}modal-footer-border-color);
-  border-bottom-left-radius: var(--#{$variable-prefix}modal-inner-border-radius);
-  border-bottom-right-radius: var(--#{$variable-prefix}modal-inner-border-radius);
+  border-top: var(--#{$variable-prefix}modal-footer-border-width) solid
+    var(--#{$variable-prefix}modal-footer-border-color);
+  border-bottom-left-radius: var(
+    --#{$variable-prefix}modal-inner-border-radius
+  );
+  border-bottom-right-radius: var(
+    --#{$variable-prefix}modal-inner-border-radius
+  );
 }
 
 @include media-breakpoint-up(sm) {
@@ -229,7 +243,6 @@ $modal-backdrop-blur: 3px;
 }
 
 @include media-breakpoint-up(lg) {
-
   .modal-lg,
   .modal-xl {
     --#{$variable-prefix}modal-dialog-width: #{$modal-lg};
