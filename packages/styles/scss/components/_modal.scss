@@ -161,12 +161,36 @@ $modal-backdrop-blur: 3px;
   border-top-right-radius: var(--#{$variable-prefix}modal-inner-border-radius);
 
   .btn-close {
-    padding: calc(var(--#{$variable-prefix}modal-header-padding-y) * .5) calc(var(--#{$variable-prefix}modal-header-padding-x) * .5);
-    margin: calc(-.5 * var(--#{$variable-prefix}modal-header-padding-y)) calc(-.5 * var(--#{$variable-prefix}modal-header-padding-x)) calc(-.5 * var(--#{$variable-prefix}modal-header-padding-y)) auto;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: var(--color-gray-400);
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+
+    transition: border .3s ease;
+
+    &:hover {
+      border-color: var(--color-gray-200);
+    }
+
+    i[class^="icon-"]:before,
+    i[class*=" icon-"]:before {
+      font-size: 18px;
+    }
   }
 }
 
 .modal-title {
+  flex: 1;
+
   margin-bottom: 0;
   line-height: var(--#{$variable-prefix}modal-title-line-height);
   color: var(--#{$variable-prefix}modal-title-color);

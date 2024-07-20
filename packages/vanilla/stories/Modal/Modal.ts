@@ -15,7 +15,9 @@ export const createModal = ({
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title h5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+              <i class="icon-ui-close"></i>
+            </button>
           </div>
           <div class="modal-body">
             Hello

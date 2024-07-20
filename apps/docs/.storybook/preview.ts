@@ -5,6 +5,8 @@ import "@inventare/styles/scss/inventare.scss";
 
 import "@inventare/vanilla/src/index";
 
+import "@inventare/icons/dist/icons.css";
+
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {
