@@ -80,6 +80,14 @@ class Modal {
     this.element.classList.add('modal-static');
   }
 
+  private handleAutoFocus() {
+    const autoFocusElement = this.element.querySelector<HTMLElement>('[autofocus]');
+    if (!autoFocusElement) {
+      return;
+    }
+    autoFocusElement.focus();
+  }
+
   show() {
     if (this.isTransitioning) {
       return;
@@ -100,6 +108,7 @@ class Modal {
 
     this.element.classList.add('show');
     this.backdrop.show();
+    this.handleAutoFocus();
     this.isTransitioning = true;
   }
 

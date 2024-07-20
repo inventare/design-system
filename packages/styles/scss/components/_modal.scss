@@ -18,6 +18,10 @@ $modal-header-padding: $modal-header-padding-y $modal-header-padding-x;
 $modal-title-color: var(--color-gray-700);
 $modal-title-line-height: 1.5;
 
+$modal-subtitle-color: var(--color-gray-400);
+$modal-subtitle-line-height: 1.5;
+$modal-subtitle-font-size: var(--font-size-small);
+
 $modal-body-padding: 16px;
 
 $modal-footer-border-width: 1px;
@@ -31,7 +35,7 @@ $modal-show-transform: none;
 $modal-transition: transform 0.3s ease;
 $modal-scale-transform: scale(1.02) !default;
 
-$modal-sm: 300px;
+$modal-sm: 400px;
 $modal-md: 500px;
 $modal-lg: 800px;
 $modal-xl: 1140px;
@@ -59,6 +63,10 @@ $modal-backdrop-blur: 3px;
 
   --#{$variable-prefix}modal-title-line-height: #{$modal-title-line-height};
   --#{$variable-prefix}modal-title-color: #{$modal-title-color};
+
+  --#{$variable-prefix}modal-subtitle-line-height: #{$modal-subtitle-line-height};
+  --#{$variable-prefix}modal-subtitle-color: #{$modal-subtitle-color};
+  --#{$variable-prefix}modal-subtitle-font-size: #{$modal-subtitle-font-size};
 
   --#{$variable-prefix}modal-body-padding: #{$modal-body-padding};
 
@@ -158,6 +166,7 @@ $modal-backdrop-blur: 3px;
   display: flex;
   flex-shrink: 0;
   align-items: center;
+  flex-wrap: wrap;
   padding: var(--#{$variable-prefix}modal-header-padding);
   border-bottom: var(--#{$variable-prefix}modal-header-border-width) solid
     var(--#{$variable-prefix}modal-header-border-color);
@@ -200,11 +209,25 @@ $modal-backdrop-blur: 3px;
   color: var(--#{$variable-prefix}modal-title-color);
 }
 
+.modal-subtitle {
+  width: 100%;
+  margin-bottom: 0;
+  line-height: var(--#{$variable-prefix}modal-subtitle-line-height);
+  color: var(--#{$variable-prefix}modal-subtitle-color);
+  font-size: var(--#{$variable-prefix}modal-subtitle-font-size);
+}
+
 .modal-body {
   position: relative;
 
   flex: 1 1 auto;
   padding: var(--#{$variable-prefix}modal-body-padding);
+
+  .form-control {
+    --#{$variable-prefix}form-control-label-font-size: var(--font-size-small);
+    --#{$variable-prefix}form-control-padding-y: var(--spacing-xsmall);
+    --#{$variable-prefix}form-control-padding-x: var(--spacing-xsmall);
+  }
 }
 
 .modal-footer {
@@ -239,6 +262,13 @@ $modal-backdrop-blur: 3px;
 
   .modal-sm {
     --#{$variable-prefix}modal-dialog-width: #{$modal-sm};
+
+    .modal-footer {
+      --#{$variable-prefix}modal-footer-border-color: transparent;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
