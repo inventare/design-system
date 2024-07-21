@@ -56,3 +56,15 @@ export function executeAfterTransition(
     }
   }, emulatedDuration)
 }
+
+/**
+ * Trick to restart an element's animation
+ *
+ * @param {HTMLElement} element
+ * @return void
+ *
+ * @see https://www.harrytheo.com/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
+ */
+export function reflow(element: HTMLElement) {
+  element.offsetHeight;
+}
