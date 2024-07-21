@@ -2,14 +2,14 @@ import { ComponentManager, ClickTriggerComponentManager } from '../../base';
 import { CollapseElement } from './CollapseElement';
 import { Collapse } from './Collapse';
 
-const TRIGGER_SELECTOR = '[data-toggle="collapse"]';
+export const COLLAPSE_TRIGGER_SELECTOR = '[data-toggle="collapse"]';
 
 export class CollapseManager extends ComponentManager<CollapseElement, Collapse> {
   protected getElement(target?: HTMLElement | null): CollapseElement | null {
     if (!target) {
       return null;
     }
-    const toggleClosest = target.closest<HTMLElement>(TRIGGER_SELECTOR);
+    const toggleClosest = target.closest<HTMLElement>(COLLAPSE_TRIGGER_SELECTOR);
     if (!toggleClosest) {
       return null;
     }

@@ -1,3 +1,4 @@
+import { CollapseManager, SidebarManager, SidebarCollapseManager } from '@inventare/vanilla/src/components';
 import { createSidebarButton } from '../SidebarButton/SidebarButton';
 import { createSidebarLabel } from '../SidebarLabel/SidebarLabel';
 
@@ -134,6 +135,15 @@ export const createSidebar = () => {
   anotherDiv.innerHTML = '<h1>Main Content</h1>';
 
   baseContainer.appendChild(anotherDiv);
+
+  const collapseManager = new CollapseManager();
+  const sidebarManager = new SidebarManager();
+  const sidebarCollapseManager = new SidebarCollapseManager();
+  baseContainer.addEventListener('click', (ev) => {
+    sidebarCollapseManager.getInstance(ev.target as HTMLElement)?.executeByClick(ev);
+    collapseManager.getInstance(ev.target as HTMLElement)?.executeByClick(ev);
+    sidebarManager.getInstance(ev.target as HTMLElement)?.executeByClick(ev);
+  });
 
   return baseContainer;
 };

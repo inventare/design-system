@@ -1,7 +1,7 @@
 import { ComponentManager } from './ComponentManager'
 
 export interface ClickTriggerComponent {
-  executeByClick(): void;
+  executeByClick(ev: Event): void;
 }
 
 type TWithId = { id: string };
@@ -21,7 +21,7 @@ export class ClickTriggerComponentManager {
       if (!instance) {
         continue;
       }
-      instance.executeByClick();
+      instance.executeByClick(ev);
     }
   }
 }
