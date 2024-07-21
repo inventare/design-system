@@ -46,6 +46,43 @@ export class Collapse implements ClickTriggerComponent {
     };
   }
 
+  hide() {
+    const { toggle, content } = this.element;
+    if (content.classList.contains(CLASS_NAME_COLLAPSING)) {
+      return;
+    }
+
+    const isOpenAttr = toggle.getAttribute('aria-expanded');
+    let isOpen = true;
+    if (isOpenAttr) {
+      isOpen = Boolean(JSON.parse(isOpenAttr));
+    }
+
+    if (!isOpen) {
+      return;
+    }
+
+    const { value, property } = this.getContentSize(content, isOpen);
+
+    content.style[property] = value;
+    content.offsetHeight; // reset animation
+
+    content.classList.add(CLASS_NAME_COLLAPSING);
+    content.classList.remove(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW)
+    content.classList.toggle(CLASS_NAME_COLLAPSED, isOpen);
+    toggle.setAttribute('aria-expanded', JSON.stringify(!isOpen));
+
+    const complete = () => {
+      content.classList.remove(CLASS_NAME_COLLAPSING);
+      content.classList.add(CLASS_NAME_COLLAPSE);
+    };
+    executeAfterTransition(complete, content);
+
+    const { value: destValue } = this.getContentSize(content, !isOpen);
+
+    content.style[property] = destValue;    
+  }
+
   toggle() {
     const { toggle, content } = this.element;
 
@@ -83,7 +120,7 @@ export class Collapse implements ClickTriggerComponent {
     content.style[property] = destValue;
   }
 
-  executeByClick() {
+  executeByClick(ev: Event) {
     this.toggle();
   }
 }

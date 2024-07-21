@@ -130,7 +130,7 @@ export class Modal implements ClickTriggerComponent {
     return this.show();
   }
 
-  executeByClick() {
+  executeByClick(ev: Event) {
     this.toggle();
   }
 }
