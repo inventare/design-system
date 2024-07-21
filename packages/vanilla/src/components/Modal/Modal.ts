@@ -1,13 +1,17 @@
 import { executeAfterTransition, reflow } from '../../utils/transitions';
 import { Backdrop } from '../Backdrop';
+import { ComponentManager } from '../../base/ComponentManager';
+import { ClickTriggerComponent, ClickTriggerComponentManager } from '../../base/ClickTriggerComponent';
 
 export const TOGGLE_SELECTOR = '[data-toggle="modal"]';
 export const DISMISS_SELECTOR = '[data-dismiss="modal"]';
 
-class Modal {
-  private static instances: Record<string, Modal> = {};
+export class ModalManager extends ComponentManager<HTMLElement, Modal> {
+  protected createInstance(element: HTMLElement): Modal {
+    return new Modal(element);
+  }
 
-  private static getModalElement(target?: HTMLElement): HTMLElement | null {
+  protected getElement(target?: HTMLElement | null): HTMLElement | null {
     if (!target) {
       return null;
     }
@@ -28,33 +32,19 @@ class Modal {
     if (!modalQuery) {
       return null;
     }
-    return document.querySelector<HTMLElement>(modalQuery);
+    return document.querySelector<HTMLElement>(modalQuery); 
   }
+}
 
-  public static getInstance(target?: HTMLElement): Modal | null {
-    const modalElement = Modal.getModalElement(target);
-    if (!modalElement) {
-      return null;
-    }
-    if (Modal.instances[modalElement.id]) {
-      return Modal.instances[modalElement.id];
-    }
-    return new Modal(modalElement);
-  };
-
+export class Modal implements ClickTriggerComponent {
   private element!: HTMLElement;
   private backdrop!: Backdrop;
   private isTransitioning = false;
 
-  private constructor(modalElement: HTMLElement) {
+  public constructor(modalElement: HTMLElement) {
     if (!modalElement.id) {
       return;
     }
-    if (Modal.instances[modalElement.id]) {
-      throw new Error('already initialized.');
-    }
-    Modal.instances[modalElement.id] = this;
-
     this.handleBackdropClick = this.handleBackdropClick.bind(this);
     this.element = modalElement;
     this.element.addEventListener('click', this.handleBackdropClick);
@@ -139,21 +129,10 @@ class Modal {
     }
     return this.show();
   }
-}
 
-function clickOnModalTrigger(element: HTMLElement) {
-  const modal = Modal.getInstance(element);
-  if (!modal) {
-    return;
+  executeByClick() {
+    this.toggle();
   }
-  modal.toggle();
 }
 
-function handleDocumentBodyClick(ev: MouseEvent) {
-  clickOnModalTrigger(ev.target as HTMLElement);
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.removeEventListener('click', handleDocumentBodyClick);
-  document.body.addEventListener('click', handleDocumentBodyClick);
-});
+ClickTriggerComponentManager.register(new ModalManager());

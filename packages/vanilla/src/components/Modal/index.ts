@@ -1,1 +1,1 @@
-import './Modal';
+export * from './Modal';
