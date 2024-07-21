@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Build all libs
+        run: yarn build
+
       - name: Build Storybook
         run: yarn workspace @inventare/docs build-storybook-docs
 
