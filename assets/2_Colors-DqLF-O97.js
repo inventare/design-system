@@ -1,8 +1,9 @@
-import{j as r}from"./jsx-runtime-BU-bgENZ.js";import{useMDXComponents as e}from"./index-bc6GlP0j.js";import{M as t,f as s,g as a}from"./index-C4mSEa62.js";import"./index-E1T66Z7w.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-DviM-Pjb.js";import"../sb-preview/runtime.js";import"./index-C2eUe6cH.js";import"./index-DvzDrELh.js";import"./index-DrFu-skq.js";function l(c){const o={h1:"h1",h2:"h2",p:"p",...e(),...c.components};return r.jsxs(r.Fragment,{children:[r.jsx(t,{title:"Tokens/Colors"}),`
+import{j as r}from"./jsx-runtime-BU-bgENZ.js";import{useMDXComponents as e}from"./index-bc6GlP0j.js";import{M as t,f as s,g as a}from"./index-DE7CJ__0.js";import"./index-E1T66Z7w.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-DNzhXSMf.js";import"../sb-preview/runtime.js";import"./index-C2eUe6cH.js";import"./index-DvzDrELh.js";import"./index-DrFu-skq.js";function l(c){const o={h1:"h1",h2:"h2",p:"p",...e(),...c.components};return r.jsxs(r.Fragment,{children:[r.jsx(t,{title:"Tokens/Colors"}),`
 `,r.jsx(o.h1,{id:"colors",children:"Colors"}),`
 `,r.jsx(o.p,{children:"All color palettes and their CSS Variables."}),`
 `,r.jsx(o.h2,{id:"base-colors",children:"Base Colors"}),`
 `,r.jsx(s,{children:r.jsx(a,{title:"Gray",colors:["var(--color-gray-50)","var(--color-gray-100)","var(--color-gray-200)","var(--color-gray-300)","var(--color-gray-400)","var(--color-gray-500)","var(--color-gray-600)","var(--color-gray-700)","var(--color-gray-800)","var(--color-gray-900)","var(--color-gray-950)"]})}),`
+`,r.jsx(s,{children:r.jsx(a,{title:"White",colors:["var(--color-white)"]})}),`
 `,r.jsx(o.h2,{id:"brand-colors",children:"Brand Colors"}),`
 `,r.jsxs(s,{children:[r.jsx(a,{title:"Primary",colors:["var(--color-primary-50)","var(--color-primary-100)","var(--color-primary-200)","var(--color-primary-300)","var(--color-primary-400)","var(--color-primary-500)","var(--color-primary-600)","var(--color-primary-700)","var(--color-primary-800)","var(--color-primary-900)","var(--color-primary-950)"]}),r.jsx(a,{title:"Primary Utilities",colors:["--color-primary-opacity-25"]})]}),`
 `,r.jsx(o.h2,{id:"contextual-colors",children:"Contextual Colors"}),`
