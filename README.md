@@ -17,6 +17,10 @@ The Inventare Design System
     <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fstyles?label=%40inventare%2Fstyles">
   </a>
 
+  <a href="https://www.npmjs.com/package/@inventare/icons" target="_blank">
+    <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Ficons?label=%40inventare%2Ficons">
+  </a>
+
   <a href="https://www.npmjs.com/package/@inventare/vanilla" target="_blank">
     <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fvanilla?label=%40inventare%2Fvanilla">
   </a>
@@ -31,3 +35,7 @@ Formally, the Inventare Design System was inspired by some libs, like the Bootst
 > We are creating a custom django-admin template for some of our products at [inventare/django-admin-inventare](https://github.com/inventare/django-admin-inventare) and the base of the components in this design system are created to supply the necessity of the django-admin template.
 >
 > For the future, we are planning to refine this components and in most of the future, create new components required by another other products and services.
+
+### Assumptions
+
+- Out of box support for the [htmx](https://htmx.org/).
