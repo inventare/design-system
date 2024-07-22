@@ -1,0 +1,18 @@
+import { Canvas, Meta, Story, Source } from '@storybook/blocks';
+import * as CardStories from './Card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+The card component is used to display informations.
+
+<Canvas of={CardStories.Base} />
+
+## Align footer to right
+
+<Canvas of={CardStories.RightFooter} />
+
+## With Icon
+
+<Canvas of={CardStories.Iconed} />
