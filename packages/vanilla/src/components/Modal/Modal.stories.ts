@@ -1,4 +1,4 @@
-import { ModalManager } from './Modal';
+import { ModalManager } from './ModalManager';
 
 interface ModalProps {
   id: string;
@@ -46,9 +46,7 @@ export default {
     `;
 
     const modalManager = new ModalManager()
-    container.addEventListener('click', (ev) => {
-      modalManager.getInstance(ev.target as HTMLElement)?.executeByClick();
-    });
+    container.addEventListener('click', (ev) => modalManager.getInstance(ev.target as HTMLElement)?.executeByClick(ev));
 
     return container;
   },
