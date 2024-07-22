@@ -1,49 +1,17 @@
 import { executeAfterTransition, reflow } from '../../utils/transitions';
 import { Backdrop } from '../Backdrop';
-import { ComponentManager } from '../../base/ComponentManager';
-import { ClickTriggerComponent, ClickTriggerComponentManager } from '../../base/ClickTriggerComponent';
+import { ClickTriggerComponent } from '../../base/ClickTriggerComponent';
 
-export const TOGGLE_SELECTOR = '[data-toggle="modal"]';
-export const DISMISS_SELECTOR = '[data-dismiss="modal"]';
-
-export class ModalManager extends ComponentManager<HTMLElement, Modal> {
-  protected createInstance(element: HTMLElement): Modal {
-    return new Modal(element);
-  }
-
-  protected getElement(target?: HTMLElement | null): HTMLElement | null {
-    if (!target) {
-      return null;
-    }
-    let toggleClosest = target.closest<HTMLElement>(TOGGLE_SELECTOR);
-    let isDismiss = false;
-    if (!toggleClosest) {
-      toggleClosest = target.closest<HTMLElement>(DISMISS_SELECTOR);
-      isDismiss = true;
-    }
-    if (!toggleClosest) {
-      return null;
-    }
-    if (isDismiss) {
-      return toggleClosest.closest<HTMLElement>('.modal');
-    }
-
-    const modalQuery = toggleClosest.getAttribute('data-target');
-    if (!modalQuery) {
-      return null;
-    }
-    return document.querySelector<HTMLElement>(modalQuery); 
-  }
-}
+export const CLASS_NAME_MODAL_SHOW = 'show';
 
 export class Modal implements ClickTriggerComponent {
   private element!: HTMLElement;
   private backdrop!: Backdrop;
-  private isTransitioning = false;
+  public isTransitioning = false;
 
   public constructor(modalElement: HTMLElement) {
     if (!modalElement.id) {
-      return;
+      throw new Error('modal element has not id.');
     }
     this.handleBackdropClick = this.handleBackdropClick.bind(this);
     this.element = modalElement;
@@ -96,7 +64,7 @@ export class Modal implements ClickTriggerComponent {
     };
     executeAfterTransition(complete, this.element);
 
-    this.element.classList.add('show');
+    this.element.classList.add(CLASS_NAME_MODAL_SHOW);
     this.backdrop.show();
     this.handleAutoFocus();
     this.isTransitioning = true;
@@ -118,13 +86,15 @@ export class Modal implements ClickTriggerComponent {
 
     this.backdrop.hide();
     this.isTransitioning = true;
-    this.element.classList.remove('show');
+    this.element.classList.remove(CLASS_NAME_MODAL_SHOW);
+  }
+
+  get isVisible() {
+    return window.getComputedStyle(this.element).display === 'block';
   }
 
   toggle() {
-    const isVisible = window.getComputedStyle(this.element).display === 'block';
-
-    if (isVisible) {
+    if (this.isVisible) {
       return this.hide();
     }
     return this.show();
@@ -134,5 +104,3 @@ export class Modal implements ClickTriggerComponent {
     this.toggle();
   }
 }
-
-ClickTriggerComponentManager.register(new ModalManager());
