@@ -98,7 +98,7 @@ $form-control-valid-placeholder: var(--color-gray-400) !default;
     color: var(--#{$variable-prefix}form-control-label-fg);
   }
 
-  input {
+  input:not(.default) {
     padding: var(--#{$variable-prefix}form-control-padding-y) var(--#{$variable-prefix}form-control-padding-x);
 
     font-family: var(--#{$variable-prefix}form-control-font);
