@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/html';
 import { fn } from '@storybook/test';
 import { withActions } from '@storybook/addon-actions/decorator';
-import { Select } from './Select';
+import { SelectManager } from './SelectManager';
 
 const meta: Meta = {
   title: 'Vanilla JavaScript/Select',
@@ -10,7 +10,7 @@ const meta: Meta = {
     container.className = 'form-control';
 
     container.innerHTML = `
-      <div class="select-container">
+      <div class="select-container" id="my-select">
         <input class="default-control" type="hidden" value="7" />
 
         <div
@@ -61,7 +61,8 @@ const meta: Meta = {
       </div>
     `;
 
-    const select = new Select(container.querySelector('.select-container') as HTMLElement);
+    new SelectManager().initializeInstanceList(container);
+    //const select = new Select(container.querySelector('.select-container') as HTMLElement);
 
     return container;
   },

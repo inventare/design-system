@@ -1,3 +1,4 @@
+import { SelectElement } from './SelectElement';
 import { SelectItem } from './SelectItem';
 
 export class Select {
@@ -25,7 +26,9 @@ export class Select {
     return this.items.find((item) => item.element === element) || null;
   }
 
-  constructor(element: HTMLElement) {
+  constructor(selectElement: SelectElement) {
+    const { element, selectCombobox, selectDropDown, selectDropDownInner } = selectElement;
+
     this.element = element;
 
     this.comboBoxKeyUp = this.comboBoxKeyUp.bind(this);
@@ -35,23 +38,11 @@ export class Select {
     this.dropDownClick = this.dropDownClick.bind(this);
     this.dropDownScroll = this.dropDownScroll.bind(this);
 
-    const selectCombobox = this.element.querySelector<HTMLElement>('.select')
-    if (!selectCombobox) {
-      throw new Error('invalid');
-    }
     this.selectCombobox = selectCombobox;
     this.selectCombobox.addEventListener('keyup', this.comboBoxKeyUp);
     this.selectCombobox.addEventListener('click', this.comboBoxClick);
 
-    const selectDropDown = this.element.querySelector<HTMLElement>('.select-dropdown');
-    if (!selectDropDown) {
-      throw new Error('invalid');
-    }
     this.selectDropDown = selectDropDown;
-    const selectDropDownInner = this.selectDropDown.querySelector<HTMLElement>('.select-dropdown-inner');
-    if (!selectDropDownInner) {
-      throw new Error('invalid');
-    }
     this.selectDropDownInner = selectDropDownInner;
 
     this.selectDropDown.addEventListener('keyup', this.dropDownKeyUp);
