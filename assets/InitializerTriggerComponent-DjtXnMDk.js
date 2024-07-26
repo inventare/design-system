@@ -1,0 +1,1 @@
+const s=class s{static register(e){const t=s.registered,c=Array.from(new Set([...t,e]));s.registered=c}static onLoad(e){for(const t of s.registered)t.initializeInstanceList(e)}};s.registered=[];let r=s;export{r as I};
