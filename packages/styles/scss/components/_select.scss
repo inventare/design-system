@@ -55,6 +55,10 @@
     
     .select-value {
       flex: 1;
+
+      border: 0;
+      outline: 0;
+      box-shadow: 0;
     }
 
     .dropdown-button {
@@ -91,8 +95,8 @@
 
   > .select-dropdown {
     position: absolute;
-    left: 0;
-    top: 100%;
+    left: 0px;
+    top: calc(100% + 8px);
     right: 0;
     height: 200px;
     
@@ -101,6 +105,7 @@
     transition: max-height 0.15s ease;
 
     background: #fff;
+    border-radius: var(--border-radius);
 
     .select-dropdown-inner {
       width: 100%;
@@ -113,6 +118,35 @@
       align-items: stretch;
     
       overflow-y: auto;
+
+      .select-item {
+        border: none;
+        background: #fff;
+        
+        text-align: left;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        cursor: pointer;
+        padding: 6px 4px;
+
+        &:hover {
+          background: aliceblue;
+        }
+
+        &:focus {
+          background: blue;
+          outline: none;
+        }
+
+        &.active {
+          background: red;
+          outline: none;
+        }
+      }
     }
   }
 
@@ -140,6 +174,10 @@
 
     > .select-dropdown {
       max-height: 200px;
+
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--#{$variable-prefix}form-control-border);
+    
     }
   }
 }

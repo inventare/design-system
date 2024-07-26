@@ -1,38 +1,46 @@
 import { SelectItem } from './SelectItem';
 
 export class Select {
-  items: Array<SelectItem>;
   activeItem: SelectItem | null = null;
   
   element: HTMLElement;
   selectCombobox: HTMLElement;
   selectDropDown: HTMLElement;
+  selectDropDownInner: HTMLElement;
 
   get isExpanded() {
     return this.element.classList.contains('expanded');
   }
 
-  private getItems() {
+  get items() {
     const buttons = [...this.element.querySelectorAll<HTMLElement>('button.select-item')];
     const items: Array<SelectItem> = [];
     for (const button of buttons) {
-      items.push(new SelectItem(button, items.length > 0 ? items[items.length - 1] : null));
+      items.push(new SelectItem(this, button, items.length > 0 ? items[items.length - 1] : null));
     }
     return items;
+  }
+
+  getItemByElement(element: HTMLElement) {
+    return this.items.find((item) => item.element === element) || null;
   }
 
   constructor(element: HTMLElement) {
     this.element = element;
 
+    this.comboBoxKeyUp = this.comboBoxKeyUp.bind(this);
     this.comboBoxClick = this.comboBoxClick.bind(this);
     this.documentClick = this.documentClick.bind(this);
     this.dropDownKeyUp = this.dropDownKeyUp.bind(this);
+    this.dropDownClick = this.dropDownClick.bind(this);
+    this.dropDownScroll = this.dropDownScroll.bind(this);
 
     const selectCombobox = this.element.querySelector<HTMLElement>('.select')
     if (!selectCombobox) {
       throw new Error('invalid');
     }
     this.selectCombobox = selectCombobox;
+    this.selectCombobox.addEventListener('keyup', this.comboBoxKeyUp);
     this.selectCombobox.addEventListener('click', this.comboBoxClick);
 
     const selectDropDown = this.element.querySelector<HTMLElement>('.select-dropdown');
@@ -40,9 +48,17 @@ export class Select {
       throw new Error('invalid');
     }
     this.selectDropDown = selectDropDown;
-    this.selectDropDown.addEventListener('keyup', this.dropDownKeyUp);
+    const selectDropDownInner = this.selectDropDown.querySelector<HTMLElement>('.select-dropdown-inner');
+    if (!selectDropDownInner) {
+      throw new Error('invalid');
+    }
+    this.selectDropDownInner = selectDropDownInner;
 
-    this.items = this.getItems();
+    this.selectDropDown.addEventListener('keyup', this.dropDownKeyUp);
+    this.selectDropDown.addEventListener('click', this.dropDownClick)
+    this.selectDropDownInner.addEventListener('scroll', this.dropDownScroll);
+
+    this.activeItem = this.items.find((item) => item.isActive) || null;
   };
 
   comboBoxClick() {
@@ -51,10 +67,29 @@ export class Select {
     }
     this.show();
   }
+  
+  comboBoxKeyUp(e: KeyboardEvent) {
+    if (e.key === 'ArrowDown') {
+      if (!this.isExpanded) {
+        this.show();
+      }
+
+      this.onArrowDown();
+    }
+    if (e.key === 'ArrowUp') {
+      if (!this.isExpanded) {
+        this.show();
+      }
+
+      this.onArrowUp();
+    }
+  }
 
   onArrowDown() {
-    if (!this.activeItem && this.items.length) {
-      this.activeItem = this.items[0];
+    const items = this.items;
+
+    if (!this.activeItem && items.length) {
+      this.activeItem = items[0];
       return this.activeItem.focus();
     }
     if (this.activeItem && this.activeItem.next) {
@@ -78,6 +113,24 @@ export class Select {
     }
   }
 
+  loadMoreDebounce: NodeJS.Timeout | null = null;
+
+  dropDownScroll(e: Event) {
+    const fullHeight = this.selectDropDownInner.scrollHeight;
+    const height = this.selectDropDownInner.clientHeight;
+    const position = this.selectDropDownInner.scrollTop;
+    
+    if (this.loadMoreDebounce) {
+      clearTimeout(this.loadMoreDebounce)
+    }
+    if (height + position + 10 >= fullHeight) {
+      this.loadMoreDebounce = setTimeout(() => {
+        const evt = new CustomEvent('load-more', { bubbles: true, cancelable: true, composed: true });
+        this.element.dispatchEvent(evt);
+      }, 300);
+    }
+  }
+
   dropDownKeyUp(e: KeyboardEvent) {
     if (e.key === 'ArrowDown') {
       this.onArrowDown();
@@ -85,6 +138,21 @@ export class Select {
     if (e.key === 'ArrowUp') {
       this.onArrowUp();
     }
+  }
+
+  dropDownClick(e: MouseEvent) {
+    const target = e.target as HTMLElement;
+    const selectItemButton = target.closest<HTMLElement>('.select-item');
+    if (!selectItemButton) {
+      return this.hide();
+    }
+
+    const selectItem = this.getItemByElement(selectItemButton);
+    if (selectItem) {
+      this.applyValue(selectItem);
+    }
+
+    this.hide();
   }
 
   documentClick(evt: Event) {
@@ -97,14 +165,40 @@ export class Select {
 
   show() {
     this.element.classList.add('expanded');
-    document.body.addEventListener('click', this.documentClick);
+    document.addEventListener('click', this.documentClick);
 
     this.selectDropDown.querySelector<HTMLInputElement>('input[type=text]')?.focus();
     this.selectDropDown.querySelector('.select-dropdown-inner')?.scrollTo({ top: 0 });
+
+    this.activeItem = this.items.find((item) => item.isActive) || null;
+    this.activeItem?.element.scrollIntoView({ behavior: 'instant' });
   }
 
   hide() {
     this.element.classList.remove('expanded');
-    document.body.removeEventListener('click', this.documentClick);
+    document.removeEventListener('click', this.documentClick);
+  }
+
+  applyValue(item: SelectItem) {
+    if (!item.value) {
+      return;
+    }
+
+    this.activeItem = item;
+    this.items.forEach((item) => item.element.classList.remove('active'));
+    item.element.classList.add('active');
+
+    const inputControl = this.element.querySelector<HTMLInputElement>('input.default-control');
+    if (!inputControl) {
+      return;
+    }
+
+    inputControl.value = item.value;
+
+    const displayValue = this.element.querySelector<HTMLElement>('.select-value');
+    if (!displayValue) {
+      return;
+    }
+    displayValue.innerHTML = item.element.innerHTML;
   }
 }

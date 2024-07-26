@@ -1,13 +1,25 @@
+import { Select } from './Select';
+
 export class SelectItem {
+  select: Select;
   element: HTMLElement;
   previous: SelectItem | null;
   next: SelectItem | null;
+
+  get isFocused() {
+    return this.element === document.activeElement;
+  }
 
   get isActive() {
     return this.element.classList.contains('active');
   }
 
-  constructor(element: HTMLElement, previous: SelectItem | null) {
+  get value() {
+    return this.element.getAttribute('data-value');
+  }
+
+  constructor(select: Select, element: HTMLElement, previous: SelectItem | null) {
+    this.select = select;
     this.element = element;
     this.previous = previous;
     if (this.previous) {
@@ -18,21 +30,20 @@ export class SelectItem {
   }
 
   blur() {
-    if (!this.isActive) {
+    if (!this.isFocused) {
       return;
     }
 
     this.element.blur();
-    this.element.classList.remove('active');
   }
 
   focus() {
-    if (this.isActive) {
+    if (this.isFocused) {
       return;
     }
 
     this.element.focus();
-    this.element.classList.add('active');
+    this.element.scrollIntoView({ behavior: 'instant' });
   }
 
   focusNext() {
