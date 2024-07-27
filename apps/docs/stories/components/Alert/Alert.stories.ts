@@ -22,3 +22,24 @@ export const Danger = {
     variant: 'danger',
   },
 };
+
+export const Success = {
+  args: {
+    text: 'This is a text indicating success!',
+    variant: 'success',
+  },
+};
+
+export const Error = {
+  args: {
+    text: 'This is a text indicating error!',
+    variant: 'error',
+  },
+};
+
+export const Warning = {
+  args: {
+    text: 'This is a text indicating warning!',
+    variant: 'warning',
+  },
+};
