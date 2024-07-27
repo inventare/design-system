@@ -11,10 +11,27 @@ $alert-danger-bg: var(--color-danger-100) !default;
 $alert-danger-fg: var(--color-danger-500) !default;
 $alert-danger-border: var(--color-danger-500) !default;
 
+$alert-error-bg: var(--color-danger-100) !default;
+$alert-error-fg: var(--color-danger-500) !default;
+$alert-error-border: var(--color-danger-500) !default;
+
+$alert-success-bg: var(--color-success-100) !default;
+$alert-success-fg: var(--color-success-500) !default;
+$alert-success-border: var(--color-success-500) !default;
+
 $alert-colors: (
   danger: (border: $alert-danger-border,
     bg: $alert-danger-bg,
     fg: $alert-danger-fg,
+  ),
+  error: (border: $alert-error-border,
+    bg: $alert-error-bg,
+    fg: $alert-error-fg,
+  ),
+  success: (
+    border: $alert-success-border,
+    bg: $alert-success-bg,
+    fg: $alert-success-fg,
   ),
 );
 
