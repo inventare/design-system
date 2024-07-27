@@ -15,7 +15,7 @@ export class SelectItem {
   }
 
   get value() {
-    return this.element.getAttribute('data-value');
+    return this.element.getAttribute('data-value') || '';
   }
 
   constructor(select: Select, element: HTMLElement, previous: SelectItem | null) {

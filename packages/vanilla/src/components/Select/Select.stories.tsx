@@ -41,6 +41,7 @@ const meta: Meta = {
 
         <div class="select-dropdown">
           <div class="select-dropdown-inner">
+            <button data-value="" class="select-item" type="button">No Value</button>
             <button data-value="1" class="select-item" type="button">Item 1</button>
             <button data-value="2" class="select-item" type="button">Item 2</button>
             <button data-value="3" class="select-item" type="button">Item 3</button>
