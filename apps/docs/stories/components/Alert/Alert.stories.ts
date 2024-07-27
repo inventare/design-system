@@ -36,3 +36,10 @@ export const Error = {
     variant: 'error',
   },
 };
+
+export const Warning = {
+  args: {
+    text: 'This is a text indicating warning!',
+    variant: 'warning',
+  },
+};

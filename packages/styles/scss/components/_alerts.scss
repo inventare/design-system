@@ -16,8 +16,12 @@ $alert-error-fg: var(--color-danger-500) !default;
 $alert-error-border: var(--color-danger-500) !default;
 
 $alert-success-bg: var(--color-success-100) !default;
-$alert-success-fg: var(--color-success-500) !default;
-$alert-success-border: var(--color-success-500) !default;
+$alert-success-fg: var(--color-success-700) !default;
+$alert-success-border: var(--color-success-700) !default;
+
+$alert-warning-bg: var(--color-warning-100) !default;
+$alert-warning-fg: var(--color-warning-700) !default;
+$alert-warning-border: var(--color-warning-700) !default;
 
 $alert-colors: (
   danger: (border: $alert-danger-border,
@@ -32,6 +36,11 @@ $alert-colors: (
     border: $alert-success-border,
     bg: $alert-success-bg,
     fg: $alert-success-fg,
+  ),
+  warning: (
+    border: $alert-warning-border,
+    bg: $alert-warning-bg,
+    fg: $alert-warning-fg,
   ),
 );
 
