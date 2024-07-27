@@ -117,7 +117,7 @@ export class Select {
     if (height + position + 10 >= fullHeight) {
       this.loadMoreDebounce = setTimeout(() => {
         const evt = new CustomEvent('load-more', { bubbles: true, cancelable: true, composed: true });
-        this.element.dispatchEvent(evt);
+        this.selectDropDown.dispatchEvent(evt);
       }, 300);
     }
   }
@@ -163,6 +163,9 @@ export class Select {
 
     this.activeItem = this.items.find((item) => item.isActive) || null;
     this.activeItem?.element.scrollIntoView({ behavior: 'instant' });
+
+    const evt = new CustomEvent('opened', { bubbles: true, cancelable: true, composed: true });
+    this.selectDropDown.dispatchEvent(evt);
   }
 
   hide() {
@@ -187,6 +190,10 @@ export class Select {
 
     const displayValue = this.element.querySelector<HTMLElement>('.select-value');
     if (!displayValue) {
+      return;
+    }
+    if (item.element.getAttribute('data-display')) {
+      displayValue.innerHTML = item.element.getAttribute('data-display') || '';
       return;
     }
     displayValue.innerHTML = item.element.innerHTML;
