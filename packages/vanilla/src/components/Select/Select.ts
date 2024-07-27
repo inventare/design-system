@@ -171,10 +171,6 @@ export class Select {
   }
 
   applyValue(item: SelectItem) {
-    if (!item.value) {
-      return;
-    }
-
     this.activeItem = item;
     this.items.forEach((item) => item.element.classList.remove('active'));
     item.element.classList.add('active');
@@ -185,6 +181,9 @@ export class Select {
     }
 
     inputControl.value = item.value;
+    
+    const evt = new CustomEvent('selected', { bubbles: true, cancelable: true, composed: true });
+    this.element.dispatchEvent(evt);
 
     const displayValue = this.element.querySelector<HTMLElement>('.select-value');
     if (!displayValue) {
