@@ -9,33 +9,34 @@ The Inventare Design System
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@inventare/tokens" target="_blank">
-    <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Ftokens?label=%40inventare%2Ftokens">
-  </a>
-
-  <a href="https://www.npmjs.com/package/@inventare/styles" target="_blank">
-    <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fstyles?label=%40inventare%2Fstyles">
-  </a>
-
-  <a href="https://www.npmjs.com/package/@inventare/icons" target="_blank">
-    <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Ficons?label=%40inventare%2Ficons">
-  </a>
-
-  <a href="https://www.npmjs.com/package/@inventare/vanilla" target="_blank">
-    <img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fvanilla?label=%40inventare%2Fvanilla">
-  </a>
+  <a href="https://www.npmjs.com/package/@inventare/tokens" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Ftokens?label=%40inventare%2Ftokens"/></a>
+  <a href="https://www.npmjs.com/package/@inventare/styles" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fstyles?label=%40inventare%2Fstyles"/></a>
+  <a href="https://www.npmjs.com/package/@inventare/icons" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Ficons?label=%40inventare%2Ficons"/></a>
+  <a href="https://www.npmjs.com/package/@inventare/vanilla" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fvanilla?label=%40inventare%2Fvanilla"/></a>
 </p>
 
 ## Introduction
 
 Formally, the Inventare Design System was inspired by some libs, like the Bootstrap, Chakra-UI, Material-UI and others. We decided to create it to maintain the consistency about our user interfaces belong all of our products and services.
 
-> About our roadmap:
-> 
-> We are creating a custom django-admin template for some of our products at [inventare/django-admin-inventare](https://github.com/inventare/django-admin-inventare) and the base of the components in this design system are created to supply the necessity of the django-admin template.
->
-> For the future, we are planning to refine this components and in most of the future, create new components required by another other products and services.
-
 ### Assumptions
 
-- Out of box support for the [htmx](https://htmx.org/).
+We have some assumptions for creating this design-system:
+
+1. Out of box support for the [htmx](https://htmx.org/).
+
+### Roadmap
+
+The creation of the design-system package's is motivated by the creation of a custom `django-admin` template for some products at the [inventare/django-admin-inventare](https://github.com/inventare/django-admin-inventare) repository. The first steps of the creation of this design system is fully to support the customization of this `django-admin` template.
+
+> For the future, we are planning to refine this components and in most of the future, create new components required by another other products and services.
+
+#### Create components for customize django-admin template
+
+The currently motivation for the creation of this packages are support the `django-admin` template.
+
+| Description                                                      | Motivation             | Reached At |
+| ---------------------------------------------------------------- | ---------------------- | ---------- |
+| Create select components prepared for autocomplete with HTMX.    | django-admin-inventare | -          |
+| Made the Sidebar responsive for mobile.                          | django-admin-inventare | -          |
+
