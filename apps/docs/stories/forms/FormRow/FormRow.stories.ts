@@ -2,7 +2,7 @@ import { FormRowProps, createFormRow } from './FormRow';
 import * as FormControlStories from '../FormControl/FormControl.stories';
 
 export default {
-  title: 'Forms/FormRow',
+  title: 'Components/Forms/FormRow',
   render: ({ ...args }: FormRowProps) => {
     return createFormRow({ ...args });
   },

@@ -1,7 +1,7 @@
 import { createSidebarLabel, SidebarLabelProps } from './SidebarLabel';
 
 export default {
-  title: 'Components/SidebarLabel',
+  title: 'Components/Navigation/SidebarLabel',
   render: ({ ...args }: SidebarLabelProps) => {
     return createSidebarLabel({ ...args });
   },

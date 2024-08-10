@@ -1,7 +1,7 @@
 import { createCard, CardProps } from './Card';
 
 export default {
-  title: 'Components/Card',
+  title: 'Components/Data Display/Card',
   render: ({ ...args }: CardProps) => {
     return createCard({ ...args });
   },

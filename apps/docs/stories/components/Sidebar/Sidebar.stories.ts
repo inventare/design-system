@@ -1,7 +1,7 @@
 import { createSidebar } from './Sidebar';
 
 export default {
-  title: 'Components/Sidebar',
+  title: 'Components/Navigation/Sidebar',
   render: () => {
     return createSidebar();
   },

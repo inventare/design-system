@@ -8,7 +8,7 @@ interface ModalProps {
 }
 
 export default {
-  title: 'Vanilla JavaScript/Modal',
+  title: 'Components/Overlay/Modal',
   render: ({
     id = 'my-admin',
     center = false,
