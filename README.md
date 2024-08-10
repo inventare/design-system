@@ -3,9 +3,7 @@
 The Inventare Design System
 
 <p align="center">
-  <a href="https://github.com/inventare/design-system/blob/main/LICENSE" target="_blank">
-    <img alt="GitHub License" src="https://img.shields.io/github/license/inventare/design-system">
-  </a>
+  <a href="https://github.com/inventare/design-system/blob/main/LICENSE" target="_blank"><img alt="GitHub License" src="https://img.shields.io/github/license/inventare/design-system"/></a>
 </p>
 
 <p align="center">
@@ -38,5 +36,8 @@ The currently motivation for the creation of this packages are support the `djan
 | Description                                                      | Motivation             | Reached At |
 | ---------------------------------------------------------------- | ---------------------- | ---------- |
 | Create select components prepared for autocomplete with HTMX.    | django-admin-inventare | -          |
-| Made the Sidebar responsive for mobile.                          | django-admin-inventare | -          |
-
+| Make the Sidebar responsive for mobile.                          | django-admin-inventare | -          |
+| Create skeleton to support HTMX loading-indicator.               | django-admin-inventare | -          |
+| Complete supporting all the django "native" form widget's.       | django-admin-inventare | -          |
+| Create application menu bar.                                     | django-admin-inventare | -          |
+| Create title section's                                           | django-admin-inventare | -          |
