@@ -4,7 +4,7 @@ import { withActions } from '@storybook/addon-actions/decorator';
 import { SelectManager } from './SelectManager';
 
 const meta: Meta = {
-  title: 'Vanilla JavaScript/Select',
+  title: 'Components/Forms/Select',
   render: ({}) => {
     const container = document.createElement('div');
     container.className = 'form-control';

@@ -1,7 +1,7 @@
 import { FormControlProps, createFormControl } from './FormControl';
 
 export default {
-  title: 'Forms/FormControl',
+  title: 'Components/Forms/FormControl',
   render: ({ ...args }: FormControlProps) => {
     return createFormControl({ ...args });
   },

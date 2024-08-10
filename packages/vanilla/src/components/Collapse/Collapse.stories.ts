@@ -8,7 +8,7 @@ interface CollapseProps {
 }
 
 export default {
-  title: 'Vanilla JavaScript/Collapse',
+  title: 'Components/Utils/Collapse',
   render: ({
     id,
     triggerContent,

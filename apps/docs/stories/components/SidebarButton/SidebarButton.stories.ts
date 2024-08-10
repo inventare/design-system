@@ -1,7 +1,7 @@
 import { SidebarButtonProps, createMultipleSidebarButtons, createSidebarButton } from './SidebarButton';
 
 export default {
-  title: 'Components/SidebarButton',
+  title: 'Components/Navigation/SidebarButton',
   render: ({ ...args }: SidebarButtonProps) => {
     if ((args as any).complete) {
       return createMultipleSidebarButtons();

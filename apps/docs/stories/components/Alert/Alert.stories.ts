@@ -1,7 +1,7 @@
 import { createAlert, AlertProps } from './Alert';
 
 export default {
-  title: 'Components/Alert',
+  title: 'Components/Data Display/Alert',
   render: ({ ...args }: AlertProps) => {
     return createAlert({ ...args });
   },

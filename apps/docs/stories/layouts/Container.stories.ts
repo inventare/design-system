@@ -1,7 +1,7 @@
 import { ContainerProps, createContainer } from './Container';
 
 export default {
-  title: 'Layout/Container',
+  title: 'Components/Layout/Container',
   render: ({ ...args }: ContainerProps) => {
     return createContainer({ ...args });
   },
