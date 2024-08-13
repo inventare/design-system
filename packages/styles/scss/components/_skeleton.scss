@@ -1,0 +1,47 @@
+$skeleton-color: var(--color-gray-200);
+$skeleton-border-radius: 0;
+$skeleton-border-radius-rounded: var(--border-radius);
+$skeleton-border-radius-medium: var(--border-radius-medium);
+$skeleton-border-radius-large: var(--border-radius-large);
+$skeleton-border-radius-xlarge: var(--border-radius-xlarge);
+$skeleton-border-radius-pill: var(--border-radius-pill);
+$skeleton-border-radius-circle: var(--border-radius-circle);
+
+.skeleton {
+  --#{$variable-prefix}skeleton-color: #{$skeleton-color};
+  --#{$variable-prefix}border-radius: #{$skeleton-border-radius};
+
+  @keyframes skeleton-pulse {
+    50% {
+      opacity: .5;
+    }
+  }
+
+  border-radius: var(--#{$variable-prefix}border-radius);
+  background-color: var(--#{$variable-prefix}skeleton-color);
+  animation: skeleton-pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+
+  &.rounded {
+    --#{$variable-prefix}border-radius: #{$skeleton-border-radius-rounded};
+  }
+
+  &.rounded-medium {
+    --#{$variable-prefix}border-radius: #{$skeleton-border-radius-medium};
+  }
+
+  &.rounded-large {
+    --#{$variable-prefix}border-radius: #{$skeleton-border-radius-large};
+  }
+
+  &.rounded-xlarge {
+    --#{$variable-prefix}border-radius: #{$skeleton-border-radius-xlarge};
+  }
+
+  &.rounded-pill {
+    --#{$variable-prefix}border-radius: #{$skeleton-border-radius-pill};
+  }
+
+  &.rounded-circle {
+    --#{$variable-prefix}border-radius: #{$skeleton-border-radius-circle};
+  }
+}
