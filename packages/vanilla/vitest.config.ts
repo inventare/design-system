@@ -10,6 +10,7 @@ export default defineConfig({
       exclude: [
         "**/*.stories.ts",
       ]
-    }
+    },
+    setupFiles: ['.vitest/setup.ts'],
   },
 });

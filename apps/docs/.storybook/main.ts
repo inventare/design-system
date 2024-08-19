@@ -15,14 +15,16 @@ const config = {
     ignored: /node_modules/,
   },
   stories: [
+    // Architecture Decision Records
+    "../architecture-decision-records/*.mdx",
     // TOKENS
     "../../../packages/tokens/stories/**/*.mdx",
+    // SCSS Styles
+    "../../../packages/styles/**/*.mdx",
+    "../../../packages/styles/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     // VANILLA JAVASCRIPT COMPONENTS
     "../../../packages/vanilla/**/*.mdx",
     "../../../packages/vanilla/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    // OUR STORIES
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),

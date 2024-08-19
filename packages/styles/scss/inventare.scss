@@ -12,14 +12,13 @@ $variable-prefix: inventare-;
 
 @import "./transitions/collapse";
 
-@import "./layouts/containers";
-
-@import "./components/alerts";
-@import "./components/button";
-@import "./components/form_control";
-@import "./components/select";
-@import "./components/form_row";
-@import "./components/sidebar";
-@import "./components/modal";
-@import "./components/card";
-@import "./components/skeleton";
+@import "./components/Container/container";
+@import "./components/Alert/alert";
+@import "./components/Button/button";
+@import "./components/FormRow/form_row";
+@import "./components/FormControl/form_control";
+@import "./components/Select/select";
+@import "./components/Sidebar/sidebar";
+@import "./components/Modal/modal";
+@import "./components/Card/card";
+@import "./components/Skeleton/skeleton";
