@@ -1,0 +1,184 @@
+.select-container {
+  position: relative;
+
+  > .select {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+
+    padding: var(--#{$variable-prefix}form-control-padding-y) var(--#{$variable-prefix}form-control-padding-x);
+
+    font-family: var(--#{$variable-prefix}form-control-font);
+    font-size: var(--#{$variable-prefix}form-control-font-size);
+    font-weight: var(--#{$variable-prefix}form-control-font-weight);
+    line-height: var(--#{$variable-prefix}form-control-line-height);
+
+    border-radius: var(--#{$variable-prefix}form-control-border-radius);
+
+    border: 1px solid var(--#{$variable-prefix}form-control-border);
+    background: var(--#{$variable-prefix}form-control-bg);
+    color: var(--#{$variable-prefix}form-control-fg);
+
+    transition: var(--#{$variable-prefix}form-control-transition);
+
+    &:disabled {
+      --#{$variable-prefix}form-control-border: #{$form-control-disabled-border};
+      --#{$variable-prefix}form-control-bg: #{$form-control-disabled-bg};
+      --#{$variable-prefix}form-control-fg: #{$form-control-disabled-fg};
+    }
+
+    &:not(:disabled) {
+      &:hover {
+        --#{$variable-prefix}form-control-border: #{$form-control-default-hover-border};
+        --#{$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
+        --#{$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
+        outline: none;
+      }
+
+      &:active,
+      &:focus {
+        --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
+        --#{$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
+        --#{$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
+        --#{$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
+
+        outline: none;
+
+        box-shadow: 0 0 0 0.25rem var(--#{$variable-prefix}form-control-shadow);
+      }
+
+      &::placeholder {
+        color: var(--#{$variable-prefix}form-control-placeholder);
+      }
+    }
+
+    .select-value {
+      flex: 1;
+
+      border: 0;
+      outline: 0;
+      box-shadow: 0;
+    }
+
+    .dropdown-button {
+      aspect-ratio: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+      border: none;
+      background: transparent;
+
+      cursor: pointer;
+
+      .arrow {
+        /* TODO: remove this font configs */
+        font-family: icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        font-size: 16px;
+
+        transform: none;
+        transition: transform 0.15s ease;
+      }
+    }
+  }
+
+  > .select-dropdown {
+    position: absolute;
+    left: 0px;
+    top: calc(100% + 8px);
+    right: 0;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s ease;
+
+    overflow-y: auto;
+
+    background: #fff;
+    border-radius: var(--border-radius);
+
+    z-index: 950;
+
+    .select-dropdown-inner {
+      width: 100%;
+      height: 100%;
+
+      padding: 5px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      .select-item {
+        border: none;
+        background: #fff;
+
+        text-align: left;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        cursor: pointer;
+        padding: 6px 4px;
+
+        &:hover {
+          background: aliceblue;
+        }
+
+        &:focus {
+          background: blue;
+          outline: none;
+        }
+
+        &.active {
+          background: red;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &.expanded {
+    > .select {
+      --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
+      --#{$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
+      --#{$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
+      --#{$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
+
+      outline: none;
+
+      box-shadow: 0 0 0 0.25rem var(--#{$variable-prefix}form-control-shadow);
+
+      &:hover {
+        --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
+      }
+
+      .dropdown-button {
+        .arrow {
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+
+    > .select-dropdown {
+      max-height: 200px;
+
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--#{$variable-prefix}form-control-border);
+
+    }
+  }
+}

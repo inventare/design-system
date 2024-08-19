@@ -7,7 +7,7 @@
   "homepage": "https://github.com/inventare/design-system",
   "files": [
     "dist",
-    "scss"
+    "scss/**/*.scss"
   ],
   "repository": {
     "type": "git",

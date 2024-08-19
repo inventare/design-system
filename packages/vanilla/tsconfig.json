@@ -25,5 +25,6 @@
   },
   "include": [
     "src/**/*.ts",
+    ".vitest/setup.ts",
   ],
 }

@@ -18,9 +18,7 @@
     "@storybook/test": "^8.1.4",
     "@storybook/theming": "^8.1.4",
     "remark-gfm": "4.0.0",
-    "storybook": "^8.1.4",
-    "@inventare/vanilla": "*",
-    "@inventare/icons": "*"
+    "storybook": "^8.1.4"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",

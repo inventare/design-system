@@ -1,0 +1,54 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import * as SkeletonStories from './Skeleton.stories';
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+The skeleton component display a placeholder preview of your content while the data is loaded.
+
+## Skeleton border radius
+
+We have various class helpers for each `border-radius` token class.
+
+### No rounded borders
+
+Without the use of any helper class, the skeleton have no rounded borders.
+
+<Canvas of={SkeletonStories.NoRounded} />
+
+### Default rounded borders
+
+Using the `.rounded` class, we add the `var(--border-radius)` token `border-radius` to the skeleton component.
+
+<Canvas of={SkeletonStories.Rounded} />
+
+### Medium rounded borders
+
+Using the `.rounded-medium` class, we add the `var(--border-radius-medium)` token `border-radius` to the skeleton component.
+
+<Canvas of={SkeletonStories.RoundedMedium} />
+
+### Large rounded borders
+
+Using the `.rounded-large` class, we add the `var(--border-radius-large)` token `border-radius` to the skeleton component.
+
+<Canvas of={SkeletonStories.RoundedLarge} />
+
+### Extra Large rounded borders
+
+Using the `.rounded-xlarge` class, we add the `var(--border-radius-xlarge)` token `border-radius` to the skeleton component.
+
+<Canvas of={SkeletonStories.RoundedXLarge} />
+
+### Pill rounded borders
+
+Using the `.rounded-pill` class, we add the `var(--border-radius-pill)` token `border-radius` to the skeleton component.
+
+<Canvas of={SkeletonStories.RoundedPill} />
+
+### Circle rounded borders
+
+Using the `.rounded-circle` class, we add the `var(--border-radius-circle)` token `border-radius` to the skeleton component.
+
+<Canvas of={SkeletonStories.RoundedCircle} />

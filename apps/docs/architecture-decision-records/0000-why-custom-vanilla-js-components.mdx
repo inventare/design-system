@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title='Docs/Architecture Decision Records/ADR 0000: Why Custom Vanilla JavaScript Components?' />
+
+# ADR 0000: Why Custom Vanilla JavaScript Components?
+
+🗓️ 2024-08 · ✍️ [@EduardoJM](https://github.com/eduardoJM/)
+
+## Context
+
+We need to choose between the use of a existing component library or create our custom.
+
+## Decision Drivers
+
+- We need to build dynamic javascript components, like collapse, modal, alert's.
+- We need out of box support for [HTMX](https://htmx.org/).
+- We need components to support Django-Admin template rewrite.
+
+## Decision
+
+We opted to create our Vanilla JavaScript components, in special to made the support for HTMX out of box. Is possible to add HTMX support working with swap events or using event bubbling (this will be decided in a future architecture decision record).
+
+To use, and customize, another web framework, like the Bootstrap, we have a lot of work too, then we decided to make our own to be it better customizable and to learn on building Vanilla JavaScript solutions.
+
+Another side of this decision is to escape from using jQuery plugins, like Select2 from original Django-Admin template.

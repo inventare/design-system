@@ -1,16 +1,17 @@
 import { SelectElement } from './SelectElement';
 import { SelectItem } from './SelectItem';
+import { SELECT_EXPANDED_CLASS } from './Select.constants';
 
 export class Select {
   activeItem: SelectItem | null = null;
-  
+
   element: HTMLElement;
   selectCombobox: HTMLElement;
   selectDropDown: HTMLElement;
   selectDropDownInner: HTMLElement;
 
   get isExpanded() {
-    return this.element.classList.contains('expanded');
+    return this.element.classList.contains(SELECT_EXPANDED_CLASS);
   }
 
   get items() {
@@ -36,7 +37,6 @@ export class Select {
     this.documentClick = this.documentClick.bind(this);
     this.dropDownKeyUp = this.dropDownKeyUp.bind(this);
     this.dropDownClick = this.dropDownClick.bind(this);
-    this.dropDownScroll = this.dropDownScroll.bind(this);
 
     this.selectCombobox = selectCombobox;
     this.selectCombobox.addEventListener('keyup', this.comboBoxKeyUp);
@@ -47,7 +47,6 @@ export class Select {
 
     this.selectDropDown.addEventListener('keyup', this.dropDownKeyUp);
     this.selectDropDown.addEventListener('click', this.dropDownClick)
-    this.selectDropDownInner.addEventListener('scroll', this.dropDownScroll);
 
     this.activeItem = this.items.find((item) => item.isActive) || null;
   };
@@ -58,7 +57,7 @@ export class Select {
     }
     this.show();
   }
-  
+
   comboBoxKeyUp(e: KeyboardEvent) {
     if (e.key === 'ArrowDown') {
       if (!this.isExpanded) {
@@ -104,24 +103,6 @@ export class Select {
     }
   }
 
-  loadMoreDebounce: NodeJS.Timeout | null = null;
-
-  dropDownScroll(e: Event) {
-    const fullHeight = this.selectDropDownInner.scrollHeight;
-    const height = this.selectDropDownInner.clientHeight;
-    const position = this.selectDropDownInner.scrollTop;
-    
-    if (this.loadMoreDebounce) {
-      clearTimeout(this.loadMoreDebounce)
-    }
-    if (height + position + 10 >= fullHeight) {
-      this.loadMoreDebounce = setTimeout(() => {
-        const evt = new CustomEvent('load-more', { bubbles: true, cancelable: true, composed: true });
-        this.selectDropDown.dispatchEvent(evt);
-      }, 300);
-    }
-  }
-
   dropDownKeyUp(e: KeyboardEvent) {
     if (e.key === 'ArrowDown') {
       this.onArrowDown();
@@ -155,7 +136,7 @@ export class Select {
   }
 
   show() {
-    this.element.classList.add('expanded');
+    this.element.classList.add(SELECT_EXPANDED_CLASS);
     document.addEventListener('click', this.documentClick);
 
     this.selectDropDown.querySelector<HTMLInputElement>('input[type=text]')?.focus();
@@ -169,7 +150,7 @@ export class Select {
   }
 
   hide() {
-    this.element.classList.remove('expanded');
+    this.element.classList.remove(SELECT_EXPANDED_CLASS);
     document.removeEventListener('click', this.documentClick);
   }
 
@@ -184,7 +165,7 @@ export class Select {
     }
 
     inputControl.value = item.value;
-    
+
     const evt = new CustomEvent('selected', { bubbles: true, cancelable: true, composed: true });
     this.element.dispatchEvent(evt);
 
