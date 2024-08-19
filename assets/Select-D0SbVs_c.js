@@ -1,0 +1,4 @@
+import{j as t}from"./jsx-runtime-BU-bgENZ.js";import{useMDXComponents as n}from"./index-bc6GlP0j.js";import{M as m,d as i}from"./index-I4Xhiywr.js";import{S as s,D as p}from"./Select.stories-B9EsBT-C.js";import"./index-E1T66Z7w.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-DkGb1UXU.js";import"../sb-preview/runtime.js";import"./index-C2eUe6cH.js";import"./index-DvzDrELh.js";import"./index-DrFu-skq.js";import"./ComponentManager-CW-XTlUv.js";import"./InitializerTriggerComponent-DjtXnMDk.js";function r(o){const e={h1:"h1",p:"p",...n(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(m,{of:s}),`
+`,t.jsx(e.h1,{id:"select",children:"Select"}),`
+`,t.jsx(e.p,{children:"Hello?!"}),`
+`,t.jsx(i,{of:p})]})}function X(o={}){const{wrapper:e}={...n(),...o.components};return e?t.jsx(e,{...o,children:t.jsx(r,{...o})}):r(o)}export{X as default};

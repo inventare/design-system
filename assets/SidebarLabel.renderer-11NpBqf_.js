@@ -1,0 +1,1 @@
+const r=({label:n="Button",withParent:l=!0})=>{const t=document.createElement("span");if(t.innerHTML=n,t.className="sidebar-label",l){const e=document.createElement("div");return e.style.backgroundColor="#222",e.style.width="300px",e.style.padding="16px",e.style.display="flex",e.style.flexDirection="column",e.style.alignItems="stretch",e.appendChild(t),e}return t};export{r};

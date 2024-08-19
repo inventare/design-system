@@ -1,4 +1,0 @@
-import{j as t}from"./jsx-runtime-BU-bgENZ.js";import{useMDXComponents as r}from"./index-bc6GlP0j.js";import{M as s,d as i}from"./index-DrsLEV_6.js";import{S as m,D as p}from"./Skeleton.stories-CB5pbOIE.js";import"./index-E1T66Z7w.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-BhPWpHi-.js";import"../sb-preview/runtime.js";import"./index-C2eUe6cH.js";import"./index-DvzDrELh.js";import"./index-DrFu-skq.js";function e(o){const n={h1:"h1",p:"p",...r(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{of:m}),`
-`,t.jsx(n.h1,{id:"skeleton",children:"Skeleton"}),`
-`,t.jsx(n.p,{children:"Skeleton for loading status..."}),`
-`,t.jsx(i,{of:p})]})}function D(o={}){const{wrapper:n}={...r(),...o.components};return n?t.jsx(n,{...o,children:t.jsx(e,{...o})}):e(o)}export{D as default};

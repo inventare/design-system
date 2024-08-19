@@ -1,0 +1,7 @@
+import{k as w,E as b,P as g}from"./FormControl.stories-ujDiW2d_.js";import{c as a}from"./Button-CfCSfByw.js";const f=({rows:t,submitRow:c,submitRowStretch:d=!1,submitRowAlign:p="left"})=>{const e=document.createElement("div");e.style.maxWidth="350px";for(const u of t){const s=document.createElement("div");s.className="form-row",s.appendChild(w(u)),e.appendChild(s)}if(!c)return e;const r=document.createElement("div"),n=["form-row","submit"];return d||n.push(p),r.className=n.join(" "),r.appendChild(a({variant:"primary",outline:!0,label:"Go Back"})),r.appendChild(a({variant:"primary",label:"Send"})),e.appendChild(r),e},R={title:"Forms/FormRow",render:({...t})=>f({...t}),argTypes:{submitRow:{control:"boolean"},submitRowStretch:{control:"boolean"},submitRowAlign:{control:{type:"select"},options:["left","center","right"]}}},o={args:{rows:[b.args,g.args],submitRow:!0,submitRowAlign:"center"}};var i,l,m;o.parameters={...o.parameters,docs:{...(i=o.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  args: {
+    rows: [FormControlStories.Email.args, FormControlStories.Password.args],
+    submitRow: true,
+    submitRowAlign: 'center'
+  }
+}`,...(m=(l=o.parameters)==null?void 0:l.docs)==null?void 0:m.source}}};const E=["LoginExample"],C=Object.freeze(Object.defineProperty({__proto__:null,LoginExample:o,__namedExportsOrder:E,default:R},Symbol.toStringTag,{value:"Module"}));export{C as F,o as L};
