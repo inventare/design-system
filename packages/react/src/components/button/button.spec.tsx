@@ -60,4 +60,12 @@ describe('Button', () => {
 
     expect(Array.from(button.classList)).toMatchObject(classList);
   });
+
+  it('should render a <a /> when as={"a"} is used', () => {
+    const href = '/my-link'
+    render(<Button as={"a"} href={href}>Link</Button>);
+
+    expect(screen.queryByRole('link')).toBeInTheDocument();
+    expect(screen.getByRole('link')).toHaveAttribute('href', href);
+  });
 });
