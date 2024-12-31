@@ -63,5 +63,8 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Run Turbo Build
+      - name: Build Packages
+        run: yarn build
+
+      - name: Build Documentation
         run: yarn build:docs
