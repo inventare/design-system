@@ -1,16 +1,14 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig, mergeConfig } from 'vitest/config'
+import configShared from '../../vitest.config'
 
-export default defineConfig({
-  test: {
-    globals: true,
-    include: ['**/*.test.ts'],
-    environment: 'jsdom',
-    coverage: {
-      provider: 'istanbul',
-      exclude: [
-        "**/*.stories.ts",
-      ]
+export default mergeConfig(
+  configShared,
+  defineConfig({
+    test: {
+      globals: true,
+      include: ['**/*.test.ts'],
+      environment: 'jsdom',
+      setupFiles: ['.vitest/setup.ts'],
     },
-    setupFiles: ['.vitest/setup.ts'],
-  },
-});
+  })
+)

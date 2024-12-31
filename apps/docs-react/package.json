@@ -1,0 +1,27 @@
+{
+  "name": "@inventare/docs-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": "true",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "8.1.4",
+    "@storybook/addon-interactions": "8.1.4",
+    "@storybook/addon-links": "8.1.4",
+    "@storybook/addon-onboarding": "8.1.4",
+    "@storybook/blocks": "8.1.4",
+    "@storybook/react": "8.1.4",
+    "@storybook/react-vite": "8.1.4",
+    "@storybook/test": "8.1.4",
+    "@types/react": "^18.3.18",
+    "storybook": "8.1.4"
+  },
+  "scripts": {
+    "start": "storybook dev -p 7006",
+    "build:docs": "storybook build -o ../docs/storybook-static/react"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
