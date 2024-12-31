@@ -3,6 +3,12 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"]
+    },
+    "build:docs": {
+      "dependsOn": ["^build:docs"]
+    },
+    "start": {
+      "dependsOn": ["^start"]
     }
   }
 }

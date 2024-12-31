@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: yarn
@@ -24,7 +24,7 @@ jobs:
         run: yarn
 
       - name: Run Tests
-        run: yarn workspace @inventare/vanilla test
+        run: yarn test
 
   build:
     name: "Build Packages"
@@ -32,10 +32,10 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: yarn
@@ -45,3 +45,26 @@ jobs:
 
       - name: Run Turbo Build
         run: yarn build
+
+  docs:
+    name: "Build Documentation"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Build Packages
+        run: yarn build
+
+      - name: Build Documentation
+        run: yarn build:docs

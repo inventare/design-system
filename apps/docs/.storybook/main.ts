@@ -9,6 +9,24 @@ function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, "package.json")));
 }
 
+const getStorybookRefs = (configType: string) => {
+  if (configType == 'DEVELOPMENT') {
+    return {
+      react: {
+        title: 'React (localhost:7006)',
+        url: 'http://localhost:7006',
+      },
+    };
+  }
+  return {
+    react: {
+      title: 'React Library',
+      url: 'react',
+      expanded: false,
+    }
+  }
+}
+
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
   watchOptions: {
@@ -49,6 +67,9 @@ const config = {
   },
   docs: {
     autodocs: "tag",
+  },
+  refs: (config, { configType = '' }) => {
+    return getStorybookRefs(configType)
   },
 };
 export default config;

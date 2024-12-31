@@ -11,6 +11,7 @@ The Inventare Design System
   <a href="https://www.npmjs.com/package/@inventare/styles" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fstyles?label=%40inventare%2Fstyles"/></a>
   <a href="https://www.npmjs.com/package/@inventare/icons" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Ficons?label=%40inventare%2Ficons"/></a>
   <a href="https://www.npmjs.com/package/@inventare/vanilla" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Fvanilla?label=%40inventare%2Fvanilla"/></a>
+  <a href="https://www.npmjs.com/package/@inventare/react" target="_blank"><img alt="NPM Version" src="https://img.shields.io/npm/v/%40inventare%2Freact?label=%40inventare%2Freact"/></a>
 </p>
 
 ## Introduction
