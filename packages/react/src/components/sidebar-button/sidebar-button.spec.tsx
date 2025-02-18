@@ -106,4 +106,12 @@ describe('SidebarButton', () => {
 
     expect(Array.from(button.classList)).toMatchObject(classList);
   });
+
+  it('should <button /> with as can rendered as <a> element', () => {
+    render(<SidebarButton as={"a"} href="https://google.com/">Link A</SidebarButton>);
+
+    expect(screen.queryByRole('link')).toBeInTheDocument();
+    expect(screen.queryByText(/Link A/)).toBeInTheDocument();
+    expect(screen.getByRole('link')).toHaveProperty('href', 'https://google.com/')
+  });
 });
