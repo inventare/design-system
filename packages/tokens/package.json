@@ -1,7 +1,7 @@
 {
   "name": "@inventare/tokens",
-  "version": "0.0.7",
-  "main": "index.js",
+  "version": "0.0.8",
+  "main": "./scss/tokens.scss",
   "license": "MIT",
   "files": [
     "dist",
@@ -16,7 +16,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "sass": "^1.60.0"
+    "sass": "^1.85.0"
   },
   "peerDependencies": {},
   "publishConfig": {
