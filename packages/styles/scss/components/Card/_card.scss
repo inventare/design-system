@@ -1,3 +1,5 @@
+@use "../../prefix";
+
 $card-bg: var(--color-white);
 $card-color: var(--color-gray-600);
 $card-border-color: var(--color-gray-200);
@@ -13,26 +15,26 @@ $card-title-color: var(--color-gray-900);
 $card-footer-spacing: var(--spacing-base);
 
 .card {
-  --#{$variable-prefix}card-bg: #{$card-bg};
-  --#{$variable-prefix}card-color: #{$card-color};
-  --#{$variable-prefix}card-border-color: #{$card-border-color};
-  --#{$variable-prefix}card-border-width: #{$card-border-width};
-  --#{$variable-prefix}card-radius: #{$card-radius};
-  --#{$variable-prefix}card-padding-x: #{$card-padding-x};
-  --#{$variable-prefix}card-padding-y: #{$card-padding-y};
-  --#{$variable-prefix}card-shadow: #{$card-shadow};
-  --#{$variable-prefix}card-title-spacing: #{$card-title-spacing};
-  --#{$variable-prefix}card-title-font-size: #{$card-title-font-size};
-  --#{$variable-prefix}card-title-font-weight: #{$card-title-font-weight};
-  --#{$variable-prefix}card-title-color: #{$card-title-color};
-  --#{$variable-prefix}card-footer-spacing: #{$card-footer-spacing};
+  --#{prefix.$variable-prefix}card-bg: #{$card-bg};
+  --#{prefix.$variable-prefix}card-color: #{$card-color};
+  --#{prefix.$variable-prefix}card-border-color: #{$card-border-color};
+  --#{prefix.$variable-prefix}card-border-width: #{$card-border-width};
+  --#{prefix.$variable-prefix}card-radius: #{$card-radius};
+  --#{prefix.$variable-prefix}card-padding-x: #{$card-padding-x};
+  --#{prefix.$variable-prefix}card-padding-y: #{$card-padding-y};
+  --#{prefix.$variable-prefix}card-shadow: #{$card-shadow};
+  --#{prefix.$variable-prefix}card-title-spacing: #{$card-title-spacing};
+  --#{prefix.$variable-prefix}card-title-font-size: #{$card-title-font-size};
+  --#{prefix.$variable-prefix}card-title-font-weight: #{$card-title-font-weight};
+  --#{prefix.$variable-prefix}card-title-color: #{$card-title-color};
+  --#{prefix.$variable-prefix}card-footer-spacing: #{$card-footer-spacing};
 
-  background: var(--#{$variable-prefix}card-bg);
-  color: var(--#{$variable-prefix}card-color);
-  border: var(--#{$variable-prefix}card-border-width) solid var(--#{$variable-prefix}card-border-color);
-  padding: var(--#{$variable-prefix}card-padding-y) var(--#{$variable-prefix}card-padding-x);
-  box-shadow: var(--#{$variable-prefix}card-shadow);
-  border-radius: var(--#{$variable-prefix}card-radius);
+  background: var(--#{prefix.$variable-prefix}card-bg);
+  color: var(--#{prefix.$variable-prefix}card-color);
+  border: var(--#{prefix.$variable-prefix}card-border-width) solid var(--#{prefix.$variable-prefix}card-border-color);
+  padding: var(--#{prefix.$variable-prefix}card-padding-y) var(--#{prefix.$variable-prefix}card-padding-x);
+  box-shadow: var(--#{prefix.$variable-prefix}card-shadow);
+  border-radius: var(--#{prefix.$variable-prefix}card-radius);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -57,17 +59,17 @@ $card-footer-spacing: var(--spacing-base);
   }
 
   .card-title {
-    margin-bottom: var(--#{$variable-prefix}card-title-spacing);
-    color: var(--#{$variable-prefix}card-title-color);
+    margin-bottom: var(--#{prefix.$variable-prefix}card-title-spacing);
+    color: var(--#{prefix.$variable-prefix}card-title-color);
 
     & > p {
-      font-size: var(--#{$variable-prefix}card-title-font-size);
-      font-weight: var(--#{$variable-prefix}card-title-font-weight);
+      font-size: var(--#{prefix.$variable-prefix}card-title-font-size);
+      font-weight: var(--#{prefix.$variable-prefix}card-title-font-weight);
     }
   }
 
   .card-footer {
-    margin-top: var(--#{$variable-prefix}card-footer-spacing);
+    margin-top: var(--#{prefix.$variable-prefix}card-footer-spacing);
     display: flex;
     flex-direction: row;
     align-items: center;

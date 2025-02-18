@@ -1,24 +1,17 @@
-$variable-prefix: inventare-;
+@use "fonts";
+@use "reset";
 
-@import "./fonts";
+@use "mixins/colors";
 
-@import "./variables/breakpoints";
+@use "transitions/collapse";
 
-@import "./reset";
-
-@import "./mixins/breakpoints";
-@import "./mixins/colors";
-@import "./functions/breakpoints";
-
-@import "./transitions/collapse";
-
-@import "./components/Container/container";
-@import "./components/Alert/alert";
-@import "./components/Button/button";
-@import "./components/FormRow/form_row";
-@import "./components/FormControl/form_control";
-@import "./components/Select/select";
-@import "./components/Sidebar/sidebar";
-@import "./components/Modal/modal";
-@import "./components/Card/card";
-@import "./components/Skeleton/skeleton";
+@use "components/Container/container";
+@use "components/Alert/alert";
+@use "components/Button/button";
+@use "components/FormRow/form_row";
+@use "components/FormControl/form_control";
+@use "components/Select/select";
+@use "components/Sidebar/sidebar";
+@use "components/Modal/modal";
+@use "components/Card/card";
+@use "components/Skeleton/skeleton";

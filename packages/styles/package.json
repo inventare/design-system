@@ -1,7 +1,7 @@
 {
   "name": "@inventare/styles",
-  "version": "0.0.19",
-  "main": "index.js",
+  "version": "0.0.22",
+  "main": "scss/inventare.scss",
   "license": "MIT",
   "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
   "homepage": "https://github.com/inventare/design-system",
@@ -19,7 +19,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "sass": "^1.60.0"
+    "sass": "^1.85.0"
   },
   "peerDependencies": {},
   "publishConfig": {

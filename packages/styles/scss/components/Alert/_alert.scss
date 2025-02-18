@@ -1,3 +1,6 @@
+@use "../../prefix";
+@use "../../mixins/colors";
+
 $alert-padding-x: var(--spacing-base) !default;
 $alert-padding-y: var(--spacing-small) !default;
 $alert-margin-bottom: var(--spacing-base) !default;
@@ -45,26 +48,26 @@ $alert-colors: (
 );
 
 .alert {
-  --#{$variable-prefix}alert-padding-x: #{$alert-padding-x};
-  --#{$variable-prefix}alert-padding-y: #{$alert-padding-y};
-  --#{$variable-prefix}alert-margin-bottom: #{$alert-margin-bottom};
-  --#{$variable-prefix}alert-fg: #{$alert-default-fg};
-  --#{$variable-prefix}alert-bg: #{$alert-default-bg};
-  --#{$variable-prefix}alert-border: #{$alert-default-border};
-  --#{$variable-prefix}alert-border-radius: #{$alert-border-radius};
+  --#{prefix.$variable-prefix}alert-padding-x: #{$alert-padding-x};
+  --#{prefix.$variable-prefix}alert-padding-y: #{$alert-padding-y};
+  --#{prefix.$variable-prefix}alert-margin-bottom: #{$alert-margin-bottom};
+  --#{prefix.$variable-prefix}alert-fg: #{$alert-default-fg};
+  --#{prefix.$variable-prefix}alert-bg: #{$alert-default-bg};
+  --#{prefix.$variable-prefix}alert-border: #{$alert-default-border};
+  --#{prefix.$variable-prefix}alert-border-radius: #{$alert-border-radius};
 
-  padding: var(--#{$variable-prefix}alert-padding-y) var(--#{$variable-prefix}alert-padding-x);
-  margin-bottom: var(--#{$variable-prefix}alert-margin-bottom);
-  border-radius: var(--#{$variable-prefix}alert-border-radius);
-  color: var(--#{$variable-prefix}alert-fg);
-  border: 1px solid var(--#{$variable-prefix}alert-border);
-  background: var(--#{$variable-prefix}alert-bg);
+  padding: var(--#{prefix.$variable-prefix}alert-padding-y) var(--#{prefix.$variable-prefix}alert-padding-x);
+  margin-bottom: var(--#{prefix.$variable-prefix}alert-margin-bottom);
+  border-radius: var(--#{prefix.$variable-prefix}alert-border-radius);
+  color: var(--#{prefix.$variable-prefix}alert-fg);
+  border: 1px solid var(--#{prefix.$variable-prefix}alert-border);
+  background: var(--#{prefix.$variable-prefix}alert-bg);
 
   @each $variant, $dict in $alert-colors {
     &.#{$variant} {
-      @include map-variable("alert-border", $dict, "border");
-      @include map-variable("alert-bg", $dict, "bg");
-      @include map-variable("alert-fg", $dict, "fg");
+      @include colors.map-variable("alert-border", $dict, "border");
+      @include colors.map-variable("alert-bg", $dict, "bg");
+      @include colors.map-variable("alert-fg", $dict, "fg");
     }
   }
 }
