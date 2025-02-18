@@ -1,21 +1,26 @@
+@use "../../breakpoints";
+@use "../../prefix";
+@use "../../mixins/colors";
+@use "../Button/button";
+
 $sidebar-button-colors: (
   primary: (border: transparent,
-    fg: $button-primary-bg,
+    fg: button.$button-primary-bg,
     bg: transparent,
-    hover-fg: $button-primary-hover-bg,
+    hover-fg: button.$button-primary-hover-bg,
     hover-border: transparent,
     hover-bg: transparent,
-    active-fg: $button-primary-active-bg,
+    active-fg: button.$button-primary-active-bg,
     active-border: transparent,
     active-bg: transparent,
   ),
   danger: (border: transparent,
-    fg: $button-danger-bg,
+    fg: button.$button-danger-bg,
     bg: transparent,
-    hover-fg: $button-danger-hover-bg,
+    hover-fg: button.$button-danger-hover-bg,
     hover-border: transparent,
     hover-bg: transparent,
-    active-fg: $button-danger-active-bg,
+    active-fg: button.$button-danger-active-bg,
     active-border: transparent,
     active-bg: transparent,
   ),
@@ -24,9 +29,9 @@ $sidebar-button-colors: (
 $sidebar-button-spacing-y: var(--spacing-xxsmall) !default;
 
 $sidebar-button-dropdown-fg: var(--color-gray-50) !default;
-$sidebar-button-dropdown-hover-bg: $button-primary-hover-bg !default;
+$sidebar-button-dropdown-hover-bg: button.$button-primary-hover-bg !default;
 $sidebar-button-dropdown-hover-fg: var(--color-gray-50) !default;
-$sidebar-button-dropdown-active-bg: $button-primary-active-bg !default;
+$sidebar-button-dropdown-active-bg: button.$button-primary-active-bg !default;
 
 $inactive-sidebar-button-colors: (
   border: transparent,
@@ -64,31 +69,31 @@ $sidebar-label-fg: #aaa;
 
 
 .sidebar {
-  --#{$variable-prefix}sidebar-default-width: #{$sidebar-width};
-  --#{$variable-prefix}sidebar-collapsed-width: #{$sidebar-collapsed-width};
+  --#{prefix.$variable-prefix}sidebar-default-width: #{$sidebar-width};
+  --#{prefix.$variable-prefix}sidebar-collapsed-width: #{$sidebar-collapsed-width};
 
-  --#{$variable-prefix}sidebar-width: var(--#{$variable-prefix}sidebar-default-width);
-  --#{$variable-prefix}sidebar-bg: #{$sidebar-bg};
-  --#{$variable-prefix}sidebar-padding-x: #{$sidebar-padding-x};
-  --#{$variable-prefix}sidebar-padding-y: #{$sidebar-padding-y};
+  --#{prefix.$variable-prefix}sidebar-width: var(--#{prefix.$variable-prefix}sidebar-default-width);
+  --#{prefix.$variable-prefix}sidebar-bg: #{$sidebar-bg};
+  --#{prefix.$variable-prefix}sidebar-padding-x: #{$sidebar-padding-x};
+  --#{prefix.$variable-prefix}sidebar-padding-y: #{$sidebar-padding-y};
 
-  --#{$variable-prefix}sidebar-branding-height: #{$sidebar-branding-height};
+  --#{prefix.$variable-prefix}sidebar-branding-height: #{$sidebar-branding-height};
 
   display: flex;
 
-  width: var(--#{$variable-prefix}sidebar-width);
-  background-color: var(--#{$variable-prefix}sidebar-bg);
+  width: var(--#{prefix.$variable-prefix}sidebar-width);
+  background-color: var(--#{prefix.$variable-prefix}sidebar-bg);
 
   transition: $sidebar-transition;
   position: relative;
 
   border-right: 1px solid #ccc;
 
-  @include media-breakpoint-down('md', $grid-breakpoints) {
-    --#{$variable-prefix}sidebar-collapsed-width: 0;
+  @include breakpoints.media-breakpoint-down('md', breakpoints.$grid-breakpoints) {
+    --#{prefix.$variable-prefix}sidebar-collapsed-width: 0;
 
-    --#{$variable-prefix}sidebar-width: 100%;
-    max-width: var(--#{$variable-prefix}sidebar-default-width);
+    --#{prefix.$variable-prefix}sidebar-width: 100%;
+    max-width: var(--#{prefix.$variable-prefix}sidebar-default-width);
 
     position: fixed;
     left: 0;
@@ -107,7 +112,7 @@ $sidebar-label-fg: #aaa;
     transform: translateX(50%);
     width: 24px;
     height: 24px;
-    background-color: var(--#{$variable-prefix}sidebar-bg);
+    background-color: var(--#{prefix.$variable-prefix}sidebar-bg);
     border: 1px solid #ccc;
     border-radius: 50%;
     cursor: pointer;
@@ -129,7 +134,7 @@ $sidebar-label-fg: #aaa;
   }
 
   .branding {
-    height: var(--#{$variable-prefix}sidebar-branding-height);
+    height: var(--#{prefix.$variable-prefix}sidebar-branding-height);
   }
 
   >.sidebar-inner {
@@ -142,8 +147,8 @@ $sidebar-label-fg: #aaa;
     overflow-y: auto;
     overflow-x: hidden;
 
-    width: var(--#{$variable-prefix}sidebar-default-width);
-    padding: var(--#{$variable-prefix}sidebar-padding-y) var(--#{$variable-prefix}sidebar-padding-x);
+    width: var(--#{prefix.$variable-prefix}sidebar-default-width);
+    padding: var(--#{prefix.$variable-prefix}sidebar-padding-y) var(--#{prefix.$variable-prefix}sidebar-padding-x);
   }
 
   .sidebar-childs {
@@ -153,7 +158,7 @@ $sidebar-label-fg: #aaa;
   }
 
   &.collapsed {
-    --#{$variable-prefix}sidebar-width: var(--#{$variable-prefix}sidebar-collapsed-width);
+    --#{prefix.$variable-prefix}sidebar-width: var(--#{prefix.$variable-prefix}sidebar-collapsed-width);
 
     .sidebar-toggle::after {
       transform: translate(-50%, -50%) rotate(-45deg);
@@ -162,7 +167,7 @@ $sidebar-label-fg: #aaa;
 
     &.collapsed-complete {
       >.sidebar-inner {
-        width: var(--#{$variable-prefix}sidebar-collapsed-width);
+        width: var(--#{prefix.$variable-prefix}sidebar-collapsed-width);
       }
 
       .hide-on-collapse {
@@ -181,19 +186,19 @@ $sidebar-label-fg: #aaa;
           top: 50%;
           transform: translateY(-50%);
           height: 1px;
-          background: var(--#{$variable-prefix}sidebar-label-fg);
+          background: var(--#{prefix.$variable-prefix}sidebar-label-fg);
           opacity: 0.25;
         }
       }
 
       .btn-sidebar {
-        --#{$variable-prefix}button-padding-y: var(--spacing-xsmall);
-        --#{$variable-prefix}button-padding-x: var(--spacing-xsmall);
+        --#{prefix.$variable-prefix}button-padding-y: var(--spacing-xsmall);
+        --#{prefix.$variable-prefix}button-padding-x: var(--spacing-xsmall);
         align-items: center;
         justify-content: center;
 
         &.dropdown {
-          --#{$variable-prefix}sidebar-button-dropdown-padding-right: var(--spacing-xsmall);
+          --#{prefix.$variable-prefix}sidebar-button-dropdown-padding-right: var(--spacing-xsmall);
 
           &::after {
             display: none;
@@ -209,7 +214,7 @@ $sidebar-label-fg: #aaa;
 }
 
 .btn-sidebar {
-  --#{$variable-prefix}sidebar-button-spacing-y: #{$sidebar-button-spacing-y};
+  --#{prefix.$variable-prefix}sidebar-button-spacing-y: #{$sidebar-button-spacing-y};
 
   justify-content: flex-start;
 
@@ -217,45 +222,45 @@ $sidebar-label-fg: #aaa;
   text-overflow: ellipsis;
 
   &:not(.child) {
-    margin: var(--#{$variable-prefix}sidebar-button-spacing-y) 0;
+    margin: var(--#{prefix.$variable-prefix}sidebar-button-spacing-y) 0;
   }
 
   &:not(.active) {
-    @include map-variable("button-border", $inactive-sidebar-button-colors, "border");
-    @include map-variable("button-bg", $inactive-sidebar-button-colors, "bg");
-    @include map-variable("button-fg", $inactive-sidebar-button-colors, "fg");
+    @include colors.map-variable("button-border", $inactive-sidebar-button-colors, "border");
+    @include colors.map-variable("button-bg", $inactive-sidebar-button-colors, "bg");
+    @include colors.map-variable("button-fg", $inactive-sidebar-button-colors, "fg");
 
     &:hover {
-      @include map-variable("button-border", $inactive-sidebar-button-colors, "hover-border");
-      @include map-variable("button-bg", $inactive-sidebar-button-colors, "hover-bg");
-      @include map-variable("button-fg", $inactive-sidebar-button-colors, "hover-fg");
+      @include colors.map-variable("button-border", $inactive-sidebar-button-colors, "hover-border");
+      @include colors.map-variable("button-bg", $inactive-sidebar-button-colors, "hover-bg");
+      @include colors.map-variable("button-fg", $inactive-sidebar-button-colors, "hover-fg");
     }
 
     &:active {
-      @include map-variable("button-border", $inactive-sidebar-button-colors, "active-border");
-      @include map-variable("button-bg", $inactive-sidebar-button-colors, "active-bg");
-      @include map-variable("button-fg", $inactive-sidebar-button-colors, "active-fg");
+      @include colors.map-variable("button-border", $inactive-sidebar-button-colors, "active-border");
+      @include colors.map-variable("button-bg", $inactive-sidebar-button-colors, "active-bg");
+      @include colors.map-variable("button-fg", $inactive-sidebar-button-colors, "active-fg");
     }
   }
 
   &.child {
-    --#{$variable-prefix}sidebar-button-child-margin-left: #{$sidebar-button-child-margin-left};
-    --#{$variable-prefix}sidebar-button-child-margin-bottom: #{$sidebar-button-child-margin-bottom};
-    --#{$variable-prefix}sidebar-button-child-timeline-bg: #{$sidebar-button-child-timeline-bg};
-    --#{$variable-prefix}sidebar-button-child-timeline-active-bg: #{$sidebar-button-child-timeline-active-bg};
+    --#{prefix.$variable-prefix}sidebar-button-child-margin-left: #{$sidebar-button-child-margin-left};
+    --#{prefix.$variable-prefix}sidebar-button-child-margin-bottom: #{$sidebar-button-child-margin-bottom};
+    --#{prefix.$variable-prefix}sidebar-button-child-timeline-bg: #{$sidebar-button-child-timeline-bg};
+    --#{prefix.$variable-prefix}sidebar-button-child-timeline-active-bg: #{$sidebar-button-child-timeline-active-bg};
 
-    margin-left: var(--#{$variable-prefix}sidebar-button-child-margin-left);
+    margin-left: var(--#{prefix.$variable-prefix}sidebar-button-child-margin-left);
     position: relative;
-    margin-bottom: var(--#{$variable-prefix}sidebar-button-child-margin-bottom);
+    margin-bottom: var(--#{prefix.$variable-prefix}sidebar-button-child-margin-bottom);
 
     &::after {
       content: '';
       position: absolute;
       left: calc(-1 * var(--spacing-base) - 1px);
       top: 0;
-      bottom: calc(-1 * var(--#{$variable-prefix}sidebar-button-child-margin-bottom) - 2px);
+      bottom: calc(-1 * var(--#{prefix.$variable-prefix}sidebar-button-child-margin-bottom) - 2px);
       width: 1px;
-      background: var(--#{$variable-prefix}sidebar-button-child-timeline-bg);
+      background: var(--#{prefix.$variable-prefix}sidebar-button-child-timeline-bg);
     }
 
     &::before {
@@ -264,7 +269,7 @@ $sidebar-label-fg: #aaa;
       left: calc(-1 * var(--spacing-base) - 6px);
       width: 10px;
       height: 10px;
-      background: var(--#{$variable-prefix}sidebar-button-child-timeline-bg);
+      background: var(--#{prefix.$variable-prefix}sidebar-button-child-timeline-bg);
       border-radius: 50%;
     }
 
@@ -286,24 +291,24 @@ $sidebar-label-fg: #aaa;
 
     &.active {
       &::before {
-        background: var(--#{$variable-prefix}sidebar-button-child-timeline-active-bg);
+        background: var(--#{prefix.$variable-prefix}sidebar-button-child-timeline-active-bg);
         z-index: 1;
       }
     }
   }
 
   &.dropdown {
-    --#{$variable-prefix}sidebar-button-dropdown-padding-right: #{$sidebar-button-dropdown-padding-right};
-    --#{$variable-prefix}sidebar-button-dropdown-margin-bottom: #{$sidebar-button-dropdown-margin-bottom};
+    --#{prefix.$variable-prefix}sidebar-button-dropdown-padding-right: #{$sidebar-button-dropdown-padding-right};
+    --#{prefix.$variable-prefix}sidebar-button-dropdown-margin-bottom: #{$sidebar-button-dropdown-margin-bottom};
 
-    padding-right: var(--#{$variable-prefix}sidebar-button-dropdown-padding-right);
-    margin-bottom: var(--#{$variable-prefix}sidebar-button-dropdown-margin-bottom);
+    padding-right: var(--#{prefix.$variable-prefix}sidebar-button-dropdown-padding-right);
+    margin-bottom: var(--#{prefix.$variable-prefix}sidebar-button-dropdown-margin-bottom);
     position: relative;
 
     &::after {
       content: '';
       position: absolute;
-      right: var(--#{$variable-prefix}button-padding-x);
+      right: var(--#{prefix.$variable-prefix}button-padding-x);
       top: 50%;
       transform: translateY(-50%) rotate(45deg);
 
@@ -324,20 +329,20 @@ $sidebar-label-fg: #aaa;
     &.active {
       @each $variant, $dict in $sidebar-button-colors {
         &.#{$variant} {
-          @include map-variable("button-border", $dict, "border");
-          @include map-variable("button-bg", $dict, "bg");
-          @include map-variable("button-fg", $dict, "fg");
+          @include colors.map-variable("button-border", $dict, "border");
+          @include colors.map-variable("button-bg", $dict, "bg");
+          @include colors.map-variable("button-fg", $dict, "fg");
 
           &:hover {
-            @include map-variable("button-border", $dict, "hover-border");
-            @include map-variable("button-bg", $dict, "hover-bg");
-            @include map-variable("button-fg", $dict, "hover-fg");
+            @include colors.map-variable("button-border", $dict, "hover-border");
+            @include colors.map-variable("button-bg", $dict, "hover-bg");
+            @include colors.map-variable("button-fg", $dict, "hover-fg");
           }
 
           &:active {
-            @include map-variable("button-border", $dict, "active-border");
-            @include map-variable("button-bg", $dict, "active-bg");
-            @include map-variable("button-fg", $dict, "active-fg");
+            @include colors.map-variable("button-border", $dict, "active-border");
+            @include colors.map-variable("button-bg", $dict, "active-bg");
+            @include colors.map-variable("button-fg", $dict, "active-fg");
           }
         }
       }
@@ -356,18 +361,18 @@ $sidebar-label-fg: #aaa;
 }
 
 .sidebar-label {
-  --#{$variable-prefix}sidebar-label-padding-x: #{$sidebar-label-padding-x};
-  --#{$variable-prefix}sidebar-label-padding-y: #{$sidebar-label-padding-y};
-  --#{$variable-prefix}sidebar-label-fg: #{$sidebar-label-fg};
-  --#{$variable-prefix}sidebar-label-top-margin: #{$sidebar-label-top-margin};
-  --#{$variable-prefix}sidebar-label-font-size: #{$sidebar-label-font-size};
-  --#{$variable-prefix}sidebar-label-font-weight: #{$sidebar-label-font-weight};
+  --#{prefix.$variable-prefix}sidebar-label-padding-x: #{$sidebar-label-padding-x};
+  --#{prefix.$variable-prefix}sidebar-label-padding-y: #{$sidebar-label-padding-y};
+  --#{prefix.$variable-prefix}sidebar-label-fg: #{$sidebar-label-fg};
+  --#{prefix.$variable-prefix}sidebar-label-top-margin: #{$sidebar-label-top-margin};
+  --#{prefix.$variable-prefix}sidebar-label-font-size: #{$sidebar-label-font-size};
+  --#{prefix.$variable-prefix}sidebar-label-font-weight: #{$sidebar-label-font-weight};
 
-  color: var(--#{$variable-prefix}sidebar-label-fg);
-  padding: var(--#{$variable-prefix}sidebar-label-padding-y) var(--#{$variable-prefix}sidebar-label-padding-x);
-  margin-top: var(--#{$variable-prefix}sidebar-label-top-margin);
-  font-weight: var(--#{$variable-prefix}sidebar-label-font-weight);
-  font-size: var(--#{$variable-prefix}sidebar-label-font-size);
+  color: var(--#{prefix.$variable-prefix}sidebar-label-fg);
+  padding: var(--#{prefix.$variable-prefix}sidebar-label-padding-y) var(--#{prefix.$variable-prefix}sidebar-label-padding-x);
+  margin-top: var(--#{prefix.$variable-prefix}sidebar-label-top-margin);
+  font-weight: var(--#{prefix.$variable-prefix}sidebar-label-font-weight);
+  font-size: var(--#{prefix.$variable-prefix}sidebar-label-font-size);
 
   overflow: hidden;
   white-space: nowrap;

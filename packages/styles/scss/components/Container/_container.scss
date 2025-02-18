@@ -1,3 +1,6 @@
+@use "../../breakpoints";
+@use "../../prefix";
+
 $container-padding-x: 0;
 $container-max-widths: (
   sm: 540px,
@@ -8,11 +11,11 @@ $container-max-widths: (
 );
 
 @mixin make-container($gutter: $container-padding-x) {
-  --#{$variable-prefix}gutter-x: #{$gutter};
-  --#{$variable-prefix}gutter-y: 0;
+  --#{prefix.$variable-prefix}gutter-x: #{$gutter};
+  --#{prefix.$variable-prefix}gutter-y: 0;
   width: 100%;
-  padding-right: var(--#{$variable-prefix}gutter-x, #{$gutter});
-  padding-left: var(--#{$variable-prefix}gutter-x, #{$gutter});
+  padding-right: var(--#{prefix.$variable-prefix}gutter-x, #{$gutter});
+  padding-left: var(--#{prefix.$variable-prefix}gutter-x, #{$gutter});
   margin-right: auto;
   margin-left: auto;
 }
@@ -27,7 +30,7 @@ $container-max-widths: (
     @extend .container-fluid;
   }
 
-  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+  @include breakpoints.media-breakpoint-up($breakpoint, breakpoints.$grid-breakpoints) {
     %responsive-container-#{$breakpoint} {
       max-width: $container-max-width;
     }
@@ -35,9 +38,9 @@ $container-max-widths: (
     // Extend each breakpoint which is smaller or equal to the current breakpoint
     $extend-breakpoint: true;
 
-    @each $name, $width in $grid-breakpoints {
+    @each $name, $width in breakpoints.$grid-breakpoints {
       @if ($extend-breakpoint) {
-        .container#{breakpoint-infix($name, $grid-breakpoints)} {
+        .container#{breakpoints.breakpoint-infix($name, breakpoints.$grid-breakpoints)} {
           @extend %responsive-container-#{$breakpoint};
         }
 

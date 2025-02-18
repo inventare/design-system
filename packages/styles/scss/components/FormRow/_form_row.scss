@@ -1,24 +1,26 @@
+@use "../../prefix";
+
 $form-row-bottom-margin: var(--spacing-base) !default;
 $form-row-bottom-margin-large: var(--spacing-large) !default;
 $form-row-bottom-gap: var(--spacing-base) !default;
 
 .form-row {
-  --#{$variable-prefix}form-row-bottom-margin: #{$form-row-bottom-margin};
-  --#{$variable-prefix}form-row-bottom-margin-large: #{$form-row-bottom-margin-large};
-  --#{$variable-prefix}form-row-bottom-gap: #{$form-row-bottom-gap};
+  --#{prefix.$variable-prefix}form-row-bottom-margin: #{$form-row-bottom-margin};
+  --#{prefix.$variable-prefix}form-row-bottom-margin-large: #{$form-row-bottom-margin-large};
+  --#{prefix.$variable-prefix}form-row-bottom-gap: #{$form-row-bottom-gap};
 
-  margin-bottom: var(--#{$variable-prefix}form-row-bottom-margin);
+  margin-bottom: var(--#{prefix.$variable-prefix}form-row-bottom-margin);
 
   display: flex;
   flex-direction: column;
   align-items: stretch;
 
   &.submit {
-    gap: var(--#{$variable-prefix}form-row-bottom-gap);
+    gap: var(--#{prefix.$variable-prefix}form-row-bottom-gap);
   }
 
   &.large {
-    margin-bottom: var(--#{$variable-prefix}form-row-bottom-margin-large);
+    margin-bottom: var(--#{prefix.$variable-prefix}form-row-bottom-margin-large);
   }
 
   &.left {

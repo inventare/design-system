@@ -1,3 +1,6 @@
+@use "../../breakpoints";
+@use "../../prefix";
+
 $modal-zindex: 1050;
 $modal-dialog-margin: 0.5rem;
 
@@ -46,35 +49,35 @@ $modal-backdrop-opacity: 1;
 $modal-backdrop-blur: 3px;
 
 .modal {
-  --#{$variable-prefix}modal-zindex: #{$modal-zindex};
-  --#{$variable-prefix}modal-dialog-width: #{$modal-md};
-  --#{$variable-prefix}modal-dialog-margin: #{$modal-dialog-margin};
-  --#{$variable-prefix}modal-content-color: #{$modal-content-color};
-  --#{$variable-prefix}modal-content-bg: #{$modal-content-bg};
-  --#{$variable-prefix}modal-content-border-color: #{$modal-content-border-color};
-  --#{$variable-prefix}modal-content-border-width: #{$modal-content-border-width};
-  --#{$variable-prefix}modal-content-border-radius: #{$modal-content-border-radius};
-  --#{$variable-prefix}modal-content-box-shadow: #{$modal-content-box-shadow};
-  --#{$variable-prefix}modal-inner-border-radius: #{$modal-content-inner-border-radius};
+  --#{prefix.$variable-prefix}modal-zindex: #{$modal-zindex};
+  --#{prefix.$variable-prefix}modal-dialog-width: #{$modal-md};
+  --#{prefix.$variable-prefix}modal-dialog-margin: #{$modal-dialog-margin};
+  --#{prefix.$variable-prefix}modal-content-color: #{$modal-content-color};
+  --#{prefix.$variable-prefix}modal-content-bg: #{$modal-content-bg};
+  --#{prefix.$variable-prefix}modal-content-border-color: #{$modal-content-border-color};
+  --#{prefix.$variable-prefix}modal-content-border-width: #{$modal-content-border-width};
+  --#{prefix.$variable-prefix}modal-content-border-radius: #{$modal-content-border-radius};
+  --#{prefix.$variable-prefix}modal-content-box-shadow: #{$modal-content-box-shadow};
+  --#{prefix.$variable-prefix}modal-inner-border-radius: #{$modal-content-inner-border-radius};
 
-  --#{$variable-prefix}modal-header-padding-x: #{$modal-header-padding-x};
-  --#{$variable-prefix}modal-header-padding-y: #{$modal-header-padding-y};
-  --#{$variable-prefix}modal-header-padding: #{$modal-header-padding};
+  --#{prefix.$variable-prefix}modal-header-padding-x: #{$modal-header-padding-x};
+  --#{prefix.$variable-prefix}modal-header-padding-y: #{$modal-header-padding-y};
+  --#{prefix.$variable-prefix}modal-header-padding: #{$modal-header-padding};
 
-  --#{$variable-prefix}modal-title-line-height: #{$modal-title-line-height};
-  --#{$variable-prefix}modal-title-color: #{$modal-title-color};
+  --#{prefix.$variable-prefix}modal-title-line-height: #{$modal-title-line-height};
+  --#{prefix.$variable-prefix}modal-title-color: #{$modal-title-color};
 
-  --#{$variable-prefix}modal-subtitle-line-height: #{$modal-subtitle-line-height};
-  --#{$variable-prefix}modal-subtitle-color: #{$modal-subtitle-color};
-  --#{$variable-prefix}modal-subtitle-font-size: #{$modal-subtitle-font-size};
+  --#{prefix.$variable-prefix}modal-subtitle-line-height: #{$modal-subtitle-line-height};
+  --#{prefix.$variable-prefix}modal-subtitle-color: #{$modal-subtitle-color};
+  --#{prefix.$variable-prefix}modal-subtitle-font-size: #{$modal-subtitle-font-size};
 
-  --#{$variable-prefix}modal-body-padding: #{$modal-body-padding};
+  --#{prefix.$variable-prefix}modal-body-padding: #{$modal-body-padding};
 
-  --#{$variable-prefix}modal-footer-border-width: #{$modal-footer-border-width};
-  --#{$variable-prefix}modal-footer-border-color: #{$modal-footer-border-color};
-  --#{$variable-prefix}modal-footer-padding: #{$modal-footer-padding};
-  --#{$variable-prefix}modal-footer-gap: #{$modal-footer-gap};
-  --#{$variable-prefix}modal-footer-bg: #{$modal-footer-bg};
+  --#{prefix.$variable-prefix}modal-footer-border-width: #{$modal-footer-border-width};
+  --#{prefix.$variable-prefix}modal-footer-border-color: #{$modal-footer-border-color};
+  --#{prefix.$variable-prefix}modal-footer-padding: #{$modal-footer-padding};
+  --#{prefix.$variable-prefix}modal-footer-gap: #{$modal-footer-gap};
+  --#{prefix.$variable-prefix}modal-footer-bg: #{$modal-footer-bg};
 
   position: fixed;
   top: 0;
@@ -82,7 +85,7 @@ $modal-backdrop-blur: 3px;
   display: none;
   width: 100%;
   height: 100%;
-  z-index: var(--#{$variable-prefix}modal-zindex);
+  z-index: var(--#{prefix.$variable-prefix}modal-zindex);
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -93,7 +96,7 @@ $modal-backdrop-blur: 3px;
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: var(--#{$variable-prefix}modal-dialog-margin);
+  margin: var(--#{prefix.$variable-prefix}modal-dialog-margin);
 
   pointer-events: none;
 
@@ -114,7 +117,7 @@ $modal-backdrop-blur: 3px;
 .modal-dialog-centered {
   display: flex;
   align-items: center;
-  min-height: calc(100% - var(--#{$variable-prefix}modal-dialog-margin) * 2);
+  min-height: calc(100% - var(--#{prefix.$variable-prefix}modal-dialog-margin) * 2);
 }
 
 .modal-content {
@@ -123,33 +126,33 @@ $modal-backdrop-blur: 3px;
   flex-direction: column;
   width: 100%;
 
-  color: var(--#{$variable-prefix}modal-content-color);
-  background-color: var(--#{$variable-prefix}modal-content-bg);
+  color: var(--#{prefix.$variable-prefix}modal-content-color);
+  background-color: var(--#{prefix.$variable-prefix}modal-content-bg);
   background-clip: padding-box;
-  border: var(--#{$variable-prefix}modal-content-border-width) solid
-    var(--#{$variable-prefix}modal-content-border-color);
-  border-radius: var(--#{$variable-prefix}modal-content-border-radius);
+  border: var(--#{prefix.$variable-prefix}modal-content-border-width) solid
+    var(--#{prefix.$variable-prefix}modal-content-border-color);
+  border-radius: var(--#{prefix.$variable-prefix}modal-content-border-radius);
 
-  box-shadow: var(--#{$variable-prefix}modal-content-box-shadow);
+  box-shadow: var(--#{prefix.$variable-prefix}modal-content-box-shadow);
 
   pointer-events: auto;
   outline: 0;
 }
 
 .modal-backdrop {
-  --#{$variable-prefix}backdrop-zindex: #{$modal-backdrop-zindex};
-  --#{$variable-prefix}backdrop-bg: #{$modal-backdrop-bg};
-  --#{$variable-prefix}backdrop-opacity: #{$modal-backdrop-opacity};
-  --#{$variable-prefix}modal-backdrop-blur: #{$modal-backdrop-blur};
+  --#{prefix.$variable-prefix}backdrop-zindex: #{$modal-backdrop-zindex};
+  --#{prefix.$variable-prefix}backdrop-bg: #{$modal-backdrop-bg};
+  --#{prefix.$variable-prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+  --#{prefix.$variable-prefix}modal-backdrop-blur: #{$modal-backdrop-blur};
 
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--#{$variable-prefix}backdrop-zindex);
+  z-index: var(--#{prefix.$variable-prefix}backdrop-zindex);
   width: 100vw;
   height: 100vh;
-  background-color: var(--#{$variable-prefix}backdrop-bg);
-  backdrop-filter: blur(var(--#{$variable-prefix}modal-backdrop-blur));
+  background-color: var(--#{prefix.$variable-prefix}backdrop-bg);
+  backdrop-filter: blur(var(--#{prefix.$variable-prefix}modal-backdrop-blur));
   transition: opacity 0.3s ease-out;
 
   // Fade for backdrop
@@ -158,7 +161,7 @@ $modal-backdrop-blur: 3px;
   }
 
   &.show {
-    opacity: var(--#{$variable-prefix}backdrop-opacity);
+    opacity: var(--#{prefix.$variable-prefix}backdrop-opacity);
   }
 }
 
@@ -167,11 +170,11 @@ $modal-backdrop-blur: 3px;
   flex-shrink: 0;
   align-items: center;
   flex-wrap: wrap;
-  padding: var(--#{$variable-prefix}modal-header-padding);
-  border-bottom: var(--#{$variable-prefix}modal-header-border-width) solid
-    var(--#{$variable-prefix}modal-header-border-color);
-  border-top-left-radius: var(--#{$variable-prefix}modal-inner-border-radius);
-  border-top-right-radius: var(--#{$variable-prefix}modal-inner-border-radius);
+  padding: var(--#{prefix.$variable-prefix}modal-header-padding);
+  border-bottom: var(--#{prefix.$variable-prefix}modal-header-border-width) solid
+    var(--#{prefix.$variable-prefix}modal-header-border-color);
+  border-top-left-radius: var(--#{prefix.$variable-prefix}modal-inner-border-radius);
+  border-top-right-radius: var(--#{prefix.$variable-prefix}modal-inner-border-radius);
 
   .btn-close {
     padding: 7px;
@@ -205,28 +208,28 @@ $modal-backdrop-blur: 3px;
   flex: 1;
 
   margin-bottom: 0;
-  line-height: var(--#{$variable-prefix}modal-title-line-height);
-  color: var(--#{$variable-prefix}modal-title-color);
+  line-height: var(--#{prefix.$variable-prefix}modal-title-line-height);
+  color: var(--#{prefix.$variable-prefix}modal-title-color);
 }
 
 .modal-subtitle {
   width: 100%;
   margin-bottom: 0;
-  line-height: var(--#{$variable-prefix}modal-subtitle-line-height);
-  color: var(--#{$variable-prefix}modal-subtitle-color);
-  font-size: var(--#{$variable-prefix}modal-subtitle-font-size);
+  line-height: var(--#{prefix.$variable-prefix}modal-subtitle-line-height);
+  color: var(--#{prefix.$variable-prefix}modal-subtitle-color);
+  font-size: var(--#{prefix.$variable-prefix}modal-subtitle-font-size);
 }
 
 .modal-body {
   position: relative;
 
   flex: 1 1 auto;
-  padding: var(--#{$variable-prefix}modal-body-padding);
+  padding: var(--#{prefix.$variable-prefix}modal-body-padding);
 
   .form-control {
-    --#{$variable-prefix}form-control-label-font-size: var(--font-size-small);
-    --#{$variable-prefix}form-control-padding-y: var(--spacing-xsmall);
-    --#{$variable-prefix}form-control-padding-x: var(--spacing-xsmall);
+    --#{prefix.$variable-prefix}form-control-label-font-size: var(--font-size-small);
+    --#{prefix.$variable-prefix}form-control-padding-y: var(--spacing-xsmall);
+    --#{prefix.$variable-prefix}form-control-padding-x: var(--spacing-xsmall);
   }
 }
 
@@ -239,32 +242,32 @@ $modal-backdrop-blur: 3px;
   gap: 10px;
 
   padding: calc(
-    var(--#{$variable-prefix}modal-footer-padding) -
-      var(--#{$variable-prefix}modal-footer-gap) * 0.5
+    var(--#{prefix.$variable-prefix}modal-footer-padding) -
+      var(--#{prefix.$variable-prefix}modal-footer-gap) * 0.5
   );
-  background-color: var(--#{$variable-prefix}modal-footer-bg);
-  border-top: var(--#{$variable-prefix}modal-footer-border-width) solid
-    var(--#{$variable-prefix}modal-footer-border-color);
+  background-color: var(--#{prefix.$variable-prefix}modal-footer-bg);
+  border-top: var(--#{prefix.$variable-prefix}modal-footer-border-width) solid
+    var(--#{prefix.$variable-prefix}modal-footer-border-color);
   border-bottom-left-radius: var(
-    --#{$variable-prefix}modal-inner-border-radius
+    --#{prefix.$variable-prefix}modal-inner-border-radius
   );
   border-bottom-right-radius: var(
-    --#{$variable-prefix}modal-inner-border-radius
+    --#{prefix.$variable-prefix}modal-inner-border-radius
   );
 }
 
-@include media-breakpoint-up(sm) {
+@include breakpoints.media-breakpoint-up(sm) {
   .modal-dialog {
-    max-width: var(--#{$variable-prefix}modal-dialog-width);
+    max-width: var(--#{prefix.$variable-prefix}modal-dialog-width);
     margin-right: auto;
     margin-left: auto;
   }
 
   .modal-sm {
-    --#{$variable-prefix}modal-dialog-width: #{$modal-sm};
+    --#{prefix.$variable-prefix}modal-dialog-width: #{$modal-sm};
 
     .modal-footer {
-      --#{$variable-prefix}modal-footer-border-color: transparent;
+      --#{prefix.$variable-prefix}modal-footer-border-color: transparent;
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -272,15 +275,15 @@ $modal-backdrop-blur: 3px;
   }
 }
 
-@include media-breakpoint-up(lg) {
+@include breakpoints.media-breakpoint-up(lg) {
   .modal-lg,
   .modal-xl {
-    --#{$variable-prefix}modal-dialog-width: #{$modal-lg};
+    --#{prefix.$variable-prefix}modal-dialog-width: #{$modal-lg};
   }
 }
 
-@include media-breakpoint-up(xl) {
+@include breakpoints.media-breakpoint-up(xl) {
   .modal-xl {
-    --#{$variable-prefix}modal-dialog-width: #{$modal-xl};
+    --#{prefix.$variable-prefix}modal-dialog-width: #{$modal-xl};
   }
 }

@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../prefix";
+
 @mixin map-variable($name, $map, $color) {
-  --#{$variable-prefix}#{$name}: #{map-get($map, $color)};
+  --#{prefix.$variable-prefix}#{$name}: #{map.get($map, $color)};
 }

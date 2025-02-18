@@ -1,3 +1,5 @@
+@use "../../prefix";
+
 $form-control-padding-x: var(--spacing-small) !default;
 $form-control-padding-y: var(--spacing-small) !default;
 
@@ -57,138 +59,138 @@ $form-control-valid-placeholder: var(--color-gray-400) !default;
   flex-direction: column;
   align-items: stretch;
 
-  --#{$variable-prefix}form-control-padding-y: #{$form-control-padding-y};
-  --#{$variable-prefix}form-control-padding-x: #{$form-control-padding-x};
-  --#{$variable-prefix}form-control-font: #{$form-control-font};
-  --#{$variable-prefix}form-control-font-size: #{$form-control-font-size};
-  --#{$variable-prefix}form-control-font-weight: #{$form-control-font-weight};
-  --#{$variable-prefix}form-control-line-height: #{$form-control-line-height};
-  --#{$variable-prefix}form-control-border-radius: #{$form-control-border-radius};
-  --#{$variable-prefix}form-control-transition: #{$form-control-transition};
+  --#{prefix.$variable-prefix}form-control-padding-y: #{$form-control-padding-y};
+  --#{prefix.$variable-prefix}form-control-padding-x: #{$form-control-padding-x};
+  --#{prefix.$variable-prefix}form-control-font: #{$form-control-font};
+  --#{prefix.$variable-prefix}form-control-font-size: #{$form-control-font-size};
+  --#{prefix.$variable-prefix}form-control-font-weight: #{$form-control-font-weight};
+  --#{prefix.$variable-prefix}form-control-line-height: #{$form-control-line-height};
+  --#{prefix.$variable-prefix}form-control-border-radius: #{$form-control-border-radius};
+  --#{prefix.$variable-prefix}form-control-transition: #{$form-control-transition};
 
-  --#{$variable-prefix}form-control-border: #{$form-control-default-border};
-  --#{$variable-prefix}form-control-bg: #{$form-control-default-bg};
-  --#{$variable-prefix}form-control-fg: #{$form-control-default-fg};
-  --#{$variable-prefix}form-control-placeholder: #{$form-control-default-placeholder};
+  --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-border};
+  --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-bg};
+  --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-fg};
+  --#{prefix.$variable-prefix}form-control-placeholder: #{$form-control-default-placeholder};
 
-  --#{$variable-prefix}form-control-label-font: #{$form-control-label-font};
-  --#{$variable-prefix}form-control-label-font-size: #{$form-control-label-font-size};
-  --#{$variable-prefix}form-control-label-font-weight: #{$form-control-label-font-weight};
-  --#{$variable-prefix}form-control-label-line-height: #{$form-control-label-line-height};
-  --#{$variable-prefix}form-control-label-spacing: #{$form-control-label-spacing};
-  --#{$variable-prefix}form-control-label-fg: #{$form-control-label-fg};
+  --#{prefix.$variable-prefix}form-control-label-font: #{$form-control-label-font};
+  --#{prefix.$variable-prefix}form-control-label-font-size: #{$form-control-label-font-size};
+  --#{prefix.$variable-prefix}form-control-label-font-weight: #{$form-control-label-font-weight};
+  --#{prefix.$variable-prefix}form-control-label-line-height: #{$form-control-label-line-height};
+  --#{prefix.$variable-prefix}form-control-label-spacing: #{$form-control-label-spacing};
+  --#{prefix.$variable-prefix}form-control-label-fg: #{$form-control-label-fg};
 
-  --#{$variable-prefix}form-control-helper-font: #{$form-control-helper-font};
-  --#{$variable-prefix}form-control-helper-font-size: #{$form-control-helper-font-size};
-  --#{$variable-prefix}form-control-helper-font-weight: #{$form-control-helper-font-weight};
-  --#{$variable-prefix}form-control-helper-margin-top: #{$form-control-helper-margin-top};
-  --#{$variable-prefix}form-control-helper-fg: #{$form-control-helper-fg};
+  --#{prefix.$variable-prefix}form-control-helper-font: #{$form-control-helper-font};
+  --#{prefix.$variable-prefix}form-control-helper-font-size: #{$form-control-helper-font-size};
+  --#{prefix.$variable-prefix}form-control-helper-font-weight: #{$form-control-helper-font-weight};
+  --#{prefix.$variable-prefix}form-control-helper-margin-top: #{$form-control-helper-margin-top};
+  --#{prefix.$variable-prefix}form-control-helper-fg: #{$form-control-helper-fg};
 
-  --#{$variable-prefix}form-control-color-padding-y: #{$form-control-color-padding-y};
-  --#{$variable-prefix}form-control-color-padding-x: #{$form-control-color-padding-x};
-  --#{$variable-prefix}form-control-color-height: #{$form-control-color-height};
-  --#{$variable-prefix}form-control-color-width: #{$form-control-color-width};
+  --#{prefix.$variable-prefix}form-control-color-padding-y: #{$form-control-color-padding-y};
+  --#{prefix.$variable-prefix}form-control-color-padding-x: #{$form-control-color-padding-x};
+  --#{prefix.$variable-prefix}form-control-color-height: #{$form-control-color-height};
+  --#{prefix.$variable-prefix}form-control-color-width: #{$form-control-color-width};
 
   label {
-    font-family: var(--#{$variable-prefix}form-control-label-font);
-    font-size: var(--#{$variable-prefix}form-control-label-font-size);
-    font-weight: var(--#{$variable-prefix}form-control-label-font-weight);
-    line-height: var(--#{$variable-prefix}form-control-label-line-height);
-    margin-bottom: var(--#{$variable-prefix}form-control-label-spacing);
-    color: var(--#{$variable-prefix}form-control-label-fg);
+    font-family: var(--#{prefix.$variable-prefix}form-control-label-font);
+    font-size: var(--#{prefix.$variable-prefix}form-control-label-font-size);
+    font-weight: var(--#{prefix.$variable-prefix}form-control-label-font-weight);
+    line-height: var(--#{prefix.$variable-prefix}form-control-label-line-height);
+    margin-bottom: var(--#{prefix.$variable-prefix}form-control-label-spacing);
+    color: var(--#{prefix.$variable-prefix}form-control-label-fg);
   }
 
   input:not(.default) {
-    padding: var(--#{$variable-prefix}form-control-padding-y) var(--#{$variable-prefix}form-control-padding-x);
+    padding: var(--#{prefix.$variable-prefix}form-control-padding-y) var(--#{prefix.$variable-prefix}form-control-padding-x);
 
-    font-family: var(--#{$variable-prefix}form-control-font);
-    font-size: var(--#{$variable-prefix}form-control-font-size);
-    font-weight: var(--#{$variable-prefix}form-control-font-weight);
-    line-height: var(--#{$variable-prefix}form-control-line-height);
+    font-family: var(--#{prefix.$variable-prefix}form-control-font);
+    font-size: var(--#{prefix.$variable-prefix}form-control-font-size);
+    font-weight: var(--#{prefix.$variable-prefix}form-control-font-weight);
+    line-height: var(--#{prefix.$variable-prefix}form-control-line-height);
 
-    border-radius: var(--#{$variable-prefix}form-control-border-radius);
+    border-radius: var(--#{prefix.$variable-prefix}form-control-border-radius);
 
-    border: 1px solid var(--#{$variable-prefix}form-control-border);
-    background: var(--#{$variable-prefix}form-control-bg);
-    color: var(--#{$variable-prefix}form-control-fg);
+    border: 1px solid var(--#{prefix.$variable-prefix}form-control-border);
+    background: var(--#{prefix.$variable-prefix}form-control-bg);
+    color: var(--#{prefix.$variable-prefix}form-control-fg);
 
-    transition: var(--#{$variable-prefix}form-control-transition);
+    transition: var(--#{prefix.$variable-prefix}form-control-transition);
 
     &:disabled {
-      --#{$variable-prefix}form-control-border: #{$form-control-disabled-border};
-      --#{$variable-prefix}form-control-bg: #{$form-control-disabled-bg};
-      --#{$variable-prefix}form-control-fg: #{$form-control-disabled-fg};
+      --#{prefix.$variable-prefix}form-control-border: #{$form-control-disabled-border};
+      --#{prefix.$variable-prefix}form-control-bg: #{$form-control-disabled-bg};
+      --#{prefix.$variable-prefix}form-control-fg: #{$form-control-disabled-fg};
     }
 
     &:not(:disabled) {
       &:hover {
-        --#{$variable-prefix}form-control-border: #{$form-control-default-hover-border};
-        --#{$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
-        --#{$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
+        --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-hover-border};
+        --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
+        --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
         outline: none;
       }
 
       &:active,
       &:focus {
-        --#{$variable-prefix}form-control-border: #{$form-control-default-active-border};
-        --#{$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
-        --#{$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
-        --#{$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
+        --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-active-border};
+        --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
+        --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
+        --#{prefix.$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
 
         outline: none;
 
-        box-shadow: 0 0 0 0.25rem var(--#{$variable-prefix}form-control-shadow);
+        box-shadow: 0 0 0 0.25rem var(--#{prefix.$variable-prefix}form-control-shadow);
       }
 
       &::placeholder {
-        color: var(--#{$variable-prefix}form-control-placeholder);
+        color: var(--#{prefix.$variable-prefix}form-control-placeholder);
       }
     }
 
     &[type="color"] {
-      padding: var(--#{$variable-prefix}form-control-color-padding-y) var(--#{$variable-prefix}form-control-color-padding-x);
-      width: var(--#{$variable-prefix}form-control-color-width);
-      height: var(--#{$variable-prefix}form-control-color-height);
+      padding: var(--#{prefix.$variable-prefix}form-control-color-padding-y) var(--#{prefix.$variable-prefix}form-control-color-padding-x);
+      width: var(--#{prefix.$variable-prefix}form-control-color-width);
+      height: var(--#{prefix.$variable-prefix}form-control-color-height);
     }
   }
 
   .helper-text {
-    font-family: var(--#{$variable-prefix}form-control-helper-font);
-    font-size: var(--#{$variable-prefix}form-control-helper-font-size);
-    font-weight: var(--#{$variable-prefix}form-control-helper-font-weight);
-    margin-top: var(--#{$variable-prefix}form-control-helper-margin-top);
-    color: var(--#{$variable-prefix}form-control-helper-fg);
+    font-family: var(--#{prefix.$variable-prefix}form-control-helper-font);
+    font-size: var(--#{prefix.$variable-prefix}form-control-helper-font-size);
+    font-weight: var(--#{prefix.$variable-prefix}form-control-helper-font-weight);
+    margin-top: var(--#{prefix.$variable-prefix}form-control-helper-margin-top);
+    color: var(--#{prefix.$variable-prefix}form-control-helper-fg);
   }
 
   &.invalid {
     .helper-text {
-      --#{$variable-prefix}form-control-invalid-color: #{$form-control-invalid-color};
-      color: var(--#{$variable-prefix}form-control-invalid-color);
+      --#{prefix.$variable-prefix}form-control-invalid-color: #{$form-control-invalid-color};
+      color: var(--#{prefix.$variable-prefix}form-control-invalid-color);
     }
 
     input,
     input:hover,
     input:focus,
     input:active {
-      --#{$variable-prefix}form-control-border: #{$form-control-invalid-color};
-      --#{$variable-prefix}form-control-shadow: #{$form-control-invalid-shadow};
-      --#{$variable-prefix}form-control-placeholder: #{$form-control-invalid-placeholder};
+      --#{prefix.$variable-prefix}form-control-border: #{$form-control-invalid-color};
+      --#{prefix.$variable-prefix}form-control-shadow: #{$form-control-invalid-shadow};
+      --#{prefix.$variable-prefix}form-control-placeholder: #{$form-control-invalid-placeholder};
     }
   }
 
   &.valid {
     .helper-text {
-      --#{$variable-prefix}form-control-valid-color: #{$form-control-valid-color};
-      color: var(--#{$variable-prefix}form-control-valid-color);
+      --#{prefix.$variable-prefix}form-control-valid-color: #{$form-control-valid-color};
+      color: var(--#{prefix.$variable-prefix}form-control-valid-color);
     }
 
     input,
     input:hover,
     input:focus,
     input:active {
-      --#{$variable-prefix}form-control-border: #{$form-control-valid-color};
-      --#{$variable-prefix}form-control-shadow: #{$form-control-valid-shadow};
-      --#{$variable-prefix}form-control-placeholder: #{$form-control-valid-placeholder};
+      --#{prefix.$variable-prefix}form-control-border: #{$form-control-valid-color};
+      --#{prefix.$variable-prefix}form-control-shadow: #{$form-control-valid-shadow};
+      --#{prefix.$variable-prefix}form-control-placeholder: #{$form-control-valid-placeholder};
     }
   }
 }
