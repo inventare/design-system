@@ -1,0 +1,34 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as ContainerStories from './container.stories';
+
+<Meta of={ContainerStories} />
+
+# Container
+
+Containers are used to contain, pad, and (sometimes) center the content within a given device or viewport.
+
+> Our container blocks are directly inspired (~copied~) from Bootstrap,
+> MIT licensed, source code. These docs are condensed and you can consult
+> the original [Bootstrap documentation](https://getbootstrap.com/docs/5.3/layout/containers/).
+
+We comes with three different containers:
+
+- `<Container breakpoint="all" />`, which sets a `max-width` at each responsive breakpoint.
+- `<Container breakpoint="{breakpoint}" />`, which is `width: 100%` until the specified breakpoint.
+- `<Container breakpoint="fluid" />`, which is `width: 100%` at all breakpoints.
+
+The table below illustrates how each container's `max-width` compares to the original `<Container />` and `<Container breakpoint="fluid" />` across each breakpoint.
+
+| Component                          | Extra Small (< 576px) | Small (>= 576px) | Medium (>= 768px)  | Large (>= 992px) | X-Large (>= 1200px) | XX-Large (>= 1400px) |
+| ---------------------------------- | --------------------- | ---------------- | ------------------ | ---------------- | ------------------- | -------------------- |
+| `<Container/>`                     | 100%                  | 540px            | 720px              | 960px            | 1140px              | 1320px               |
+| `<Container breakpoint="sm" />`    | 100%                  | 540px            | 720px              | 960px            | 1140px              | 1320px               |
+| `<Container breakpoint="md" />`    | 100%                  | 100%             | 720px              | 960px            | 1140px              | 1320px               |
+| `<Container breakpoint="lg" />`    | 100%                  | 100%             | 100%               | 960px            | 1140px              | 1320px               |
+| `<Container breakpoint="xl" />`    | 100%                  | 100%             | 100%               | 100%             | 1140px              | 1320px               |
+| `<Container breakpoint="xxl" />`   | 100%                  | 100%             | 100%               | 100%             | 100%                | 1320px               |
+| `<Container breakpoint="fluid" />` | 100%                  | 100%             | 100%               | 100%             | 100%                | 100%                 |
+
+## Examples
+
+The best way to see the examples is to see each story inside this component in fullscreen mode.
