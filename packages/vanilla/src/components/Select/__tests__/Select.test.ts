@@ -63,6 +63,36 @@ describe('Select', () => {
     expect(isExpanded(container)).toBeFalsy();
   });
 
+  it('press escape on combobox should close dropdown', async () => {
+    const container = renderSelect({ items: 5, }, { addEvents: true });
+    document.body.appendChild(container);
+
+    const combobox = getByRole(container, 'combobox');
+    await userEvent.click(combobox)
+
+    await userEvent.keyboard('[Escape]');
+
+    expect(isExpanded(container)).toBeFalsy();
+  });
+
+  it('press escape on focused dropdown should close dropdown', async () => {
+    const container = renderSelect({ items: 5, }, { addEvents: true });
+    document.body.appendChild(container);
+
+    const combobox = getByRole(container, 'combobox');
+    await userEvent.click(combobox)
+
+    const listItem = getByRole(container, 'option', { name: 'Item 3' });
+    if (!listItem) {
+      throw new Error('not found');
+    }
+    listItem.focus();
+
+    await userEvent.keyboard('[Escape]');
+
+    expect(isExpanded(container)).toBeFalsy();
+  });
+
   it('click on a item should set the value of the input', async () => {
     const container = renderSelect({ items: 5, }, { addEvents: true });
     document.body.appendChild(container);

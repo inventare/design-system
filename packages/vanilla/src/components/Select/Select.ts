@@ -73,6 +73,9 @@ export class Select {
 
       this.onArrowUp();
     }
+    if (e.key === 'Escape' && this.isExpanded) {
+      this.hide();
+    }
   }
 
   onArrowDown() {
@@ -109,6 +112,9 @@ export class Select {
     }
     if (e.key === 'ArrowUp') {
       this.onArrowUp();
+    }
+    if (e.key === 'Escape') {
+      this.hide();
     }
   }
 
