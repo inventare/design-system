@@ -1,5 +1,7 @@
 export * from './button';
 
+export * from './container';
+
 export * from './form-row';
 export * from './form-label';
 export * from './form-input';
