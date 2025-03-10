@@ -14,7 +14,7 @@ const getStorybookRefs = (configType: string) => {
     return {
       react: {
         title: 'React (localhost:7006)',
-        url: 'http://localhost:7006',
+        url: 'http://localhost:7006/',
       },
     };
   }
