@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title='Docs/Architecture Decision Records/ADR 0001: Why Create Our Own Select Component?' />
+
+# ADR 0001: Why Create Our Own Select Component?
+
+🗓️ 2025-03 · ✍️ [@EduardoJM](https://github.com/eduardoJM/)
+
+## Context
+
+We need to use custom select components to populate with paginated data fetching and, to solve this problem, we need to choose a select component or create our own.
+
+## Decision Drivers
+
+- We need out of box support for [HTMX](https://htmx.org/).
+- We need to support vanilla with easy component initialization for `Django` and `Django-Admin` usage.
+- We need to create the base to support react component.
+- The vanilla and the react version should have the same design and UX.
+
+## Decision
+
+We opted to create our custom component. The first created version of the component is using vanilla javascript. To out of box support for HTMX we opted to use event bubbling, like described in **ADR 0000: Why Custom Vanilla JavaScript Components?**.
+
+The reason for opted this is:
+
+1. Customize the most of custom react component is hard to maintain the consistency with other library for vanilla.
+2. For vanilla, we have a limited range of components and the most used is *Select2*, with *jQuery*. The usage of *jQuery* is not intented in this library.
+3. Creating our own, is possible to maintain it very simple until we need more complex features.
