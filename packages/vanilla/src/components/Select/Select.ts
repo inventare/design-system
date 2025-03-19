@@ -145,11 +145,14 @@ export class Select {
     this.element.classList.add(SELECT_EXPANDED_CLASS);
     document.addEventListener('click', this.documentClick);
 
-    this.selectDropDown.querySelector<HTMLInputElement>('input[type=text]')?.focus();
     this.selectDropDown.querySelector('.select-dropdown-inner')?.scrollTo({ top: 0 });
 
-    this.activeItem = this.items.find((item) => item.isActive) || null;
-    this.activeItem?.element.scrollIntoView({ behavior: 'instant' });
+    setTimeout(() => {
+      this.selectDropDown.querySelector<HTMLInputElement>('input[type=text]')?.focus();
+    }, 100);
+
+    //this.activeItem = this.items.find((item) => item.isActive) || null;
+    //this.activeItem?.element.scrollIntoView({ behavior: 'instant' });
 
     const evt = new CustomEvent('opened', { bubbles: true, cancelable: true, composed: true });
     this.selectDropDown.dispatchEvent(evt);

@@ -55,6 +55,9 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
 
       <div class="select-dropdown">
         <div class="select-dropdown-inner">
+          <div class="select-dropdown-search">
+            <input type="text" placeholder="Pesquisar..." />
+          </div>
           <button data-value="" class="select-item" type="button" role="option">No Value</button>
           ${buttons}
         </div>
@@ -66,5 +69,10 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
     new SelectManager().initializeInstanceList(container);
   }
 
-  return container;
+  const wrapper = document.createElement('div');
+  wrapper.style.height = '300px';
+  wrapper.appendChild(container);
+
+  return wrapper;
 };
+

@@ -37,6 +37,8 @@ const config = {
     "../architecture-decision-records/*.mdx",
     // TOKENS
     "../../../packages/tokens/stories/**/*.mdx",
+    // ICONS
+    "../../../packages/icons/stories/**/*.mdx",
     // SCSS Styles
     "../../../packages/styles/**/*.mdx",
     "../../../packages/styles/**/*.stories.@(js|jsx|mjs|ts|tsx)",
