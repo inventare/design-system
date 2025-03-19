@@ -1,0 +1,4 @@
+import{j as t}from"./jsx-runtime-DPPBfO83.js";import{useMDXComponents as e}from"./index-BI8gCevP.js";import{M as s,C as i,d as a}from"./index-BW7c5mDS.js";import{B as m,D as c}from"./Breadcrumb.stories-FFgvgOq1.js";import"./index-DbCJ5pgv.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-DL0tZgjO.js";import"../sb-preview/runtime.js";import"./index-C2eUe6cH.js";import"./index-BNBnOnkz.js";import"./index-DrFu-skq.js";function n(r){const o={h1:"h1",p:"p",...e(),...r.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{of:m}),`
+`,t.jsx(o.h1,{id:"breadcrumb",children:"Breadcrumb"}),`
+`,t.jsx(o.p,{children:"Used to display a page's location within a site's hierarchical structure"}),`
+`,t.jsx(i,{children:t.jsx(a,{of:c})})]})}function b(r={}){const{wrapper:o}={...e(),...r.components};return o?t.jsx(o,{...r,children:t.jsx(n,{...r})}):n(r)}export{b as default};
