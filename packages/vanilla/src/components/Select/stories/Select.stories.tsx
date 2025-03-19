@@ -13,7 +13,7 @@ type Story = StoryObj<SelectProps>;
 
 export const Default: Story = {
   args: {
-    items: 3
+    items: 42
   }
 };
 
