@@ -1,0 +1,25 @@
+import{j as e}from"./jsx-runtime-WwOhivLH.js";import{useMDXComponents as s}from"./index-DYqT6kjR.js";import{M as c,C as i,d as r}from"./index-BAaMq9P7.js";import{C as l,a as h,F as x}from"./Container.stories-M2TJYkJ0.js";import"./index-DwKesvR4.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-BFQ-A_1h.js";import"../sb-preview/runtime.js";import"./index-DY3dAHcx.js";import"./index-DQqPIFLp.js";import"./index-DrFu-skq.js";function t(d){const n={a:"a",blockquote:"blockquote",code:"code",del:"del",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",pre:"pre",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s(),...d.components};return e.jsxs(e.Fragment,{children:[e.jsx(c,{of:l}),`
+`,e.jsx(n.h1,{id:"container",children:"Container"}),`
+`,e.jsx(n.p,{children:"Containers are used to contain, pad, and (sometimes) center the content within a given device or viewport."}),`
+`,e.jsxs(n.blockquote,{children:[`
+`,e.jsxs(n.p,{children:["Our container blocks are directly inspired (",e.jsx(n.del,{children:"copied"}),`) from Bootstrap,
+MIT licensed, source code. These docs are condensed and you can consult
+the original `,e.jsx(n.a,{href:"https://getbootstrap.com/docs/5.3/layout/containers/",rel:"nofollow",children:"Bootstrap documentation"}),"."]}),`
+`]}),`
+`,e.jsx(n.p,{children:"We comes with three different containers:"}),`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsxs(n.li,{children:[e.jsx(n.code,{children:".container"}),", which sets a ",e.jsx(n.code,{children:"max-width"})," at each responsive breakpoint."]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.code,{children:".container-{breakpoint}"}),", which is ",e.jsx(n.code,{children:"width: 100%"})," until the specified breakpoint."]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.code,{children:".container-fluid"}),", which is ",e.jsx(n.code,{children:"width: 100%"})," at all breakpoints."]}),`
+`]}),`
+`,e.jsxs(n.p,{children:["The table below illustrates how each container's ",e.jsx(n.code,{children:"max-width"})," compares to the original ",e.jsx(n.code,{children:".container"})," and ",e.jsx(n.code,{children:".container-fluid"})," across each breakpoint."]}),`
+`,e.jsxs(n.table,{children:[e.jsx(n.thead,{children:e.jsxs(n.tr,{children:[e.jsx(n.th,{children:"Class"}),e.jsx(n.th,{children:"Extra Small (< 576px)"}),e.jsx(n.th,{children:"Small (>= 576px)"}),e.jsx(n.th,{children:"Medium (>= 768px)"}),e.jsx(n.th,{children:"Large (>= 992px)"}),e.jsx(n.th,{children:"X-Large (>= 1200px)"}),e.jsx(n.th,{children:"XX-Large (>= 1400px)"})]})}),e.jsxs(n.tbody,{children:[e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"540px"}),e.jsx(n.td,{children:"720px"}),e.jsx(n.td,{children:"960px"}),e.jsx(n.td,{children:"1140px"}),e.jsx(n.td,{children:"1320px"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container-sm"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"540px"}),e.jsx(n.td,{children:"720px"}),e.jsx(n.td,{children:"960px"}),e.jsx(n.td,{children:"1140px"}),e.jsx(n.td,{children:"1320px"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container-md"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"720px"}),e.jsx(n.td,{children:"960px"}),e.jsx(n.td,{children:"1140px"}),e.jsx(n.td,{children:"1320px"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container-lg"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"960px"}),e.jsx(n.td,{children:"1140px"}),e.jsx(n.td,{children:"1320px"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container-xl"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"1140px"}),e.jsx(n.td,{children:"1320px"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container-xxl"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"1320px"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:".container-fluid"})}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"}),e.jsx(n.td,{children:"100%"})]})]})]}),`
+`,e.jsx(n.h2,{id:"examples",children:"Examples"}),`
+`,e.jsx(n.h3,{id:"container-1",children:"Container"}),`
+`,e.jsx(i,{children:e.jsx(r,{of:h})}),`
+`,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-html",children:`<div class="container">...</div>
+`})}),`
+`,e.jsx(n.h3,{id:"container-fluid",children:"Container-Fluid"}),`
+`,e.jsx(i,{children:e.jsx(r,{of:x})}),`
+`,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-html",children:`<div class="container-fluid">...</div>
+`})})]})}function k(d={}){const{wrapper:n}={...s(),...d.components};return n?e.jsx(n,{...d,children:e.jsx(t,{...d})}):t(d)}export{k as default};
