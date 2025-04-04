@@ -35,6 +35,8 @@ const config = {
   stories: [
     // Architecture Decision Records
     "../architecture-decision-records/*.mdx",
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     // TOKENS
     "../../../packages/tokens/stories/**/*.mdx",
     // ICONS
