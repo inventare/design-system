@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/html';
 import { FormControlProps, renderFormControl } from './FormControl';
 
-export default {
+const meta: Meta<FormControlProps> = {
   title: 'Forms/FormControl',
   render: ({ ...args }: FormControlProps) => {
     return renderFormControl({ ...args });
@@ -17,7 +18,11 @@ export default {
   },
 };
 
-export const Default = {
+export default meta;
+
+type Story = StoryObj<FormControlProps>;
+
+export const Default: Story = {
   args: {
     label: 'What is your name?',
     id: 'input-def',
@@ -26,7 +31,7 @@ export const Default = {
   }
 };
 
-export const Valid = {
+export const Valid: Story = {
   args: {
     label: 'What is your value?',
     id: 'input-valid',
@@ -37,7 +42,7 @@ export const Valid = {
   }
 };
 
-export const Invalid = {
+export const Invalid: Story = {
   args: {
     label: 'What is your value?',
     id: 'input-invalid',
@@ -48,7 +53,7 @@ export const Invalid = {
   }
 };
 
-export const WithHelperText = {
+export const WithHelperText: Story = {
   args: {
     label: 'What is your email?',
     id: 'input-with-helper',
@@ -59,7 +64,45 @@ export const WithHelperText = {
   }
 };
 
-export const Text = {
+export const WithHelperTextAdornments: Story = {
+  args: {
+    label: 'With is the price?',
+    id: 'input-with-helper',
+    disabled: false,
+    type: "number",
+    helperText: 'Monthly price.',
+    placeholder: '290',
+    value: '500',
+    leftAdornment: 'R$',
+    rightAdornment: '/month',
+  }
+};
+
+export const LeftAdornments: Story = {
+  args: {
+    label: 'What is the price?',
+    id: 'input-with-helper',
+    disabled: false,
+    type: 'number',
+    placeholder: '290',
+    value: '500',
+    leftAdornment: 'R$',
+  }
+};
+
+export const RightAdornments: Story = {
+  args: {
+    label: 'What is the price?',
+    id: 'input-with-helper',
+    disabled: false,
+    type: 'number',
+    placeholder: '290',
+    value: '500',
+    rightAdornment: '/year',
+  }
+};
+
+export const Text: Story = {
   args: {
     label: 'What is your name?',
     id: 'input-text-name',
@@ -69,7 +112,7 @@ export const Text = {
   }
 };
 
-export const Password = {
+export const Password: Story = {
   args: {
     label: 'Enter your password?',
     id: 'input-password',
@@ -79,7 +122,7 @@ export const Password = {
   }
 };
 
-export const Email = {
+export const Email: Story = {
   args: {
     label: 'What is your email?',
     id: 'input-email-email',
@@ -89,7 +132,7 @@ export const Email = {
   }
 };
 
-export const Date = {
+export const Date: Story = {
   args: {
     label: 'Select the birth date',
     id: 'input-date',
@@ -98,7 +141,7 @@ export const Date = {
   }
 };
 
-export const DateTimeLocal = {
+export const DateTimeLocal: Story = {
   args: {
     label: 'Select the date and time to schedule',
     id: 'input-datetime',
@@ -107,7 +150,7 @@ export const DateTimeLocal = {
   }
 };
 
-export const Color = {
+export const Color: Story = {
   args: {
     label: 'Select the detail color',
     id: 'input-color',
@@ -116,7 +159,7 @@ export const Color = {
   }
 };
 
-export const File = {
+export const File: Story = {
   args: {
     label: 'Select the attachment',
     id: 'input-file',
@@ -125,7 +168,7 @@ export const File = {
   }
 };
 
-export const Month = {
+export const Month: Story = {
   args: {
     label: 'Select the month',
     id: 'input-month',
@@ -134,7 +177,7 @@ export const Month = {
   }
 };
 
-export const Week = {
+export const Week: Story = {
   args: {
     label: 'Select the week',
     id: 'input-week',
@@ -143,7 +186,7 @@ export const Week = {
   }
 };
 
-export const Disabled = {
+export const Disabled: Story = {
   args: {
     disabled: true,
     label: 'Your e-mail',
@@ -154,7 +197,7 @@ export const Disabled = {
   }
 };
 
-export const DisabledValid = {
+export const DisabledValid: Story = {
   args: {
     variant: 'valid',
     disabled: true,
@@ -166,7 +209,7 @@ export const DisabledValid = {
   }
 };
 
-export const DisabledInvalid = {
+export const DisabledInvalid: Story = {
   args: {
     variant: 'invalid',
     disabled: true,
@@ -178,7 +221,7 @@ export const DisabledInvalid = {
   }
 };
 
-export const Placeholder = {
+export const Placeholder: Story = {
   args: {
     disabled: false,
     label: 'What is your name?',
@@ -187,7 +230,7 @@ export const Placeholder = {
   }
 };
 
-export const PlaceholderValid = {
+export const PlaceholderValid: Story = {
   args: {
     disabled: false,
     label: 'What is your name?',
@@ -197,7 +240,7 @@ export const PlaceholderValid = {
   }
 };
 
-export const PlaceholderInvalid = {
+export const PlaceholderInvalid: Story = {
   args: {
     disabled: false,
     label: 'What is your name?',
