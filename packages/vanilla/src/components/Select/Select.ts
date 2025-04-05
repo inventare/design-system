@@ -120,6 +120,12 @@ export class Select {
 
   dropDownClick(e: MouseEvent) {
     const target = e.target as HTMLElement;
+
+    const isInInput = !!target.closest('input');
+    if (isInInput) {
+      return;
+    }
+
     const selectItemButton = target.closest<HTMLElement>('.select-item');
     if (!selectItemButton) {
       return this.hide();
