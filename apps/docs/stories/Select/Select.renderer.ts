@@ -56,11 +56,21 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
 
       <div class="select-dropdown${fitParent ? ' select-dropdown-fixed-fit' : ' '}">
         <div class="select-dropdown-inner">
+          ${fitParent ? `
+            <header>
+              <button type="button">
+                <i class="icon-caret-left"></i>
+                Back
+              </button>
+            </header>
+          ` : ''}
           <div class="select-dropdown-search">
             <input type="text" placeholder="Pesquisar..." />
           </div>
-          <button data-value="" class="select-item" type="button" role="option">No Value</button>
-          ${buttons}
+          <div class="select-dropdown-items">
+            <button data-value="" class="select-item" type="button" role="option">No Value</button>
+            ${buttons}
+          </div>
         </div>
       </div>
     </div>
