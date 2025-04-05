@@ -3,6 +3,8 @@
 $form-control-padding-x: var(--spacing-small) !default;
 $form-control-padding-y: var(--spacing-small) !default;
 
+$form-control-adornment-spacing: var(--spacing-xsmall) !default;
+
 $form-control-font: var(--font-family) !default;
 $form-control-font-size: var(--font-size-base) !default;
 $form-control-font-weight: var(--font-weight-regular) !default;
@@ -54,6 +56,46 @@ $form-control-valid-color: var(--color-success-500) !default;
 $form-control-valid-shadow: var(--color-success-opacity-25) !default;
 $form-control-valid-placeholder: var(--color-gray-400) !default;
 
+@mixin input-font-props {
+  font-family: var(--#{prefix.$variable-prefix}form-control-font);
+  font-size: var(--#{prefix.$variable-prefix}form-control-font-size);
+  font-weight: var(--#{prefix.$variable-prefix}form-control-font-weight);
+  line-height: var(--#{prefix.$variable-prefix}form-control-line-height);
+
+  color: var(--#{prefix.$variable-prefix}form-control-fg);
+}
+
+@mixin input {
+  padding: var(--#{prefix.$variable-prefix}form-control-padding-y) var(--#{prefix.$variable-prefix}form-control-padding-x);
+
+  @include input-font-props;
+
+  border-radius: var(--#{prefix.$variable-prefix}form-control-border-radius);
+
+  border: 1px solid var(--#{prefix.$variable-prefix}form-control-border);
+  background: var(--#{prefix.$variable-prefix}form-control-bg);
+
+  transition: var(--#{prefix.$variable-prefix}form-control-transition);
+}
+
+@mixin input-hover {
+  --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-hover-border};
+  --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
+  --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
+  outline: none;
+}
+
+@mixin input-focus {
+  --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-active-border};
+  --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
+  --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
+  --#{prefix.$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
+
+  outline: none;
+
+  box-shadow: 0 0 0 0.25rem var(--#{prefix.$variable-prefix}form-control-shadow);
+}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -61,6 +103,7 @@ $form-control-valid-placeholder: var(--color-gray-400) !default;
 
   --#{prefix.$variable-prefix}form-control-padding-y: #{$form-control-padding-y};
   --#{prefix.$variable-prefix}form-control-padding-x: #{$form-control-padding-x};
+  --#{prefix.$variable-prefix}form-control-adornment-spacing: #{$form-control-adornment-spacing};
   --#{prefix.$variable-prefix}form-control-font: #{$form-control-font};
   --#{prefix.$variable-prefix}form-control-font-size: #{$form-control-font-size};
   --#{prefix.$variable-prefix}form-control-font-weight: #{$form-control-font-weight};
@@ -101,20 +144,7 @@ $form-control-valid-placeholder: var(--color-gray-400) !default;
   }
 
   input:not(.default) {
-    padding: var(--#{prefix.$variable-prefix}form-control-padding-y) var(--#{prefix.$variable-prefix}form-control-padding-x);
-
-    font-family: var(--#{prefix.$variable-prefix}form-control-font);
-    font-size: var(--#{prefix.$variable-prefix}form-control-font-size);
-    font-weight: var(--#{prefix.$variable-prefix}form-control-font-weight);
-    line-height: var(--#{prefix.$variable-prefix}form-control-line-height);
-
-    border-radius: var(--#{prefix.$variable-prefix}form-control-border-radius);
-
-    border: 1px solid var(--#{prefix.$variable-prefix}form-control-border);
-    background: var(--#{prefix.$variable-prefix}form-control-bg);
-    color: var(--#{prefix.$variable-prefix}form-control-fg);
-
-    transition: var(--#{prefix.$variable-prefix}form-control-transition);
+    @include input;
 
     &:disabled {
       --#{prefix.$variable-prefix}form-control-border: #{$form-control-disabled-border};
@@ -124,22 +154,12 @@ $form-control-valid-placeholder: var(--color-gray-400) !default;
 
     &:not(:disabled) {
       &:hover {
-        --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-hover-border};
-        --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-hover-bg};
-        --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-hover-fg};
-        outline: none;
+        @include input-hover;
       }
 
       &:active,
       &:focus {
-        --#{prefix.$variable-prefix}form-control-border: #{$form-control-default-active-border};
-        --#{prefix.$variable-prefix}form-control-bg: #{$form-control-default-active-bg};
-        --#{prefix.$variable-prefix}form-control-fg: #{$form-control-default-active-fg};
-        --#{prefix.$variable-prefix}form-control-shadow: #{$form-control-default-active-shadow};
-
-        outline: none;
-
-        box-shadow: 0 0 0 0.25rem var(--#{prefix.$variable-prefix}form-control-shadow);
+        @include input-focus;
       }
 
       &::placeholder {
@@ -151,6 +171,47 @@ $form-control-valid-placeholder: var(--color-gray-400) !default;
       padding: var(--#{prefix.$variable-prefix}form-control-color-padding-y) var(--#{prefix.$variable-prefix}form-control-color-padding-x);
       width: var(--#{prefix.$variable-prefix}form-control-color-width);
       height: var(--#{prefix.$variable-prefix}form-control-color-height);
+    }
+  }
+
+  .input {
+    @include input;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--#{prefix.$variable-prefix}form-control-adornment-spacing);
+
+    &:not(.disabled) {
+      &:hover {
+        @include input-hover;
+      }
+
+      &:active,
+      &:focus-within {
+        @include input-focus;
+      }
+
+      input {
+        &::placeholder {
+          color: var(--#{prefix.$variable-prefix}form-control-placeholder);
+        }
+      }
+    }
+
+    input {
+      flex: 1;
+      border: transparent;
+      outline: none;
+      background: transparent;
+      box-shadow: none;
+      min-width: 0;
+
+      @include input-font-props;
+    }
+
+    .adornment {
+      @include input-font-props;
     }
   }
 

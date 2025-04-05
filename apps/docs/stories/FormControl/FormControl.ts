@@ -7,6 +7,8 @@ export interface FormControlProps {
   type?: string;
   placeholder?: string;
   variant?: 'default' | 'valid' | 'invalid';
+  leftAdornment?: string;
+  rightAdornment?: string;
 }
 
 export const renderFormControl = ({
@@ -14,6 +16,8 @@ export const renderFormControl = ({
   disabled,
   label,
   helperText,
+  leftAdornment,
+  rightAdornment,
   value = '',
   type = 'text',
   placeholder = '',
@@ -47,7 +51,33 @@ export const renderFormControl = ({
   }
 
   container.appendChild(labelEl);
-  container.appendChild(input);
+
+  if (leftAdornment || rightAdornment) {
+    input.classList.add('default');
+
+    const inputContainer = document.createElement('label');
+    inputContainer.className = 'input'
+
+    if (leftAdornment) {
+      const left = document.createElement('div');
+      left.className = 'adornment';
+      left.innerHTML = leftAdornment;
+      inputContainer.appendChild(left);
+    }
+
+    inputContainer.appendChild(input)
+
+    if (rightAdornment) {
+      const right = document.createElement('div');
+      right.className = 'adornment';
+      right.innerHTML = rightAdornment;
+      inputContainer.appendChild(right);
+    }
+
+    container.appendChild(inputContainer)
+  } else {
+    container.appendChild(input);
+  }
 
   if (helperText) {
     const helperTextEl = document.createElement('span');
