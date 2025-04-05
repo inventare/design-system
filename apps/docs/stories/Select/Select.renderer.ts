@@ -2,6 +2,8 @@ import { SelectManager } from "../../../../packages/vanilla/src/components/Selec
 
 export interface SelectProps {
   items?: number;
+  fitParent?: boolean;
+  preventCloseOnSelect?: boolean;
 }
 
 export interface SelectOptions {
@@ -10,7 +12,7 @@ export interface SelectOptions {
 }
 
 export const renderSelect = (props: SelectProps, options: SelectOptions) => {
-  const { items = 10 } = props;
+  const { fitParent, preventCloseOnSelect, items = 10 } = props;
   const { addEvents, customRenderItems } = options;
 
   const container = document.createElement('div');
@@ -24,7 +26,7 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
     .join('');
 
   container.innerHTML = `
-    <div class="select-container" id="my-select">
+    <div class="select-container${fitParent ? ' select-fixed-fit' : ' '}" id="my-select">
       <input class="default-control" type="hidden" value="7" />
 
       <div
@@ -35,6 +37,7 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
         aria-expanded="false"
         aria-disabled="false"
         aria-controls="select-display"
+        ${preventCloseOnSelect ? 'data-prevent="1"' : ''}
       >
         <span
           class="select-value"
@@ -53,13 +56,23 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
         </button>
       </div>
 
-      <div class="select-dropdown">
+      <div class="select-dropdown${fitParent ? ' select-dropdown-fixed-fit' : ' '}">
         <div class="select-dropdown-inner">
+          ${fitParent ? `
+            <header>
+              <button type="button" class="close-button">
+                <i class="icon-caret-left"></i>
+                Back
+              </button>
+            </header>
+          ` : ''}
           <div class="select-dropdown-search">
             <input type="text" placeholder="Pesquisar..." />
           </div>
-          <button data-value="" class="select-item" type="button" role="option">No Value</button>
-          ${buttons}
+          <div class="select-dropdown-items">
+            <button data-value="" class="select-item" type="button" role="option">No Value</button>
+            ${buttons}
+          </div>
         </div>
       </div>
     </div>

@@ -120,8 +120,18 @@ export class Select {
 
   dropDownClick(e: MouseEvent) {
     const target = e.target as HTMLElement;
+
+    const isInInput = !!target.closest('input');
+    const isCloseButton = !!target.closest('.close-button');
+    if (isInInput) {
+      return;
+    }
+
     const selectItemButton = target.closest<HTMLElement>('.select-item');
     if (!selectItemButton) {
+      if (this.selectCombobox.dataset.prevent === '1' && !isCloseButton) {
+        return;
+      }
       return this.hide();
     }
 
@@ -130,6 +140,9 @@ export class Select {
       this.applyValue(selectItem);
     }
 
+    if (this.selectCombobox.dataset.prevent === '1') {
+      return;
+    }
     this.hide();
   }
 
