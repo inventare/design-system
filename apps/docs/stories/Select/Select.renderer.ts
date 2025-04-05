@@ -2,6 +2,7 @@ import { SelectManager } from "../../../../packages/vanilla/src/components/Selec
 
 export interface SelectProps {
   items?: number;
+  fitParent?: boolean;
 }
 
 export interface SelectOptions {
@@ -10,7 +11,7 @@ export interface SelectOptions {
 }
 
 export const renderSelect = (props: SelectProps, options: SelectOptions) => {
-  const { items = 10 } = props;
+  const { fitParent, items = 10 } = props;
   const { addEvents, customRenderItems } = options;
 
   const container = document.createElement('div');
@@ -24,7 +25,7 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
     .join('');
 
   container.innerHTML = `
-    <div class="select-container" id="my-select">
+    <div class="select-container${fitParent ? ' select-fixed-fit' : ' '}" id="my-select">
       <input class="default-control" type="hidden" value="7" />
 
       <div
@@ -53,7 +54,7 @@ export const renderSelect = (props: SelectProps, options: SelectOptions) => {
         </button>
       </div>
 
-      <div class="select-dropdown">
+      <div class="select-dropdown${fitParent ? ' select-dropdown-fixed-fit' : ' '}">
         <div class="select-dropdown-inner">
           <div class="select-dropdown-search">
             <input type="text" placeholder="Pesquisar..." />
