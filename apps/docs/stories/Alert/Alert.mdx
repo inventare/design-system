@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story, Source } from '@storybook/blocks';
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+Provide contextual feedback messages for user actions.
+
+## Default state
+
+The default state is a base gray-styled alert.
+
+<Story of={AlertStories.Base} />
+
+<Source of={AlertStories.Base} dark />
+
+## Contextual colors
+
+We provide some contextual color cases by default:
+
+### Danger
+
+Used for danger or error actions.
+
+<Story of={AlertStories.Danger} />
+
+<Source of={AlertStories.Danger} dark />
+
+The `error` variant is too used (is same of `danger`) and is added for support the default [message-tags](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/#message-tags) of the `django.contrib.messages` package of the django framework.
+
+<Story of={AlertStories.Error} />
+
+<Source of={AlertStories.Error} dark />
+
+### Success
+
+Used to indicate the success of some action.
+
+<Story of={AlertStories.Success} />
+
+<Source of={AlertStories.Success} dark />
+
+### Warning
+
+Used to indicate some warning.
+
+<Story of={AlertStories.Warning} />
+
+<Source of={AlertStories.Warning} dark />

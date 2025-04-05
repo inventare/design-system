@@ -1,0 +1,70 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import * as SidebarButtonStories from './SidebarButton.stories';
+
+<Meta of={SidebarButtonStories} />
+
+# Sidebar Button
+
+The sidebar button component is a set of utility for button to create a complete sidebar navigation menu. We have some types of Sidebar Button:
+
+- Sidebar Button: used to indicate the sidebar button without subgroup's.
+- Dropdown: used to indicate a group of items.
+- Child: used to indicate a child item of a group.
+
+## Default
+
+The default sidebar button is used for non-child buttons.
+
+<Canvas of={SidebarButtonStories.Primary} />
+
+### With Icon
+
+<Canvas of={SidebarButtonStories.PrimaryWithIcon} />
+
+### Active
+
+<Canvas of={SidebarButtonStories.PrimaryActive} />
+
+<Canvas of={SidebarButtonStories.PrimaryActiveWithIcon} />
+
+## DropDown
+
+Can be visible in two modes: the collapsed and the expanded versions.
+
+<Canvas of={SidebarButtonStories.Dropdown} />
+
+### Expanded
+
+The expanded version is visible when the `aria-expanded` attribute is set to `true`:
+
+<Canvas of={SidebarButtonStories.DropdownExpanded} />
+
+### Active
+
+To set the dropdown button to active state, with `primary` color scheme, add the `active` class to the button:
+
+<Canvas of={SidebarButtonStories.DropdownActive} />
+
+<Canvas of={SidebarButtonStories.DropdownExpandedActive} />
+
+## Child
+
+The child is used for childs buttons on a group of buttons.
+
+<Canvas of={SidebarButtonStories.Child} />
+
+### Position of dot and line
+
+We have some classes to indicate the dot and line positions: `start`, `middle` and `end`:
+
+<Canvas of={SidebarButtonStories.Child} />
+
+<Canvas of={SidebarButtonStories.ChildMiddle} />
+
+<Canvas of={SidebarButtonStories.ChildEnd} />
+
+### Active
+
+The `active` class set the child item to `primary` color schema:
+
+<Canvas of={SidebarButtonStories.ChildActive} />

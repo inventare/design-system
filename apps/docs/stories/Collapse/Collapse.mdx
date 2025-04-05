@@ -1,0 +1,36 @@
+import { Canvas, Meta, Story, Source } from '@storybook/blocks';
+import * as CollapseStories from './Collapse.stories';
+
+<Meta of={CollapseStories} />
+
+# Collapse
+
+The Collapse component is a utilitary for create some collapsible components, like accordion's child menus. Totally inspired by the Bootstrap collapse component, can be used for vertical and horizontal directions.
+
+## Vertical Collapse
+
+<Story of={CollapseStories.Default} />
+
+<Source code={`
+<div data-toggle="collapse" data-target="#default-collapse" aria-expanded="true">
+  Click here to toggle
+</div>
+<div id="default-collapse" class="collapse show">
+  Content...
+</div>
+`} dark />
+
+## Horizontal Collapse
+
+<Story of={CollapseStories.Horizontal} />
+
+<Source code={`
+<div data-toggle="collapse" data-target="#default-collapse" aria-expanded="true">
+  Click here to toggle
+</div>
+<div id="default-collapse" class="collapse horizontal show">
+  <div style="width: 300px">
+    Content...
+  </div>
+</div>
+`} dark />

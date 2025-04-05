@@ -1,0 +1,41 @@
+import { Canvas, Meta, Story, Source } from '@storybook/blocks';
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+The Modal component is created with `HTML`, `SCSS` and `JavaScript` for the open and close behaviour.
+
+## Size
+
+We have some possible modal sizes. Click on the buttons bellow to see all available sizes of the Modal:
+
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+  <Story of={ModalStories.Small} />
+
+  <Story of={ModalStories.Medium} />
+
+  <Story of={ModalStories.Large} />
+
+  <Story of={ModalStories.ExtraLarge} />
+</div>
+
+The table bellow contains a list of size classes available and, bellow of the table we have a example of how to use it with `.modal-sm` class.
+
+| Class                    | Size           | Width                |
+| ------------------------ | -------------- | -------------------- |
+| `class="modal modal-sm"` | Small          | `400px`              |
+| `class="modal modal-md"` | Medium         | `500px`              |
+| `class="modal modal-lg"` | Large          | `800px`              |
+| `class="modal modal-xl"` | Extra Large    | `1140px`             |
+
+<Source of={ModalStories.Small} dark />
+
+## Centered
+
+Is possible to vertically center the modal on the screen using the `modal-dialog-centered` class on the `modal-dialog` element.
+
+<Story of={ModalStories.Centered} />
+
+<Source of={ModalStories.Centered} dark />

@@ -1,5 +1,3 @@
-import { theme } from './theme';
-
 import "@inventare/tokens/scss/tokens.scss";
 import "@inventare/styles/scss/inventare.scss";
 
@@ -14,7 +12,6 @@ const preview = {
         date: /Date$/i,
       },
     },
-    docs: { theme, },
   },
 };
 
