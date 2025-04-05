@@ -180,6 +180,10 @@
         flex: 1;
         overflow-x: hidden;
         overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .select-item {
@@ -208,6 +212,26 @@
         &.active {
           background: var(--color-primary-500);
           outline: none;
+
+          position: relative;
+
+          &::after {
+            font-family: icons !important;
+            font-style: normal;
+            font-weight: normal !important;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: '\f102';
+
+            font-size: 18px;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
       }
     }

@@ -21,6 +21,7 @@ export const FitParent: Story = {
   args: {
     items: 42,
     fitParent: true,
+    preventCloseOnSelect: true,
   }
 };
 
