@@ -1,11 +1,12 @@
 import type { StoryObj } from '@storybook/react';
-import { Sidebar, SidebarInner } from '../sidebar';
 import {
+  Sidebar,
+  SidebarInner,
+  SidebarButton,
   SidebarButtonGroup,
   SidebarButtonGroupItems,
   SidebarButtonGroupTrigger,
-} from './sidebar-button-group';
-import { SidebarButton } from '../sidebar-button';
+} from '../../../../packages/react/src';
 
 const meta = {
   title: 'Navigation/SidebarButtonGroup',

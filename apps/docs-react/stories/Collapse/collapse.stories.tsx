@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Collapse, CollapseContent, CollapseTrigger } from './collapse';
+import { Collapse, CollapseContent, CollapseTrigger } from '../../../../packages/react/src';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

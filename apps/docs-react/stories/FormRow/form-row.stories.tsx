@@ -1,9 +1,11 @@
 import type { StoryObj } from '@storybook/react';
-import { FormRow } from './form-row';
-import { FormLabel } from '../form-label';
-import { FormControl } from '../form-control';
-import { FormInput } from '../form-input';
-import { Button } from '../button';
+import {
+  FormRow,
+  FormLabel,
+  FormControl,
+  FormInput,
+  Button,
+} from '../../../../packages/react/src';
 
 const meta = {
   title: 'Forms/FormRow',
