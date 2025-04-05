@@ -41,12 +41,6 @@ const config = {
     "../../../packages/tokens/stories/**/*.mdx",
     // ICONS
     "../../../packages/icons/stories/**/*.mdx",
-    // SCSS Styles
-    "../../../packages/styles/**/*.mdx",
-    "../../../packages/styles/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    // VANILLA JAVASCRIPT COMPONENTS
-    "../../../packages/vanilla/**/*.mdx",
-    "../../../packages/vanilla/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),

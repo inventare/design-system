@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title='Docs/Architecture Decision Records/ADR 0002: Why Are Stories Far From Component?' />
+
+# ADR 0002: Why Are Stories Far From Component?
+
+🗓️ 2025-04 · ✍️ [@EduardoJM](https://github.com/eduardoJM/)
+
+## Context
+
+We need to think about a place to store the storybook stories.
+
+## Decision Drivers
+
+- We have a lot of components that are only `scss` files.
+- We have a lot of components that are `scss` and `javascript` from `vanilla` package.
+- We have a lot of components that are `tsx` in `react` package.
+
+## Decision
+
+We opted to create a `stories` folder inside the `apps/docs` to store `scss` and `vanilla` components and create a `stories` folder inside the `apps/docs-react` to store the `react` components.
+
+The reason for opted this is:
+
+1. Maintain all `vanilla` and `scss` components in the same place.
+2. Maintain all `react` components in the same place.
+3. Maintain consistency along all the `scss` and `vanilla` stories and documentations.

@@ -6,3 +6,49 @@ import * as SheetStories from './Sheet.stories';
 # Sheet
 
 The Sheet is a extension of the Modal component to display content that complements the main content of the screen.
+
+## Width
+
+As the sheet is a extension of the `Modal` component, the sheet width was defined by the modal `class`. Click on the buttons bellow to see all available sizes of the `Sheet`:
+
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+  <Story of={SheetStories.Small} />
+
+  <Story of={SheetStories.Medium} />
+
+  <Story of={SheetStories.Large} />
+
+  <Story of={SheetStories.ExtraLarge} />
+</div>
+
+The table bellow contains a list of size classes available and, bellow of the table we have a example of how to use it with `.modal-sm` class.
+
+| Class                               | Size           | Width                |
+| ----------------------------------- | -------------- | -------------------- |
+| `class="sheet-left modal modal-sm"` | Small          | `400px`              |
+| `class="sheet-left modal modal-md"` | Medium         | `500px`              |
+| `class="sheet-left modal modal-lg"` | Large          | `800px`              |
+| `class="sheet-left modal modal-xl"` | Extra Large    | `1140px`             |
+
+<Source of={SheetStories.Small} dark />
+
+## Position
+
+Currently, we have two sheet positions: `left` and `right`. The `left` sheet scrolls from left outside of screen to a fixed on left of the page. The `right` sheet scrolls from right outside of screen to a fixed on right of the page.
+
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+  <Story of={SheetStories.Left} />
+
+  <Story of={SheetStories.Right} />
+</div>
+
+To apply the `left` or `right` position of the sheet, only add `.sheet-left` or `.sheet-right` class on the `.modal` element:
+
+| Class                       | Position       |
+| --------------------------- | -------------- |
+| `class="sheet-left modal"`  | Left           |
+| `class="sheet-right modal"` | Right          |
+
+The example code bellow is the right sheet source code:
+
+<Source of={SheetStories.Right} dark />

@@ -1,27 +1,27 @@
-import { ModalManager } from "../../../../packages/vanilla/src/components/Modal/ModalManager";
+import { ModalManager } from "../../../../packages/vanilla/src/components/Modal";
 
-export interface SheetProps {
-  position: 'left' | 'right';
-  size: 'sm' | 'md' | 'lg' | 'xl';
+export interface ModalProps {
   id: string;
   title?: string;
   subtitle?: string;
+  size: 'sm' | 'md' | 'lg' | 'xl';
+  center?: boolean;
   buttonText?: string;
 }
 
-export interface SheetRenderOptions {
+export interface ModalRenderOptions {
   addEvents?: boolean;
 }
 
-export const renderSheet = (props: SheetProps, options: SheetRenderOptions) => {
-  const { id, title, subtitle, position = 'right', size = 'sm', buttonText = 'Open' } = props;
+export const renderModal = (props: ModalProps, options: ModalRenderOptions) => {
+  const { id, title, subtitle, center, size = 'md', buttonText = 'Open' } = props;
   const { addEvents } = options;
 
   const container = document.createElement('div');
 
   container.innerHTML = `
-    <div class="sheet-${position} modal modal-${size} fade" id="${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog sheet-dialog">
+    <div class="modal modal-${size} fade" id="${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog ${center && 'modal-dialog-centered'} ">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title h5" id="exampleModalLabel">${title}</h1>
@@ -53,4 +53,4 @@ export const renderSheet = (props: SheetProps, options: SheetRenderOptions) => {
   }
 
   return container;
-}
+};

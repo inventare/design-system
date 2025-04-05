@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "strict": true,
+    "esModuleInterop": false,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": false,
+    "importHelpers": true,
+    "rootDir": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "types": [
+      "vitest/globals"
+    ],
+  },
+  "include": [
+    ".vitest/setup.ts",
+  ],
+}
