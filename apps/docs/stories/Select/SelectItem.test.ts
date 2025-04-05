@@ -1,6 +1,5 @@
 import { vi } from 'vitest';
-import { SelectItem } from '../SelectItem';
-import { Select } from '../Select';
+import { Select, SelectItem } from '../../../../packages/vanilla/src/components/Select';
 
 describe('SelectItem', () => {
   beforeEach(() => {

@@ -6,9 +6,9 @@ import {
   CLASS_NAME_HORIZONTAL,
   CLASS_NAME_SHOW,
   Collapse,
-} from '../Collapse'
-import { CollapseManager } from '../CollapseManager';
-import { renderCollapse } from '../stories/Collapse.renderer';
+  CollapseManager,
+} from '../../../../packages/vanilla/src/components/Collapse'
+import { renderCollapse } from './Collapse.renderer';
 
 describe('Collapse', () => {
   const renderCollapseBase = (horizontal: boolean = false) => {

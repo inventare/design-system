@@ -1,7 +1,7 @@
 import { getByRole, queryByRole } from '@testing-library/dom';
 import { userEvent } from '@testing-library/user-event';
-import { renderSelect } from '../stories/Select.renderer';
-import { SELECT_EXPANDED_CLASS } from '../Select.constants';
+import { renderSelect } from './Select.renderer';
+import { SELECT_EXPANDED_CLASS } from '../../../../packages/vanilla/src/components/Select';
 
 describe('Select', () => {
   beforeEach(() => {

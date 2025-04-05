@@ -1,7 +1,6 @@
 import { expect, vi } from 'vitest';
-import { Modal, CLASS_NAME_MODAL_SHOW } from '../Modal';
-import { ModalManager } from '../ModalManager';
-import { renderModal } from '../stories/Modal.renderer';
+import { Modal, ModalManager, CLASS_NAME_MODAL_SHOW } from '../../../../packages/vanilla/src/components/Modal';
+import { renderModal } from './Modal.renderer';
 
 describe('Modal', () => {
   const setupModal = () => {
