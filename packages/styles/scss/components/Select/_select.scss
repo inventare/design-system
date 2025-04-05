@@ -2,7 +2,9 @@
 @use "../FormControl/form_control";
 
 .select-container {
-  position: relative;
+  &:not(.select-fixed-fit) {
+    position: relative;
+  }
 
   > .select {
     display: flex;
@@ -113,6 +115,13 @@
 
     z-index: 950;
 
+    &.select-dropdown-fixed-fit {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+
     .select-dropdown-inner {
       width: 100%;
       height: 100%;
@@ -189,12 +198,21 @@
       }
     }
 
-    > .select-dropdown {
-      max-height: 200px;
+    &.select-fixed-fit {
+      > .select-dropdown {
+        max-height: 100%;
+      }
+    }
 
+    &:not(.select-fixed-fit) {
+      > .select-dropdown {
+        max-height: 200px;
+      }
+    }
+
+    > .select-dropdown {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
       border: 1px solid var(--#{prefix.$variable-prefix}form-control-border);
-
     }
   }
 }
