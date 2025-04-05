@@ -1,1 +1,0 @@
-const c=({variant:n="primary",disabled:a=!1,outline:r=!1,sizing:e="default",label:o,onClick:u})=>{const t=document.createElement("button");return t.type="button",t.innerHTML=o||"Button",a&&(t.disabled=!0),t.addEventListener("click",u),t.className=["btn",`${n}`,`${e==="default"?"":e}`,`${r?"outline":""}`].join(" ").trim(),t};export{c};

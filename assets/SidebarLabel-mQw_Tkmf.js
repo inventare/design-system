@@ -1,4 +1,0 @@
-import{j as t}from"./jsx-runtime-WwOhivLH.js";import{useMDXComponents as n}from"./index-DYqT6kjR.js";import{M as i,d as s}from"./index-0kf2VDN_.js";import{S as a,D as m}from"./SidebarLabel.stories-D1zJ58PE.js";import"./index-DwKesvR4.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-Br4VojyS.js";import"../sb-preview/runtime.js";import"./index-DY3dAHcx.js";import"./index-DQqPIFLp.js";import"./index-DrFu-skq.js";import"./SidebarLabel.renderer-11NpBqf_.js";function r(o){const e={h1:"h1",p:"p",...n(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{of:a}),`
-`,t.jsx(e.h1,{id:"sidebar-label",children:"Sidebar Label"}),`
-`,t.jsx(e.p,{children:"The sidebar label component is a component to add label for sidebar items."}),`
-`,t.jsx(s,{of:m})]})}function S(o={}){const{wrapper:e}={...n(),...o.components};return e?t.jsx(e,{...o,children:t.jsx(r,{...o})}):r(o)}export{S as default};

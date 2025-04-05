@@ -1,0 +1,7 @@
+import{r as w,E as b,P as g}from"./FormControl.stories-DwNr5Pjz.js";import{r as a}from"./Button-BA8mUfzZ.js";const f=({rows:t,submitRow:c,submitRowStretch:d=!1,submitRowAlign:p="left"})=>{const e=document.createElement("div");e.style.maxWidth="350px";for(const u of t){const n=document.createElement("div");n.className="form-row",n.appendChild(w(u)),e.appendChild(n)}if(!c)return e;const o=document.createElement("div"),s=["form-row","submit"];return d||s.push(p),o.className=s.join(" "),o.appendChild(a({variant:"primary",outline:!0,label:"Go Back"})),o.appendChild(a({variant:"primary",label:"Send"})),e.appendChild(o),e},R={title:"Forms/FormRow",render:({...t})=>f({...t}),argTypes:{submitRow:{control:"boolean"},submitRowStretch:{control:"boolean"},submitRowAlign:{control:{type:"select"},options:["left","center","right"]}}},r={args:{rows:[b.args,g.args],submitRow:!0,submitRowAlign:"center"}};var i,l,m;r.parameters={...r.parameters,docs:{...(i=r.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  args: {
+    rows: [FormControlStories.Email.args, FormControlStories.Password.args],
+    submitRow: true,
+    submitRowAlign: 'center'
+  }
+}`,...(m=(l=r.parameters)==null?void 0:l.docs)==null?void 0:m.source}}};const E=["LoginExample"],C=Object.freeze(Object.defineProperty({__proto__:null,LoginExample:r,__namedExportsOrder:E,default:R},Symbol.toStringTag,{value:"Module"}));export{C as F,r as L};
