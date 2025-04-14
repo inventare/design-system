@@ -5,15 +5,21 @@
 
 @use "transitions/collapse";
 
-@use "components/Container/container";
-@use "components/Alert/alert";
-@use "components/Button/button";
-@use "components/FormRow/form_row";
-@use "components/FormControl/form_control";
-@use "components/Select/select";
-@use "components/Sidebar/sidebar";
-@use "components/Modal/modal";
-@use "components/Card/card";
-@use "components/Skeleton/skeleton";
-@use "components/Breadcrumb/breadcrumb";
-@use "components/Sheet/sheet";
+@use "components/container";
+@use "components/alert";
+@use "components/button";
+@use "components/sidebar";
+@use "components/card";
+@use "components/skeleton";
+@use "components/breadcrumb";
+
+@use "components/modal";
+@use "components/sheet";
+@use "components/dropdown_menu";
+
+@use "components/form_select";
+@use "components/form_row";
+@use "components/form_control";
+@use "components/form_checkbox";
+@use "components/form_switch";
+@use "components/form_radio";

@@ -1,0 +1,207 @@
+@use "../prefix";
+@use "../mixins/colors";
+
+$button-padding-x: var(--spacing-base) !default;
+$button-padding-y: var(--spacing-xsmall) !default;
+$button-font: var(--font-family) !default;
+$button-font-size: 1rem !default;
+$button-font-weight: 400 !default;
+$button-line-height: normal !default;
+$button-gap: var(--spacing-small) !default;
+$button-border-radius: var(--border-radius) !default;
+$button-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$button-disabled-opacity: 0.65;
+
+/* LARGE */
+$button-large-padding-x: var(--spacing-large) !default;
+$button-large-padding-y: var(--spacing-small) !default;
+$button-large-font-size: 1.25rem !default;
+$button-large-border-radius: var(--border-radius) !default;
+
+/* SMALL */
+$button-small-padding-x: var(--spacing-small) !default;
+$button-small-padding-y: var(--spacing-xxsmall) !default;
+$button-small-font-size: 0.875rem !default;
+$button-small-border-radius: var(--border-radius) !default;
+
+/* DEFAULT */
+$button-default-border: transparent !default;
+$button-default-bg: transparent !default;
+$button-default-fg: #222 !default;
+$button-default-hover-border: transparent !default;
+$button-default-hover-bg: transparent !default;
+$button-default-hover-fg: #222 !default;
+$button-default-active-border: #222 !default;
+$button-default-active-bg: transparent !default;
+$button-default-active-fg: #222 !default;
+
+/* PRIMARY */
+$button-primary-border: var(--color-primary-500) !default;
+$button-primary-bg: var(--color-primary-500) !default;
+$button-primary-fg: var(--color-gray-50) !default;
+$button-primary-hover-border: var(--color-primary-600) !default;
+$button-primary-hover-bg: var(--color-primary-600) !default;
+$button-primary-hover-fg: var(--color-gray-50) !default;
+$button-primary-active-border: var(--color-primary-700) !default;
+$button-primary-active-bg: var(--color-primary-700) !default;
+$button-primary-active-fg: var(--color-gray-50) !default;
+
+/* DANGER */
+$button-danger-border: var(--color-danger-500) !default;
+$button-danger-bg: var(--color-danger-500) !default;
+$button-danger-fg: var(--color-gray-50) !default;
+$button-danger-hover-border: var(--color-danger-600) !default;
+$button-danger-hover-bg: var(--color-danger-600) !default;
+$button-danger-hover-fg: var(--color-gray-50) !default;
+$button-danger-active-border: var(--color-danger-700) !default;
+$button-danger-active-bg: var(--color-danger-700) !default;
+$button-danger-active-fg: var(--color-gray-50) !default;
+
+/* COLORS */
+$button-colors: (
+  primary: (border: $button-primary-border,
+    bg: $button-primary-bg,
+    fg: $button-primary-fg,
+    hover-border: $button-primary-hover-border,
+    hover-bg: $button-primary-hover-bg,
+    hover-fg: $button-primary-hover-fg,
+    active-border: $button-primary-active-border,
+    active-bg: $button-primary-active-bg,
+    active-fg: $button-primary-active-fg,
+  ),
+  danger: (border: $button-danger-border,
+    bg: $button-danger-bg,
+    fg: $button-danger-fg,
+    hover-border: $button-danger-hover-border,
+    hover-bg: $button-danger-hover-bg,
+    hover-fg: $button-danger-hover-fg,
+    active-border: $button-danger-active-border,
+    active-bg: $button-danger-active-bg,
+    active-fg: $button-danger-active-fg,
+  ),
+);
+
+.btn {
+  --#{prefix.$variable-prefix}button-padding-y: #{$button-padding-y};
+  --#{prefix.$variable-prefix}button-padding-x: #{$button-padding-x};
+  --#{prefix.$variable-prefix}button-gap: #{$button-gap};
+  --#{prefix.$variable-prefix}button-font: #{$button-font};
+  --#{prefix.$variable-prefix}button-font-size: #{$button-font-size};
+  --#{prefix.$variable-prefix}button-font-weight: #{$button-font-weight};
+  --#{prefix.$variable-prefix}button-line-height: #{$button-line-height};
+  --#{prefix.$variable-prefix}button-border-radius: #{$button-border-radius};
+  --#{prefix.$variable-prefix}button-transition: #{$button-transition};
+
+  --#{prefix.$variable-prefix}button-border: #{$button-default-border};
+  --#{prefix.$variable-prefix}button-bg: #{$button-default-bg};
+  --#{prefix.$variable-prefix}button-fg: #{$button-default-fg};
+
+  border-radius: var(--#{prefix.$variable-prefix}button-border-radius);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--#{prefix.$variable-prefix}button-gap);
+
+  padding: var(--#{prefix.$variable-prefix}button-padding-y) var(--#{prefix.$variable-prefix}button-padding-x);
+
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--#{prefix.$variable-prefix}button-font);
+  font-size: var(--#{prefix.$variable-prefix}button-font-size);
+  font-weight: var(--#{prefix.$variable-prefix}button-font-weight);
+  line-height: var(--#{prefix.$variable-prefix}button-line-height);
+
+  cursor: pointer;
+
+  border: 1px solid var(--#{prefix.$variable-prefix}button-border);
+  background: var(--#{prefix.$variable-prefix}button-bg);
+  color: var(--#{prefix.$variable-prefix}button-fg);
+
+  transition: var(--#{prefix.$variable-prefix}button-transition);
+
+  &:hover {
+    --#{prefix.$variable-prefix}button-border: #{$button-default-hover-border};
+    --#{prefix.$variable-prefix}button-bg: #{$button-default-hover-bg};
+    --#{prefix.$variable-prefix}button-fg: #{$button-default-hover-fg};
+  }
+
+  &:active {
+    --#{prefix.$variable-prefix}button-border: #{$button-default-active-border};
+    --#{prefix.$variable-prefix}button-bg: #{$button-default-active-bg};
+    --#{prefix.$variable-prefix}button-fg: #{$button-default-active-fg};
+  }
+
+  &:disabled,
+  &.disabled {
+    --#{prefix.$variable-prefix}button-disabled-opacity: #{$button-disabled-opacity};
+
+    cursor: default;
+    pointer-events: none;
+
+    opacity: var(--#{prefix.$variable-prefix}button-disabled-opacity);
+  }
+
+  @each $variant, $dict in $button-colors {
+    &.#{$variant} {
+      @include colors.map-variable("button-border", $dict, "border");
+      @include colors.map-variable("button-bg", $dict, "bg");
+      @include colors.map-variable("button-fg", $dict, "fg");
+
+      &:hover {
+        @include colors.map-variable("button-border", $dict, "hover-border");
+        @include colors.map-variable("button-bg", $dict, "hover-bg");
+        @include colors.map-variable("button-fg", $dict, "hover-fg");
+      }
+
+      &:active {
+        @include colors.map-variable("button-border", $dict, "active-border");
+        @include colors.map-variable("button-bg", $dict, "active-bg");
+        @include colors.map-variable("button-fg", $dict, "active-fg");
+      }
+
+      &:disabled,
+      &.disabled {
+        --#{prefix.$variable-prefix}button-disabled-opacity: #{$button-disabled-opacity};
+
+        cursor: default;
+        pointer-events: none;
+
+        opacity: var(--#{prefix.$variable-prefix}button-disabled-opacity);
+      }
+
+      &.outline {
+        @include colors.map-variable("button-border", $dict, "border");
+        @include colors.map-variable("button-bg", $dict, "fg");
+        @include colors.map-variable("button-fg", $dict, "bg");
+
+        &:hover {
+          @include colors.map-variable("button-border", $dict, "hover-border");
+          @include colors.map-variable("button-bg", $dict, "hover-bg");
+          @include colors.map-variable("button-fg", $dict, "hover-fg");
+        }
+
+        &:active {
+          @include colors.map-variable("button-border", $dict, "active-border");
+          @include colors.map-variable("button-bg", $dict, "active-bg");
+          @include colors.map-variable("button-fg", $dict, "active-fg");
+        }
+      }
+    }
+  }
+
+  &.large {
+    --#{prefix.$variable-prefix}button-padding-y: #{$button-large-padding-y};
+    --#{prefix.$variable-prefix}button-padding-x: #{$button-large-padding-x};
+    --#{prefix.$variable-prefix}button-font-size: #{$button-large-font-size};
+    --#{prefix.$variable-prefix}button-border-radius: #{$button-large-border-radius};
+  }
+
+  &.small {
+    --#{prefix.$variable-prefix}button-padding-y: #{$button-small-padding-y};
+    --#{prefix.$variable-prefix}button-padding-x: #{$button-small-padding-x};
+    --#{prefix.$variable-prefix}button-font-size: #{$button-small-font-size};
+    --#{prefix.$variable-prefix}button-border-radius: #{$button-small-border-radius};
+  }
+}

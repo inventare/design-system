@@ -1,0 +1,108 @@
+@use "../prefix";
+@use "../mixins/colors";
+
+$form-check-spacing: var(--spacing-xsmall) !default;
+
+$form-checkbox-size: 16px !default;
+$form-checkbox-radius: var(--border-radius) !default;
+$form-checkbox-transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
+$form-checkbox-default-border: var(--color-gray-100) !default;
+
+$form-checkbox-checked-primary-border: var(--color-primary-500) !default;
+$form-checkbox-checked-primary-bg: var(--color-primary-500) !default;
+$form-checkbox-checked-primary-shadow: var(--color-primary-opacity-25) !default;
+
+$form-checkbox-checked-secondary-border: var(--color-secondary-500) !default;
+$form-checkbox-checked-secondary-bg: var(--color-secondary-500) !default;
+$form-checkbox-checked-secondary-shadow: var(--color-secondary-opacity-25) !default;
+
+$form-checkbox-checked-danger-border: var(--color-danger-500) !default;
+$form-checkbox-checked-danger-bg: var(--color-danger-500) !default;
+$form-checkbox-checked-danger-shadow: var(--color-danger-opacity-25) !default;
+
+$form-checkbox-checked-success-border: var(--color-success-500) !default;
+$form-checkbox-checked-success-bg: var(--color-success-500) !default;
+$form-checkbox-checked-success-shadow: var(--color-success-opacity-25) !default;
+
+$form-checkbox-checked-warning-border: var(--color-warning-500) !default;
+$form-checkbox-checked-warning-bg: var(--color-warning-500) !default;
+$form-checkbox-checked-warning-shadow: var(--color-warning-opacity-25) !default;
+
+$form-checkbox-checked-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+
+$form-checkbox-colors: (
+  primary: (
+    border: $form-checkbox-checked-primary-border,
+    bg: $form-checkbox-checked-primary-bg,
+    shadow: $form-checkbox-checked-primary-shadow,
+  ),
+  secondary: (
+    border: $form-checkbox-checked-secondary-border,
+    bg: $form-checkbox-checked-secondary-bg,
+    shadow: $form-checkbox-checked-secondary-shadow,
+  ),
+  danger: (
+    border: $form-checkbox-checked-danger-border,
+    bg: $form-checkbox-checked-danger-bg,
+    shadow: $form-checkbox-checked-danger-shadow,
+  ),
+  warning: (
+    border: $form-checkbox-checked-warning-border,
+    bg: $form-checkbox-checked-warning-bg,
+    shadow: $form-checkbox-checked-warning-shadow,
+  ),
+  success: (
+    border: $form-checkbox-checked-success-border,
+    bg: $form-checkbox-checked-success-bg,
+    shadow: $form-checkbox-checked-success-shadow,
+  ),
+);
+
+.form-check {
+  --#{prefix.$variable-prefix}form-check-spacing: #{$form-check-spacing};
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--#{prefix.$variable-prefix}form-check-spacing);
+
+  .form-check-input {
+    --#{prefix.$variable-prefix}form-checkbox-size: #{$form-checkbox-size};
+    --#{prefix.$variable-prefix}form-checkbox-radius: #{$form-checkbox-radius};
+    --#{prefix.$variable-prefix}form-checkbox-border: #{$form-checkbox-default-border};
+    --#{prefix.$variable-prefix}form-checkbox-bg: transparent;
+    --#{prefix.$variable-prefix}form-checkbox-shadow: transparent;
+    --#{prefix.$variable-prefix}form-checkbox-transition: #{$form-checkbox-transition};
+    --#{prefix.$variable-prefix}form-checkbox-checked-image: #{$form-checkbox-checked-image};
+
+    appearance: none;
+    width: var(--#{prefix.$variable-prefix}form-checkbox-size);
+    height: var(--#{prefix.$variable-prefix}form-checkbox-size);
+    border-radius: var(--#{prefix.$variable-prefix}form-checkbox-radius);
+
+    transition: var(--#{prefix.$variable-prefix}form-checkbox-transition);
+
+    border: 1px solid var(--#{prefix.$variable-prefix}form-checkbox-border);
+    background-color: var(--#{prefix.$variable-prefix}form-checkbox-bg);
+
+    box-shadow: none;
+
+    &:checked {
+      background-image: var(--#{prefix.$variable-prefix}form-checkbox-checked-image);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem var(--#{prefix.$variable-prefix}form-checkbox-shadow);
+    }
+
+    @each $variant, $dict in $form-checkbox-colors {
+      &.#{$variant}:checked {
+        @include colors.map-variable("form-checkbox-border", $dict, "border");
+        @include colors.map-variable("form-checkbox-bg", $dict, "bg");
+        @include colors.map-variable("form-checkbox-shadow", $dict, "shadow");
+      }
+    }
+  }
+}
