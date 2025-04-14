@@ -7,7 +7,7 @@ import {
   CLASS_NAME_SHOW,
   Collapse,
   CollapseManager,
-} from '../../../../packages/vanilla/src/components/Collapse'
+} from '../../../../../packages/vanilla/src/components'
 import { renderCollapse } from './Collapse.renderer';
 
 describe('Collapse', () => {

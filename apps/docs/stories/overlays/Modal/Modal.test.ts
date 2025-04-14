@@ -1,5 +1,5 @@
 import { expect, vi } from 'vitest';
-import { Modal, ModalManager, CLASS_NAME_MODAL_SHOW } from '../../../../packages/vanilla/src/components/Modal';
+import { Modal, ModalManager, CLASS_NAME_MODAL_SHOW } from '../../../../../packages/vanilla/src/components';
 import { renderModal } from './Modal.renderer';
 
 describe('Modal', () => {
