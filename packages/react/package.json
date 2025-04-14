@@ -21,8 +21,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "clsx": "2.1.1",
-    "@inventare/core": "*"
+    "@inventare/core": "*",
+    "clsx": "2.1.1"
   },
   "peerDependencies": {
     "react": "^18.3.1"
@@ -30,9 +30,10 @@
   "devDependencies": {
     "@types/react": "^18.3.18",
     "@vitejs/plugin-react": "^4.3.4",
+    "globals": "^15.14.0",
+    "react-dom": "^18.3.1",
     "vite": "^6.2.6",
-    "vite-plugin-dts": "4.4.0",
-    "globals": "^15.14.0"
+    "vite-plugin-dts": "4.4.0"
   },
   "publishConfig": {
     "access": "public"

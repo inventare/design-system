@@ -1,0 +1,53 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as ContainerStories from './Container.stories';
+
+<Meta of={ContainerStories} />
+
+# Container
+
+Containers are used to contain, pad, and (sometimes) center the content within a given device or viewport.
+
+> Our container blocks are directly inspired (~copied~) from Bootstrap,
+> MIT licensed, source code. These docs are condensed and you can consult
+> the original [Bootstrap documentation](https://getbootstrap.com/docs/5.3/layout/containers/).
+
+We comes with three different containers:
+
+- `.container`, which sets a `max-width` at each responsive breakpoint.
+- `.container-{breakpoint}`, which is `width: 100%` until the specified breakpoint.
+- `.container-fluid`, which is `width: 100%` at all breakpoints.
+
+The table below illustrates how each container's `max-width` compares to the original `.container` and `.container-fluid` across each breakpoint.
+
+| Class              | Extra Small (< 576px) | Small (>= 576px) | Medium (>= 768px)  | Large (>= 992px) | X-Large (>= 1200px) | XX-Large (>= 1400px) |
+| ------------------ | --------------------- | ---------------- | ------------------ | ---------------- | ------------------- | -------------------- |
+| `.container`       | 100%                  | 540px            | 720px              | 960px            | 1140px              | 1320px               |
+| `.container-sm`    | 100%                  | 540px            | 720px              | 960px            | 1140px              | 1320px               |
+| `.container-md`    | 100%                  | 100%             | 720px              | 960px            | 1140px              | 1320px               |
+| `.container-lg`    | 100%                  | 100%             | 100%               | 960px            | 1140px              | 1320px               |
+| `.container-xl`    | 100%                  | 100%             | 100%               | 100%             | 1140px              | 1320px               |
+| `.container-xxl`   | 100%                  | 100%             | 100%               | 100%             | 100%                | 1320px               |
+| `.container-fluid` | 100%                  | 100%             | 100%               | 100%             | 100%                | 100%                 |
+
+
+## Examples
+
+### Container
+
+<Canvas>
+  <Story of={ContainerStories.Container} />
+</Canvas>
+
+```html
+<div class="container">...</div>
+```
+
+### Container-Fluid
+
+<Canvas>
+  <Story of={ContainerStories.Fluid} />
+</Canvas>
+
+```html
+<div class="container-fluid">...</div>
+```

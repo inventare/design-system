@@ -1,0 +1,36 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { MultipleCanvas } from '../../../../../utils/storybook/components/MultipleCanvas';
+import * as SwitchStories from './Switch.stories';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+A switch has the markup of a custom checkbox but uses the .form-switch class to render a toggle switch.
+
+## States
+
+<MultipleCanvas
+  components={[
+    { title: 'Default', of: SwitchStories.Default },
+    { title: 'Checked', of: SwitchStories.Checked },
+    { title: 'Disabled', of: SwitchStories.Disabled },
+    { title: 'Disabled and Checked', of: SwitchStories.DisabledChecked },
+  ]}
+  renderWidth={220}
+/>
+
+## Colors
+
+We have a lot of custom contextual colors of the switch component. The color is applied by using the color name class on the `.form-check-input` element, see the example codes:
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary', of: SwitchStories.Primary },
+    { title: 'Secondary', of: SwitchStories.Secondary },
+    { title: 'Danger', of: SwitchStories.Danger },
+    { title: 'Warning', of: SwitchStories.Warning },
+    { title: 'Success', of: SwitchStories.Success },
+  ]}
+  renderWidth={220}
+/>

@@ -14,7 +14,7 @@ const getStorybookRefs = (configType: string) => {
     return {
       react: {
         title: 'React (localhost:7006)',
-        url: 'http://localhost:7006/',
+        url: 'http://localhost:7006',
       },
     };
   }
@@ -35,12 +35,13 @@ const config = {
   stories: [
     // Architecture Decision Records
     "../architecture-decision-records/*.mdx",
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     // TOKENS
     "../../../packages/tokens/stories/**/*.mdx",
     // ICONS
     "../../../packages/icons/stories/**/*.mdx",
+    // Components
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
@@ -63,9 +64,7 @@ const config = {
     name: getAbsolutePath("@storybook/html-vite"),
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+  docs: {},
   refs: (config, { configType = '' }) => {
     return getStorybookRefs(configType)
   },

@@ -1,0 +1,34 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { MultipleCanvas } from '../../../../../utils/storybook/components/MultipleCanvas';
+import * as RadioStories from './Radio.stories';
+
+<Meta of={RadioStories} />
+
+# Radio
+
+## States
+
+<MultipleCanvas
+  components={[
+    { title: 'Default', of: RadioStories.Default },
+    { title: 'Checked', of: RadioStories.Checked },
+    { title: 'Disabled', of: RadioStories.Disabled },
+    { title: 'Disabled and Checked', of: RadioStories.DisabledChecked },
+  ]}
+  renderWidth={220}
+/>
+
+## Colors
+
+We have a lot of custom contextual colors of the radio component. The color is applied by using the color name class on the `.form-radio-input` element, see the example codes:
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary', of: RadioStories.Primary },
+    { title: 'Secondary', of: RadioStories.Secondary },
+    { title: 'Danger', of: RadioStories.Danger },
+    { title: 'Warning', of: RadioStories.Warning },
+    { title: 'Success', of: RadioStories.Success },
+  ]}
+  renderWidth={220}
+/>

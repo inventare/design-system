@@ -1,0 +1,163 @@
+@use "../prefix";
+@use "../mixins/colors";
+
+$form-check-spacing: var(--spacing-xsmall) !default;
+
+$form-switch-width: 42px !default;
+$form-switch-height: 22px !default;
+$form-switch-ball-size: 18px !default;
+$form-switch-radius: var(--border-radius-pill) !default;
+$form-switch-transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
+$form-switch-default-border: var(--color-gray-300) !default;
+$form-switch-default-ball-color: var(--color-gray-300) !default;
+$form-switch-disabled-opacity: 0.65 !default;
+$form-switch-horizontal-pad: 2px !default;
+
+$form-switch-checked-primary-border: var(--color-primary-500) !default;
+$form-switch-checked-primary-bg: var(--color-primary-500) !default;
+$form-switch-checked-primary-shadow: var(--color-primary-opacity-25) !default;
+$form-switch-checked-primary-ball-color: var(--color-white) !default;
+
+$form-switch-checked-secondary-border: var(--color-secondary-500) !default;
+$form-switch-checked-secondary-bg: var(--color-secondary-500) !default;
+$form-switch-checked-secondary-shadow: var(--color-secondary-opacity-25) !default;
+$form-switch-checked-secondary-ball-color: var(--color-white) !default;
+
+$form-switch-checked-danger-border: var(--color-danger-500) !default;
+$form-switch-checked-danger-bg: var(--color-danger-500) !default;
+$form-switch-checked-danger-shadow: var(--color-danger-opacity-25) !default;
+$form-switch-checked-danger-ball-color: var(--color-white) !default;
+
+$form-switch-checked-success-border: var(--color-success-500) !default;
+$form-switch-checked-success-bg: var(--color-success-500) !default;
+$form-switch-checked-success-shadow: var(--color-success-opacity-25) !default;
+$form-switch-checked-success-ball-color: var(--color-white) !default;
+
+$form-switch-checked-warning-border: var(--color-warning-500) !default;
+$form-switch-checked-warning-bg: var(--color-warning-500) !default;
+$form-switch-checked-warning-shadow: var(--color-warning-opacity-25) !default;
+$form-switch-checked-warning-ball-color: var(--color-white) !default;
+
+$form-switch-colors: (
+  primary: (
+    border: $form-switch-checked-primary-border,
+    bg: $form-switch-checked-primary-bg,
+    shadow: $form-switch-checked-primary-shadow,
+    ball: $form-switch-checked-primary-ball-color,
+  ),
+  secondary: (
+    border: $form-switch-checked-secondary-border,
+    bg: $form-switch-checked-secondary-bg,
+    shadow: $form-switch-checked-secondary-shadow,
+    ball: $form-switch-checked-secondary-ball-color,
+  ),
+  danger: (
+    border: $form-switch-checked-danger-border,
+    bg: $form-switch-checked-danger-bg,
+    shadow: $form-switch-checked-danger-shadow,
+    ball: $form-switch-checked-danger-ball-color,
+  ),
+  warning: (
+    border: $form-switch-checked-warning-border,
+    bg: $form-switch-checked-warning-bg,
+    shadow: $form-switch-checked-warning-shadow,
+    ball: $form-switch-checked-warning-ball-color,
+  ),
+  success: (
+    border: $form-switch-checked-success-border,
+    bg: $form-switch-checked-success-bg,
+    shadow: $form-switch-checked-success-shadow,
+    ball: $form-switch-checked-success-ball-color,
+  ),
+);
+
+.form-switch {
+  --#{prefix.$variable-prefix}form-check-spacing: #{$form-check-spacing};
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--#{prefix.$variable-prefix}form-check-spacing);
+
+  .form-check-input {
+    --#{prefix.$variable-prefix}form-switch-width: #{$form-switch-width};
+    --#{prefix.$variable-prefix}form-switch-height: #{$form-switch-height};
+    --#{prefix.$variable-prefix}form-switch-ball-size: #{$form-switch-ball-size};
+    --#{prefix.$variable-prefix}form-switch-radius: #{$form-switch-radius};
+    --#{prefix.$variable-prefix}form-switch-border: #{$form-switch-default-border};
+    --#{prefix.$variable-prefix}form-switch-bg: transparent;
+    --#{prefix.$variable-prefix}form-switch-shadow: transparent;
+    --#{prefix.$variable-prefix}form-switch-transition: #{$form-switch-transition};
+    --#{prefix.$variable-prefix}form-switch-disabled-opacity: #{$form-switch-disabled-opacity};
+    --#{prefix.$variable-prefix}form-switch-horizontal-pad: #{$form-switch-horizontal-pad};
+
+    appearance: none;
+    width: var(--#{prefix.$variable-prefix}form-switch-width);
+    height: var(--#{prefix.$variable-prefix}form-switch-height);
+    border-radius: var(--#{prefix.$variable-prefix}form-switch-radius);
+
+    transition: var(--#{prefix.$variable-prefix}form-switch-transition);
+
+    border: 1px solid var(--#{prefix.$variable-prefix}form-switch-border);
+    background-color: var(--#{prefix.$variable-prefix}form-switch-bg);
+
+    box-shadow: none;
+
+    position: relative;
+
+    &:focus, &:active {
+      box-shadow: 0 0 0 0.25rem var(--#{prefix.$variable-prefix}form-switch-shadow);
+    }
+
+    &::after {
+      --#{prefix.$variable-prefix}form-switch-ball-color: #{$form-switch-default-ball-color};
+
+      content: '';
+      width: var(--#{prefix.$variable-prefix}form-switch-ball-size);
+      height: var(--#{prefix.$variable-prefix}form-switch-ball-size);
+      border-radius: var(--border-radius-circle);
+
+      position: absolute;
+      left: var(--#{prefix.$variable-prefix}form-switch-horizontal-pad);
+      top: 50%;
+      transform: translateY(-50%);
+
+      background: var(--#{prefix.$variable-prefix}form-switch-ball-color);
+
+      transition: left 0.3s ease;
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+
+    &:checked {
+      &::after {
+        left: calc(
+          100% - var(--#{prefix.$variable-prefix}form-switch-ball-size) - var(--#{prefix.$variable-prefix}form-switch-horizontal-pad)
+        );
+      }
+    }
+
+    &:disabled {
+      opacity: var(--#{prefix.$variable-prefix}form-switch-disabled-opacity);
+    }
+
+    @each $variant, $dict in $form-switch-colors {
+      &.#{$variant}{
+        @include colors.map-variable("form-switch-shadow", $dict, "shadow");
+
+        &:checked {
+          @include colors.map-variable("form-switch-border", $dict, "border");
+          @include colors.map-variable("form-switch-bg", $dict, "bg");
+
+          &::after {
+            @include colors.map-variable("form-switch-ball-color", $dict, "ball");
+          }
+        }
+      }
+    }
+  }
+}

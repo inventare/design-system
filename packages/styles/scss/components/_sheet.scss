@@ -1,0 +1,74 @@
+@use "../breakpoints";
+@use "../prefix";
+@use "../mixins/colors";
+
+$sheet-left-fade-transform: translateX(-100%);
+$sheet-right-fade-transform: translateX(100%);
+$sheet-show-transform: none;
+$sheet-transition: transform 0.3s ease;
+$sheet-scale-transform: scale(1.02) !default;
+
+.modal-dialog.sheet-dialog {
+  position: fixed;
+  padding: 0 !important;
+  top: 0;
+  bottom: 0;
+  width: 100% !important;
+
+  .sheet-right & {
+    right: 0 !important;
+  }
+  .sheet-left & {
+    left: 0 !important;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+
+  .sheet-right.fade & {
+    transition: $sheet-transition !important;
+    transform: $sheet-right-fade-transform !important;
+  }
+  .sheet-left.fade & {
+    transition: $sheet-transition !important;
+    transform: $sheet-left-fade-transform !important;
+  }
+
+  .modal.show & {
+    transform: $sheet-show-transform !important;
+  }
+  .modal.modal-static & {
+    transform: $sheet-scale-transform !important;
+  }
+  .modal-content {
+    flex: 1;
+  }
+}
+
+.sheet-left {
+  .modal-content {
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+.sheet-right {
+  .modal-content {
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+@include breakpoints.media-breakpoint-up(sm) {
+  .modal-dialog.sheet-dialog {
+    margin: 0 !important;
+  }
+}

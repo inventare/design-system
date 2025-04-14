@@ -23,6 +23,7 @@ $color-secondary-700: #863d8e;
 $color-secondary-800: #6f3375;
 $color-secondary-900: #5d2e61;
 $color-secondary-950: #3a143e;
+$color-secondary-opacity-25: rgba($color-secondary-500, 0.25);
 
 $color-danger-50: #fef2f2;
 $color-danger-100: #fee6e5;
@@ -61,6 +62,7 @@ $color-warning-700: #a36005;
 $color-warning-800: #864c0d;
 $color-warning-900: #723e11;
 $color-warning-950: #431f05;
+$color-warning-opacity-25: rgba($color-warning-500, 0.25);
 
 $color-gray-50: #f6f6f6;
 $color-gray-100: #e7e7e7;
@@ -181,6 +183,7 @@ $line-height-headings: $line-height-base;
   --color-secondary-800: #{$color-secondary-800};
   --color-secondary-900: #{$color-secondary-900};
   --color-secondary-950: #{$color-secondary-950};
+  --color-secondary-opacity-25: #{$color-secondary-opacity-25};
 
   --color-danger-50: #{$color-danger-50};
   --color-danger-100: #{$color-danger-100};
@@ -219,6 +222,7 @@ $line-height-headings: $line-height-base;
   --color-warning-800: #{$color-warning-800};
   --color-warning-900: #{$color-warning-900};
   --color-warning-950: #{$color-warning-950};
+  --color-warning-opacity-25: #{$color-warning-opacity-25};
 
   --color-white: #{$color-white};
 

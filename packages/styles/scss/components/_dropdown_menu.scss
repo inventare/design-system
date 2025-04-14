@@ -1,0 +1,89 @@
+@use "../prefix";
+@use "../mixins/colors";
+
+$dropdown-drop-icon-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3e%3cpath fill='%23fff' stroke='none' d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3e%3c/svg%3e");
+$dropdown-drop-icon-size: 20px;
+
+$dropdown-menu-border: var(--color-gray-100) !default;
+$dropdown-menu-bg: var(--color-white) !default;
+$dropdown-menu-fg: var(--color-gray-900) !default;
+
+$dropdown-menu-item-primary-hover-bg: var(--color-primary-500) !default;
+$dropdown-menu-item-primary-hover-fg: var(--color-white) !default;
+$dropdown-menu-item-primary-active-bg: var(--color-primary-600) !default;
+$dropdown-menu-item-primary-active-fg: var(--color-white) !default;
+
+$dropdown-menu-item-colors: (
+  primary: (
+    hover-bg: $dropdown-menu-item-primary-hover-bg,
+    hover-fg: $dropdown-menu-item-primary-hover-fg,
+    active-bg: $dropdown-menu-item-primary-active-bg,
+    active-fg: $dropdown-menu-item-primary-active-fg,
+  ),
+);
+
+.dropdown {
+  .dropdown-toggle {
+    --#{prefix.$variable-prefix}dropdown-drop-icon-image: #{$dropdown-drop-icon-image};
+    --#{prefix.$variable-prefix}dropdown-drop-icon-size: #{$dropdown-drop-icon-size};
+
+    &::after {
+      content: '';
+      width: var(--#{prefix.$variable-prefix}dropdown-drop-icon-size);
+      height: var(--#{prefix.$variable-prefix}dropdown-drop-icon-size);
+      background-image: var(--#{prefix.$variable-prefix}dropdown-drop-icon-image);
+    }
+  }
+
+  .dropdown-menu {
+    --#{prefix.$variable-prefix}dropdown-menu-border: #{$dropdown-menu-border};
+    --#{prefix.$variable-prefix}dropdown-menu-bg: #{$dropdown-menu-bg};
+    --#{prefix.$variable-prefix}dropdown-menu-fg: #{$dropdown-menu-fg};
+
+    --#{prefix.$variable-prefix}dropdown-menu-item-bg: transparent;
+    --#{prefix.$variable-prefix}dropdown-menu-item-fg: var(--#{prefix.$variable-prefix}dropdown-menu-fg);
+
+    position: fixed;
+    display: none;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--#{prefix.$variable-prefix}dropdown-menu-border);
+    background-color: var(--#{prefix.$variable-prefix}dropdown-menu-bg);
+    color: var(--#{prefix.$variable-prefix}dropdown-menu-fg);
+
+    .dropdown-item {
+      display: block;
+      text-decoration: none;
+      padding: 5px 10px;
+
+      background: var(--#{prefix.$variable-prefix}dropdown-menu-item-bg);
+      color: var(--#{prefix.$variable-prefix}dropdown-menu-item-fg);
+
+      a {
+        color: var(--#{prefix.$variable-prefix}dropdown-menu-item-fg);
+      }
+    }
+
+    @each $variant, $dict in $dropdown-menu-item-colors {
+      &.#{$variant} {
+        .dropdown-item {
+          &:hover {
+            @include colors.map-variable("dropdown-menu-item-bg", $dict, "hover-bg");
+            @include colors.map-variable("dropdown-menu-item-fg", $dict, "hover-fg");
+          }
+          &:active {
+            @include colors.map-variable("dropdown-menu-item-bg", $dict, "active-bg");
+            @include colors.map-variable("dropdown-menu-item-fg", $dict, "active-fg");
+          }
+        }
+      }
+    }
+  }
+
+  ul.dropdown-menu {
+    list-style-type: none;
+  }
+}

@@ -1,0 +1,36 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { MultipleCanvas } from '../../../../../utils/storybook/components/MultipleCanvas';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+Create consistent cross-browser and cross-device checkboxes with completely rewritten check component.
+
+## States
+
+<MultipleCanvas
+  components={[
+    { title: 'Default', of: CheckboxStories.Default },
+    { title: 'Checked', of: CheckboxStories.Checked },
+    { title: 'Disabled', of: CheckboxStories.Disabled },
+    { title: 'Disabled and Checked', of: CheckboxStories.DisabledChecked },
+  ]}
+  renderWidth={220}
+/>
+
+## Colors
+
+We have a lot of custom contextual colors of the checkbox component. The color is applied by using the color name class on the `.form-check-input` element, see the example codes:
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary', of: CheckboxStories.Primary },
+    { title: 'Secondary', of: CheckboxStories.Secondary },
+    { title: 'Danger', of: CheckboxStories.Danger },
+    { title: 'Warning', of: CheckboxStories.Warning },
+    { title: 'Success', of: CheckboxStories.Success },
+  ]}
+  renderWidth={220}
+/>
