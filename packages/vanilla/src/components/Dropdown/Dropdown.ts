@@ -19,6 +19,9 @@ export class Dropdown implements ClickTriggerComponent {
     if (!element || !triggerElement) {
       throw new Error('.dropdown-menu and .dropdown-toggle should be encapsuled by .dropdown')
     }
+
+    this.documentClick = this.documentClick.bind(this);
+
     this.element = element;
     this.triggerElement = triggerElement;
     this.element.addEventListener('click', this.handleDropdownClick);
@@ -36,12 +39,14 @@ export class Dropdown implements ClickTriggerComponent {
     if (this.isTransitioning) {
       return;
     }
-    /*
+  }
+
+  private documentClick(event: MouseEvent) {
     const isContent = !!(event.target as HTMLElement).closest('.dropdown-menu')
     if (isContent) {
       return;
     }
-    */
+    this.hide();
   }
 
   show() {
@@ -60,6 +65,7 @@ export class Dropdown implements ClickTriggerComponent {
 
     const complete = () => {
       this.isTransitioning = false;
+      document.addEventListener('click', this.documentClick);
     };
     executeAfterTransition(complete, this.element);
 
@@ -72,6 +78,8 @@ export class Dropdown implements ClickTriggerComponent {
     if (this.isTransitioning) {
       return;
     }
+
+    document.removeEventListener('click', this.documentClick);
 
     const complete = () => {
       this.element.style.display = 'none';

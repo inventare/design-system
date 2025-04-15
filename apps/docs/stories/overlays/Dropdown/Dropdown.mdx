@@ -1,6 +1,24 @@
 import { Canvas, Meta, Story, Source } from '@storybook/blocks';
 import * as DropdownStories from './Dropdown.stories';
+import { MultipleCanvas } from '../../../../../utils/storybook/components/MultipleCanvas';
 
 <Meta of={DropdownStories} />
 
 # Dropdown
+
+Dropdowns are toggleable, contextual overlays for displaying lists of links and more.
+
+<Canvas of={DropdownStories.Default} />
+
+## Dropdown Alignment
+
+Is possible to define the menu alignment using the classes `.dropdown-menu-start`, `.dropdown-menu-center` and `.dropdown-menu-end` on the menu:
+
+<MultipleCanvas
+  components={[
+    { title: 'Left', of: DropdownStories.Left },
+    { title: 'Center', of: DropdownStories.Center },
+    { title: 'Right', of: DropdownStories.Right }
+  ]}
+  renderWidth={300}
+/>

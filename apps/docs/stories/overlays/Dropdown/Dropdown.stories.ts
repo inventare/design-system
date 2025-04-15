@@ -14,6 +14,32 @@ type Story = StoryObj<DropdownProps>;
 
 export const Default: Story = {
   args: {
-    buttonText: 'Open Menu',
+    buttonText: 'Open Dropdown',
+  }
+};
+
+export const Left: Story = {
+  args: {
+    buttonText: 'Left',
+    align: 'left',
+    hideContent: true,
+  }
+};
+
+export const Center: Story = {
+  args: {
+    buttonText: 'Center',
+    align: 'center',
+    hideContent: true,
+    containerAlign: 'center',
+  }
+};
+
+export const Right: Story = {
+  args: {
+    buttonText: 'Right',
+    align: 'right',
+    hideContent: true,
+    containerAlign: 'flex-end',
   }
 };
