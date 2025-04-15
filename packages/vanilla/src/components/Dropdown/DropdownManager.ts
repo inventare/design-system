@@ -25,13 +25,6 @@ export class DropdownManager extends ComponentManager<HTMLElement, Dropdown> {
       return null;
     }
     return toggleClosest.closest<HTMLElement>('.dropdown');
-    /*
-    const dropdownQuery = toggleClosest.getAttribute('data-target');
-    if (!dropdownQuery) {
-      return null;
-    }
-    return document.querySelector<HTMLElement>(dropdownQuery);
-    */
   }
 }
 

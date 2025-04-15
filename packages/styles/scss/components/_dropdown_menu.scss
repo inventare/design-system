@@ -7,6 +7,7 @@ $dropdown-drop-icon-size: 20px;
 $dropdown-menu-border: var(--color-gray-100) !default;
 $dropdown-menu-bg: var(--color-white) !default;
 $dropdown-menu-fg: var(--color-gray-900) !default;
+$dropdown-menu-min-width: 200px;
 
 $dropdown-menu-item-primary-hover-bg: var(--color-primary-500) !default;
 $dropdown-menu-item-primary-hover-fg: var(--color-white) !default;
@@ -23,6 +24,9 @@ $dropdown-menu-item-colors: (
 );
 
 .dropdown {
+  display: inline;
+  position: relative;
+
   .dropdown-toggle {
     --#{prefix.$variable-prefix}dropdown-drop-icon-image: #{$dropdown-drop-icon-image};
     --#{prefix.$variable-prefix}dropdown-drop-icon-size: #{$dropdown-drop-icon-size};
@@ -39,20 +43,32 @@ $dropdown-menu-item-colors: (
     --#{prefix.$variable-prefix}dropdown-menu-border: #{$dropdown-menu-border};
     --#{prefix.$variable-prefix}dropdown-menu-bg: #{$dropdown-menu-bg};
     --#{prefix.$variable-prefix}dropdown-menu-fg: #{$dropdown-menu-fg};
+    --#{prefix.$variable-prefix}dropdown-menu-min-width: #{$dropdown-menu-min-width};
 
     --#{prefix.$variable-prefix}dropdown-menu-item-bg: transparent;
     --#{prefix.$variable-prefix}dropdown-menu-item-fg: var(--#{prefix.$variable-prefix}dropdown-menu-fg);
 
-    position: fixed;
+    position: absolute;
     display: none;
 
     overflow: hidden;
 
     border-radius: 8px;
 
+    min-width: var(--#{prefix.$variable-prefix}dropdown-menu-min-width);
+
     border: 1px solid var(--#{prefix.$variable-prefix}dropdown-menu-border);
     background-color: var(--#{prefix.$variable-prefix}dropdown-menu-bg);
     color: var(--#{prefix.$variable-prefix}dropdown-menu-fg);
+
+    &.dropdown-menu-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.dropdown-menu-end {
+      right: 0;
+    }
 
     .dropdown-item {
       display: block;
