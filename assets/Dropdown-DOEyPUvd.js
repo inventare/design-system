@@ -1,0 +1,7 @@
+import{j as n,M as s,C as i}from"./index-DIlFgkcA.js";import{useMDXComponents as r}from"./index-CyTVKGqX.js";import{D as d,a as m,L as p,C as a,R as l}from"./Dropdown.stories-B4F_F3uf.js";import{M as c}from"./MultipleCanvas-DjuXgfrH.js";import"./iframe-CV1eJLL6.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";import"./ModalManager-6x1BS2KN.js";import"./ComponentManager-CW-XTlUv.js";import"./transitions-DBBZnb0O.js";import"./CollapseManager-nVBSW0wM.js";import"./InitializerTriggerComponent-DjtXnMDk.js";import"./SidebarManager-CzxXZlRJ.js";import"./SelectManager-3Sc5s_KG.js";function t(e){const o={code:"code",h1:"h1",h2:"h2",p:"p",...r(),...e.components};return n.jsxs(n.Fragment,{children:[n.jsx(s,{of:d}),`
+`,n.jsx(o.h1,{id:"dropdown",children:"Dropdown"}),`
+`,n.jsx(o.p,{children:"Dropdowns are toggleable, contextual overlays for displaying lists of links and more."}),`
+`,n.jsx(i,{of:m}),`
+`,n.jsx(o.h2,{id:"dropdown-alignment",children:"Dropdown Alignment"}),`
+`,n.jsxs(o.p,{children:["Is possible to define the menu alignment using the classes ",n.jsx(o.code,{children:".dropdown-menu-start"}),", ",n.jsx(o.code,{children:".dropdown-menu-center"})," and ",n.jsx(o.code,{children:".dropdown-menu-end"})," on the menu:"]}),`
+`,n.jsx(c,{components:[{title:"Left",of:p},{title:"Center",of:a},{title:"Right",of:l}],renderWidth:300})]})}function b(e={}){const{wrapper:o}={...r(),...e.components};return o?n.jsx(o,{...e,children:n.jsx(t,{...e})}):t(e)}export{b as default};
