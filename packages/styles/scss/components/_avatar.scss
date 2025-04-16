@@ -1,0 +1,119 @@
+@use "../prefix";
+@use "../mixins/colors";
+
+$avatar-size-small: 32px !default;
+$avatar-size-medium: 48px !default;
+$avatar-size-large: 64px !default;
+$avatar-size-xlarge: 96px !default;
+$avatar-fs-small: var(--font-size-small) !default;
+$avatar-fs-medium: var(--font-size-base) !default;
+$avatar-fs-large: var(--font-size-h5) !default;
+$avatar-fs-xlarge: var(--font-size-h4) !default;
+
+$avatar-default-size: $avatar-size-small !default;
+$avatar-default-fs: $avatar-fs-small !default;
+$avatar-radius: var(--border-radius-circle) !default;
+
+$avatar-bg-primary: var(--color-primary-500) !default;
+$avatar-bg-secondary: var(--color-secondary-500) !default;
+$avatar-bg-danger: var(--color-danger-500) !default;
+$avatar-bg-warning: var(--color-warning-500) !default;
+$avatar-bg-success: var(--color-success-500) !default;
+$avatar-bg-default: var(--color-gray-100) !default;
+
+$avatar-fg-primary: var(--color-white) !default;
+$avatar-fg-secondary: var(--color-white) !default;
+$avatar-fg-danger: var(--color-white) !default;
+$avatar-fg-warning: var(--color-white) !default;
+$avatar-fg-success: var(--color-white) !default;
+$avatar-fg-default: var(--color-gray-900) !default;
+
+$avatar-sizes: (
+  small: (
+    size: $avatar-size-small,
+    fs: $avatar-fs-small,
+  ),
+  medium: (
+    size: $avatar-size-medium,
+    fs: $avatar-fs-medium,
+  ),
+  large: (
+    size: $avatar-size-large,
+    fs: $avatar-fs-large,
+  ),
+  xlarge: (
+    size: $avatar-size-xlarge,
+    fs: $avatar-fs-xlarge,
+  ),
+);
+
+$avatar-colors: (
+  primary: (
+    bg: $avatar-bg-primary,
+    fg: $avatar-fg-primary,
+  ),
+  secondary: (
+    bg: $avatar-bg-secondary,
+    fg: $avatar-fg-secondary,
+  ),
+  danger: (
+    bg: $avatar-bg-danger,
+    fg: $avatar-fg-danger,
+  ),
+  warning: (
+    bg: $avatar-bg-warning,
+    fg: $avatar-fg-warning,
+  ),
+  success: (
+    bg: $avatar-bg-success,
+    fg: $avatar-fg-success,
+  ),
+);
+
+.avatar {
+  --#{prefix.$variable-prefix}avatar-size: #{$avatar-default-size};
+  --#{prefix.$variable-prefix}avatar-fs: #{$avatar-default-fs};
+  --#{prefix.$variable-prefix}avatar-radius: #{$avatar-radius};
+  --#{prefix.$variable-prefix}avatar-bg: #{$avatar-bg-default};
+  --#{prefix.$variable-prefix}avatar-fg: #{$avatar-fg-default};
+
+  width: var(--#{prefix.$variable-prefix}avatar-size);
+  height: var(--#{prefix.$variable-prefix}avatar-size);
+  min-width: var(--#{prefix.$variable-prefix}avatar-size);
+  min-height: var(--#{prefix.$variable-prefix}avatar-size);
+  max-width: var(--#{prefix.$variable-prefix}avatar-size);
+  max-height: var(--#{prefix.$variable-prefix}avatar-size);
+
+  border-radius: var(--#{prefix.$variable-prefix}avatar-radius);
+
+  background-color: var(--#{prefix.$variable-prefix}avatar-bg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--#{prefix.$variable-prefix}avatar-fg);
+
+  font-size: var(--#{prefix.$variable-prefix}avatar-fs);
+
+  object-fit: cover;
+  object-position: center;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @each $variant, $dict in $avatar-sizes {
+    &.#{$variant} {
+      @include colors.map-variable("avatar-size", $dict, "size");
+      @include colors.map-variable("avatar-fs", $dict, "fs");
+    }
+  }
+
+  @each $variant, $dict in $avatar-colors {
+    &.#{$variant} {
+      @include colors.map-variable("avatar-bg", $dict, "bg");
+      @include colors.map-variable("avatar-fg", $dict, "fg");
+    }
+  }
+}
