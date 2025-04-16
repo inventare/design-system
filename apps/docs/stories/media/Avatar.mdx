@@ -1,0 +1,65 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { MultipleCanvas } from '../../../../utils/storybook/components/MultipleCanvas';
+import * as AvatarStories from './Avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+Helper classes to define avatar's on pages.
+
+## Text
+
+We have option to show text on the avatar component, like this:
+
+<Canvas of={AvatarStories.TextDefault} />
+
+## Image
+
+Also, is possible to use the avatar component to show a image, like:
+
+<Canvas of={AvatarStories.ImageTag} />
+
+Or using `background-image`:
+
+<Canvas of={AvatarStories.ImageBackground} />
+
+## Sizes
+
+We have some sizes of avatar component:
+
+<MultipleCanvas
+  components={[
+    { title: 'Small', of: AvatarStories.TextSmall },
+    { title: 'Medium', of: AvatarStories.TextMedium },
+    { title: 'Large', of: AvatarStories.TextLarge },
+    { title: 'Extra Large', of: AvatarStories.TextExtraLarge },
+  ]}
+  renderWidth={220}
+/>
+
+Using image:
+
+<MultipleCanvas
+  components={[
+    { title: 'Small', of: AvatarStories.ImageSmall },
+    { title: 'Medium', of: AvatarStories.ImageMedium },
+    { title: 'Large', of: AvatarStories.ImageLarge },
+    { title: 'Extra Large', of: AvatarStories.ImageExtraLarge },
+  ]}
+  renderWidth={220}
+/>
+
+## Colors for Text
+
+<MultipleCanvas
+  components={[
+    { title: 'Primary', of: AvatarStories.TextPrimary },
+    { title: 'Secondary', of: AvatarStories.TextSecondary },
+    { title: 'Danger', of: AvatarStories.TextDanger },
+    { title: 'Warning', of: AvatarStories.TextWarning },
+    { title: 'Success', of: AvatarStories.TextSuccess },
+    { title: 'Default', of: AvatarStories.TextDefault },
+  ]}
+  renderWidth={220}
+/>
