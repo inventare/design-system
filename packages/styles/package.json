@@ -1,6 +1,6 @@
 {
   "name": "@inventare/styles",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "main": "scss/inventare.scss",
   "license": "MIT",
   "author": "Eduardo Oliveira <eduardo_y05@outlook.com>",
