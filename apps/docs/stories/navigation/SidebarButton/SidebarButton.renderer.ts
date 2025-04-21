@@ -2,7 +2,7 @@ export interface SidebarButtonProps {
   label?: string;
   disabled?: boolean;
   variant?: 'primary' | 'danger';
-  dropDown?: boolean;
+  expandable?: boolean;
   expanded?: boolean;
   child?: boolean;
   childPosition?: 'start' | 'middle' | 'end';
@@ -14,7 +14,7 @@ export const renderSidebarButton = ({
   variant = 'primary',
   label = 'Button',
   disabled = false,
-  dropDown = false,
+  expandable = false,
   expanded = false,
   child = false,
   childPosition = 'start',
@@ -33,7 +33,7 @@ export const renderSidebarButton = ({
   btn.className = [
     'btn btn-sidebar',
     `${variant}`,
-    `${dropDown ? 'dropdown' : ''}`,
+    `${expandable ? 'expandable' : ''}`,
     `${child ? `child ${childPosition}` : ''}`,
     `${active ? 'active' : ''}`,
   ].join(' ').trim();

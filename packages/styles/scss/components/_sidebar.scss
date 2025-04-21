@@ -28,25 +28,25 @@ $sidebar-button-colors: (
 
 $sidebar-button-spacing-y: var(--spacing-xxsmall) !default;
 
-$sidebar-button-dropdown-fg: var(--color-gray-50) !default;
-$sidebar-button-dropdown-hover-bg: button.$button-primary-hover-bg !default;
-$sidebar-button-dropdown-hover-fg: var(--color-gray-50) !default;
-$sidebar-button-dropdown-active-bg: button.$button-primary-active-bg !default;
+$sidebar-button-expandable-fg: var(--color-gray-50) !default;
+$sidebar-button-expandable-hover-bg: button.$button-primary-hover-bg !default;
+$sidebar-button-expandable-hover-fg: var(--color-gray-50) !default;
+$sidebar-button-expandable-active-bg: button.$button-primary-active-bg !default;
 
 $inactive-sidebar-button-colors: (
   border: transparent,
-  fg: $sidebar-button-dropdown-fg,
+  fg: $sidebar-button-expandable-fg,
   bg: transparent,
-  hover-fg: $sidebar-button-dropdown-hover-fg,
+  hover-fg: $sidebar-button-expandable-hover-fg,
   hover-border: transparent,
-  hover-bg: $sidebar-button-dropdown-hover-bg,
-  active-fg: $sidebar-button-dropdown-fg,
+  hover-bg: $sidebar-button-expandable-hover-bg,
+  active-fg: $sidebar-button-expandable-fg,
   active-border: transparent,
-  active-bg: $sidebar-button-dropdown-active-bg,
+  active-bg: $sidebar-button-expandable-active-bg,
 );
 
-$sidebar-button-dropdown-padding-right: var(--spacing-xxlarge) !default;
-$sidebar-button-dropdown-margin-bottom: var(--spacing-xxsmall) !default;
+$sidebar-button-expandable-padding-right: var(--spacing-xxlarge) !default;
+$sidebar-button-expandable-margin-bottom: var(--spacing-xxsmall) !default;
 $sidebar-button-child-margin-left: var(--spacing-xxlarge) !default;
 $sidebar-button-child-margin-bottom: var(--spacing-xxsmall) !default;
 $sidebar-button-child-timeline-bg: var(--color-gray-400) !default;
@@ -197,8 +197,8 @@ $sidebar-label-fg: #aaa;
         align-items: center;
         justify-content: center;
 
-        &.dropdown {
-          --#{prefix.$variable-prefix}sidebar-button-dropdown-padding-right: var(--spacing-xsmall);
+        &.expandable {
+          --#{prefix.$variable-prefix}sidebar-button-expandable-padding-right: var(--spacing-xsmall);
 
           &::after {
             display: none;
@@ -297,12 +297,12 @@ $sidebar-label-fg: #aaa;
     }
   }
 
-  &.dropdown {
-    --#{prefix.$variable-prefix}sidebar-button-dropdown-padding-right: #{$sidebar-button-dropdown-padding-right};
-    --#{prefix.$variable-prefix}sidebar-button-dropdown-margin-bottom: #{$sidebar-button-dropdown-margin-bottom};
+  &.expandable {
+    --#{prefix.$variable-prefix}sidebar-button-expandable-padding-right: #{$sidebar-button-expandable-padding-right};
+    --#{prefix.$variable-prefix}sidebar-button-expandable-margin-bottom: #{$sidebar-button-expandable-margin-bottom};
 
-    padding-right: var(--#{prefix.$variable-prefix}sidebar-button-dropdown-padding-right);
-    margin-bottom: var(--#{prefix.$variable-prefix}sidebar-button-dropdown-margin-bottom);
+    padding-right: var(--#{prefix.$variable-prefix}sidebar-button-expandable-padding-right);
+    margin-bottom: var(--#{prefix.$variable-prefix}sidebar-button-expandable-margin-bottom);
     position: relative;
 
     &::after {
