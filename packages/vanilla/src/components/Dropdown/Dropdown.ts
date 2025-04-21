@@ -54,10 +54,11 @@ export class Dropdown implements ClickTriggerComponent {
       return;
     }
 
-    const toggleBox = this.triggerElement.getBoundingClientRect();
+    // const toggleBox = this.triggerElement.getBoundingClientRect();
 
     this.element.style.display = 'block'
     this.element.removeAttribute('aria-hidden')
+    this.triggerElement.setAttribute('aria-expanded', JSON.stringify(true));
     //this.element.setAttribute('aria-modal', String(true))
     //this.element.setAttribute('role', 'dialog')
 
@@ -80,6 +81,7 @@ export class Dropdown implements ClickTriggerComponent {
     }
 
     document.removeEventListener('click', this.documentClick);
+    this.triggerElement.setAttribute('aria-expanded', JSON.stringify(false));
 
     const complete = () => {
       this.element.style.display = 'none';

@@ -1,5 +1,5 @@
 export interface ButtonProps {
-  variant?: 'primary' | 'danger';
+  variant?: 'primary' | 'danger' | 'ghost';
   disabled?: boolean;
   outline?: boolean;
   sizing?: 'default' | 'large' | 'small';

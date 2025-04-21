@@ -2,6 +2,7 @@ import { DropdownManager } from "../../../../../packages/vanilla/src/components"
 
 export interface DropdownProps {
   buttonText?: string;
+  buttonVariant?: 'primary' | 'danger' | 'ghost',
   align?: 'left' | 'center' | 'right';
   hideContent?: boolean;
   containerAlign?: 'flex-start' | 'center' | 'flex-end';
@@ -9,6 +10,7 @@ export interface DropdownProps {
 
 export interface DropdownRenderOptions {
   addEvents?: boolean;
+  noContainer?: boolean;
 }
 
 export const renderDropdown = (props: DropdownProps, options: DropdownRenderOptions) => {
@@ -16,9 +18,10 @@ export const renderDropdown = (props: DropdownProps, options: DropdownRenderOpti
     align = 'left',
     buttonText = 'Open',
     containerAlign = 'flex-start',
+    buttonVariant = 'primary',
     hideContent,
   } = props;
-  const { addEvents } = options;
+  const { addEvents, noContainer } = options;
 
   const container = document.createElement('div');
 
@@ -35,7 +38,7 @@ export const renderDropdown = (props: DropdownProps, options: DropdownRenderOpti
   container.innerHTML = `
     <div class="dropdown">
       <button
-        class="btn primary dropdown-toggle"
+        class="btn ${buttonVariant} dropdown-toggle"
         type="button"
         data-toggle="dropdown"
         aria-expanded="false"
@@ -47,6 +50,15 @@ export const renderDropdown = (props: DropdownProps, options: DropdownRenderOpti
       </ul>
     </div>
   `;
+
+  if (noContainer) {
+    const dd = container.querySelector('.dropdown') as HTMLElement;
+    if (addEvents) {
+      const manager = new DropdownManager();
+      dd.addEventListener('click', (ev) => manager.getInstance(ev.target as HTMLElement)?.executeByClick(ev));
+    }
+    return dd;
+  }
 
   if (addEvents) {
     const manager = new DropdownManager();
