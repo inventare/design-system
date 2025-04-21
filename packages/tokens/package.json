@@ -1,6 +1,6 @@
 {
   "name": "@inventare/tokens",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "./scss/tokens.scss",
   "license": "MIT",
   "files": [

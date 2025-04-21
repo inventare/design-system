@@ -11,7 +11,7 @@ export default {
     onClick: { action: 'onClick' },
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'danger'],
+      options: ['primary', 'danger', 'ghost'],
     },
     sizing: {
       control: { type: 'select' },
@@ -135,6 +135,13 @@ export const DeleteButtonSmall = {
   args: {
     variant: 'danger',
     sizing: 'small',
+    label: `${deleteIcon} Delete`,
+  }
+}
+
+export const DeleteButtonGhost = {
+  args: {
+    variant: 'ghost',
     label: `${deleteIcon} Delete`,
   }
 }

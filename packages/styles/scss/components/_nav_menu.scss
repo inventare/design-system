@@ -1,0 +1,199 @@
+@use "../prefix";
+@use "../mixins/colors";
+
+$nav-menu-height: 64px !default;
+$nav-menu-bg: var(--color-gray-100) !default;
+$nav-menu-fg: var(--color-gray-900) !default;
+$nav-menu-item-padding-x: var(--spacing-base) !default;
+$nav-menu-item-padding-y: var(--spacing-xsmall) !default;
+$nav-menu-item-font: var(--font-family) !default;
+$nav-menu-item-font-size: 1rem !default;
+$nav-menu-item-font-weight: 400 !default;
+$nav-menu-item-line-height: normal !default;
+$nav-menu-item-arrow-contrast: 0;
+$nav-menu-item-hover-bg: var(--color-gray-200) !default;
+$nav-menu-item-hover-fg: var(--color-gray-900) !default;
+$nav-menu-item-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+$nav-primary-bg: var(--color-primary-500) !default;
+$nav-primary-hover-bg: var(--color-primary-600) !default;
+$nav-primary-fg: var(--color-white) !default;
+$nav-primary-hover-fg: var(--color-white) !default;
+$nav-primary-contrast: 1;
+$nav-primary-hover-contrast: 1;
+
+$nav-secondary-bg: var(--color-secondary-500) !default;
+$nav-secondary-hover-bg: var(--color-secondary-600) !default;
+$nav-secondary-fg: var(--color-white) !default;
+$nav-secondary-hover-fg: var(--color-white) !default;
+$nav-secondary-contrast: 1;
+$nav-secondary-hover-contrast: 1;
+
+$nav-danger-bg: var(--color-danger-500) !default;
+$nav-danger-hover-bg: var(--color-danger-600) !default;
+$nav-danger-fg: var(--color-white) !default;
+$nav-danger-hover-fg: var(--color-white) !default;
+$nav-danger-contrast: 1;
+$nav-danger-hover-contrast: 1;
+
+$nav-warning-bg: var(--color-warning-500) !default;
+$nav-warning-hover-bg: var(--color-warning-600) !default;
+$nav-warning-fg: var(--color-white) !default;
+$nav-warning-hover-fg: var(--color-white) !default;
+$nav-warning-contrast: 1;
+$nav-warning-hover-contrast: 1;
+
+$nav-white-bg: var(--color-white) !default;
+$nav-white-hover-bg: var(--color-gray-50) !default;
+$nav-white-fg: var(--color-gray-700) !default;
+$nav-white-hover-fg: var(--color-gray-900) !default;
+$nav-white-contrast: 0;
+$nav-white-hover-contrast: 0;
+
+$nav-menu-colors: (
+  primary: (
+    bg: $nav-primary-bg,
+    fg: $nav-primary-fg,
+    hover-bg: $nav-primary-hover-bg,
+    hover-fg: $nav-primary-hover-fg,
+    contrast: $nav-primary-contrast,
+    hover-contrast: $nav-primary-hover-contrast,
+  ),
+  secondary: (
+    bg: $nav-secondary-bg,
+    fg: $nav-secondary-fg,
+    hover-bg: $nav-secondary-hover-bg,
+    hover-fg: $nav-secondary-hover-fg,
+    contrast: $nav-secondary-contrast,
+    hover-contrast: $nav-secondary-hover-contrast,
+  ),
+  danger: (
+    bg: $nav-danger-bg,
+    fg: $nav-danger-fg,
+    hover-bg: $nav-danger-hover-bg,
+    hover-fg: $nav-danger-hover-fg,
+    contrast: $nav-danger-contrast,
+    hover-contrast: $nav-danger-hover-contrast,
+  ),
+  warning: (
+    bg: $nav-warning-bg,
+    fg: $nav-warning-fg,
+    hover-bg: $nav-warning-hover-bg,
+    hover-fg: $nav-warning-hover-fg,
+    contrast: $nav-warning-contrast,
+    hover-contrast: $nav-warning-hover-contrast,
+  ),
+  white: (
+    bg: $nav-white-bg,
+    fg: $nav-white-fg,
+    hover-bg: $nav-white-hover-bg,
+    hover-fg: $nav-white-hover-fg,
+    contrast: $nav-white-contrast,
+    hover-contrast: $nav-white-hover-contrast,
+  ),
+);
+
+.menu {
+  --#{prefix.$variable-prefix}nav-menu-height: #{$nav-menu-height};
+  --#{prefix.$variable-prefix}nav-menu-bg: #{$nav-menu-bg};
+  --#{prefix.$variable-prefix}nav-menu-fg: #{$nav-menu-fg};
+  --#{prefix.$variable-prefix}nav-menu-item-hover-bg: #{$nav-menu-item-hover-bg};
+  --#{prefix.$variable-prefix}nav-menu-item-hover-fg: #{$nav-menu-item-hover-fg};
+  --#{prefix.$variable-prefix}nav-menu-item-padding-x: #{$nav-menu-item-padding-x};
+  --#{prefix.$variable-prefix}nav-menu-item-padding-y: #{$nav-menu-item-padding-y};
+  --#{prefix.$variable-prefix}nav-menu-item-font: #{$nav-menu-item-font};
+  --#{prefix.$variable-prefix}nav-menu-item-font-size: #{$nav-menu-item-font-size};
+  --#{prefix.$variable-prefix}nav-menu-item-font-weight: #{$nav-menu-item-font-weight};
+  --#{prefix.$variable-prefix}nav-menu-item-line-height: #{$nav-menu-item-line-height};
+  --#{prefix.$variable-prefix}nav-menu-item-transition: #{$nav-menu-item-transition};
+  --#{prefix.$variable-prefix}nav-menu-item-arrow-contrast: #{$nav-menu-item-arrow-contrast};
+  --#{prefix.$variable-prefix}nav-menu-item-arrow-hover-contrast: #{$nav-menu-item-arrow-contrast};
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  height: var(--#{prefix.$variable-prefix}nav-menu-height);
+  background-color: var(--#{prefix.$variable-prefix}nav-menu-bg);
+  color: var(--#{prefix.$variable-prefix}nav-menu-fg);
+
+  @each $variant, $dict in $nav-menu-colors {
+    &.#{$variant} {
+      @include colors.map-variable("nav-menu-bg", $dict, "bg");
+      @include colors.map-variable("nav-menu-fg", $dict, "fg");
+      @include colors.map-variable("nav-menu-item-hover-bg", $dict, "hover-bg");
+      @include colors.map-variable("nav-menu-item-hover-fg", $dict, "hover-fg");
+      @include colors.map-variable("nav-menu-item-arrow-contrast", $dict, "contrast");
+      @include colors.map-variable("nav-menu-item-arrow-hover-contrast", $dict, "hover-contrast");
+    }
+  }
+
+  > ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    > li {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: var(--#{prefix.$variable-prefix}nav-menu-item-padding-y) var(--#{prefix.$variable-prefix}nav-menu-item-padding-x);
+
+        text-align: center;
+        text-decoration: none;
+        font-family: var(--#{prefix.$variable-prefix}button-font);
+        font-size: var(--#{prefix.$variable-prefix}button-font-size);
+        font-weight: var(--#{prefix.$variable-prefix}button-font-weight);
+        line-height: var(--#{prefix.$variable-prefix}button-line-height);
+
+        color: var(--#{prefix.$variable-prefix}nav-menu-fg);
+
+        transition: var(--#{prefix.$variable-prefix}nav-menu-item-transition);
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--#{prefix.$variable-prefix}nav-menu-item-hover-bg);
+          color: var(--#{prefix.$variable-prefix}nav-menu-item-hover-fg);
+        }
+      }
+
+      > button, > .dropdown > button {
+        height: 100%;
+        border: none;
+        border-radius: 0;
+        background-color: transparent !important;
+        color: var(--#{prefix.$variable-prefix}nav-menu-item-hover-fg) !important;
+
+        &:hover, &[aria-expanded=true] {
+          background-color: var(--#{prefix.$variable-prefix}nav-menu-item-hover-bg) !important;
+          color: var(--#{prefix.$variable-prefix}nav-menu-item-hover-fg) !important;
+        }
+
+        &.dropdown-toggle {
+          &::after {
+            filter: contrast(var(--#{prefix.$variable-prefix}nav-menu-item-arrow-contrast));
+          }
+          &:hover {
+            &::after {
+              filter: contrast(var(--#{prefix.$variable-prefix}nav-menu-item-arrow-hover-contrast));
+            }
+          }
+        }
+      }
+    }
+  }
+}
