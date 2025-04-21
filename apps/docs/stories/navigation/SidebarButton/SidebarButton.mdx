@@ -8,7 +8,7 @@ import * as SidebarButtonStories from './SidebarButton.stories';
 The sidebar button component is a set of utility for button to create a complete sidebar navigation menu. We have some types of Sidebar Button:
 
 - Sidebar Button: used to indicate the sidebar button without subgroup's.
-- Dropdown: used to indicate a group of items.
+- Expandable: used to indicate a group of items.
 - Child: used to indicate a child item of a group.
 
 ## Default
@@ -27,25 +27,25 @@ The default sidebar button is used for non-child buttons.
 
 <Canvas of={SidebarButtonStories.PrimaryActiveWithIcon} />
 
-## DropDown
+## Expandable
 
 Can be visible in two modes: the collapsed and the expanded versions.
 
-<Canvas of={SidebarButtonStories.Dropdown} />
+<Canvas of={SidebarButtonStories.Expandable} />
 
 ### Expanded
 
 The expanded version is visible when the `aria-expanded` attribute is set to `true`:
 
-<Canvas of={SidebarButtonStories.DropdownExpanded} />
+<Canvas of={SidebarButtonStories.ExpandableExpanded} />
 
 ### Active
 
-To set the dropdown button to active state, with `primary` color scheme, add the `active` class to the button:
+To set the expandable button to active state, with `primary` color scheme, add the `active` class to the button:
 
-<Canvas of={SidebarButtonStories.DropdownActive} />
+<Canvas of={SidebarButtonStories.ExpandableActive} />
 
-<Canvas of={SidebarButtonStories.DropdownExpandedActive} />
+<Canvas of={SidebarButtonStories.ExpandableExpandedActive} />
 
 ## Child
 

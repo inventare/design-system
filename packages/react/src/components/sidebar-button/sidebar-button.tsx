@@ -39,7 +39,7 @@ export const SidebarButton = forwardRef<SidebarButtonProps, "button">((props, re
         [className || '']: true,
         'btn-sidebar': true,
         'active': isActive,
-        'dropdown': buttonType === 'expandable',
+        'expandable': buttonType === 'expandable',
         'child': buttonType === 'child',
         [itemIndicatorAlign]: buttonType === 'child',
         btn: true,

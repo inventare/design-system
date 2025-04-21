@@ -29,7 +29,7 @@ export const renderSidebar = () => {
   const toggle = renderSidebarButton({
     variant: 'primary',
     label: `${shoppingCartIcon} <span class="hide-on-collapse">Sales</span>`,
-    dropDown: true,
+    expandable: true,
     expanded: true,
     active: true,
     withParent: false,

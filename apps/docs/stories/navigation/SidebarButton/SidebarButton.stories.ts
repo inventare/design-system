@@ -11,7 +11,7 @@ const meta: Meta<SidebarButtonProps> = {
       options: ['primary', 'danger'],
     },
     disabled: { control: 'boolean', },
-    dropDown: { control: 'boolean', },
+    expandable: { control: 'boolean', },
     expanded: { control: 'boolean', },
     childPosition: {
       control: { type: 'select' },
@@ -60,37 +60,37 @@ export const PrimaryActiveWithIcon: Story = {
   },
 };
 
-export const Dropdown: Story = {
+export const Expandable: Story = {
   args: {
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
-    dropDown: true,
+    expandable: true,
   },
 };
 
-export const DropdownActive: Story = {
+export const ExpandableActive: Story = {
   args: {
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
-    dropDown: true,
+    expandable: true,
     active: true,
   },
 };
 
-export const DropdownExpanded: Story = {
+export const ExpandableExpanded: Story = {
   args: {
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
-    dropDown: true,
+    expandable: true,
     expanded: true,
   },
 };
 
-export const DropdownExpandedActive: Story = {
+export const ExpandableExpandedActive: Story = {
   args: {
     variant: 'primary',
     label: `${shoppingCartIcon} Sales`,
-    dropDown: true,
+    expandable: true,
     active: true,
     expanded: true,
   },
