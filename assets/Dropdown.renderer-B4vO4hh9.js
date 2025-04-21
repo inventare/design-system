@@ -1,0 +1,15 @@
+import"./ModalManager-6x1BS2KN.js";import"./CollapseManager-nVBSW0wM.js";import"./SidebarManager-CzxXZlRJ.js";import"./SelectManager-3Sc5s_KG.js";import{C as f}from"./ComponentManager-CW-XTlUv.js";import{r as C,e as u,C as y}from"./transitions-DBBZnb0O.js";const m="show";class E{constructor(e){this.isTransitioning=!1;const t=e.querySelector(".dropdown-menu"),s=e.querySelector(".dropdown-toggle");if(!t||!s)throw new Error(".dropdown-menu and .dropdown-toggle should be encapsuled by .dropdown");this.documentClick=this.documentClick.bind(this),this.element=t,this.triggerElement=s,this.element.addEventListener("click",this.handleDropdownClick)}get isVisible(){return window.getComputedStyle(this.element).display==="block"}handleAutoFocus(){const e=this.element.querySelector("[autofocus]");e&&e.focus()}handleDropdownClick(e){this.isTransitioning}documentClick(e){e.target.closest(".dropdown-menu")||this.hide()}show(){if(this.isTransitioning)return;this.element.style.display="block",this.element.removeAttribute("aria-hidden"),this.triggerElement.setAttribute("aria-expanded",JSON.stringify(!0)),C(this.element),u(()=>{this.isTransitioning=!1,document.addEventListener("click",this.documentClick)},this.element),this.element.classList.add(m),this.handleAutoFocus(),this.isTransitioning=!0}hide(){if(this.isTransitioning)return;document.removeEventListener("click",this.documentClick),this.triggerElement.setAttribute("aria-expanded",JSON.stringify(!1)),u(()=>{this.element.style.display="none",this.element.setAttribute("aria-hidden",String(!0)),this.isTransitioning=!1},this.element),this.isTransitioning=!0,this.element.classList.remove(m)}toggle(){return this.isVisible?this.hide():this.show()}executeByClick(e){this.toggle()}}const k='[data-dismiss="dropdown"]',b='[data-toggle="dropdown"]';class d extends f{createInstance(e){return new E(e)}getElement(e){if(!e)return null;let t=e.closest(b);return t||(t=e.closest(k)),t?t.closest(".dropdown"):null}}y.register(new d);const L=(l,e)=>{const{align:t="left",buttonText:s="Open",containerAlign:h="flex-start",buttonVariant:g="primary",hideContent:S}=l,{addEvents:a,noContainer:p}=e,n=document.createElement("div"),w={left:"dropdown-menu-start",center:"dropdown-menu-center",right:"dropdown-menu-end"}[t];if(n.innerHTML=`
+    <div class="dropdown">
+      <button
+        class="btn ${g} dropdown-toggle"
+        type="button"
+        data-toggle="dropdown"
+        aria-expanded="false"
+      >${s}</button>
+      <ul class="dropdown-menu ${w} primary">
+        <li><a class="dropdown-item">Action</a></li>
+        <li><a class="dropdown-item">Another action</a></li>
+        <li><a class="dropdown-item">Something else here</a></li>
+      </ul>
+    </div>
+  `,p){const o=n.querySelector(".dropdown");if(a){const r=new d;o.addEventListener("click",i=>{var c;return(c=r.getInstance(i.target))==null?void 0:c.executeByClick(i)})}return o}if(a){const o=new d;n.addEventListener("click",r=>{var i;return(i=o.getInstance(r.target))==null?void 0:i.executeByClick(r)})}return n.style.display="flex",n.style.justifyContent=h,n.style.minHeight="200px",n};export{L as r};
