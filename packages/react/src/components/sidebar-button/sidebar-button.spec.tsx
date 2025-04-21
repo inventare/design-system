@@ -73,11 +73,11 @@ describe('SidebarButton', () => {
     expect(Array.from(button.classList)).toMatchObject(classList);
   });
 
-  it('should <button /> has correct classes with active and dropdown', () => {
+  it('should <button /> has correct classes with active and expandable', () => {
     const className = 'my-button'
     const color = 'primary';
     const size = 'normal'
-    const classList = [className, 'btn-sidebar', 'active', 'dropdown', 'btn', color, size, 'outline'];
+    const classList = [className, 'btn-sidebar', 'active', 'expandable', 'btn', color, size, 'outline'];
     render(<SidebarButton className={className} size={size} color={color} buttonType="expandable" outline isActive />);
 
     const button = screen.getByRole('button');
