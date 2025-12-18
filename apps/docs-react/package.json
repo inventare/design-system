@@ -15,7 +15,7 @@
     "@storybook/react-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@types/react": "^18.3.18",
-    "storybook": "^8.6.12"
+    "storybook": "^8.6.15"
   },
   "scripts": {
     "start": "storybook dev -p 7006",
