@@ -1,0 +1,22 @@
+import{j as e,M as c,S as t}from"./index-CNf0_4o_.js";import{useMDXComponents as o}from"./index-Dor1_1mu.js";import{M as i}from"./MultipleCanvas-_Gzjid3W.js";import{B as h,P as x,D as j,a as m,b as p,c as u,d as f,e as g,f as b,S as r,N as d,L as a,g as v,h as D,i as y}from"./Button.stories-BRvR6wlu.js";import"./iframe-2c7k-oFT.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";import"./index-DSC6Fyi1.js";import"./Button-BA8mUfzZ.js";function l(n){const s={code:"code",h1:"h1",h2:"h2",h3:"h3",p:"p",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",...o(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(c,{of:h}),`
+`,e.jsx(s.h1,{id:"button",children:"Button"}),`
+`,e.jsx(s.p,{children:"Displays a button or a component that looks like a button."}),`
+`,e.jsx(s.h2,{id:"colors",children:"Colors"}),`
+`,e.jsx(s.p,{children:"We provide some color schemes for the button component, each serving its own semantic purpose."}),`
+`,e.jsx(i,{components:[{title:"Primary",of:x},{title:"Danger",of:j}]}),`
+`,e.jsx(s.h3,{id:"outline-variants",children:"Outline variants"}),`
+`,e.jsx(s.p,{children:"In addition, we have some outline variant for some use-cases. This outline variants are based on the same colors of the solid buttons. The outline variants are described in this section."}),`
+`,e.jsx(i,{components:[{title:"Primary Outline",of:m},{title:"Danger Outline",of:p}]}),`
+`,e.jsx(s.h3,{id:"disabled-states",children:"Disabled states"}),`
+`,e.jsxs(s.p,{children:["The disbaled state variant is defined by reducing the opacity of the original color schema and setting the ",e.jsx(s.code,{children:"pointer-events"})," to ",e.jsx(s.code,{children:"none"}),"."]}),`
+`,e.jsx(i,{components:[{title:"Primary",of:u},{title:"Danger",of:f},{title:"Primary Outline",of:g},{title:"Danger Outline",of:b}]}),`
+`,e.jsx(s.h2,{id:"sizes",children:"Sizes"}),`
+`,e.jsx(s.p,{children:"In addiction to the colors, we provide some sizes for different scenarios usages."}),`
+`,e.jsx(i,{components:[{title:"Small",of:r},{title:"Normal",of:d},{title:"Large",of:a}]}),`
+`,e.jsx(s.p,{children:"The padding is a custom padding for each button size:"}),`
+`,e.jsxs(s.table,{children:[e.jsx(s.thead,{children:e.jsxs(s.tr,{children:[e.jsx(s.th,{children:"Button Size"}),e.jsx(s.th,{children:"Horizontal Padding"}),e.jsx(s.th,{children:"Vertical Padding"}),e.jsx(s.th,{children:"Preview"})]})}),e.jsxs(s.tbody,{children:[e.jsxs(s.tr,{children:[e.jsx(s.td,{children:"Small"}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-small)"})}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-xxsmall)"})}),e.jsx(s.td,{children:e.jsx(t,{of:r})})]}),e.jsxs(s.tr,{children:[e.jsx(s.td,{children:"Normal"}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-base)"})}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-xsmall)"})}),e.jsx(s.td,{children:e.jsx(t,{of:d})})]}),e.jsxs(s.tr,{children:[e.jsx(s.td,{children:"Large"}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-large)"})}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-small)"})}),e.jsx(s.td,{children:e.jsx(t,{of:a})})]})]})]}),`
+`,e.jsx(s.h2,{id:"border-radius",children:"Border-radius"}),`
+`,e.jsxs(s.p,{children:["The ",e.jsx(s.code,{children:"var(--border-radius)"})," from ",e.jsx(s.code,{children:"Tokens/BorderRadius"})," is used as the ",e.jsx(s.code,{children:"border-radius"})," css property for all buttons."]}),`
+`,e.jsx(s.h2,{id:"text-and-icon",children:"Text and Icon"}),`
+`,e.jsxs(s.p,{children:["The button has a ",e.jsx(s.code,{children:"display: inline-flex"})," with a gap of ",e.jsx(s.code,{children:"var(--spacing-small)"}),":"]}),`
+`,e.jsxs(s.table,{children:[e.jsx(s.thead,{children:e.jsxs(s.tr,{children:[e.jsx(s.th,{children:"Button Size"}),e.jsx(s.th,{children:"Gap"}),e.jsx(s.th,{children:"Preview"})]})}),e.jsxs(s.tbody,{children:[e.jsxs(s.tr,{children:[e.jsx(s.td,{children:"Small"}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-small)"})}),e.jsx(s.td,{children:e.jsx(t,{of:v})})]}),e.jsxs(s.tr,{children:[e.jsx(s.td,{children:"Normal"}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-base)"})}),e.jsx(s.td,{children:e.jsx(t,{of:D})})]}),e.jsxs(s.tr,{children:[e.jsx(s.td,{children:"Large"}),e.jsx(s.td,{children:e.jsx(s.code,{children:"var(--spacing-base)"})}),e.jsx(s.td,{children:e.jsx(t,{of:y})})]})]})]})]})}function N(n={}){const{wrapper:s}={...o(),...n.components};return s?e.jsx(s,{...n,children:e.jsx(l,{...n})}):l(n)}export{N as default};
