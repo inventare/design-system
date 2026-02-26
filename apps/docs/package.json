@@ -18,7 +18,7 @@
     "@storybook/test": "^8.6.12",
     "@storybook/theming": "^8.6.12",
     "remark-gfm": "4.0.0",
-    "storybook": "^8.6.15"
+    "storybook": "^8.6.17"
   },
   "scripts": {
     "start": "storybook dev -p 6006",
